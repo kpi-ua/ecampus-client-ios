@@ -52,7 +52,7 @@
         if( result != nil) {
             // switch to new view
             SubsystemViewController *subsystemViewController = [self.storyboard instantiateViewControllerWithIdentifier:@"SubsystemViewController"];
-            subsystemViewController.subsystems =[CampusAPI getPermissions:result];
+            subsystemViewController.subsystems = [CampusAPI getPermissions:result];
            [self presentModalViewController:subsystemViewController animated:YES];
         } else {
             UIAlertView *message = [[UIAlertView alloc] initWithTitle:@"Помилка входу!"

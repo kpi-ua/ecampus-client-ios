@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		8401E7401838F8B200D06721 /* CampusAPI.m in Sources */ = {isa = PBXBuildFile; fileRef = 8401E73F1838F8B200D06721 /* CampusAPI.m */; };
 		8401E7431838FD1500D06721 /* SubsystemProfile.m in Sources */ = {isa = PBXBuildFile; fileRef = 8401E7421838FD1500D06721 /* SubsystemProfile.m */; };
+		8410D1EC1839360800E3D895 /* SubsystemViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8410D1EB1839360800E3D895 /* SubsystemViewController.m */; };
 		845E63891838DF2000E6D313 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 845E63881838DF2000E6D313 /* Foundation.framework */; };
 		845E638B1838DF2000E6D313 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 845E638A1838DF2000E6D313 /* CoreGraphics.framework */; };
 		845E638D1838DF2000E6D313 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 845E638C1838DF2000E6D313 /* UIKit.framework */; };
@@ -25,7 +26,6 @@
 		845E63B71838DF2100E6D313 /* CampusTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 845E63B61838DF2100E6D313 /* CampusTests.m */; };
 		845E63C21838E35100E6D313 /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 845E63C11838E35100E6D313 /* LoginViewController.m */; };
 		84BDEE1518390F86007E8F37 /* SubsystemViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 84BDEE1418390F86007E8F37 /* SubsystemViewCell.m */; };
-		84BDEE18183910E6007E8F37 /* SubsystemViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 84BDEE17183910E6007E8F37 /* SubsystemViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -44,6 +44,8 @@
 		8401E73F1838F8B200D06721 /* CampusAPI.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CampusAPI.m; sourceTree = "<group>"; };
 		8401E7411838FD1500D06721 /* SubsystemProfile.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SubsystemProfile.h; sourceTree = "<group>"; };
 		8401E7421838FD1500D06721 /* SubsystemProfile.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SubsystemProfile.m; sourceTree = "<group>"; };
+		8410D1EA1839360800E3D895 /* SubsystemViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SubsystemViewController.h; sourceTree = "<group>"; };
+		8410D1EB1839360800E3D895 /* SubsystemViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SubsystemViewController.m; sourceTree = "<group>"; };
 		845E63851838DF2000E6D313 /* Campus.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Campus.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		845E63881838DF2000E6D313 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		845E638A1838DF2000E6D313 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -66,8 +68,6 @@
 		845E63C11838E35100E6D313 /* LoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginViewController.m; sourceTree = "<group>"; };
 		84BDEE1318390F86007E8F37 /* SubsystemViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SubsystemViewCell.h; sourceTree = "<group>"; };
 		84BDEE1418390F86007E8F37 /* SubsystemViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SubsystemViewCell.m; sourceTree = "<group>"; };
-		84BDEE16183910E6007E8F37 /* SubsystemViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SubsystemViewController.h; path = ../SubsystemViewController.h; sourceTree = "<group>"; };
-		84BDEE17183910E6007E8F37 /* SubsystemViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SubsystemViewController.m; path = ../SubsystemViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -127,8 +127,8 @@
 		845E638E1838DF2000E6D313 /* Campus */ = {
 			isa = PBXGroup;
 			children = (
-				84BDEE16183910E6007E8F37 /* SubsystemViewController.h */,
-				84BDEE17183910E6007E8F37 /* SubsystemViewController.m */,
+				8410D1EA1839360800E3D895 /* SubsystemViewController.h */,
+				8410D1EB1839360800E3D895 /* SubsystemViewController.m */,
 				845E63971838DF2000E6D313 /* AppDelegate.h */,
 				845E63981838DF2000E6D313 /* AppDelegate.m */,
 				845E639A1838DF2000E6D313 /* Main_iPhone.storyboard */,
@@ -274,8 +274,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				84BDEE18183910E6007E8F37 /* SubsystemViewController.m in Sources */,
 				845E63991838DF2000E6D313 /* AppDelegate.m in Sources */,
+				8410D1EC1839360800E3D895 /* SubsystemViewController.m in Sources */,
 				8401E7431838FD1500D06721 /* SubsystemProfile.m in Sources */,
 				8401E7401838F8B200D06721 /* CampusAPI.m in Sources */,
 				845E63951838DF2000E6D313 /* main.m in Sources */,
