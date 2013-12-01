@@ -6,9 +6,9 @@
 //  Copyright (c) 2013 КБ ИС. All rights reserved.
 //
 
-#import "SubsystemProfile.h"
+#import "Profile.h"
 
-@implementation SubsystemProfile 
+@implementation Profile
 
 @synthesize subsystemName, isCreate, isDelete, isRead, isUpdate;
 

@@ -8,7 +8,7 @@
 
 #import <Foundation/Foundation.h>
 
-@interface SubsystemProfile : NSObject {
+@interface Profile : NSObject {
     
     NSString *subsystemName;
     BOOL isCreate;

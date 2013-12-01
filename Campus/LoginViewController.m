@@ -11,6 +11,7 @@
 @implementation LoginViewController
 @synthesize login;
 @synthesize password;
+@synthesize parent;
 
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
@@ -46,14 +47,21 @@
 
 - (IBAction)loginButton:(UIButton *)sender {
 
-    if (login.text.length != 0 && password.text.length != 0) {                               /* check for empty fields*/
+    if (login.text.length != 0 && password.text.length != 0) {                               /* check for empty fields */
     
         NSString *result = [CampusAPI getAuth:login.text withPassword:password.text];        /* result of authentification */
         if( result != nil) {
             // switch to new view
-            SubsystemViewController *subsystemViewController = [self.storyboard instantiateViewControllerWithIdentifier:@"SubsystemViewController"];
-            subsystemViewController.subsystems = [CampusAPI getPermissions:result];
-           [self presentModalViewController:subsystemViewController animated:YES];
+            [CampusAPI setSessionID:result];
+            [parent dismissModalViewControllerAnimated:YES];
+         //   SubsystemViewController *subsystemViewController = [self.storyboard instantiateViewControllerWithIdentifier:@"SubsystemViewController"];
+         //   subsystemViewController.subsystems = [CampusAPI getPermissions:result];
+         //[self presentModalViewController:subsystemViewController animated:YES];
+            
+           // MainTabBarController *mainTabBarController = [self.storyboard instantiateViewControllerWithIdentifier:@"MainTabBarController"];
+           // [mainTabBarController setSelectedIndex:0];
+           // [mainTabBarController setSelectedViewController:[mainTabBarController.viewControllers objectAtIndex:0]];
+          // [self presentModalViewController:mainTabBarController animated:YES];
         } else {
             UIAlertView *message = [[UIAlertView alloc] initWithTitle:@"Помилка входу!"
                                                               message:@"Виникла помилка з'єднання с сервером. Перевірте налаштування інтернету"

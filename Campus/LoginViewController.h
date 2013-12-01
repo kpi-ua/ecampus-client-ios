@@ -9,6 +9,7 @@
 #import <UIKit/UIKit.h>
 #import "CampusAPI.h"
 #import "SubsystemViewController.h"
+#import "MainTabBarController.h"
 
 @interface LoginViewController : UIViewController {
     UITextField *login;
@@ -21,7 +22,7 @@
 @property (nonatomic, strong) IBOutlet UITextField *login;
 @property (nonatomic, strong) IBOutlet UITextField *password;
 @property (nonatomic, strong) IBOutlet UIView *view;
-
+@property (nonatomic, retain) UITabBarController *parent;
 
 - (IBAction)loginButton:(UIButton *)sender;
 

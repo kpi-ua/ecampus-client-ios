@@ -8,7 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		8401E7401838F8B200D06721 /* CampusAPI.m in Sources */ = {isa = PBXBuildFile; fileRef = 8401E73F1838F8B200D06721 /* CampusAPI.m */; };
-		8401E7431838FD1500D06721 /* SubsystemProfile.m in Sources */ = {isa = PBXBuildFile; fileRef = 8401E7421838FD1500D06721 /* SubsystemProfile.m */; };
+		8401E7431838FD1500D06721 /* Profile.m in Sources */ = {isa = PBXBuildFile; fileRef = 8401E7421838FD1500D06721 /* Profile.m */; };
 		8410D1EC1839360800E3D895 /* SubsystemViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8410D1EB1839360800E3D895 /* SubsystemViewController.m */; };
 		845E63891838DF2000E6D313 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 845E63881838DF2000E6D313 /* Foundation.framework */; };
 		845E638B1838DF2000E6D313 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 845E638A1838DF2000E6D313 /* CoreGraphics.framework */; };
@@ -25,7 +25,14 @@
 		845E63B51838DF2100E6D313 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 845E63B31838DF2100E6D313 /* InfoPlist.strings */; };
 		845E63B71838DF2100E6D313 /* CampusTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 845E63B61838DF2100E6D313 /* CampusTests.m */; };
 		845E63C21838E35100E6D313 /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 845E63C11838E35100E6D313 /* LoginViewController.m */; };
+		8478BE501847D6AE000FAD0E /* MainTabBarController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8478BE4F1847D6AE000FAD0E /* MainTabBarController.m */; };
 		84BDEE1518390F86007E8F37 /* SubsystemViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 84BDEE1418390F86007E8F37 /* SubsystemViewCell.m */; };
+		84D2618C184B6615008AAD3B /* UserData.m in Sources */ = {isa = PBXBuildFile; fileRef = 84D2618B184B6615008AAD3B /* UserData.m */; };
+		84D26190184B6708008AAD3B /* Personalities.m in Sources */ = {isa = PBXBuildFile; fileRef = 84D2618F184B6708008AAD3B /* Personalities.m */; };
+		84D26193184B69CD008AAD3B /* Employee.m in Sources */ = {isa = PBXBuildFile; fileRef = 84D26192184B69CD008AAD3B /* Employee.m */; };
+		84D26197184B88D8008AAD3B /* InfoViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 84D26196184B88D8008AAD3B /* InfoViewCell.m */; };
+		84D2619A184B8996008AAD3B /* PersonalitiesViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 84D26199184B8996008AAD3B /* PersonalitiesViewCell.m */; };
+		84D2619D184B8A39008AAD3B /* EmployeeViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 84D2619C184B8A39008AAD3B /* EmployeeViewCell.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -42,8 +49,8 @@
 		8401E73D1838F45A00D06721 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/Main_iPhone.storyboard; sourceTree = "<group>"; };
 		8401E73E1838F8B200D06721 /* CampusAPI.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CampusAPI.h; sourceTree = "<group>"; };
 		8401E73F1838F8B200D06721 /* CampusAPI.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CampusAPI.m; sourceTree = "<group>"; };
-		8401E7411838FD1500D06721 /* SubsystemProfile.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SubsystemProfile.h; sourceTree = "<group>"; };
-		8401E7421838FD1500D06721 /* SubsystemProfile.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SubsystemProfile.m; sourceTree = "<group>"; };
+		8401E7411838FD1500D06721 /* Profile.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Profile.h; sourceTree = "<group>"; };
+		8401E7421838FD1500D06721 /* Profile.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Profile.m; sourceTree = "<group>"; };
 		8410D1EA1839360800E3D895 /* SubsystemViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SubsystemViewController.h; sourceTree = "<group>"; };
 		8410D1EB1839360800E3D895 /* SubsystemViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SubsystemViewController.m; sourceTree = "<group>"; };
 		845E63851838DF2000E6D313 /* Campus.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Campus.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -66,8 +73,22 @@
 		845E63B61838DF2100E6D313 /* CampusTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CampusTests.m; sourceTree = "<group>"; };
 		845E63C01838E35100E6D313 /* LoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginViewController.h; sourceTree = "<group>"; };
 		845E63C11838E35100E6D313 /* LoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginViewController.m; sourceTree = "<group>"; };
+		8478BE4E1847D6AE000FAD0E /* MainTabBarController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainTabBarController.h; sourceTree = "<group>"; };
+		8478BE4F1847D6AE000FAD0E /* MainTabBarController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainTabBarController.m; sourceTree = "<group>"; };
 		84BDEE1318390F86007E8F37 /* SubsystemViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SubsystemViewCell.h; sourceTree = "<group>"; };
 		84BDEE1418390F86007E8F37 /* SubsystemViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SubsystemViewCell.m; sourceTree = "<group>"; };
+		84D2618A184B6615008AAD3B /* UserData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserData.h; sourceTree = "<group>"; };
+		84D2618B184B6615008AAD3B /* UserData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserData.m; sourceTree = "<group>"; };
+		84D2618E184B6708008AAD3B /* Personalities.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Personalities.h; sourceTree = "<group>"; };
+		84D2618F184B6708008AAD3B /* Personalities.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Personalities.m; sourceTree = "<group>"; };
+		84D26191184B69CD008AAD3B /* Employee.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Employee.h; sourceTree = "<group>"; };
+		84D26192184B69CD008AAD3B /* Employee.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Employee.m; sourceTree = "<group>"; };
+		84D26195184B88D8008AAD3B /* InfoViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InfoViewCell.h; sourceTree = "<group>"; };
+		84D26196184B88D8008AAD3B /* InfoViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = InfoViewCell.m; sourceTree = "<group>"; };
+		84D26198184B8996008AAD3B /* PersonalitiesViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PersonalitiesViewCell.h; sourceTree = "<group>"; };
+		84D26199184B8996008AAD3B /* PersonalitiesViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PersonalitiesViewCell.m; sourceTree = "<group>"; };
+		84D2619B184B8A39008AAD3B /* EmployeeViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EmployeeViewCell.h; sourceTree = "<group>"; };
+		84D2619C184B8A39008AAD3B /* EmployeeViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EmployeeViewCell.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -127,6 +148,7 @@
 		845E638E1838DF2000E6D313 /* Campus */ = {
 			isa = PBXGroup;
 			children = (
+				84D2618D184B66A0008AAD3B /* CampusAPI */,
 				8410D1EA1839360800E3D895 /* SubsystemViewController.h */,
 				8410D1EB1839360800E3D895 /* SubsystemViewController.m */,
 				845E63971838DF2000E6D313 /* AppDelegate.h */,
@@ -136,13 +158,10 @@
 				845E63A31838DF2000E6D313 /* Images.xcassets */,
 				845E63C01838E35100E6D313 /* LoginViewController.h */,
 				845E63C11838E35100E6D313 /* LoginViewController.m */,
-				8401E73E1838F8B200D06721 /* CampusAPI.h */,
-				8401E73F1838F8B200D06721 /* CampusAPI.m */,
 				845E638F1838DF2000E6D313 /* Supporting Files */,
-				8401E7411838FD1500D06721 /* SubsystemProfile.h */,
-				8401E7421838FD1500D06721 /* SubsystemProfile.m */,
-				84BDEE1318390F86007E8F37 /* SubsystemViewCell.h */,
-				84BDEE1418390F86007E8F37 /* SubsystemViewCell.m */,
+				84D26194184B88B8008AAD3B /* Cells */,
+				8478BE4E1847D6AE000FAD0E /* MainTabBarController.h */,
+				8478BE4F1847D6AE000FAD0E /* MainTabBarController.m */,
 			);
 			path = Campus;
 			sourceTree = "<group>";
@@ -174,6 +193,38 @@
 				845E63B31838DF2100E6D313 /* InfoPlist.strings */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		84D2618D184B66A0008AAD3B /* CampusAPI */ = {
+			isa = PBXGroup;
+			children = (
+				8401E73E1838F8B200D06721 /* CampusAPI.h */,
+				8401E73F1838F8B200D06721 /* CampusAPI.m */,
+				8401E7411838FD1500D06721 /* Profile.h */,
+				8401E7421838FD1500D06721 /* Profile.m */,
+				84D2618A184B6615008AAD3B /* UserData.h */,
+				84D2618B184B6615008AAD3B /* UserData.m */,
+				84D2618E184B6708008AAD3B /* Personalities.h */,
+				84D2618F184B6708008AAD3B /* Personalities.m */,
+				84D26191184B69CD008AAD3B /* Employee.h */,
+				84D26192184B69CD008AAD3B /* Employee.m */,
+			);
+			name = CampusAPI;
+			sourceTree = "<group>";
+		};
+		84D26194184B88B8008AAD3B /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				84BDEE1318390F86007E8F37 /* SubsystemViewCell.h */,
+				84BDEE1418390F86007E8F37 /* SubsystemViewCell.m */,
+				84D26195184B88D8008AAD3B /* InfoViewCell.h */,
+				84D26196184B88D8008AAD3B /* InfoViewCell.m */,
+				84D26198184B8996008AAD3B /* PersonalitiesViewCell.h */,
+				84D26199184B8996008AAD3B /* PersonalitiesViewCell.m */,
+				84D2619B184B8A39008AAD3B /* EmployeeViewCell.h */,
+				84D2619C184B8A39008AAD3B /* EmployeeViewCell.m */,
+			);
+			name = Cells;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -274,12 +325,19 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				84D26197184B88D8008AAD3B /* InfoViewCell.m in Sources */,
 				845E63991838DF2000E6D313 /* AppDelegate.m in Sources */,
 				8410D1EC1839360800E3D895 /* SubsystemViewController.m in Sources */,
-				8401E7431838FD1500D06721 /* SubsystemProfile.m in Sources */,
+				8401E7431838FD1500D06721 /* Profile.m in Sources */,
 				8401E7401838F8B200D06721 /* CampusAPI.m in Sources */,
+				84D26190184B6708008AAD3B /* Personalities.m in Sources */,
+				84D2619D184B8A39008AAD3B /* EmployeeViewCell.m in Sources */,
+				84D2619A184B8996008AAD3B /* PersonalitiesViewCell.m in Sources */,
+				84D2618C184B6615008AAD3B /* UserData.m in Sources */,
 				845E63951838DF2000E6D313 /* main.m in Sources */,
 				84BDEE1518390F86007E8F37 /* SubsystemViewCell.m in Sources */,
+				84D26193184B69CD008AAD3B /* Employee.m in Sources */,
+				8478BE501847D6AE000FAD0E /* MainTabBarController.m in Sources */,
 				845E63C21838E35100E6D313 /* LoginViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
