@@ -10,6 +10,8 @@
 		8401E7401838F8B200D06721 /* CampusAPI.m in Sources */ = {isa = PBXBuildFile; fileRef = 8401E73F1838F8B200D06721 /* CampusAPI.m */; };
 		8401E7431838FD1500D06721 /* Profile.m in Sources */ = {isa = PBXBuildFile; fileRef = 8401E7421838FD1500D06721 /* Profile.m */; };
 		8410D1EC1839360800E3D895 /* SubsystemViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8410D1EB1839360800E3D895 /* SubsystemViewController.m */; };
+		8418A57F185A5C6C00C8C52B /* BulletinBoardViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8418A57E185A5C6C00C8C52B /* BulletinBoardViewController.m */; };
+		8418A582185A5CCB00C8C52B /* BulletinBoardCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 8418A581185A5CCB00C8C52B /* BulletinBoardCell.m */; };
 		845E63891838DF2000E6D313 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 845E63881838DF2000E6D313 /* Foundation.framework */; };
 		845E638B1838DF2000E6D313 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 845E638A1838DF2000E6D313 /* CoreGraphics.framework */; };
 		845E638D1838DF2000E6D313 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 845E638C1838DF2000E6D313 /* UIKit.framework */; };
@@ -53,6 +55,10 @@
 		8401E7421838FD1500D06721 /* Profile.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Profile.m; sourceTree = "<group>"; };
 		8410D1EA1839360800E3D895 /* SubsystemViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SubsystemViewController.h; sourceTree = "<group>"; };
 		8410D1EB1839360800E3D895 /* SubsystemViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SubsystemViewController.m; sourceTree = "<group>"; };
+		8418A57D185A5C6C00C8C52B /* BulletinBoardViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BulletinBoardViewController.h; sourceTree = "<group>"; };
+		8418A57E185A5C6C00C8C52B /* BulletinBoardViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BulletinBoardViewController.m; sourceTree = "<group>"; };
+		8418A580185A5CCB00C8C52B /* BulletinBoardCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BulletinBoardCell.h; sourceTree = "<group>"; };
+		8418A581185A5CCB00C8C52B /* BulletinBoardCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BulletinBoardCell.m; sourceTree = "<group>"; };
 		845E63851838DF2000E6D313 /* Campus.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Campus.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		845E63881838DF2000E6D313 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		845E638A1838DF2000E6D313 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -115,6 +121,27 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		8418A583185A5CD100C8C52B /* Personality */ = {
+			isa = PBXGroup;
+			children = (
+				8410D1EA1839360800E3D895 /* SubsystemViewController.h */,
+				8410D1EB1839360800E3D895 /* SubsystemViewController.m */,
+				84D26194184B88B8008AAD3B /* Cells */,
+			);
+			name = Personality;
+			sourceTree = "<group>";
+		};
+		8418A584185A5D1C00C8C52B /* BulletinBoard */ = {
+			isa = PBXGroup;
+			children = (
+				8418A57D185A5C6C00C8C52B /* BulletinBoardViewController.h */,
+				8418A57E185A5C6C00C8C52B /* BulletinBoardViewController.m */,
+				8418A580185A5CCB00C8C52B /* BulletinBoardCell.h */,
+				8418A581185A5CCB00C8C52B /* BulletinBoardCell.m */,
+			);
+			name = BulletinBoard;
+			sourceTree = "<group>";
+		};
 		845E637C1838DF2000E6D313 = {
 			isa = PBXGroup;
 			children = (
@@ -148,9 +175,9 @@
 		845E638E1838DF2000E6D313 /* Campus */ = {
 			isa = PBXGroup;
 			children = (
+				8418A583185A5CD100C8C52B /* Personality */,
+				8418A584185A5D1C00C8C52B /* BulletinBoard */,
 				84D2618D184B66A0008AAD3B /* CampusAPI */,
-				8410D1EA1839360800E3D895 /* SubsystemViewController.h */,
-				8410D1EB1839360800E3D895 /* SubsystemViewController.m */,
 				845E63971838DF2000E6D313 /* AppDelegate.h */,
 				845E63981838DF2000E6D313 /* AppDelegate.m */,
 				845E639A1838DF2000E6D313 /* Main_iPhone.storyboard */,
@@ -159,7 +186,6 @@
 				845E63C01838E35100E6D313 /* LoginViewController.h */,
 				845E63C11838E35100E6D313 /* LoginViewController.m */,
 				845E638F1838DF2000E6D313 /* Supporting Files */,
-				84D26194184B88B8008AAD3B /* Cells */,
 				8478BE4E1847D6AE000FAD0E /* MainTabBarController.h */,
 				8478BE4F1847D6AE000FAD0E /* MainTabBarController.m */,
 			);
@@ -326,9 +352,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				84D26197184B88D8008AAD3B /* InfoViewCell.m in Sources */,
+				8418A57F185A5C6C00C8C52B /* BulletinBoardViewController.m in Sources */,
 				845E63991838DF2000E6D313 /* AppDelegate.m in Sources */,
 				8410D1EC1839360800E3D895 /* SubsystemViewController.m in Sources */,
 				8401E7431838FD1500D06721 /* Profile.m in Sources */,
+				8418A582185A5CCB00C8C52B /* BulletinBoardCell.m in Sources */,
 				8401E7401838F8B200D06721 /* CampusAPI.m in Sources */,
 				84D26190184B6708008AAD3B /* Personalities.m in Sources */,
 				84D2619D184B8A39008AAD3B /* EmployeeViewCell.m in Sources */,
