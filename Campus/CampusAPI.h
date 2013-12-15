@@ -11,6 +11,7 @@
 #import "Personalities.h"
 #import "UserData.h"
 #import "Employee.h"
+#import "UserConversation.h"
 
 @interface CampusAPI : NSObject
 
@@ -21,6 +22,7 @@
 + (NSString *) getDataFrom:(NSString *)url;
 + (NSString *) fetchedData:(NSData *)responseData withKey:(NSString*)key;
 + (NSArray  *) fetchedSubsystemData:(NSData *)responseData;
-+ (UserData  *) fetchedUser:(NSData *) responseData;
-+ (UserData*) getCurrentUser:(NSString*)sessionID;
++ (UserData *) fetchedUser:(NSData *) responseData;
++ (UserData *) getCurrentUser:(NSString*)sessionID;
++ (NSArray  *) getUserConversations:(NSString*)sessionID;
 @end

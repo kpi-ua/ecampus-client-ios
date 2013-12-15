@@ -187,10 +187,45 @@ static NSString *sessionID;
  */
 +(UserData*) getCurrentUser:(NSString*)sessionID {
     NSString * result = [CampusAPI getDataFromURL:[NSString stringWithFormat:@"http://api.ecampus.kpi.ua/User/GetCurrentUser?sessionId=%@&", sessionID]];
-  //  NSLog(@"Result %@", result);
     if (result != nil) {
         NSData *dataResult = [result dataUsingEncoding:NSUTF8StringEncoding];
         UserData *userData = [CampusAPI fetchedUser:dataResult];
+        return userData;
+    } else {
+        return nil;
+    }
+}
+
+
++(NSArray*)fetchedConversations:(NSData *) responseData {
+    //parse out the json data
+    NSMutableArray *userConversations = [[NSMutableArray alloc] init];
+    NSError* error;
+    NSDictionary* json = [NSJSONSerialization
+                          JSONObjectWithData: responseData
+                          options:kNilOptions
+                          error:&error];
+    NSArray* conversations     = [json objectForKey:@"Data"];
+    for (NSDictionary *message in conversations) {
+        UserConversation *us = [[UserConversation alloc] init];
+        [us setGroupID:  [message[@"GroupId"] integerValue]];
+        [us setLastMessageDate: message[@"LastMessageDate"]];
+        [us setLastMessageText: message[@"LastMessageText"]];
+        [us setSubject:         message[@"Subject"]];
+        [userConversations addObject:us];
+        
+    }
+    return userConversations;
+}
+
+/**
+ * Returns user conversation
+ */
++ (NSArray *) getUserConversations:(NSString*)sessionID {
+    NSString * result = [CampusAPI getDataFromURL:[NSString stringWithFormat:@"http://api.ecampus.kpi.ua/Message/GetUserConversations?sessionId=%@&", sessionID]];
+    if (result != nil) {
+        NSData *dataResult = [result dataUsingEncoding:NSUTF8StringEncoding];
+        NSArray *userData = [CampusAPI fetchedConversations:dataResult];
         return userData;
     } else {
         return nil;
