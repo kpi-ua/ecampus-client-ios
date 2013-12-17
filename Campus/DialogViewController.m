@@ -10,13 +10,14 @@
 #import "UIBubbleTableView.h"
 #import "UIBubbleTableViewDataSource.h"
 #import "NSBubbleData.h"
+#import "Message.h"
 
 @interface DialogViewController ()
 {
     IBOutlet UIBubbleTableView *bubbleTable;
     IBOutlet UIView *textInputView;
     IBOutlet UITextField *textField;
-
+    NSMutableArray *messages;
     NSMutableArray *bubbleData;
 }
 
@@ -28,6 +29,20 @@
 {
     [super viewDidLoad];
     
+    if([CampusAPI groupID]!=0) {
+        messages = [CampusAPI getUserConversations:[CampusAPI sessionID] withGroupID:[CampusAPI groupID]];
+        
+    }
+    
+    bubbleData = [[NSMutableArray alloc] init];
+    int t = -300;
+    
+    for (Message *message in messages) {
+        NSBubbleData *heyBubble = [NSBubbleData dataWithText: message.text date:[NSDate dateWithTimeIntervalSinceNow:t+=10] type:BubbleTypeSomeoneElse];
+        heyBubble.avatar = nil;
+        [bubbleData addObject:heyBubble];
+    }
+    /*
     NSBubbleData *heyBubble = [NSBubbleData dataWithText:@"Hey, halloween is soon" date:[NSDate dateWithTimeIntervalSinceNow:-300] type:BubbleTypeSomeoneElse];
     heyBubble.avatar = [UIImage imageNamed:@"avatar1.png"];
 
@@ -36,8 +51,7 @@
     
     NSBubbleData *replyBubble = [NSBubbleData dataWithText:@"Wow.. Really cool picture out there. iPhone 5 has really nice camera, yeah?" date:[NSDate dateWithTimeIntervalSinceNow:-5] type:BubbleTypeMine];
     replyBubble.avatar = nil;
-    
-    bubbleData = [[NSMutableArray alloc] initWithObjects:heyBubble, photoBubble, replyBubble, nil];
+    */
     bubbleTable.bubbleDataSource = self;
     
     // The line below sets the snap interval in seconds. This defines how the bubbles will be grouped in time.
@@ -57,7 +71,7 @@
     //    - NSBubbleTypingTypeMe - shows "now typing" bubble on the right
     //    - NSBubbleTypingTypeNone - no "now typing" bubble
     
-    bubbleTable.typingBubble = NSBubbleTypingTypeSomebody;
+    //bubbleTable.typingBubble = NSBubbleTypingTypeSomebody;
     
     [bubbleTable reloadData];
     

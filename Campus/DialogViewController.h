@@ -8,6 +8,7 @@
 
 #import <UIKit/UIKit.h>
 #import "UIBubbleTableViewDataSource.h"
+#import "CampusAPI.h"
 
 @interface DialogViewController : UIViewController <UIBubbleTableViewDataSource>
 

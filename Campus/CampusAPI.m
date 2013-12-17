@@ -13,6 +13,7 @@
 @implementation CampusAPI
 
 static NSString *sessionID;
+static int groupID;
 
 +(NSString*) sessionID {
     return sessionID;
@@ -20,6 +21,15 @@ static NSString *sessionID;
 +(void) setSessionID:(NSString*) value {
     sessionID = value;
 }
+
++(int) groupID {
+    return groupID;
+}
++(void) setGroupID:(int) value {
+    groupID = value;
+}
+
+
 /**
  * Returns user session id after successful authentication or nil if  authentication is failed.
  */
@@ -39,7 +49,7 @@ static NSString *sessionID;
  * Returns user permissions.
  */
 +(NSArray*) getPermissions:(NSString*)sessionID {
-    NSString * result = [CampusAPI getDataFromURL:[NSString stringWithFormat:@"http://api.ecampus.kpi.ua/User/GetPermissions?sessionId=%@&", sessionID]];
+    NSString * result = [CampusAPI getDataFromURL:[NSString stringWithFormat:@"http://api.ecampus.kpi.ua/User/GetPermissions?sessionId=%@", sessionID]];
   // NSLog(@"Result %@", result);
     if (result != nil) {
         NSData *dataResult = [result dataUsingEncoding:NSUTF8StringEncoding];
@@ -186,7 +196,7 @@ static NSString *sessionID;
  * Returns user information
  */
 +(UserData*) getCurrentUser:(NSString*)sessionID {
-    NSString * result = [CampusAPI getDataFromURL:[NSString stringWithFormat:@"http://api.ecampus.kpi.ua/User/GetCurrentUser?sessionId=%@&", sessionID]];
+    NSString * result = [CampusAPI getDataFromURL:[NSString stringWithFormat:@"http://api.ecampus.kpi.ua/User/GetCurrentUser?sessionId=%@", sessionID]];
     if (result != nil) {
         NSData *dataResult = [result dataUsingEncoding:NSUTF8StringEncoding];
         UserData *userData = [CampusAPI fetchedUser:dataResult];
@@ -196,7 +206,9 @@ static NSString *sessionID;
     }
 }
 
-
+/**
+ * Parse user conversation
+ */
 +(NSArray*)fetchedConversations:(NSData *) responseData {
     //parse out the json data
     NSMutableArray *userConversations = [[NSMutableArray alloc] init];
@@ -219,10 +231,27 @@ static NSString *sessionID;
 }
 
 /**
- * Returns user conversation
+ * Returns user messages
+ */
++ (NSArray *) getUserConversations:(NSString*)sessionID withGroupID:(int)groupID{
+    NSString * result = [CampusAPI getDataFromURL:[NSString stringWithFormat:@"http://api.ecampus.kpi.ua/Message/GetUserConversation?sessionID=%@&groupId=%d", sessionID, groupID]];
+    if (result != nil) {
+        NSData *dataResult = [result dataUsingEncoding:NSUTF8StringEncoding];
+        NSArray *userData = [CampusAPI fetchedMessages:dataResult];
+        return userData;
+    } else {
+        return nil;
+    }
+}
+
+
+
+
+/**
+ * Returns user conversations
  */
 + (NSArray *) getUserConversations:(NSString*)sessionID {
-    NSString * result = [CampusAPI getDataFromURL:[NSString stringWithFormat:@"http://api.ecampus.kpi.ua/Message/GetUserConversations?sessionId=%@&", sessionID]];
+    NSString * result = [CampusAPI getDataFromURL:[NSString stringWithFormat:@"http://api.ecampus.kpi.ua/Message/GetUserConversations?sessionID=%@", sessionID]];
     if (result != nil) {
         NSData *dataResult = [result dataUsingEncoding:NSUTF8StringEncoding];
         NSArray *userData = [CampusAPI fetchedConversations:dataResult];
@@ -231,4 +260,29 @@ static NSString *sessionID;
         return nil;
     }
 }
+
+/**
+ * Parse user messages
+ */
++(NSArray*)fetchedMessages:(NSData *) responseData {
+    //parse out the json data
+    NSMutableArray *userConversations = [[NSMutableArray alloc] init];
+    NSError* error;
+    NSDictionary* json = [NSJSONSerialization
+                          JSONObjectWithData: responseData
+                          options:kNilOptions
+                          error:&error];
+    NSArray* messages     = [json objectForKey:@"Data"];
+    for (NSDictionary *m in messages) {
+        Message *message = [[Message alloc] init];
+        [message setSenderUserAccountID: [m[@"SenderUserAccountId"] integerValue]];
+        [message setText:                 m[@"Text"]];
+        [message setSentDate:             m[@"DateSent"]];
+        [message setMessageID:           [m[@"MessageId"] integerValue]];
+        [userConversations addObject:message];
+        
+    }
+    return userConversations;
+}
+
 @end

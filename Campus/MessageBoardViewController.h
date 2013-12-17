@@ -9,6 +9,8 @@
 #import <UIKit/UIKit.h>
 #import "CampusAPI.h"
 #import "MessageCell.h"
+#import "CampusAPI.h"
+#import "DialogViewController.h"
 
 @interface MessageBoardViewController : UITableViewController {
     NSArray *conversation;

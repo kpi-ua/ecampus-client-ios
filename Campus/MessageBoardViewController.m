@@ -32,16 +32,15 @@
  
     // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
+    if ([CampusAPI sessionID]!=nil) {
+        //subsystems = [CampusAPI getPermissions:[CampusAPI sessionID]];
+        conversation = [CampusAPI getUserConversations:[CampusAPI sessionID]];
+        [self.tableView reloadData];
+    }
 }
 
 -(void)viewDidAppear:(BOOL)animated {
     [super viewDidAppear:animated];
-
-        if ([CampusAPI sessionID]!=nil) {
-            //subsystems = [CampusAPI getPermissions:[CampusAPI sessionID]];
-            conversation = [CampusAPI getUserConversations:[CampusAPI sessionID]];
-            [self.tableView reloadData];
-        }
 
 }
 
@@ -121,16 +120,29 @@
 }
 */
 
-/*
+
 #pragma mark - Navigation
 
 // In a story board-based application, you will often want to do a little preparation before navigation
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
+    UIViewController *controller;
+    if ([segue.destinationViewController isKindOfClass:[UINavigationController class]]) {
+        UINavigationController *navController = (UINavigationController *)segue.destinationViewController;
+        controller = [navController.viewControllers objectAtIndex:0];
+    } else {
+        controller = segue.destinationViewController;
+    }
+    if ([controller isKindOfClass:[DialogViewController class]] ) {
+        DialogViewController *dvc = (DialogViewController *)controller;
+        NSIndexPath *ip = [self.tableView indexPathForSelectedRow];
+        UserConversation *us =[conversation  objectAtIndex:ip.row];
+        [CampusAPI setGroupID: us.groupID];
+        
+    }
+    
 }
 
- */
+
 
 @end

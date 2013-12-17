@@ -113,8 +113,18 @@
         Employee *employee = [userData.employees objectAtIndex:indexPath.row - [userData.personalities count] - 1];
         cell.subdivisionName.text = employee.subdivisionName;
         cell.position.text = employee.position;
-        cell.academicDegree.text = employee.academicDegree;
-        cell.academicStatus.text = employee.academicStatus;
+        if (employee.academicDegree == (id)[NSNull null]) { /* еб*ная наркомания тут просто!!!*/
+            cell.academicDegree.text = @"Немає";
+        } else {
+            cell.academicDegree.text = employee.academicDegree;
+        }
+        
+        if (employee.academicStatus == (id)[NSNull null]) { /* еб*ная наркомания тут просто!!!*/
+           cell.academicStatus.text = @"Немає";
+        } else {
+            cell.academicStatus.text = employee.academicStatus;
+        }
+        
         return cell;
     } else {
         NSLog(@"%ld in (%d,%d)", (long)indexPath.row,  1 +[userData.personalities count] + [userData.employees count], indexPath.row + [userData.personalities count] + [userData.employees count] + 1);
