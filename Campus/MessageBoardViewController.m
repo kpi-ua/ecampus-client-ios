@@ -14,6 +14,8 @@
 
 @implementation MessageBoardViewController
 
+
+
 - (id)initWithStyle:(UITableViewStyle)style
 {
     self = [super initWithStyle:style];
@@ -32,17 +34,46 @@
  
     // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
-    if ([CampusAPI sessionID]!=nil) {
-        //subsystems = [CampusAPI getPermissions:[CampusAPI sessionID]];
-        conversation = [CampusAPI getUserConversations:[CampusAPI sessionID]];
-        [self.tableView reloadData];
+    isNeedUpdate = true;
+}
+-(void)viewDidAppear:(BOOL)animated {
+    [super viewDidAppear:animated];
+    if(isNeedUpdate) {
+        [self startLoading];
+        isNeedUpdate = false;
     }
 }
 
--(void)viewDidAppear:(BOOL)animated {
-    [super viewDidAppear:animated];
-
+- (void)stopLoading {
+    isLoading = NO;
+    
+    if ([CampusAPI sessionID]!=nil) {
+        conversation = [CampusAPI getUserConversations:[CampusAPI sessionID]];
+        [self.tableView reloadData];
+    }
+    // Hide the header
+    [UIView animateWithDuration:0.3 animations:^{
+        self.tableView.contentInset = UIEdgeInsetsZero;
+        [refreshArrow layer].transform = CATransform3DMakeRotation(M_PI * 2, 0, 0, 1);
+    }
+                     completion:^(BOOL finished) {
+                         [self performSelector:@selector(stopLoadingComplete)];
+                     }];
 }
+- (void)stopLoadingComplete {
+    // Reset the header
+    refreshLabel.text = self.textPull;
+    refreshArrow.hidden = NO;
+    [refreshSpinner stopAnimating];
+}
+
+- (void)refresh {
+    // This is just a demo. Override this method with your custom reload action.
+    // Don't forget to call stopLoading at the end.
+    [self performSelector:@selector(stopLoading) withObject:nil afterDelay:2.0];
+    
+}
+ 
 
 - (void)didReceiveMemoryWarning
 {
@@ -135,6 +166,7 @@
     }
     if ([controller isKindOfClass:[DialogViewController class]] ) {
         DialogViewController *dvc = (DialogViewController *)controller;
+        dvc.hidesBottomBarWhenPushed = YES;
         NSIndexPath *ip = [self.tableView indexPathForSelectedRow];
         UserConversation *us =[conversation  objectAtIndex:ip.row];
         [CampusAPI setGroupID: us.groupID];
@@ -143,6 +175,11 @@
     
 }
 
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    
+    UITableViewCell *cell = [tableView cellForRowAtIndexPath:indexPath];
+    cell.accessoryView = [[UIActivityIndicatorView alloc] initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleGray];
+}
 
 
 @end

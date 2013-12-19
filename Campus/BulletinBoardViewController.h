@@ -8,7 +8,8 @@
 
 #import <UIKit/UIKit.h>
 #import "BulletinBoardCell.h"
+#import "PullRefreshTableViewController.h"
 
-@interface BulletinBoardViewController : UITableViewController
+@interface BulletinBoardViewController : PullRefreshTableViewController
 
 @end

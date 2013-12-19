@@ -18,8 +18,11 @@
 
 + (NSString*) sessionID;
 + (int) groupID;
++ (int) userID;
 + (void) setSessionID:(NSString*) value;
 + (void) setGroupID:(int) value;
++ (UIImage *) avatar;
++ (void) setAvatar:(UIImage*) value;
 + (NSString *) getAuth:(NSString*)login withPassword:(NSString*)password;
 + (NSArray  *) getPermissions:(NSString*)sessionID;
 + (NSString *) getDataFromURL:(NSString *)url;
@@ -29,4 +32,5 @@
 + (UserData *) getCurrentUser:(NSString*)sessionID;
 + (NSArray  *) getUserConversations:(NSString*)sessionID;
 + (NSArray  *) getUserConversations:(NSString*)sessionID withGroupID:(int)groupID;
++ (Boolean) sendMessage:(NSString*)message forGroup:(int)groupID withSession:(NSString*) sessionID;
 @end

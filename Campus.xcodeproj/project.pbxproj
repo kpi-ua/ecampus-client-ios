@@ -37,6 +37,10 @@
 		84D26197184B88D8008AAD3B /* InfoViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 84D26196184B88D8008AAD3B /* InfoViewCell.m */; };
 		84D2619A184B8996008AAD3B /* PersonalitiesViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 84D26199184B8996008AAD3B /* PersonalitiesViewCell.m */; };
 		84D2619D184B8A39008AAD3B /* EmployeeViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 84D2619C184B8A39008AAD3B /* EmployeeViewCell.m */; };
+		84E117BA186367ED002BF063 /* logo.png in Resources */ = {isa = PBXBuildFile; fileRef = 84E117B9186367ED002BF063 /* logo.png */; };
+		84E117BE18637388002BF063 /* PullRefreshTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 84E117BD18637388002BF063 /* PullRefreshTableViewController.m */; };
+		84E117C01863739A002BF063 /* arrow.png in Resources */ = {isa = PBXBuildFile; fileRef = 84E117BF1863739A002BF063 /* arrow.png */; };
+		84E117C2186373B6002BF063 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 84E117C1186373B6002BF063 /* QuartzCore.framework */; };
 		84F8A81E185DBE9F00449B28 /* bubbleMine.png in Resources */ = {isa = PBXBuildFile; fileRef = 84F8A808185DBE9F00449B28 /* bubbleMine.png */; };
 		84F8A81F185DBE9F00449B28 /* bubbleMine@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 84F8A809185DBE9F00449B28 /* bubbleMine@2x.png */; };
 		84F8A820185DBE9F00449B28 /* bubbleSomeone.png in Resources */ = {isa = PBXBuildFile; fileRef = 84F8A80A185DBE9F00449B28 /* bubbleSomeone.png */; };
@@ -121,6 +125,11 @@
 		84D26199184B8996008AAD3B /* PersonalitiesViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PersonalitiesViewCell.m; sourceTree = "<group>"; };
 		84D2619B184B8A39008AAD3B /* EmployeeViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EmployeeViewCell.h; sourceTree = "<group>"; };
 		84D2619C184B8A39008AAD3B /* EmployeeViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EmployeeViewCell.m; sourceTree = "<group>"; };
+		84E117B9186367ED002BF063 /* logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = logo.png; sourceTree = "<group>"; };
+		84E117BC18637388002BF063 /* PullRefreshTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PullRefreshTableViewController.h; sourceTree = "<group>"; };
+		84E117BD18637388002BF063 /* PullRefreshTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PullRefreshTableViewController.m; sourceTree = "<group>"; };
+		84E117BF1863739A002BF063 /* arrow.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = arrow.png; sourceTree = "<group>"; };
+		84E117C1186373B6002BF063 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		84F8A808185DBE9F00449B28 /* bubbleMine.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bubbleMine.png; sourceTree = "<group>"; };
 		84F8A809185DBE9F00449B28 /* bubbleMine@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "bubbleMine@2x.png"; sourceTree = "<group>"; };
 		84F8A80A185DBE9F00449B28 /* bubbleSomeone.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bubbleSomeone.png; sourceTree = "<group>"; };
@@ -159,6 +168,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				84E117C2186373B6002BF063 /* QuartzCore.framework in Frameworks */,
 				845E638B1838DF2000E6D313 /* CoreGraphics.framework in Frameworks */,
 				845E638D1838DF2000E6D313 /* UIKit.framework in Frameworks */,
 				845E63891838DF2000E6D313 /* Foundation.framework in Frameworks */,
@@ -221,6 +231,7 @@
 		845E63871838DF2000E6D313 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				84E117C1186373B6002BF063 /* QuartzCore.framework */,
 				845E63881838DF2000E6D313 /* Foundation.framework */,
 				845E638A1838DF2000E6D313 /* CoreGraphics.framework */,
 				845E638C1838DF2000E6D313 /* UIKit.framework */,
@@ -232,6 +243,7 @@
 		845E638E1838DF2000E6D313 /* Campus */ = {
 			isa = PBXGroup;
 			children = (
+				84E117BB18637348002BF063 /* PullPushRefresh */,
 				84FBAC851860D69D008279C9 /* Images */,
 				84F8A82F185DC16300449B28 /* LoginView */,
 				84F8A82E185DC15100449B28 /* Messages */,
@@ -316,6 +328,15 @@
 			name = Cells;
 			sourceTree = "<group>";
 		};
+		84E117BB18637348002BF063 /* PullPushRefresh */ = {
+			isa = PBXGroup;
+			children = (
+				84E117BC18637388002BF063 /* PullRefreshTableViewController.h */,
+				84E117BD18637388002BF063 /* PullRefreshTableViewController.m */,
+			);
+			name = PullPushRefresh;
+			sourceTree = "<group>";
+		};
 		84F8A807185DBE9F00449B28 /* images */ = {
 			isa = PBXGroup;
 			children = (
@@ -385,6 +406,8 @@
 		84FBAC851860D69D008279C9 /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				84E117BF1863739A002BF063 /* arrow.png */,
+				84E117B9186367ED002BF063 /* logo.png */,
 				84FBAC861860D76B008279C9 /* do.png */,
 				84FBAC871860D76B008279C9 /* messages.png */,
 				84FBAC881860D76B008279C9 /* profile.png */,
@@ -470,6 +493,7 @@
 			files = (
 				84F8A827185DBE9F00449B28 /* typingSomeone@2x.png in Resources */,
 				845E639F1838DF2000E6D313 /* Main_iPad.storyboard in Resources */,
+				84E117BA186367ED002BF063 /* logo.png in Resources */,
 				84F8A826185DBE9F00449B28 /* typingSomeone.png in Resources */,
 				84F8A81F185DBE9F00449B28 /* bubbleMine@2x.png in Resources */,
 				84F8A81E185DBE9F00449B28 /* bubbleMine.png in Resources */,
@@ -483,6 +507,7 @@
 				845E63A41838DF2000E6D313 /* Images.xcassets in Resources */,
 				84F8A822185DBE9F00449B28 /* missingAvatar.png in Resources */,
 				845E63931838DF2000E6D313 /* InfoPlist.strings in Resources */,
+				84E117C01863739A002BF063 /* arrow.png in Resources */,
 				84F8A823185DBE9F00449B28 /* missingAvatar@2x.png in Resources */,
 				84F8A820185DBE9F00449B28 /* bubbleSomeone.png in Resources */,
 			);
@@ -516,6 +541,7 @@
 				84F8A829185DBE9F00449B28 /* UIBubbleHeaderTableViewCell.m in Sources */,
 				84FBAC8E1860D93E008279C9 /* Message.m in Sources */,
 				8401E7401838F8B200D06721 /* CampusAPI.m in Sources */,
+				84E117BE18637388002BF063 /* PullRefreshTableViewController.m in Sources */,
 				84D26190184B6708008AAD3B /* Personalities.m in Sources */,
 				84D2619D184B8A39008AAD3B /* EmployeeViewCell.m in Sources */,
 				84D2619A184B8996008AAD3B /* PersonalitiesViewCell.m in Sources */,

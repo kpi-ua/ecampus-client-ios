@@ -16,8 +16,9 @@
 #import "Personalities.h"
 #import "UserData.h"
 #import "CampusAPI.h"
+#import "PullRefreshTableViewController.h"
 
-@interface SubsystemViewController : UITableViewController {
+@interface SubsystemViewController : PullRefreshTableViewController{
     NSArray *subsystems;
     UserData *userData;
     UIImage *photo;

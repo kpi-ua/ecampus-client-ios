@@ -11,9 +11,11 @@
 #import "MessageCell.h"
 #import "CampusAPI.h"
 #import "DialogViewController.h"
+#import "PullRefreshTableViewController.h"
 
-@interface MessageBoardViewController : UITableViewController {
+@interface MessageBoardViewController : PullRefreshTableViewController {
     NSArray *conversation;
+    BOOL isNeedUpdate;
 }
 @property (strong, nonatomic) NSArray *conversation;
 @end

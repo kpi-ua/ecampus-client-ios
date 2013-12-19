@@ -14,10 +14,14 @@
 
 static NSString *sessionID;
 static int groupID;
+static int userID;
+static UIImage *avatar;
 
+// Properties
 +(NSString*) sessionID {
     return sessionID;
 }
+
 +(void) setSessionID:(NSString*) value {
     sessionID = value;
 }
@@ -25,8 +29,24 @@ static int groupID;
 +(int) groupID {
     return groupID;
 }
+
 +(void) setGroupID:(int) value {
     groupID = value;
+}
+
++(int) userID {
+    return userID;
+}
+
++(void) setUserID:(int) value {
+    userID = value;
+}
+
++ (UIImage *) avatar {
+    return avatar;
+}
++ (void) setAvatar:(UIImage*) value {
+    avatar = value;
 }
 
 
@@ -138,6 +158,7 @@ static int groupID;
                           error:&error];
     NSDictionary* data     = [json objectForKey:@"Data"];
     userData.userAccountID = [[data objectForKey:@"UserAccountId"] integerValue];
+    [CampusAPI setUserID:userData.userAccountID];
     NSLog(@"%@", [data objectForKey:@"Photo"]);
     userData.urlPhoto = [[NSURL alloc] initWithString:[data objectForKey:@"Photo"]];
     userData.fullName = [data objectForKey:@"FullName"];
@@ -255,6 +276,7 @@ static int groupID;
     if (result != nil) {
         NSData *dataResult = [result dataUsingEncoding:NSUTF8StringEncoding];
         NSArray *userData = [CampusAPI fetchedConversations:dataResult];
+        userData = [[userData reverseObjectEnumerator] allObjects];
         return userData;
     } else {
         return nil;
@@ -285,4 +307,17 @@ static int groupID;
     return userConversations;
 }
 
+/**
+ * Send Message
+ */
++ (Boolean) sendMessage:(NSString*)message forGroup:(int)groupID withSession:(NSString*) sessionID {
+    NSString *text = [message stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
+    NSString * result = [CampusAPI getDataFromURL:[NSString stringWithFormat:@"http://api.ecampus.kpi.ua/Message/SendMessage?sessionID=%@&groupID=%d&text=%@", sessionID, groupID, text]];
+    if (result != nil) {
+        NSData *dataResult = [result dataUsingEncoding:NSUTF8StringEncoding];
+        return YES;
+    } else {
+        return NO;
+    }
+}
 @end
