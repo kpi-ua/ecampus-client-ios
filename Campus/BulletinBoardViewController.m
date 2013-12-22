@@ -7,6 +7,7 @@
 //
 
 #import "BulletinBoardViewController.h"
+#define REFRESH_HEADER_HEIGHT 52.0f
 
 @interface BulletinBoardViewController ()
 
@@ -32,7 +33,64 @@
  
     // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
+    self.title = @"Оголошення";
+    isNeedUpdate = true;
 }
+
+-(void)viewDidAppear:(BOOL)animated {
+    [super viewDidAppear:animated];
+    if(isNeedUpdate) {
+        [self startLoading];
+    }
+}
+
+- (void)startLoading {
+    isLoading = YES;
+    // Show the header
+    [UIView animateWithDuration:0.3 animations:^{
+        self.tableView.contentInset = UIEdgeInsetsMake(REFRESH_HEADER_HEIGHT, 0, 0, 0);
+        refreshLabel.text = self.textLoading;
+        refreshArrow.hidden = YES;
+        [refreshSpinner startAnimating];
+    }];
+    // Refresh action!
+    [self refresh];
+}
+
+- (void)stopLoading {
+    isLoading = NO;
+    
+    if ([CampusAPI sessionID]!=nil) {
+        //subsystems = [CampusAPI getPermissions:[CampusAPI sessionID]];
+        messages = [CampusAPI getActualBulletinBoardMessages:[CampusAPI sessionID]];
+        [self.tableView reloadData];
+        isNeedUpdate = false;
+    }
+    
+    // Hide the header
+    [UIView animateWithDuration:0.3 animations:^{
+        self.tableView.contentInset = UIEdgeInsetsZero;
+        [refreshArrow layer].transform = CATransform3DMakeRotation(M_PI * 2, 0, 0, 1);
+    }
+                     completion:^(BOOL finished) {
+                         [self performSelector:@selector(stopLoadingComplete)];
+                     }];
+}
+
+- (void)stopLoadingComplete {
+    // Reset the header
+    refreshLabel.text = self.textPull;
+    refreshArrow.hidden = NO;
+    [refreshSpinner stopAnimating];
+}
+
+- (void)refresh {
+    // This is just a demo. Override this method with your custom reload action.
+    // Don't forget to call stopLoading at the end.
+    
+    [self performSelector:@selector(stopLoading) withObject:nil afterDelay:2.0];
+}
+
 
 - (void)didReceiveMemoryWarning
 {
@@ -50,7 +108,7 @@
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
     // Return the number of rows in the section.
-    return 1;
+    return [messages count];
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
@@ -62,17 +120,15 @@
         NSArray *nib = [[NSBundle mainBundle] loadNibNamed:@"BulletinBoardCell" owner:self options:nil];
         cell = [nib objectAtIndex:0];
     }
-    cell.bulletinBoardMessageTitle.text = @"Тестове повідомлення";
-    cell.bulletinBoardMessageBody.text = @"Тестове повідомлення дошки оголошень Кампус 1,8";
-    cell.bulletinBoardMessageDate.text = @"12 грудня 2013 року";
+    BbMessage *message = [messages objectAtIndex:indexPath.row];
+    cell.bulletinBoardMessageTitle.text =  message.subject;
+    cell.bulletinBoardMessageBody.text  =  message.text;
+    cell.bulletinBoardMessageDate.text  =  message.date;
     
     return cell;
 }
 
--(void) refresh {
-    [super refresh];
-    [self.tableView reloadData];
-}
+
 /*
 // Override to support conditional editing of the table view.
 - (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath
@@ -112,16 +168,29 @@
 }
 */
 
-/*
+
 #pragma mark - Navigation
 
 // In a story board-based application, you will often want to do a little preparation before navigation
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
+    UIViewController *controller;
+    if ([segue.destinationViewController isKindOfClass:[UINavigationController class]]) {
+        UINavigationController *navController = (UINavigationController *)segue.destinationViewController;
+        controller = [navController.viewControllers objectAtIndex:0];
+    } else {
+        controller = segue.destinationViewController;
+    }
+    if ([controller isKindOfClass:[DetailViewController class]] ) {
+        DetailViewController *dvc = (DetailViewController *)controller;
+        dvc.hidesBottomBarWhenPushed = YES;
+        NSIndexPath *ip = [self.tableView indexPathForSelectedRow];
+        BbMessage *bbm =  [messages  objectAtIndex:ip.row];
+
+        dvc.message = bbm;
+    }
 }
 
- */
+
 
 @end

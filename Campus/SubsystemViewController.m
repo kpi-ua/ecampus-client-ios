@@ -38,17 +38,9 @@
 }
 -(void)viewDidAppear:(BOOL)animated {
     [super viewDidAppear:animated];
-   // [self.tableView setContentOffset:CGPointMake(0, -REFRESH_HEADER_HEIGHT-1) animated:YES];
     if(isNeedUpdate) {
         [self startLoading];
-        //[self refresh];
     }
-    /*  if(isNeedUpdate) {
-     if ([CampusAPI sessionID]!=nil) {
-     [self startLoading];
-     }
-     
-     }*/
 }
 - (void)didReceiveMemoryWarning
 {
@@ -78,7 +70,8 @@
     if ([CampusAPI sessionID]!=nil) {
         //subsystems = [CampusAPI getPermissions:[CampusAPI sessionID]];
         userData = [CampusAPI getCurrentUser:[CampusAPI sessionID]];
-        photo = [[UIImage alloc] initWithData:[NSData dataWithContentsOfURL:userData.urlPhoto]];
+       
+        photo = [CampusAPI getImageFromURL:userData.urlPhoto];
         [CampusAPI setAvatar:photo];
         [self.tableView reloadData];
         isNeedUpdate = false;

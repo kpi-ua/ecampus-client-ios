@@ -9,7 +9,13 @@
 #import <UIKit/UIKit.h>
 #import "BulletinBoardCell.h"
 #import "PullRefreshTableViewController.h"
+#import "CampusAPI.h"
+#import "DetailViewController.h"
 
-@interface BulletinBoardViewController : PullRefreshTableViewController
+@interface BulletinBoardViewController : PullRefreshTableViewController {
+    NSArray *messages;
+    BOOL isNeedUpdate;
+}
+
 
 @end

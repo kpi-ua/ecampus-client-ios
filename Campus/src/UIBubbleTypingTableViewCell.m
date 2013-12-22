@@ -22,7 +22,7 @@
 
 + (CGFloat)height
 {
-    return 40.0;
+    return 50.0;
 }
 
 - (void)setType:(NSBubbleTypingType)value

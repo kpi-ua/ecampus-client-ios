@@ -9,7 +9,7 @@
 #import "MessageCell.h"
 
 @implementation MessageCell
-@synthesize messageDate = _messageDate, messageText = _messageText, subject = _subject;
+@synthesize messageDate = _messageDate, messageText = _messageText, subject = _subject, image = _image;
 
 - (id)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier
 {

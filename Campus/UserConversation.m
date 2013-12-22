@@ -9,5 +9,5 @@
 #import "UserConversation.h"
 
 @implementation UserConversation
-@synthesize groupID, lastMessageDate, lastMessageText, subject;
+@synthesize groupID, lastMessageDate, lastMessageText, subject, users, lastSenderUserAccountId, image;
 @end

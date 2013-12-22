@@ -35,6 +35,8 @@
     // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
     isNeedUpdate = true;
+    self.navigationController.title = @"Повідомлення";
+    self.title= @"Повідомлення";
 }
 -(void)viewDidAppear:(BOOL)animated {
     [super viewDidAppear:animated];
@@ -105,6 +107,7 @@
         cell = [nib objectAtIndex:0];
     }
     UserConversation *message = [conversation objectAtIndex:indexPath.row];
+    cell.image.image       = message.image;
     cell.subject.text      = message.subject;
     cell.messageDate.text  = message.lastMessageDate;
     cell.messageText.text  = message.lastMessageText;
@@ -169,7 +172,8 @@
         dvc.hidesBottomBarWhenPushed = YES;
         NSIndexPath *ip = [self.tableView indexPathForSelectedRow];
         UserConversation *us =[conversation  objectAtIndex:ip.row];
-        [CampusAPI setGroupID: us.groupID];
+        [CampusAPI setConversation:us];
+        [CampusAPI setUsers: us.users];
         
     }
     

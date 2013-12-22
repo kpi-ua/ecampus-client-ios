@@ -13,16 +13,23 @@
 #import "Employee.h"
 #import "UserConversation.h"
 #import "Message.h"
+#import "ImageCache.h"
+#import "BbMessage.h"
 
 @interface CampusAPI : NSObject
 
-+ (NSString*) sessionID;
-+ (int) groupID;
+
 + (int) userID;
++ (NSString*) sessionID;
 + (void) setSessionID:(NSString*) value;
-+ (void) setGroupID:(int) value;
++ (UserConversation*) conversation;
++ (void) setConversation:(UserConversation*) value;
 + (UIImage *) avatar;
 + (void) setAvatar:(UIImage*) value;
++ (NSArray*) users;
++ (void) setUsers:(NSArray*) value;
++ (NSString*) fullName;
+
 + (NSString *) getAuth:(NSString*)login withPassword:(NSString*)password;
 + (NSArray  *) getPermissions:(NSString*)sessionID;
 + (NSString *) getDataFromURL:(NSString *)url;
@@ -33,4 +40,7 @@
 + (NSArray  *) getUserConversations:(NSString*)sessionID;
 + (NSArray  *) getUserConversations:(NSString*)sessionID withGroupID:(int)groupID;
 + (Boolean) sendMessage:(NSString*)message forGroup:(int)groupID withSession:(NSString*) sessionID;
++ (Boolean) sendMessage:(NSString*)message forGroup:(int)groupID withSession:(NSString*) sessionID withUsers:(NSString*) users fromUserName:(NSString*) username;
++ (UIImage*) getImageFromURL : (NSURL*) url;
++ (NSArray  *) getActualBulletinBoardMessages:(NSString*)sessionID;
 @end
