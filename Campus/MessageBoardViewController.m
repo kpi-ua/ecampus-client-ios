@@ -109,7 +109,14 @@
     UserConversation *message = [conversation objectAtIndex:indexPath.row];
     cell.image.image       = message.image;
     cell.subject.text      = message.subject;
-    cell.messageDate.text  = message.lastMessageDate;
+    NSDateFormatter *isoFormat = [[NSDateFormatter alloc] init];
+    [isoFormat setDateFormat:@"yyyy-MM-dd'T'HH:mm:ss.SS"];
+    NSDate *formattedDate = [isoFormat dateFromString:message.lastMessageDate];
+    
+    NSDateFormatter *shortFormat = [[NSDateFormatter alloc] init];
+    [shortFormat setDateFormat:@"dd.MM.yyyy"];
+    
+    cell.messageDate.text  = [shortFormat stringFromDate:formattedDate];
     cell.messageText.text  = message.lastMessageText;
     
     return cell;

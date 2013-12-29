@@ -123,7 +123,17 @@
     BbMessage *message = [messages objectAtIndex:indexPath.row];
     cell.bulletinBoardMessageTitle.text =  message.subject;
     cell.bulletinBoardMessageBody.text  =  message.text;
-    cell.bulletinBoardMessageDate.text  =  message.date;
+    
+    
+    NSDateFormatter *isoFormat = [[NSDateFormatter alloc] init];
+    [isoFormat setDateFormat:@"yyyy-MM-dd'T'HH:mm:ss"];
+    NSDate *formattedDate = [isoFormat dateFromString:message.date];
+
+    NSDateFormatter *shortFormat = [[NSDateFormatter alloc] init];
+    [shortFormat setDateFormat:@"dd.MM.yyyy"];
+    //[shortFormat setDoesRelativeDateFormatting:YES];
+    
+    cell.bulletinBoardMessageDate.text  =  [shortFormat stringFromDate:formattedDate];
     
     return cell;
 }

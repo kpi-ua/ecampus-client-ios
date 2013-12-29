@@ -1,54 +1,54 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="4514" systemVersion="12E55" targetRuntime="iOS.CocoaTouch" variant="6xAndEarlier" propertyAccessControl="none" initialViewController="j3c-VQ-zUD">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="4514" systemVersion="12E55" targetRuntime="iOS.CocoaTouch" variant="6xAndEarlier" propertyAccessControl="none" initialViewController="SKf-VQ-9CA">
     <dependencies>
         <deployment defaultVersion="1280" identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3747"/>
     </dependencies>
     <scenes>
         <!--Login View Controller-->
-        <scene sceneID="0i1-Gv-cVd">
+        <scene sceneID="I7r-Ts-CDQ">
             <objects>
-                <viewController storyboardIdentifier="LoginViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="g7m-hB-0po" customClass="LoginViewController" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="IOk-0d-fD4">
+                <viewController storyboardIdentifier="LoginViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="Ly5-J8-1Nl" customClass="LoginViewController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="qXf-2I-BJ9">
                         <rect key="frame" x="0.0" y="20" width="320" height="548"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" id="iHl-ax-FBS">
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" id="VDR-Sf-0b1">
                                 <rect key="frame" x="20" y="145" width="280" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="0.94561723909999995" green="0.958984375" blue="0.95089224459999999" alpha="1" colorSpace="calibratedRGB"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" returnKeyType="done"/>
                             </textField>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" id="AMg-DU-hVH">
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" id="Ng2-YT-YFk">
                                 <rect key="frame" x="20" y="212" width="280" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="0.94889913110000002" green="0.96231265939999999" blue="0.95419244420000005" alpha="1" colorSpace="calibratedRGB"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocorrectionType="no" returnKeyType="done" enablesReturnKeyAutomatically="YES" secureTextEntry="YES"/>
                             </textField>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="uDv-KZ-qEy">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="toW-iN-i6K">
                                 <rect key="frame" x="20" y="314" width="280" height="33"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Вхід"/>
                                 <connections>
-                                    <action selector="loginButton:" destination="g7m-hB-0po" eventType="touchDown" id="EVo-nu-Bbm"/>
+                                    <action selector="loginButton:" destination="Ly5-J8-1Nl" eventType="touchDown" id="eGI-b9-8ZW"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Логін:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="her-fs-FkO">
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Логін:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="6PA-my-2c5">
                                 <rect key="frame" x="20" y="116" width="272" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Пароль:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="mbC-CZ-gsR">
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Пароль:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="rwv-L1-aXz">
                                 <rect key="frame" x="20" y="183" width="280" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="logo.png" id="8fQ-le-2Qo">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="logo.png" id="a6q-Rg-BQo">
                                 <rect key="frame" x="68" y="63" width="184" height="45"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
@@ -56,35 +56,35 @@
                         <color key="backgroundColor" red="0.89279253449999996" green="0.90541294640000003" blue="0.897772864" alpha="1" colorSpace="calibratedRGB"/>
                     </view>
                     <connections>
-                        <outlet property="login" destination="iHl-ax-FBS" id="Ku9-lP-U3j"/>
-                        <outlet property="password" destination="AMg-DU-hVH" id="u3Y-4I-QYK"/>
+                        <outlet property="login" destination="VDR-Sf-0b1" id="zCr-d3-wus"/>
+                        <outlet property="password" destination="Ng2-YT-YFk" id="KfT-wF-cl9"/>
                     </connections>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="o7E-9t-8eC" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="eS8-Db-Ed9" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="438" y="-837"/>
+            <point key="canvasLocation" x="494" y="-845"/>
         </scene>
         <!--Subsystem View Controller - Профіль-->
-        <scene sceneID="jdO-uF-zzS">
+        <scene sceneID="7a3-mN-xZw">
             <objects>
-                <tableViewController storyboardIdentifier="SubsystemViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="OgU-rb-m5K" customClass="SubsystemViewController" sceneMemberID="viewController">
-                    <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" allowsSelection="NO" rowHeight="200" sectionHeaderHeight="22" sectionFooterHeight="22" id="WHp-Go-jBd">
+                <tableViewController storyboardIdentifier="SubsystemViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="3t0-do-1jN" customClass="SubsystemViewController" sceneMemberID="viewController">
+                    <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" allowsSelection="NO" rowHeight="200" sectionHeaderHeight="22" sectionFooterHeight="22" id="DxS-zn-QH8">
                         <rect key="frame" x="0.0" y="20" width="320" height="499"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="InfoCell" rowHeight="153" id="5Ho-1P-J3Y" customClass="InfoViewCell">
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="InfoCell" rowHeight="153" id="5qM-pS-sSP" customClass="InfoViewCell">
                                 <rect key="frame" x="0.0" y="22" width="320" height="153"/>
                                 <autoresizingMask key="autoresizingMask"/>
-                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="5Ho-1P-J3Y" id="wmq-p0-FHY">
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="5qM-pS-sSP" id="3HY-fQ-pU2">
                                     <rect key="frame" x="0.0" y="0.0" width="320" height="153"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" id="G97-r5-oA3">
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" id="z9o-JI-2iX">
                                             <rect key="frame" x="20" y="20" width="94" height="125"/>
                                             <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                                         </imageView>
-                                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Свинаренко Дмитро Анатолійович" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="aOr-HO-Ync">
+                                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Свинаренко Дмитро Анатолійович" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="fVi-ZH-qfu">
                                             <rect key="frame" x="128" y="45" width="172" height="76"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
@@ -94,64 +94,64 @@
                                     </subviews>
                                 </tableViewCellContentView>
                                 <connections>
-                                    <outlet property="fullName" destination="aOr-HO-Ync" id="Ye4-Du-S0q"/>
-                                    <outlet property="image" destination="G97-r5-oA3" id="tb0-I5-fEt"/>
+                                    <outlet property="fullName" destination="fVi-ZH-qfu" id="JCI-2Y-hcK"/>
+                                    <outlet property="image" destination="z9o-JI-2iX" id="LMP-3R-RFm"/>
                                 </connections>
                             </tableViewCell>
-                            <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="PersonalitiesCell" rowHeight="199" id="0S8-dk-Xud" customClass="PersonalitiesViewCell">
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="PersonalitiesCell" rowHeight="199" id="hLc-03-z2F" customClass="PersonalitiesViewCell">
                                 <rect key="frame" x="0.0" y="175" width="320" height="199"/>
                                 <autoresizingMask key="autoresizingMask"/>
-                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="0S8-dk-Xud" id="YaT-b3-HY3">
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="hLc-03-z2F" id="OmK-Aj-65H">
                                     <rect key="frame" x="0.0" y="0.0" width="320" height="199"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Кафедра:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="BtJ-61-gpT">
+                                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Кафедра:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="h4x-zq-C6E">
                                             <rect key="frame" x="20" y="14" width="106" height="21"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Група:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="ii0-LU-Dcj">
+                                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Група:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="EMp-j5-BMe">
                                             <rect key="frame" x="20" y="161" width="173" height="21"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Контракт:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="rWL-yw-f0x">
+                                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Контракт:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="y8Z-Yb-xtQ">
                                             <rect key="frame" x="20" y="180" width="188" height="21"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Кафедра технічної кібернетики" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" minimumFontSize="9" id="9jM-cK-pHI">
+                                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Кафедра технічної кібернетики" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" minimumFontSize="9" id="nyZ-J1-Bjj">
                                             <rect key="frame" x="20" y="35" width="280" height="41"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="ІК-02" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="7K6-x8-lXH">
+                                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="ІК-02" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="03G-ld-Hvt">
                                             <rect key="frame" x="240" y="161" width="60" height="21"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Так/Ні" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="0Ba-f8-PbV">
+                                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Так/Ні" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="W5X-6q-AEz">
                                             <rect key="frame" x="240" y="180" width="60" height="21"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Спеціальність:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="DiL-AO-lcx">
+                                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Спеціальність:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="bNI-Yy-LFu">
                                             <rect key="frame" x="20" y="80" width="123" height="21"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Комп'ютеризовані та робототехнічні системи" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="yS2-Vj-CH9">
+                                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Комп'ютеризовані та робототехнічні системи" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="h7B-ux-V4B">
                                             <rect key="frame" x="20" y="104" width="280" height="41"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
@@ -160,66 +160,66 @@
                                     </subviews>
                                 </tableViewCellContentView>
                                 <connections>
-                                    <outlet property="isContract" destination="0Ba-f8-PbV" id="eWI-li-kWG"/>
-                                    <outlet property="speciality" destination="yS2-Vj-CH9" id="mWI-Do-3r8"/>
-                                    <outlet property="studyGroupName" destination="7K6-x8-lXH" id="5ZU-JL-afs"/>
-                                    <outlet property="subdivisionName" destination="9jM-cK-pHI" id="TVE-HJ-gx9"/>
+                                    <outlet property="isContract" destination="W5X-6q-AEz" id="Efu-DI-sAO"/>
+                                    <outlet property="speciality" destination="h7B-ux-V4B" id="qJV-Kb-a7N"/>
+                                    <outlet property="studyGroupName" destination="03G-ld-Hvt" id="clA-0y-6sO"/>
+                                    <outlet property="subdivisionName" destination="nyZ-J1-Bjj" id="kYd-pp-eap"/>
                                 </connections>
                             </tableViewCell>
-                            <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="EmployeesCell" rowHeight="155" id="Cq5-Zu-eUE" customClass="EmployeeViewCell">
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="EmployeesCell" rowHeight="155" id="VgU-vP-zQa" customClass="EmployeeViewCell">
                                 <rect key="frame" x="0.0" y="374" width="320" height="155"/>
                                 <autoresizingMask key="autoresizingMask"/>
-                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Cq5-Zu-eUE" id="1f1-yq-EWM">
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="VgU-vP-zQa" id="Ww9-Ek-vnh">
                                     <rect key="frame" x="0.0" y="0.0" width="320" height="155"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Кафедра:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="X6K-N5-jfz">
+                                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Кафедра:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="4hG-wg-xxw">
                                             <rect key="frame" x="20" y="14" width="106" height="21"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Посада:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="YdP-Qg-mSM">
+                                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Посада:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="CMZ-Cy-mBT">
                                             <rect key="frame" x="20" y="79" width="68" height="21"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Наукове звання:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="ztZ-uF-2le">
+                                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Наукове звання:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="MPS-O2-g8e">
                                             <rect key="frame" x="20" y="98" width="135" height="21"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Науковий статус:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="1Eg-7C-Mfm">
+                                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Науковий статус:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="fRT-lL-Aie">
                                             <rect key="frame" x="20" y="116" width="142" height="21"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Кафедра технічної кібернетики" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="LeO-3e-Fb1">
+                                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Кафедра технічної кібернетики" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="MQZ-vb-uLB">
                                             <rect key="frame" x="20" y="37" width="280" height="41"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Штатний доцент" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="WIH-f2-oqN">
+                                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Штатний доцент" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="7sc-wS-vyR">
                                             <rect key="frame" x="101" y="79" width="199" height="21"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Кандидат наук" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="4sJ-2z-b0G">
+                                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Кандидат наук" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="YV2-jb-Ssr">
                                             <rect key="frame" x="154" y="98" width="146" height="21"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Доцент" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="TIf-KS-F7j">
+                                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Доцент" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="pTf-1d-xcb">
                                             <rect key="frame" x="163" y="116" width="137" height="21"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
@@ -228,79 +228,79 @@
                                     </subviews>
                                 </tableViewCellContentView>
                                 <connections>
-                                    <outlet property="academicDegree" destination="4sJ-2z-b0G" id="WFv-Dt-BIq"/>
-                                    <outlet property="academicStatus" destination="TIf-KS-F7j" id="LJQ-a6-Tj8"/>
-                                    <outlet property="position" destination="WIH-f2-oqN" id="aqJ-Nt-9IK"/>
-                                    <outlet property="subdivisionName" destination="LeO-3e-Fb1" id="40H-GC-P6O"/>
+                                    <outlet property="academicDegree" destination="YV2-jb-Ssr" id="RYR-d9-wZI"/>
+                                    <outlet property="academicStatus" destination="pTf-1d-xcb" id="Txg-XS-pgh"/>
+                                    <outlet property="position" destination="7sc-wS-vyR" id="hdm-QU-3xt"/>
+                                    <outlet property="subdivisionName" destination="MQZ-vb-uLB" id="rGB-Xv-k54"/>
                                 </connections>
                             </tableViewCell>
-                            <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="SubsystemCell" rowHeight="161" id="tzv-GK-YuU" customClass="SubsystemViewCell">
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="SubsystemCell" rowHeight="161" id="OZI-66-urc" customClass="SubsystemViewCell">
                                 <rect key="frame" x="0.0" y="529" width="320" height="161"/>
                                 <autoresizingMask key="autoresizingMask"/>
-                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="tzv-GK-YuU" id="k6q-ch-pFu">
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="OZI-66-urc" id="WMt-ho-sCU">
                                     <rect key="frame" x="0.0" y="0.0" width="320" height="161"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Підсистема:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="DdU-vn-zHu">
+                                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Підсистема:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="c5Q-GT-uw2">
                                             <rect key="frame" x="20" y="14" width="106" height="21"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Права на створення:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="0J3-EA-TsW">
+                                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Права на створення:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="Qwx-0R-ewb">
                                             <rect key="frame" x="20" y="79" width="173" height="21"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Права на читання:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="ari-40-nl9">
+                                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Права на читання:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="qG8-do-MNN">
                                             <rect key="frame" x="20" y="98" width="173" height="21"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Права на оновлення:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="NFv-zS-bgs">
+                                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Права на оновлення:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="PcO-rd-rup">
                                             <rect key="frame" x="20" y="116" width="173" height="21"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Права на видалення:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="Ytn-QC-6QE">
+                                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Права на видалення:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="OxV-E1-uYW">
                                             <rect key="frame" x="20" y="134" width="173" height="21"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Назва підсистеми" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="nFV-CA-8qf">
+                                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Назва підсистеми" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="blk-Ac-AVm">
                                             <rect key="frame" x="20" y="37" width="280" height="41"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Так/Ні" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="SM6-Zh-ffd">
+                                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Так/Ні" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="h67-G2-bZN">
                                             <rect key="frame" x="240" y="79" width="60" height="21"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Так/Ні" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="IIf-W4-DBh">
+                                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Так/Ні" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="RIN-jC-SPV">
                                             <rect key="frame" x="240" y="98" width="60" height="21"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Так/Ні" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="95l-kc-syE">
+                                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Так/Ні" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="uWB-tI-3Wy">
                                             <rect key="frame" x="240" y="116" width="60" height="21"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Так/Ні" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="PCi-vH-SKR">
+                                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Так/Ні" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="Ebg-Ik-X3r">
                                             <rect key="frame" x="240" y="134" width="60" height="21"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
@@ -309,35 +309,35 @@
                                     </subviews>
                                 </tableViewCellContentView>
                                 <connections>
-                                    <outlet property="isCreate" destination="SM6-Zh-ffd" id="RIa-Bq-Olz"/>
-                                    <outlet property="isDelete" destination="PCi-vH-SKR" id="VYY-yC-LIK"/>
-                                    <outlet property="isRead" destination="IIf-W4-DBh" id="dzF-w8-cPX"/>
-                                    <outlet property="isUpdate" destination="95l-kc-syE" id="eFu-vI-7Kc"/>
-                                    <outlet property="subSystemName" destination="nFV-CA-8qf" id="tcz-Fb-dvv"/>
+                                    <outlet property="isCreate" destination="h67-G2-bZN" id="0Mb-8y-08X"/>
+                                    <outlet property="isDelete" destination="Ebg-Ik-X3r" id="tQz-s3-gyl"/>
+                                    <outlet property="isRead" destination="RIN-jC-SPV" id="adR-tt-0rC"/>
+                                    <outlet property="isUpdate" destination="uWB-tI-3Wy" id="JCs-mw-L6a"/>
+                                    <outlet property="subSystemName" destination="blk-Ac-AVm" id="IWd-fU-HiB"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>
-                            <outlet property="dataSource" destination="OgU-rb-m5K" id="D0E-0V-FLl"/>
-                            <outlet property="delegate" destination="OgU-rb-m5K" id="Du2-k1-NQa"/>
+                            <outlet property="dataSource" destination="3t0-do-1jN" id="fLK-Q6-AIE"/>
+                            <outlet property="delegate" destination="3t0-do-1jN" id="TGl-05-fFM"/>
                         </connections>
                     </tableView>
-                    <tabBarItem key="tabBarItem" title="Профіль" image="profile.png" id="9R8-fw-m01"/>
-                    <navigationItem key="navigationItem" id="7dT-Kb-8u7"/>
+                    <tabBarItem key="tabBarItem" title="Профіль" image="profile.png" id="cyv-ns-SrE"/>
+                    <navigationItem key="navigationItem" id="QUb-uc-xP8"/>
                 </tableViewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="IDY-yg-RnQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="uvB-8Z-dSQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1072" y="-129"/>
+            <point key="canvasLocation" x="1166" y="-261"/>
         </scene>
         <!--View Controller - Інше-->
-        <scene sceneID="Xzk-kh-xli">
+        <scene sceneID="QDk-iS-v6I">
             <objects>
-                <viewController id="tiX-J0-yJd" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="Dzf-VO-mrX">
+                <viewController id="U7E-zc-N2u" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="QJN-Sz-JLe">
                         <rect key="frame" x="0.0" y="20" width="320" height="499"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Інші функції" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="tp6-Pd-EJ8">
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Інші функції" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="QkC-fb-9nv">
                                 <rect key="frame" x="20" y="239" width="280" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
@@ -346,162 +346,162 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Інше" image="others.png" id="xc5-Do-lGu"/>
+                    <tabBarItem key="tabBarItem" title="Інше" image="others.png" id="ejQ-Ja-eKG"/>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="psk-ek-Yn6" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="PSZ-zs-ZPt" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1123" y="988"/>
+            <point key="canvasLocation" x="1215" y="986"/>
         </scene>
         <!--Main Tab Bar Controller-->
-        <scene sceneID="Jv0-de-wcK">
+        <scene sceneID="4ot-G0-g6C">
             <objects>
-                <tabBarController storyboardIdentifier="TabBar" definesPresentationContext="YES" useStoryboardIdentifierAsRestorationIdentifier="YES" id="j3c-VQ-zUD" customClass="MainTabBarController" sceneMemberID="viewController">
-                    <navigationItem key="navigationItem" id="exA-XG-5jd"/>
+                <tabBarController storyboardIdentifier="TabBar" definesPresentationContext="YES" useStoryboardIdentifierAsRestorationIdentifier="YES" id="SKf-VQ-9CA" customClass="MainTabBarController" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" id="BqZ-IT-2IP"/>
                     <nil key="simulatedBottomBarMetrics"/>
-                    <tabBar key="tabBar" contentMode="scaleToFill" id="1b3-yu-BSz">
+                    <tabBar key="tabBar" contentMode="scaleToFill" id="LZt-hf-inG">
                         <rect key="frame" x="129" y="330" width="163" height="49"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                     </tabBar>
                     <connections>
-                        <segue destination="g7m-hB-0po" kind="modal" id="pgG-hL-7yp"/>
-                        <segue destination="OgU-rb-m5K" kind="relationship" relationship="viewControllers" id="cWF-lN-hdQ"/>
-                        <segue destination="4yP-4C-Me0" kind="relationship" relationship="viewControllers" id="XhE-f6-Fvf"/>
-                        <segue destination="YOi-eQ-ZHN" kind="relationship" relationship="viewControllers" id="9oc-fC-Lvg"/>
-                        <segue destination="tiX-J0-yJd" kind="relationship" relationship="viewControllers" id="V0T-59-kmh"/>
+                        <segue destination="Ly5-J8-1Nl" kind="modal" id="GlL-fZ-h7e"/>
+                        <segue destination="3t0-do-1jN" kind="relationship" relationship="viewControllers" id="KzA-zj-hjd"/>
+                        <segue destination="jYO-fh-Cel" kind="relationship" relationship="viewControllers" id="Zfq-CJ-Vg3"/>
+                        <segue destination="Udh-kN-gb7" kind="relationship" relationship="viewControllers" id="zrr-uT-jfB"/>
+                        <segue destination="U7E-zc-N2u" kind="relationship" relationship="viewControllers" id="6AH-Em-GSu"/>
                     </connections>
                 </tabBarController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="slx-UH-pFP" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="iJz-HL-Bav" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-80" y="237"/>
+            <point key="canvasLocation" x="122" y="289"/>
         </scene>
         <!--Navigation Controller - Оголошення-->
-        <scene sceneID="uN3-Fp-GeO">
+        <scene sceneID="xB9-Qv-2yP">
             <objects>
-                <navigationController definesPresentationContext="YES" id="4yP-4C-Me0" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Оголошення" image="do.png" id="PaT-Xk-QcP"/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="tCO-6e-J4C">
+                <navigationController definesPresentationContext="YES" id="jYO-fh-Cel" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Оголошення" image="do.png" id="uC4-f6-y8Y"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="qNs-9k-Hnd">
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <connections>
-                        <segue destination="fPc-p1-rat" kind="relationship" relationship="rootViewController" id="pGm-a1-J9F"/>
+                        <segue destination="LJz-XI-goT" kind="relationship" relationship="rootViewController" id="Vrq-sW-EaQ"/>
                     </connections>
                 </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="vri-kd-wan" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Bc7-Jr-MtN" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1201" y="-873"/>
+            <point key="canvasLocation" x="1187" y="-1025"/>
         </scene>
         <!--Navigation Controller - Повідомлення-->
-        <scene sceneID="v3f-Ym-rOE">
+        <scene sceneID="TZK-01-WLX">
             <objects>
-                <navigationController title="Повідомлення" definesPresentationContext="YES" id="YOi-eQ-ZHN" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Повідомлення" image="messages.png" id="Sc3-M4-ahs"/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="nW9-28-Keg">
+                <navigationController title="Повідомлення" definesPresentationContext="YES" id="Udh-kN-gb7" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Повідомлення" image="messages.png" id="gsQ-H8-Ssf"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="h3O-Iz-3py">
                         <rect key="frame" x="0.0" y="-44" width="0.0" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <connections>
-                        <segue destination="qRD-tf-ui6" kind="relationship" relationship="rootViewController" id="anY-IX-8aa"/>
+                        <segue destination="nV8-hC-I1E" kind="relationship" relationship="rootViewController" id="1r6-ZL-RIK"/>
                     </connections>
                 </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="Bca-pb-1bg" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="hZM-fc-eXp" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1677" y="296"/>
+            <point key="canvasLocation" x="1655" y="332"/>
         </scene>
         <!--Message Board View Controller - Повідомлення-->
-        <scene sceneID="QFJ-wC-2Zd">
+        <scene sceneID="tsi-7l-gCQ">
             <objects>
-                <tableViewController title="Повідомлення" id="qRD-tf-ui6" customClass="MessageBoardViewController" sceneMemberID="viewController">
-                    <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="89" sectionHeaderHeight="22" sectionFooterHeight="22" id="oRc-Hk-4lH">
+                <tableViewController title="Повідомлення" id="nV8-hC-I1E" customClass="MessageBoardViewController" sceneMemberID="viewController">
+                    <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="89" sectionHeaderHeight="22" sectionFooterHeight="22" id="OJ9-GT-VxL">
                         <rect key="frame" x="0.0" y="64" width="320" height="455"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell contentMode="scaleToFill" selectionStyle="blue" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="MessageCell" rowHeight="89" id="bna-fF-dAS" customClass="MessageCell">
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="blue" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="MessageCell" rowHeight="89" id="hYn-SL-rgi" customClass="MessageCell">
                                 <rect key="frame" x="0.0" y="22" width="320" height="89"/>
                                 <autoresizingMask key="autoresizingMask"/>
-                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="bna-fF-dAS" id="oSF-ty-QAP">
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="hYn-SL-rgi" id="ks1-Cg-g0c">
                                     <rect key="frame" x="0.0" y="0.0" width="300" height="88"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Тема сообщения" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="WL6-rl-oQ1">
-                                            <rect key="frame" x="66" y="15" width="206" height="21"/>
+                                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Тема сообщения" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="uNY-ol-czI">
+                                            <rect key="frame" x="66" y="15" width="177" height="21"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                             <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" id="53b-ri-j3A">
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" id="D5I-Kk-uu8">
                                             <rect key="frame" x="8" y="15" width="50" height="58"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         </imageView>
-                                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Текст какого-то очень длинного сообщения. Да... Очень длинного" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="Fo2-ZL-PX0">
+                                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Текст какого-то очень длинного сообщения. Да... Очень длинного" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="vii-uc-01L">
                                             <rect key="frame" x="66" y="37" width="234" height="36"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="12:47" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="yBn-f0-NsH">
-                                            <rect key="frame" x="258" y="15" width="42" height="21"/>
+                                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="12.12.2013" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="9MB-Ko-QK2">
+                                            <rect key="frame" x="251" y="15" width="67" height="21"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="10"/>
                                             <color key="textColor" red="0.0" green="0.0" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                     </subviews>
                                 </tableViewCellContentView>
                                 <connections>
-                                    <outlet property="image" destination="53b-ri-j3A" id="f3s-cR-62B"/>
-                                    <outlet property="messageDate" destination="yBn-f0-NsH" id="cpn-7G-Gbs"/>
-                                    <outlet property="messageText" destination="Fo2-ZL-PX0" id="cd5-Sm-wRE"/>
-                                    <outlet property="subject" destination="WL6-rl-oQ1" id="JEE-6Q-6gf"/>
-                                    <segue destination="cbL-rd-Bcn" kind="push" id="eSQ-5T-Euo"/>
+                                    <outlet property="image" destination="D5I-Kk-uu8" id="Zym-tI-NZk"/>
+                                    <outlet property="messageDate" destination="9MB-Ko-QK2" id="qqg-a8-mfq"/>
+                                    <outlet property="messageText" destination="vii-uc-01L" id="c7Q-MT-nty"/>
+                                    <outlet property="subject" destination="uNY-ol-czI" id="xBP-y4-1o2"/>
+                                    <segue destination="fDL-4k-n8H" kind="push" id="giB-FN-fWC"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>
-                            <outlet property="dataSource" destination="qRD-tf-ui6" id="fKk-QS-hIF"/>
-                            <outlet property="delegate" destination="qRD-tf-ui6" id="6Hx-pr-Car"/>
+                            <outlet property="dataSource" destination="nV8-hC-I1E" id="HAN-C9-eCK"/>
+                            <outlet property="delegate" destination="nV8-hC-I1E" id="9gx-el-clM"/>
                         </connections>
                     </tableView>
-                    <tabBarItem key="tabBarItem" title="Повідомлення" image="messages.png" id="Qkk-Xn-Ii4"/>
-                    <navigationItem key="navigationItem" id="KjE-h1-B8B">
-                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="pFj-gu-o4W"/>
+                    <tabBarItem key="tabBarItem" title="Повідомлення" image="messages.png" id="h7l-dg-I0R"/>
+                    <navigationItem key="navigationItem" id="fh1-95-bE9">
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="Kbn-St-aur"/>
                     </navigationItem>
                 </tableViewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="Fen-5J-NWF" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="1nJ-9L-SKZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2129" y="302"/>
+            <point key="canvasLocation" x="2115" y="212"/>
         </scene>
         <!--Dialog View Controller-->
-        <scene sceneID="a8v-hZ-Hrm">
+        <scene sceneID="Myc-se-2EZ">
             <objects>
-                <viewController id="cbL-rd-Bcn" customClass="DialogViewController" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="MoT-gv-Q5e">
+                <viewController id="fDL-4k-n8H" customClass="DialogViewController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Tjo-1w-Le3">
                         <rect key="frame" x="0.0" y="64" width="320" height="455"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="kU7-d5-ZOd" customClass="UIBubbleTableView">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="paP-Ht-2me" customClass="UIBubbleTableView">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="409"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <inset key="scrollIndicatorInsets" minX="0.0" minY="0.0" maxX="0.0" maxY="44"/>
                             </tableView>
-                            <view contentMode="scaleToFill" id="o0q-sD-dhj">
+                            <view contentMode="scaleToFill" id="iuD-uM-Frk">
                                 <rect key="frame" x="0.0" y="370" width="320" height="85"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="ViO-t3-Vpj">
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="rof-DN-fBl">
                                         <rect key="frame" x="228" y="6" width="88" height="32"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <state key="normal" title="Надіслати">
                                             <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
                                         <connections>
-                                            <action selector="sayPressed:" destination="cbL-rd-Bcn" eventType="touchUpInside" id="C3P-pe-AOk"/>
+                                            <action selector="sayPressed:" destination="fDL-4k-n8H" eventType="touchUpInside" id="Dw9-td-3cw"/>
                                         </connections>
                                     </button>
-                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" id="VXb-vo-352">
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" id="zkA-DC-iDe">
                                         <rect key="frame" x="3" y="7" width="220" height="30"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
@@ -513,46 +513,46 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
-                    <navigationItem key="navigationItem" id="c3N-J3-ysB"/>
+                    <navigationItem key="navigationItem" id="p1n-9E-J5z"/>
                     <connections>
-                        <outlet property="bubbleTable" destination="kU7-d5-ZOd" id="61f-9J-PZY"/>
-                        <outlet property="textField" destination="VXb-vo-352" id="7a0-wQ-bB1"/>
-                        <outlet property="textInputView" destination="o0q-sD-dhj" id="ajG-76-ObH"/>
+                        <outlet property="bubbleTable" destination="paP-Ht-2me" id="LrX-9y-bBW"/>
+                        <outlet property="textField" destination="zkA-DC-iDe" id="AKy-Lw-8wc"/>
+                        <outlet property="textInputView" destination="iuD-uM-Frk" id="zIt-hX-sIZ"/>
                     </connections>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="xIc-nN-bL0" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="SEK-ql-ncd" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2598" y="302"/>
+            <point key="canvasLocation" x="2600" y="264"/>
         </scene>
         <!--Bulletin Board View Controller - Дошка оголошнь-->
-        <scene sceneID="OQ6-oI-vqL">
+        <scene sceneID="dih-b4-hkg">
             <objects>
-                <tableViewController title="Дошка оголошнь" modalTransitionStyle="partialCurl" id="fPc-p1-rat" customClass="BulletinBoardViewController" sceneMemberID="viewController">
-                    <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="127" sectionHeaderHeight="22" sectionFooterHeight="22" id="X09-3N-Llg">
+                <tableViewController title="Дошка оголошнь" modalTransitionStyle="partialCurl" id="LJz-XI-goT" customClass="BulletinBoardViewController" sceneMemberID="viewController">
+                    <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="127" sectionHeaderHeight="22" sectionFooterHeight="22" id="a03-Ts-mOh">
                         <rect key="frame" x="0.0" y="64" width="320" height="455"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="BulletinBoardCell" rowHeight="127" id="cM7-oM-gVG" customClass="BulletinBoardCell">
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="BulletinBoardCell" rowHeight="127" id="N2g-KK-GFb" customClass="BulletinBoardCell">
                                 <rect key="frame" x="0.0" y="22" width="320" height="127"/>
                                 <autoresizingMask key="autoresizingMask"/>
-                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="cM7-oM-gVG" id="ABW-Te-xIf">
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="N2g-KK-GFb" id="oOY-Vj-QBw">
                                     <rect key="frame" x="0.0" y="0.0" width="300" height="126"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Назва оголошення" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="ZtU-9F-P1G">
+                                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Назва оголошення" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="LuA-In-7Jc">
                                             <rect key="frame" x="20" y="27" width="280" height="21"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="19"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Короткий текст оголошення. Короткий текст оголошення..." lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="zFJ-fF-LEI">
+                                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Короткий текст оголошення. Короткий текст оголошення..." lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="5d3-HR-cZV">
                                             <rect key="frame" x="20" y="56" width="280" height="21"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="12 грудня 2013 року" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="sqf-q9-AAx">
+                                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="12 грудня 2013 року" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="w60-8C-WgF">
                                             <rect key="frame" x="124" y="85" width="176" height="21"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="12"/>
@@ -561,59 +561,87 @@
                                     </subviews>
                                 </tableViewCellContentView>
                                 <connections>
-                                    <outlet property="bulletinBoardMessageBody" destination="zFJ-fF-LEI" id="AY1-AD-Cp6"/>
-                                    <outlet property="bulletinBoardMessageDate" destination="sqf-q9-AAx" id="cCh-Br-NFZ"/>
-                                    <outlet property="bulletinBoardMessageTitle" destination="ZtU-9F-P1G" id="7vz-55-FU1"/>
-                                    <segue destination="ait-K3-KGn" kind="push" id="O1N-Pl-nWn"/>
+                                    <outlet property="bulletinBoardMessageBody" destination="5d3-HR-cZV" id="nCN-O6-Agd"/>
+                                    <outlet property="bulletinBoardMessageDate" destination="w60-8C-WgF" id="Wtg-tN-6dw"/>
+                                    <outlet property="bulletinBoardMessageTitle" destination="LuA-In-7Jc" id="D9O-HV-w53"/>
+                                    <segue destination="kmc-lS-sxb" kind="push" id="RLb-9X-WnK"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>
-                            <outlet property="dataSource" destination="fPc-p1-rat" id="Hk6-uz-8FT"/>
-                            <outlet property="delegate" destination="fPc-p1-rat" id="Zg4-3v-KP1"/>
+                            <outlet property="dataSource" destination="LJz-XI-goT" id="HCM-9t-bO6"/>
+                            <outlet property="delegate" destination="LJz-XI-goT" id="kGb-9Q-5YT"/>
                         </connections>
                     </tableView>
-                    <tabBarItem key="tabBarItem" title="Оголошення" image="do.png" id="2eA-V5-q2T"/>
-                    <navigationItem key="navigationItem" id="CFb-1b-PDp"/>
+                    <tabBarItem key="tabBarItem" title="Оголошення" image="do.png" id="sFo-AU-QnH"/>
+                    <navigationItem key="navigationItem" id="pvr-bc-UHi"/>
                 </tableViewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="Uwb-HX-U3s" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Dv8-tR-WfD" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1746" y="-753"/>
+            <point key="canvasLocation" x="1694" y="-965"/>
         </scene>
         <!--Detail View Controller-->
-        <scene sceneID="p5w-IF-MfJ">
+        <scene sceneID="xaZ-ij-bFU">
             <objects>
-                <viewController id="ait-K3-KGn" customClass="DetailViewController" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="7iZ-DX-rEi">
+                <viewController id="kmc-lS-sxb" customClass="DetailViewController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="GLK-x2-Eg2">
                         <rect key="frame" x="0.0" y="64" width="320" height="455"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Назва оголошення" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="beF-Qi-vXp">
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Назва оголошення" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="mXE-ft-21Q">
                                 <rect key="frame" x="28" y="0.0" width="280" height="69"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="Текст оголошення" id="Ea1-cd-XAt">
-                                <rect key="frame" x="24" y="77" width="280" height="354"/>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="Текст оголошення" id="EoR-FI-v43">
+                                <rect key="frame" x="20" y="141" width="280" height="173"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Автор:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="icN-rS-6HZ">
+                                <rect key="frame" x="28" y="77" width="50" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="MJz-aI-tuz">
+                                <rect key="frame" x="82" y="77" width="218" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Дата:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="sUn-v0-Tph">
+                                <rect key="frame" x="28" y="97" width="50" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="1lX-en-wnu">
+                                <rect key="frame" x="82" y="97" width="218" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
-                    <navigationItem key="navigationItem" id="YeW-Ea-Zg5"/>
+                    <navigationItem key="navigationItem" id="ooa-nq-i1x"/>
                     <connections>
-                        <outlet property="subject" destination="beF-Qi-vXp" id="iAb-7X-ZlF"/>
-                        <outlet property="text" destination="Ea1-cd-XAt" id="bFP-1Q-jaP"/>
+                        <outlet property="author" destination="MJz-aI-tuz" id="AvJ-dW-tMA"/>
+                        <outlet property="date" destination="1lX-en-wnu" id="9Ic-Uv-n1N"/>
+                        <outlet property="subject" destination="mXE-ft-21Q" id="foa-LA-ugu"/>
+                        <outlet property="text" destination="EoR-FI-v43" id="UFc-a1-BNd"/>
                     </connections>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="Vay-8C-IJi" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Q7b-uh-Q3z" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2303" y="-753"/>
+            <point key="canvasLocation" x="2181" y="-965"/>
         </scene>
     </scenes>
     <resources>
