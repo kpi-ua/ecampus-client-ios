@@ -1,0 +1,4 @@
+language: objective-c
+xcode_project: Campus.xcodeproj
+xcode_scheme: CampusTests
+osx_image: xcode7
