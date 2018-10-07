@@ -12,6 +12,7 @@
 		04CFCE4E216A323B00A460BA /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 04CFCE4C216A323B00A460BA /* Main.storyboard */; };
 		04CFCE50216A323C00A460BA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 04CFCE4F216A323C00A460BA /* Assets.xcassets */; };
 		04CFCE53216A323C00A460BA /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 04CFCE51216A323C00A460BA /* LaunchScreen.storyboard */; };
+		FAC44813D60CCB2C081F5DF8 /* Pods_CampusClientIOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 792C034B76FFB0E7E5CACEFB /* Pods_CampusClientIOS.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +23,9 @@
 		04CFCE4F216A323C00A460BA /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		04CFCE52216A323C00A460BA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		04CFCE54216A323C00A460BA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		792C034B76FFB0E7E5CACEFB /* Pods_CampusClientIOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CampusClientIOS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		84415CC226A4C81E05085554 /* Pods-CampusClientIOS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CampusClientIOS.release.xcconfig"; path = "Pods/Target Support Files/Pods-CampusClientIOS/Pods-CampusClientIOS.release.xcconfig"; sourceTree = "<group>"; };
+		97CB0B402711BDEA41A20A82 /* Pods-CampusClientIOS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CampusClientIOS.debug.xcconfig"; path = "Pods/Target Support Files/Pods-CampusClientIOS/Pods-CampusClientIOS.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -29,6 +33,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FAC44813D60CCB2C081F5DF8 /* Pods_CampusClientIOS.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -40,6 +45,8 @@
 			children = (
 				04CFCE47216A323B00A460BA /* CampusClientIOS */,
 				04CFCE46216A323B00A460BA /* Products */,
+				3E3DE76D9572D3A7EABF2203 /* Pods */,
+				93F47F1164B4D1CB2102524F /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -64,6 +71,23 @@
 			path = CampusClientIOS;
 			sourceTree = "<group>";
 		};
+		3E3DE76D9572D3A7EABF2203 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				97CB0B402711BDEA41A20A82 /* Pods-CampusClientIOS.debug.xcconfig */,
+				84415CC226A4C81E05085554 /* Pods-CampusClientIOS.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		93F47F1164B4D1CB2102524F /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				792C034B76FFB0E7E5CACEFB /* Pods_CampusClientIOS.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -71,6 +95,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 04CFCE57216A323C00A460BA /* Build configuration list for PBXNativeTarget "CampusClientIOS" */;
 			buildPhases = (
+				1C26A5F19586A7EFB9EE490A /* [CP] Check Pods Manifest.lock */,
 				04CFCE41216A323B00A460BA /* Sources */,
 				04CFCE42216A323B00A460BA /* Frameworks */,
 				04CFCE43216A323B00A460BA /* Resources */,
@@ -129,6 +154,31 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		1C26A5F19586A7EFB9EE490A /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-CampusClientIOS-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		04CFCE41216A323B00A460BA /* Sources */ = {
@@ -278,6 +328,7 @@
 		};
 		04CFCE58216A323C00A460BA /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 97CB0B402711BDEA41A20A82 /* Pods-CampusClientIOS.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -296,6 +347,7 @@
 		};
 		04CFCE59216A323C00A460BA /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 84415CC226A4C81E05085554 /* Pods-CampusClientIOS.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;

@@ -1,0 +1,6 @@
+framework module Pods_CampusClientIOS {
+  umbrella header "Pods-CampusClientIOS-umbrella.h"
+
+  export *
+  module * { export * }
+}
