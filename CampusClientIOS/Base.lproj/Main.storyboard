@@ -27,20 +27,33 @@
             <point key="canvasLocation" x="-196" y="-518"/>
         </scene>
         <!--Поточне-->
-        <scene sceneID="I8M-8C-gpt">
+        <scene sceneID="3ER-bj-2aj">
             <objects>
-                <viewController id="4bs-dl-UIf" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="Cxa-gq-SYL">
+                <tableViewController id="opi-7d-iOL" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="UhM-Ps-B6g">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <viewLayoutGuide key="safeArea" id="h2D-rQ-rMM"/>
-                    </view>
-                    <tabBarItem key="tabBarItem" title="Поточне" id="OMj-Oj-1KV"/>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="ZCP-Yr-OIm" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="F4v-lO-Adm">
+                                <rect key="frame" x="0.0" y="28" width="375" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="F4v-lO-Adm" id="ger-Ap-jPP">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="opi-7d-iOL" id="S4L-YP-8M3"/>
+                            <outlet property="delegate" destination="opi-7d-iOL" id="FcN-k1-Bzl"/>
+                        </connections>
+                    </tableView>
+                    <tabBarItem key="tabBarItem" title="Поточне" id="8rr-pj-H8n"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="HQc-pR-tME" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-966" y="1997"/>
+            <point key="canvasLocation" x="-724" y="1997"/>
         </scene>
         <!--Архів-->
         <scene sceneID="lKS-9y-ZMI">
@@ -56,7 +69,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="eDO-TK-D91" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="606" y="1997"/>
+            <point key="canvasLocation" x="388" y="1997"/>
         </scene>
         <!--Головне меню-->
         <scene sceneID="Wrt-4d-Vgo">
@@ -97,8 +110,8 @@
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </tabBar>
                     <connections>
+                        <segue destination="opi-7d-iOL" kind="relationship" relationship="viewControllers" id="K8Y-62-zsw"/>
                         <segue destination="AB5-Ch-pBM" kind="relationship" relationship="viewControllers" id="6FM-vf-iL7"/>
-                        <segue destination="4bs-dl-UIf" kind="relationship" relationship="viewControllers" id="3nW-9f-PjA"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Hwc-Wb-Ru8" userLabel="First Responder" sceneMemberID="firstResponder"/>
