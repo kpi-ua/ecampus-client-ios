@@ -26,9 +26,9 @@
 		04CFCE52216A323C00A460BA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		04CFCE54216A323C00A460BA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		04CFCE5A216A36D800A460BA /* MainVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainVC.swift; sourceTree = "<group>"; };
-		04CFCE65216B402400A460BA /* PotochneTVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PotochneTVC.swift; sourceTree = "<group>"; };
-		04CFCE6A216B449500A460BA /* VoteTVCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VoteTVCell.swift; sourceTree = "<group>"; };
-		04CFCE6B216B449500A460BA /* VoteTVCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = VoteTVCell.xib; sourceTree = "<group>"; };
+		04CFCE65216B402400A460BA /* PotochneTVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = PotochneTVC.swift; path = CampusClientIOS/Potochne/PotochneTVC.swift; sourceTree = SOURCE_ROOT; };
+		04CFCE6A216B449500A460BA /* VoteTVCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = VoteTVCell.swift; path = CampusClientIOS/Potochne/VoteTVCell.swift; sourceTree = SOURCE_ROOT; };
+		04CFCE6B216B449500A460BA /* VoteTVCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = VoteTVCell.xib; path = CampusClientIOS/Potochne/VoteTVCell.xib; sourceTree = SOURCE_ROOT; };
 		792C034B76FFB0E7E5CACEFB /* Pods_CampusClientIOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CampusClientIOS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		84415CC226A4C81E05085554 /* Pods-CampusClientIOS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CampusClientIOS.release.xcconfig"; path = "Pods/Target Support Files/Pods-CampusClientIOS/Pods-CampusClientIOS.release.xcconfig"; sourceTree = "<group>"; };
 		97CB0B402711BDEA41A20A82 /* Pods-CampusClientIOS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CampusClientIOS.debug.xcconfig"; path = "Pods/Target Support Files/Pods-CampusClientIOS/Pods-CampusClientIOS.debug.xcconfig"; sourceTree = "<group>"; };

@@ -29,27 +29,20 @@
         <!--Поточне-->
         <scene sceneID="3ER-bj-2aj">
             <objects>
-                <tableViewController id="opi-7d-iOL" sceneMemberID="viewController">
+                <tableViewController id="opi-7d-iOL" customClass="PotochneTVC" customModule="CampusClientIOS" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="UhM-Ps-B6g">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="F4v-lO-Adm">
-                                <rect key="frame" x="0.0" y="28" width="375" height="44"/>
-                                <autoresizingMask key="autoresizingMask"/>
-                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="F4v-lO-Adm" id="ger-Ap-jPP">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
-                                    <autoresizingMask key="autoresizingMask"/>
-                                </tableViewCellContentView>
-                            </tableViewCell>
-                        </prototypes>
                         <connections>
                             <outlet property="dataSource" destination="opi-7d-iOL" id="S4L-YP-8M3"/>
                             <outlet property="delegate" destination="opi-7d-iOL" id="FcN-k1-Bzl"/>
                         </connections>
                     </tableView>
                     <tabBarItem key="tabBarItem" title="Поточне" id="8rr-pj-H8n"/>
+                    <connections>
+                        <outlet property="potocneTV" destination="UhM-Ps-B6g" id="PT0-vW-aUN"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="HQc-pR-tME" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -117,21 +110,6 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Hwc-Wb-Ru8" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-196" y="1057"/>
-        </scene>
-        <!--View Controller-->
-        <scene sceneID="ZmS-Vr-1JW">
-            <objects>
-                <viewController id="Ftr-MH-gyX" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="M7Y-G0-SOw">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <viewLayoutGuide key="safeArea" id="BAV-PF-VhS"/>
-                    </view>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="Xcr-HW-Ovc" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="738" y="1056"/>
         </scene>
     </scenes>
 </document>
