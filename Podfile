@@ -6,5 +6,6 @@ target 'CampusClientIOS' do
   use_frameworks!
 
   # Pods for CampusClientIOS
+  pod "UIDropDown"
 
 end

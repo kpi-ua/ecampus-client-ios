@@ -7,14 +7,31 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		7F795CBB84B0022DFBA62088CD56C673 /* Pods-CampusClientIOS-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 653E43DD4A50379412B74B64EC849946 /* Pods-CampusClientIOS-dummy.m */; };
-		B71050FD7C8FBF65DC45225D1369AC2A /* Pods-CampusClientIOS-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 1E88B7C109CF968E09D86ED3E5BB1400 /* Pods-CampusClientIOS-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		BBBC568A01027A3C1BEAC72EED9172E8 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5A16F4CFC63FAC439D7A04994F579A03 /* Foundation.framework */; };
+		0C411883FBB5C5EFA4154E31DBF9CC9A /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5A16F4CFC63FAC439D7A04994F579A03 /* Foundation.framework */; };
+		29918BB876D3F9141683536BEE85FE57 /* Pods-CampusClientIOS-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 653E43DD4A50379412B74B64EC849946 /* Pods-CampusClientIOS-dummy.m */; };
+		300AA81E29F01BD761BEA5CC74FF50A4 /* UIDropDown-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = A8548B9324BE00401E598254D05A3A1C /* UIDropDown-dummy.m */; };
+		5A44F4DA4B563A4D12A2F2789949E31A /* Pods-CampusClientIOS-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 1E88B7C109CF968E09D86ED3E5BB1400 /* Pods-CampusClientIOS-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		7D84290604E77851F8CDDA176E2FD79F /* UIDropDown-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = A5FF459C12D4EF4D9639B924E4ADD4C3 /* UIDropDown-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		855726B805F392EEBE0890DCD898A5B9 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5A16F4CFC63FAC439D7A04994F579A03 /* Foundation.framework */; };
+		B8A078091DB63167C45A78053D1608FC /* UIDropDown.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7188FD177822F09D86862A19A4C2416 /* UIDropDown.swift */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXContainerItemProxy section */
+		6EE4C57A0AB778F79430BC5222F15EE1 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 5FF628B14A2FAEF57A2822E2C8CAB589;
+			remoteInfo = UIDropDown;
+		};
+/* End PBXContainerItemProxy section */
+
 /* Begin PBXFileReference section */
+		037B191789336338F31FC718F6B11884 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		196D1670F17DEAFE582D44C215DE69D4 /* Pods_CampusClientIOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_CampusClientIOS.framework; path = "Pods-CampusClientIOS.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
 		1E88B7C109CF968E09D86ED3E5BB1400 /* Pods-CampusClientIOS-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-CampusClientIOS-umbrella.h"; sourceTree = "<group>"; };
-		41B0F21E8301A0BFE6B1E14F2BA9A3C4 /* Pods_CampusClientIOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_CampusClientIOS.framework; path = "Pods-CampusClientIOS.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
+		29EC991612AB41CC1F1E685E5FBC7752 /* UIDropDown.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = UIDropDown.modulemap; sourceTree = "<group>"; };
+		2C4C28E81900A3104F653AC89D100033 /* UIDropDown.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = UIDropDown.framework; path = UIDropDown.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		525FDA7890B61FB51C33345D552650BD /* Pods-CampusClientIOS-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-CampusClientIOS-frameworks.sh"; sourceTree = "<group>"; };
 		5A16F4CFC63FAC439D7A04994F579A03 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS11.3.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
 		5B525B59AAB96AF5E5EEACBA7F90F544 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -22,24 +39,55 @@
 		653E43DD4A50379412B74B64EC849946 /* Pods-CampusClientIOS-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-CampusClientIOS-dummy.m"; sourceTree = "<group>"; };
 		93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		971EBFE4B03B0EF0C3A634BC95186685 /* Pods-CampusClientIOS-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-CampusClientIOS-acknowledgements.markdown"; sourceTree = "<group>"; };
+		9748660C222D6F025EE43C486D770297 /* UIDropDown.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = UIDropDown.xcconfig; sourceTree = "<group>"; };
 		990540B8F6B58A978DC472FA16C269BA /* Pods-CampusClientIOS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-CampusClientIOS.release.xcconfig"; sourceTree = "<group>"; };
+		A5FF459C12D4EF4D9639B924E4ADD4C3 /* UIDropDown-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "UIDropDown-umbrella.h"; sourceTree = "<group>"; };
+		A8548B9324BE00401E598254D05A3A1C /* UIDropDown-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "UIDropDown-dummy.m"; sourceTree = "<group>"; };
 		AE526822DDAE3B4E688FAD970E1BE60B /* Pods-CampusClientIOS.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-CampusClientIOS.modulemap"; sourceTree = "<group>"; };
+		E13BB5F2DADF80753DBD0EB3EF047B77 /* UIDropDown-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "UIDropDown-prefix.pch"; sourceTree = "<group>"; };
 		E4122E0ED00AE42EA2110DB11F1C27FA /* Pods-CampusClientIOS-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-CampusClientIOS-acknowledgements.plist"; sourceTree = "<group>"; };
+		E7188FD177822F09D86862A19A4C2416 /* UIDropDown.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = UIDropDown.swift; path = UIDropDown/UIDropDown.swift; sourceTree = "<group>"; };
 		EA5C0807AB2694C8B35F097E6E7321A4 /* Pods-CampusClientIOS-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-CampusClientIOS-resources.sh"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		D3DDDBF5264FFE45647DA11DC147F8CB /* Frameworks */ = {
+		465C44DF02605CC0B1F93E2205A7862D /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				BBBC568A01027A3C1BEAC72EED9172E8 /* Foundation.framework in Frameworks */,
+				0C411883FBB5C5EFA4154E31DBF9CC9A /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C8CB6648567DE594ED7A7412FDAF93E1 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				855726B805F392EEBE0890DCD898A5B9 /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0B91501F11013F3160CDAEE70305AB0A /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				200AE102DEC201A74E24540C6BFFC9E2 /* UIDropDown */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		200AE102DEC201A74E24540C6BFFC9E2 /* UIDropDown */ = {
+			isa = PBXGroup;
+			children = (
+				E7188FD177822F09D86862A19A4C2416 /* UIDropDown.swift */,
+				BE2DD56E2AB2AE894BDC4E66BC35277B /* Support Files */,
+			);
+			name = UIDropDown;
+			path = UIDropDown;
+			sourceTree = "<group>";
+		};
 		5E0D919E635D23B70123790B8308F8EF /* iOS */ = {
 			isa = PBXGroup;
 			children = (
@@ -53,7 +101,8 @@
 			children = (
 				93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */,
 				BC3CA7F9E30CC8F7E2DD044DD34432FC /* Frameworks */,
-				E42F98778DA6E3AA008352C4D7F97BAC /* Products */,
+				0B91501F11013F3160CDAEE70305AB0A /* Pods */,
+				D8C65F0D49D6A4B565DB7680B6362728 /* Products */,
 				C0535149CB514E6FD7206767D7F0EE7C /* Targets Support Files */,
 			);
 			sourceTree = "<group>";
@@ -84,6 +133,20 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		BE2DD56E2AB2AE894BDC4E66BC35277B /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				037B191789336338F31FC718F6B11884 /* Info.plist */,
+				29EC991612AB41CC1F1E685E5FBC7752 /* UIDropDown.modulemap */,
+				9748660C222D6F025EE43C486D770297 /* UIDropDown.xcconfig */,
+				A8548B9324BE00401E598254D05A3A1C /* UIDropDown-dummy.m */,
+				E13BB5F2DADF80753DBD0EB3EF047B77 /* UIDropDown-prefix.pch */,
+				A5FF459C12D4EF4D9639B924E4ADD4C3 /* UIDropDown-umbrella.h */,
+			);
+			name = "Support Files";
+			path = "../Target Support Files/UIDropDown";
+			sourceTree = "<group>";
+		};
 		C0535149CB514E6FD7206767D7F0EE7C /* Targets Support Files */ = {
 			isa = PBXGroup;
 			children = (
@@ -92,10 +155,11 @@
 			name = "Targets Support Files";
 			sourceTree = "<group>";
 		};
-		E42F98778DA6E3AA008352C4D7F97BAC /* Products */ = {
+		D8C65F0D49D6A4B565DB7680B6362728 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				41B0F21E8301A0BFE6B1E14F2BA9A3C4 /* Pods_CampusClientIOS.framework */,
+				196D1670F17DEAFE582D44C215DE69D4 /* Pods_CampusClientIOS.framework */,
+				2C4C28E81900A3104F653AC89D100033 /* UIDropDown.framework */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -103,33 +167,60 @@
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
-		E59AD4D415FE9D8C310BF4E66101CB8B /* Headers */ = {
+		53F6D38607457285311B75D84DB01A17 /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B71050FD7C8FBF65DC45225D1369AC2A /* Pods-CampusClientIOS-umbrella.h in Headers */,
+				7D84290604E77851F8CDDA176E2FD79F /* UIDropDown-umbrella.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		DE67479FDAAAF040609BB7E8A7DE3AE4 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5A44F4DA4B563A4D12A2F2789949E31A /* Pods-CampusClientIOS-umbrella.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
-		AFF3F0A83152F941AC679E8083BCAED1 /* Pods-CampusClientIOS */ = {
+		574D34E3515FF3E2DF5319423C195789 /* Pods-CampusClientIOS */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 0D1406B346BAA09B191F3926F709F6F5 /* Build configuration list for PBXNativeTarget "Pods-CampusClientIOS" */;
+			buildConfigurationList = C5B332C547944A32A35C4D582BBD85D8 /* Build configuration list for PBXNativeTarget "Pods-CampusClientIOS" */;
 			buildPhases = (
-				E59AD4D415FE9D8C310BF4E66101CB8B /* Headers */,
-				52850CDD31E18B7846137A320752CE64 /* Sources */,
-				D3DDDBF5264FFE45647DA11DC147F8CB /* Frameworks */,
-				3AE899F553793727FEB96928B01E0DBA /* Resources */,
+				DE67479FDAAAF040609BB7E8A7DE3AE4 /* Headers */,
+				FBCB4DDA5650DD01B94007BBB4137F07 /* Sources */,
+				C8CB6648567DE594ED7A7412FDAF93E1 /* Frameworks */,
+				433D0825B591F23C729CEA5A8ED99731 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				368C02EE5E73D3A5F4EF8679446E9107 /* PBXTargetDependency */,
+			);
+			name = "Pods-CampusClientIOS";
+			productName = "Pods-CampusClientIOS";
+			productReference = 196D1670F17DEAFE582D44C215DE69D4 /* Pods_CampusClientIOS.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		5FF628B14A2FAEF57A2822E2C8CAB589 /* UIDropDown */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 86B1419F68CD51BC59D652FEC5600C25 /* Build configuration list for PBXNativeTarget "UIDropDown" */;
+			buildPhases = (
+				53F6D38607457285311B75D84DB01A17 /* Headers */,
+				6F431DB644352BC8E71AC3FA27F3FE5F /* Sources */,
+				465C44DF02605CC0B1F93E2205A7862D /* Frameworks */,
+				3D9DFD0620C92318D628D71BC830627F /* Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 			);
-			name = "Pods-CampusClientIOS";
-			productName = "Pods-CampusClientIOS";
-			productReference = 41B0F21E8301A0BFE6B1E14F2BA9A3C4 /* Pods_CampusClientIOS.framework */;
+			name = UIDropDown;
+			productName = UIDropDown;
+			productReference = 2C4C28E81900A3104F653AC89D100033 /* UIDropDown.framework */;
 			productType = "com.apple.product-type.framework";
 		};
 /* End PBXNativeTarget section */
@@ -149,17 +240,25 @@
 				en,
 			);
 			mainGroup = 7DB346D0F39D3F0E887471402A8071AB;
-			productRefGroup = E42F98778DA6E3AA008352C4D7F97BAC /* Products */;
+			productRefGroup = D8C65F0D49D6A4B565DB7680B6362728 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				AFF3F0A83152F941AC679E8083BCAED1 /* Pods-CampusClientIOS */,
+				574D34E3515FF3E2DF5319423C195789 /* Pods-CampusClientIOS */,
+				5FF628B14A2FAEF57A2822E2C8CAB589 /* UIDropDown */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
-		3AE899F553793727FEB96928B01E0DBA /* Resources */ = {
+		3D9DFD0620C92318D628D71BC830627F /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		433D0825B591F23C729CEA5A8ED99731 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -169,15 +268,33 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
-		52850CDD31E18B7846137A320752CE64 /* Sources */ = {
+		6F431DB644352BC8E71AC3FA27F3FE5F /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				7F795CBB84B0022DFBA62088CD56C673 /* Pods-CampusClientIOS-dummy.m in Sources */,
+				300AA81E29F01BD761BEA5CC74FF50A4 /* UIDropDown-dummy.m in Sources */,
+				B8A078091DB63167C45A78053D1608FC /* UIDropDown.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FBCB4DDA5650DD01B94007BBB4137F07 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				29918BB876D3F9141683536BEE85FE57 /* Pods-CampusClientIOS-dummy.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		368C02EE5E73D3A5F4EF8679446E9107 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = UIDropDown;
+			target = 5FF628B14A2FAEF57A2822E2C8CAB589 /* UIDropDown */;
+			targetProxy = 6EE4C57A0AB778F79430BC5222F15EE1 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
 		007F1066051A467FBEB0038594E9D7C2 /* Release */ = {
@@ -239,46 +356,7 @@
 			};
 			name = Release;
 		};
-		13CF8B36821EC1CAFC3B5095966DE1A7 /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 990540B8F6B58A978DC472FA16C269BA /* Pods-CampusClientIOS.release.xcconfig */;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
-				CLANG_ENABLE_OBJC_WEAK = NO;
-				CODE_SIGN_IDENTITY = "";
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				CURRENT_PROJECT_VERSION = 1;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				INFOPLIST_FILE = "Target Support Files/Pods-CampusClientIOS/Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 11.4;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
-				MACH_O_TYPE = staticlib;
-				MODULEMAP_FILE = "Target Support Files/Pods-CampusClientIOS/Pods-CampusClientIOS.modulemap";
-				OTHER_LDFLAGS = "";
-				OTHER_LIBTOOLFLAGS = "";
-				PODS_ROOT = "$(SRCROOT)";
-				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
-				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VALIDATE_PRODUCT = YES;
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Release;
-		};
-		A1E21989A3038BFB6B895A23F6E4A5E1 /* Debug */ = {
+		04AE8058620F3155F042937781714B03 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 61FEAC14085FD0ABC4A74884961F9DF0 /* Pods-CampusClientIOS.debug.xcconfig */;
 			buildSettings = {
@@ -310,6 +388,123 @@
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		47744B2DF0BC8A6F0A53C617ACC20188 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 990540B8F6B58A978DC472FA16C269BA /* Pods-CampusClientIOS.release.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = "Target Support Files/Pods-CampusClientIOS/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 11.4;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-CampusClientIOS/Pods-CampusClientIOS.modulemap";
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		9293FAFAF5B3C2338313232BA287FC9D /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 9748660C222D6F025EE43C486D770297 /* UIDropDown.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_PREFIX_HEADER = "Target Support Files/UIDropDown/UIDropDown-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/UIDropDown/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MODULEMAP_FILE = "Target Support Files/UIDropDown/UIDropDown.modulemap";
+				PRODUCT_MODULE_NAME = UIDropDown;
+				PRODUCT_NAME = UIDropDown;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		E2386BBBFFC8A68F8981B822B78FDCBF /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 9748660C222D6F025EE43C486D770297 /* UIDropDown.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_PREFIX_HEADER = "Target Support Files/UIDropDown/UIDropDown-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/UIDropDown/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MODULEMAP_FILE = "Target Support Files/UIDropDown/UIDropDown.modulemap";
+				PRODUCT_MODULE_NAME = UIDropDown;
+				PRODUCT_NAME = UIDropDown;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_PREFIX = "";
@@ -383,20 +578,29 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		0D1406B346BAA09B191F3926F709F6F5 /* Build configuration list for PBXNativeTarget "Pods-CampusClientIOS" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				A1E21989A3038BFB6B895A23F6E4A5E1 /* Debug */,
-				13CF8B36821EC1CAFC3B5095966DE1A7 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
 		2D8E8EC45A3A1A1D94AE762CB5028504 /* Build configuration list for PBXProject "Pods" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				E246FC26AF4A9832D7AA01080188D618 /* Debug */,
 				007F1066051A467FBEB0038594E9D7C2 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		86B1419F68CD51BC59D652FEC5600C25 /* Build configuration list for PBXNativeTarget "UIDropDown" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E2386BBBFFC8A68F8981B822B78FDCBF /* Debug */,
+				9293FAFAF5B3C2338313232BA287FC9D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		C5B332C547944A32A35C4D582BBD85D8 /* Build configuration list for PBXNativeTarget "Pods-CampusClientIOS" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				04AE8058620F3155F042937781714B03 /* Debug */,
+				47744B2DF0BC8A6F0A53C617ACC20188 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

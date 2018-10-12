@@ -1,3 +1,16 @@
-PODFILE CHECKSUM: 613a95ad32ba54e9b8be67f052d7e129c691fe79
+PODS:
+  - UIDropDown (1.1.1)
+
+DEPENDENCIES:
+  - UIDropDown
+
+SPEC REPOS:
+  https://github.com/cocoapods/specs.git:
+    - UIDropDown
+
+SPEC CHECKSUMS:
+  UIDropDown: 22e6e3e22d419884c8f21d95ea9be36aac905ed4
+
+PODFILE CHECKSUM: 790180fa53ef97b868a0c47cced9a1ef40bab88a
 
 COCOAPODS: 1.5.3
