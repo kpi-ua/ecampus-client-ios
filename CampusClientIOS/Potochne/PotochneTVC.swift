@@ -11,7 +11,8 @@ import UIDropDown
 
 class PotochneTVC: UITableViewController {
     
-    let prepodi: [String] = ["prepod0", "prepod1", "prepod2", "prepod3", "prepod4"]
+    let prepodi = ["prepod0", "prepod1", "prepod2", "prepod3", "prepod4"]
+    let sections = ["vote 1", "vote 2"]
     let cellIdentifier = "voteCell"
     var currentSelection = 0
     
@@ -45,5 +46,14 @@ class PotochneTVC: UITableViewController {
             return 60
         }
     }
+    
+    override func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+        return "section \(self.sections[section])"
+    }
+    
+    override func numberOfSections(in tableView: UITableView) -> Int {
+        return 2
+    }
+    
     
 }
