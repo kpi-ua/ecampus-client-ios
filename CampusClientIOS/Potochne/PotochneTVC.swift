@@ -32,6 +32,7 @@ class PotochneTVC: UITableViewController {
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         self.currentSelection = indexPath.row
+        print(tableView.cellForRow(at: indexPath)?.frame.size.height)
         tableView.deselectRow(at: indexPath, animated: true)
         tableView.beginUpdates()
         tableView.endUpdates()
@@ -51,12 +52,14 @@ class PotochneTVC: UITableViewController {
     
     func setHeight(index: IndexPath) -> CGFloat {
         if index.row == self.currentSelection {
+            if tableView.cellForRow(at: index)?.frame.size.height == 100 {
+                return 60
+            }
             return 100
         }
         else {
             return 60
         }
     }
-    
     
 }
