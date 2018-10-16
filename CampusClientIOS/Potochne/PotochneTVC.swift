@@ -11,8 +11,11 @@ import UIDropDown
 
 class PotochneTVC: UITableViewController {
     
-    let prepodi = ["prepod0", "prepod1", "prepod2", "prepod3", "prepod4"]
-    let sections = ["vote 1", "vote 2"]
+    let prepodi = [
+        ["prepod0", "prepod1", "prepod2", "prepod3", "prepod4"],
+        ["prepod5", "prepod6", "prepod7", "prepod8"]
+        ]
+    let sectionNames = ["vote 1", "vote 2"]
     let cellIdentifier = "voteCell"
     var currentSelection = -1
     
@@ -21,18 +24,17 @@ class PotochneTVC: UITableViewController {
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return prepodi.count
+        return prepodi[section].count
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: cellIdentifier, for: indexPath) as! VoteTVCell
-        cell.prepodNameLabel.text = prepodi[indexPath.row]
+        cell.prepodNameLabel.text = prepodi[indexPath.section][indexPath.row]
         return cell
     }
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         self.currentSelection = indexPath.row
-        print(tableView.cellForRow(at: indexPath)?.frame.size.height)
         tableView.deselectRow(at: indexPath, animated: true)
         tableView.beginUpdates()
         tableView.endUpdates()
@@ -43,11 +45,11 @@ class PotochneTVC: UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
-        return "section \(self.sections[section])"
+        return "section \(self.sectionNames[section])"
     }
     
     override func numberOfSections(in tableView: UITableView) -> Int {
-        return self.sections.count
+        return prepodi.count
     }
     
     func setHeight(index: IndexPath) -> CGFloat {
