@@ -14,7 +14,6 @@
 		04CFCE5B216A36D800A460BA /* MainVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04CFCE5A216A36D800A460BA /* MainVC.swift */; };
 		04CFCE67216B402400A460BA /* PotochneTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04CFCE65216B402400A460BA /* PotochneTVC.swift */; };
 		04CFCE6C216B449500A460BA /* VoteTVCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04CFCE6A216B449500A460BA /* VoteTVCell.swift */; };
-		04CFCE6D216B449500A460BA /* VoteTVCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 04CFCE6B216B449500A460BA /* VoteTVCell.xib */; };
 		FAC44813D60CCB2C081F5DF8 /* Pods_CampusClientIOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 792C034B76FFB0E7E5CACEFB /* Pods_CampusClientIOS.framework */; };
 /* End PBXBuildFile section */
 
@@ -28,7 +27,6 @@
 		04CFCE5A216A36D800A460BA /* MainVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainVC.swift; sourceTree = "<group>"; };
 		04CFCE65216B402400A460BA /* PotochneTVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = PotochneTVC.swift; path = CampusClientIOS/Potochne/PotochneTVC.swift; sourceTree = SOURCE_ROOT; };
 		04CFCE6A216B449500A460BA /* VoteTVCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = VoteTVCell.swift; path = CampusClientIOS/Potochne/VoteTVCell.swift; sourceTree = SOURCE_ROOT; };
-		04CFCE6B216B449500A460BA /* VoteTVCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = VoteTVCell.xib; path = CampusClientIOS/Potochne/VoteTVCell.xib; sourceTree = SOURCE_ROOT; };
 		792C034B76FFB0E7E5CACEFB /* Pods_CampusClientIOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CampusClientIOS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		84415CC226A4C81E05085554 /* Pods-CampusClientIOS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CampusClientIOS.release.xcconfig"; path = "Pods/Target Support Files/Pods-CampusClientIOS/Pods-CampusClientIOS.release.xcconfig"; sourceTree = "<group>"; };
 		97CB0B402711BDEA41A20A82 /* Pods-CampusClientIOS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CampusClientIOS.debug.xcconfig"; path = "Pods/Target Support Files/Pods-CampusClientIOS/Pods-CampusClientIOS.debug.xcconfig"; sourceTree = "<group>"; };
@@ -67,10 +65,10 @@
 		04CFCE47216A323B00A460BA /* CampusClientIOS */ = {
 			isa = PBXGroup;
 			children = (
+				04CFCE4C216A323B00A460BA /* Main.storyboard */,
 				04CFCE69216B445600A460BA /* Potochne */,
 				04CFCE48216A323B00A460BA /* AppDelegate.swift */,
 				04CFCE5A216A36D800A460BA /* MainVC.swift */,
-				04CFCE4C216A323B00A460BA /* Main.storyboard */,
 				04CFCE51216A323C00A460BA /* LaunchScreen.storyboard */,
 				04CFCE54216A323C00A460BA /* Info.plist */,
 				04CFCE4F216A323C00A460BA /* Assets.xcassets */,
@@ -83,7 +81,6 @@
 			children = (
 				04CFCE65216B402400A460BA /* PotochneTVC.swift */,
 				04CFCE6A216B449500A460BA /* VoteTVCell.swift */,
-				04CFCE6B216B449500A460BA /* VoteTVCell.xib */,
 			);
 			path = Potochne;
 			sourceTree = "<group>";
@@ -168,7 +165,6 @@
 				04CFCE53216A323C00A460BA /* LaunchScreen.storyboard in Resources */,
 				04CFCE50216A323C00A460BA /* Assets.xcassets in Resources */,
 				04CFCE4E216A323B00A460BA /* Main.storyboard in Resources */,
-				04CFCE6D216B449500A460BA /* VoteTVCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

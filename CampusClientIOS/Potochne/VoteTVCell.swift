@@ -13,8 +13,6 @@ class VoteTVCell: UITableViewCell {
     
     @IBOutlet weak var prepodNameLabel: UILabel!
     
-    @IBOutlet weak var markLabel: UILabel!
-    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code

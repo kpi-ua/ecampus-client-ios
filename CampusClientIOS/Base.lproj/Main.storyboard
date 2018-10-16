@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="zUx-89-RQp">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14313.18" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="zUx-89-RQp">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14283.14"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -27,26 +27,46 @@
             <point key="canvasLocation" x="-196" y="-518"/>
         </scene>
         <!--Поточне-->
-        <scene sceneID="3ER-bj-2aj">
+        <scene sceneID="TI2-HT-r2v">
             <objects>
-                <tableViewController id="opi-7d-iOL" customClass="PotochneTVC" customModule="CampusClientIOS" customModuleProvider="target" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="UhM-Ps-B6g">
+                <tableViewController id="o6Z-l9-e0f" customClass="PotochneTVC" customModule="CampusClientIOS" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="b8p-RR-hLC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="voteCell" rowHeight="60" id="DwG-OT-OZ9" customClass="VoteTVCell" customModule="CampusClientIOS" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="28" width="375" height="60"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="DwG-OT-OZ9" id="lUm-Uh-4lV">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="59.5"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FRk-jg-RGO">
+                                            <rect key="frame" x="16" y="19" width="100" height="21"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                </tableViewCellContentView>
+                                <inset key="separatorInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                <connections>
+                                    <outlet property="prepodNameLabel" destination="FRk-jg-RGO" id="mSE-jA-dgJ"/>
+                                </connections>
+                            </tableViewCell>
+                        </prototypes>
                         <connections>
-                            <outlet property="dataSource" destination="opi-7d-iOL" id="S4L-YP-8M3"/>
-                            <outlet property="delegate" destination="opi-7d-iOL" id="FcN-k1-Bzl"/>
+                            <outlet property="dataSource" destination="o6Z-l9-e0f" id="AaL-Ly-KAw"/>
+                            <outlet property="delegate" destination="o6Z-l9-e0f" id="wGN-gx-5Xj"/>
                         </connections>
                     </tableView>
-                    <tabBarItem key="tabBarItem" title="Поточне" id="8rr-pj-H8n"/>
-                    <connections>
-                        <outlet property="potocneTV" destination="UhM-Ps-B6g" id="PT0-vW-aUN"/>
-                    </connections>
+                    <tabBarItem key="tabBarItem" title="Поточне" id="x8m-SM-D3N"/>
                 </tableViewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="HQc-pR-tME" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="tnC-iX-BC2" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-724" y="1997"/>
+            <point key="canvasLocation" x="-810.39999999999998" y="1996.5517241379312"/>
         </scene>
         <!--Архів-->
         <scene sceneID="lKS-9y-ZMI">
@@ -103,7 +123,7 @@
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </tabBar>
                     <connections>
-                        <segue destination="opi-7d-iOL" kind="relationship" relationship="viewControllers" id="K8Y-62-zsw"/>
+                        <segue destination="o6Z-l9-e0f" kind="relationship" relationship="viewControllers" id="9fy-iI-skS"/>
                         <segue destination="AB5-Ch-pBM" kind="relationship" relationship="viewControllers" id="6FM-vf-iL7"/>
                     </connections>
                 </tabBarController>
