@@ -112,11 +112,11 @@
             </objects>
             <point key="canvasLocation" x="-196" y="269.41529235382313"/>
         </scene>
-        <!--Tab Bar Controller-->
+        <!--Голосування-->
         <scene sceneID="z1O-Jv-ra5">
             <objects>
                 <tabBarController id="Qw0-jI-flf" sceneMemberID="viewController">
-                    <navigationItem key="navigationItem" id="GCf-U1-TbD"/>
+                    <navigationItem key="navigationItem" title="Голосування" id="GCf-U1-TbD"/>
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="FOz-OS-P2B">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="49"/>
                         <autoresizingMask key="autoresizingMask"/>

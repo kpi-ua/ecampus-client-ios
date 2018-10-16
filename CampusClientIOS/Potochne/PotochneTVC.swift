@@ -14,11 +14,10 @@ class PotochneTVC: UITableViewController {
     let prepodi = ["prepod0", "prepod1", "prepod2", "prepod3", "prepod4"]
     let sections = ["vote 1", "vote 2"]
     let cellIdentifier = "voteCell"
-    var currentSelection = 0
+    var currentSelection = -1
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -39,12 +38,7 @@ class PotochneTVC: UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        if indexPath.row == self.currentSelection {
-            return 100
-        }
-        else {
-            return 60
-        }
+        return setHeight(index: indexPath)
     }
     
     override func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
@@ -52,7 +46,16 @@ class PotochneTVC: UITableViewController {
     }
     
     override func numberOfSections(in tableView: UITableView) -> Int {
-        return 2
+        return self.sections.count
+    }
+    
+    func setHeight(index: IndexPath) -> CGFloat {
+        if index.row == self.currentSelection {
+            return 100
+        }
+        else {
+            return 60
+        }
     }
     
     

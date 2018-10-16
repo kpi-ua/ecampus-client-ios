@@ -1,0 +1,6 @@
+framework module UIDropDown {
+  umbrella header "UIDropDown-umbrella.h"
+
+  export *
+  module * { export * }
+}
