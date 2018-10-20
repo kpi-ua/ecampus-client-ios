@@ -17,10 +17,12 @@ class PotochneTVC: UITableViewController {
         ]
     let sectionNames = ["vote 1", "vote 2"]
     let cellIdentifier = "voteCell"
-    var currentSelection = -1
+    var currentSelection = [[-1], [-1]]
+    var selectedPrepod = ""
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -34,7 +36,8 @@ class PotochneTVC: UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        self.currentSelection = indexPath.row
+        self.currentSelection = [[indexPath.section], [indexPath.row]]
+        selectedPrepod = currentPrepod(index: indexPath)
         tableView.deselectRow(at: indexPath, animated: true)
         tableView.beginUpdates()
         tableView.endUpdates()
@@ -52,8 +55,8 @@ class PotochneTVC: UITableViewController {
         return prepodi.count
     }
     
-    func setHeight(index: IndexPath) -> CGFloat {
-        if index.row == self.currentSelection {
+    private func setHeight(index: IndexPath) -> CGFloat {
+        if [[index.section], [index.row]] == self.currentSelection {
             if tableView.cellForRow(at: index)?.frame.size.height == 100 {
                 return 60
             }
@@ -64,4 +67,16 @@ class PotochneTVC: UITableViewController {
         }
     }
     
+    func currentPrepod(index: IndexPath) -> String {
+        let currentPrepod = prepodi[index.section][index.row]
+        return currentPrepod
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if (segue.identifier == "detailVoteSegue") {
+            if let DetailVoteTVC = segue.destination as? DetailVoteTVC {
+                DetailVoteTVC.prepodDetailName = selectedPrepod
+            }
+        }
+    }
 }

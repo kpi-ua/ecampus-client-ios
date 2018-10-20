@@ -13,17 +13,19 @@ class VoteTVCell: UITableViewCell {
     
     @IBOutlet weak var prepodNameLabel: UILabel!
     
-    override func awakeFromNib() {
+        override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
     }
+    
+    @IBOutlet weak var statusLabel: UILabel!
     
     func nameOfPrepod(name: String) {
         prepodNameLabel.text = name
     }
     
-    
-    
-    
+    @IBAction func voteActionButton(_ sender: Any) {
+        
+    }
     
 }
