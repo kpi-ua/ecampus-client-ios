@@ -36,10 +36,11 @@ class PotochneTVC: UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        tableView.selectRow(at: indexPath, animated: true, scrollPosition: .bottom)
+        tableView.beginUpdates()
         self.currentSelection = [[indexPath.section], [indexPath.row]]
         selectedPrepod = currentPrepod(index: indexPath)
         tableView.deselectRow(at: indexPath, animated: true)
-        tableView.beginUpdates()
         tableView.endUpdates()
     }
     
@@ -62,9 +63,7 @@ class PotochneTVC: UITableViewController {
             }
             return 100
         }
-        else {
             return 60
-        }
     }
     
     func currentPrepod(index: IndexPath) -> String {

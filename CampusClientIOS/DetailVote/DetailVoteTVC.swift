@@ -12,11 +12,11 @@ class DetailVoteTVC: UITableViewController {
     
     var prepodDetailName = ""
     let cellIdentifier = "voteDetaliCell"
-    var pickheight = 0
+     var currentSelection = [[-1], [-1]]
     
     let voteDetails = [ "Компетенстність в дисципліні, яку викладає",
                         "Вимогливість викладача",
-                        "Вміння донести мателріал до студентів",
+                        "Вміння донести матеріал до студентів",
                         "Вміння налагодиди партнерські стосунки зі студентами",
                         "Загальна культура та тактовність по відношенню до студентів",
                         "Використання засобів дистанційного спілкування (електронна пошта, Skype, соцмережі)"
@@ -30,7 +30,7 @@ class DetailVoteTVC: UITableViewController {
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         if let cell = tableView.dequeueReusableCell(withIdentifier: cellIdentifier, for: indexPath) as? DetailVoteTVCell {
-            cell.detailVoteLabel.text = voteDetails[indexPath.row]
+            cell.detalilVoteLabel.text = voteDetails[indexPath.row]
             return cell
         }
         return UITableViewCell()
@@ -38,6 +38,7 @@ class DetailVoteTVC: UITableViewController {
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
+        self.currentSelection = [[indexPath.section], [indexPath.row]]
         tableView.beginUpdates()
         tableView.endUpdates()
     }
@@ -53,7 +54,18 @@ class DetailVoteTVC: UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 100
+        return setHeight(index: indexPath)
     }
+    
+    private func setHeight(index: IndexPath) -> CGFloat {
+        if [[index.section], [index.row]] == self.currentSelection {
+            if tableView.cellForRow(at: index)?.frame.size.height == 150 {
+                return 95
+            }
+            return 150
+        }
+        return 95
+    }
+    
     
 }

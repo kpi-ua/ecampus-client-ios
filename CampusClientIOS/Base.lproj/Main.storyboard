@@ -35,30 +35,92 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="voteDetaliCell" rowHeight="100" id="gNc-zy-nFf" customClass="DetailVoteTVCell" customModule="CampusClientIOS" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="28" width="375" height="100"/>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="voteDetaliCell" rowHeight="150" id="gNc-zy-nFf" customClass="DetailVoteTVCell" customModule="CampusClientIOS" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="28" width="375" height="150"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="gNc-zy-nFf" id="X8h-ZC-yWb">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="99.5"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="149.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="4" baselineAdjustment="alignBaselines" highlighted="YES" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kM5-qN-liS">
-                                            <rect key="frame" x="0.0" y="0.0" width="277" height="99.5"/>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Tgq-JT-xth">
+                                            <rect key="frame" x="16" y="11" width="250" height="80"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
+                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JYe-oD-vOP">
+                                            <rect key="frame" x="16" y="97" width="30" height="41"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="24"/>
+                                            <color key="tintColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            <state key="normal" title="1"/>
+                                            <connections>
+                                                <action selector="markButtonPushed:" destination="gNc-zy-nFf" eventType="touchUpInside" id="MPH-EL-6da"/>
+                                            </connections>
+                                        </button>
+                                        <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Vua-Et-kA5">
+                                            <rect key="frame" x="65" y="97" width="30" height="41"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="24"/>
+                                            <state key="normal" title="2"/>
+                                            <connections>
+                                                <action selector="markButtonPushed:" destination="gNc-zy-nFf" eventType="touchUpInside" id="YIX-eo-TxB"/>
+                                            </connections>
+                                        </button>
+                                        <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="drr-Rk-PnG">
+                                            <rect key="frame" x="114" y="97" width="30" height="41"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="24"/>
+                                            <state key="normal" title="3"/>
+                                            <connections>
+                                                <action selector="markButtonPushed:" destination="gNc-zy-nFf" eventType="touchUpInside" id="fop-bh-XTb"/>
+                                            </connections>
+                                        </button>
+                                        <button opaque="NO" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XUx-hx-ZMB">
+                                            <rect key="frame" x="163" y="97" width="30" height="41"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="24"/>
+                                            <state key="normal" title="4"/>
+                                            <connections>
+                                                <action selector="markButtonPushed:" destination="gNc-zy-nFf" eventType="touchUpInside" id="l4X-1O-wwm"/>
+                                            </connections>
+                                        </button>
+                                        <button opaque="NO" tag="4" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="R4i-Ac-nFU">
+                                            <rect key="frame" x="212" y="97" width="30" height="41"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="24"/>
+                                            <state key="normal" title="5"/>
+                                            <connections>
+                                                <action selector="markButtonPushed:" destination="gNc-zy-nFf" eventType="touchUpInside" id="uRq-Ug-e02"/>
+                                            </connections>
+                                        </button>
+                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EsR-ut-HYN">
+                                            <rect key="frame" x="312" y="97" width="47" height="41"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="24"/>
+                                            <state key="normal" title="Vote"/>
+                                        </button>
                                     </subviews>
                                     <constraints>
-                                        <constraint firstItem="kM5-qN-liS" firstAttribute="top" secondItem="X8h-ZC-yWb" secondAttribute="top" id="8r9-FF-kGe"/>
-                                        <constraint firstAttribute="trailingMargin" secondItem="kM5-qN-liS" secondAttribute="trailing" constant="82" id="Ptv-bs-t9K"/>
-                                        <constraint firstItem="kM5-qN-liS" firstAttribute="leading" secondItem="X8h-ZC-yWb" secondAttribute="leading" id="V6l-EW-7Wm"/>
-                                        <constraint firstItem="kM5-qN-liS" firstAttribute="centerY" secondItem="X8h-ZC-yWb" secondAttribute="centerY" id="zF2-7b-HlM"/>
+                                        <constraint firstAttribute="trailing" secondItem="Tgq-JT-xth" secondAttribute="trailing" constant="109" id="I9t-d8-Ag2"/>
+                                        <constraint firstItem="Tgq-JT-xth" firstAttribute="top" secondItem="X8h-ZC-yWb" secondAttribute="top" constant="11" id="Ky0-pJ-2aw"/>
+                                        <constraint firstItem="JYe-oD-vOP" firstAttribute="top" secondItem="X8h-ZC-yWb" secondAttribute="top" constant="97" id="L9q-sb-lpg"/>
+                                        <constraint firstItem="R4i-Ac-nFU" firstAttribute="leading" secondItem="X8h-ZC-yWb" secondAttribute="leading" constant="212" id="NWw-dK-3QU"/>
+                                        <constraint firstItem="XUx-hx-ZMB" firstAttribute="top" secondItem="X8h-ZC-yWb" secondAttribute="top" constant="97" id="OUU-Hm-Jea"/>
+                                        <constraint firstItem="drr-Rk-PnG" firstAttribute="leading" secondItem="X8h-ZC-yWb" secondAttribute="leading" constant="114" id="Odf-Sa-NtM"/>
+                                        <constraint firstAttribute="trailing" secondItem="EsR-ut-HYN" secondAttribute="trailing" constant="16" id="PHp-RC-ifE"/>
+                                        <constraint firstItem="JYe-oD-vOP" firstAttribute="leading" secondItem="X8h-ZC-yWb" secondAttribute="leading" constant="16" id="QGh-Gs-p88"/>
+                                        <constraint firstItem="Vua-Et-kA5" firstAttribute="top" secondItem="X8h-ZC-yWb" secondAttribute="top" constant="97" id="RaX-is-Tfx"/>
+                                        <constraint firstItem="Tgq-JT-xth" firstAttribute="leading" secondItem="X8h-ZC-yWb" secondAttribute="leading" constant="16" id="YnI-01-bY7"/>
+                                        <constraint firstItem="Vua-Et-kA5" firstAttribute="leading" secondItem="X8h-ZC-yWb" secondAttribute="leading" constant="65" id="byS-HZ-ch0"/>
+                                        <constraint firstItem="drr-Rk-PnG" firstAttribute="top" secondItem="X8h-ZC-yWb" secondAttribute="top" constant="97" id="ddV-J6-1aV"/>
+                                        <constraint firstItem="EsR-ut-HYN" firstAttribute="top" secondItem="X8h-ZC-yWb" secondAttribute="top" constant="97" id="jWo-1C-55p"/>
+                                        <constraint firstItem="R4i-Ac-nFU" firstAttribute="top" secondItem="X8h-ZC-yWb" secondAttribute="top" constant="97" id="pdk-lF-3qX"/>
+                                        <constraint firstItem="XUx-hx-ZMB" firstAttribute="leading" secondItem="X8h-ZC-yWb" secondAttribute="leading" constant="163" id="q1D-Br-jTU"/>
                                     </constraints>
                                 </tableViewCellContentView>
                                 <inset key="separatorInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 <connections>
-                                    <outlet property="detailVoteLabel" destination="kM5-qN-liS" id="o9Y-pK-AUq"/>
+                                    <outlet property="detalilVoteLabel" destination="Tgq-JT-xth" id="ON6-jH-O2d"/>
+                                    <outletCollection property="markButton" destination="JYe-oD-vOP" collectionClass="NSMutableArray" id="tT7-hf-Rjg"/>
+                                    <outletCollection property="markButton" destination="Vua-Et-kA5" collectionClass="NSMutableArray" id="fC8-dy-Rto"/>
+                                    <outletCollection property="markButton" destination="drr-Rk-PnG" collectionClass="NSMutableArray" id="YAf-yp-IAI"/>
+                                    <outletCollection property="markButton" destination="XUx-hx-ZMB" collectionClass="NSMutableArray" id="gsx-AF-HSg"/>
+                                    <outletCollection property="markButton" destination="R4i-Ac-nFU" collectionClass="NSMutableArray" id="Xi4-CX-M52"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -169,9 +231,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vCu-Mm-LLY">
-                                <rect key="frame" x="118" y="153" width="92" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vCu-Mm-LLY">
+                                <rect key="frame" x="141" y="150" width="92" height="30"/>
                                 <state key="normal" title="Button"/>
                                 <connections>
                                     <segue destination="Qw0-jI-flf" kind="show" id="WL6-Ew-sHI"/>
@@ -179,6 +240,11 @@
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="vCu-Mm-LLY" firstAttribute="leading" secondItem="bF0-HT-EYL" secondAttribute="leading" constant="141" id="27F-76-8fL"/>
+                            <constraint firstItem="vCu-Mm-LLY" firstAttribute="top" secondItem="bF0-HT-EYL" secondAttribute="top" constant="86" id="bqF-fl-P5G"/>
+                            <constraint firstItem="vCu-Mm-LLY" firstAttribute="centerX" secondItem="d8O-RI-Za9" secondAttribute="centerX" id="uJn-6q-pag"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="bF0-HT-EYL"/>
                     </view>
                     <navigationItem key="navigationItem" title="Головне меню" id="Ga9-Bn-C4y">
