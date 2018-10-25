@@ -22,7 +22,7 @@ class PotochneTVC: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        tableView.layoutIfNeeded()
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -78,4 +78,5 @@ class PotochneTVC: UITableViewController {
             }
         }
     }
+    
 }

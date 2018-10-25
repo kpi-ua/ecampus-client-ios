@@ -89,11 +89,6 @@
                                                 <action selector="markButtonPushed:" destination="gNc-zy-nFf" eventType="touchUpInside" id="uRq-Ug-e02"/>
                                             </connections>
                                         </button>
-                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EsR-ut-HYN">
-                                            <rect key="frame" x="312" y="97" width="47" height="41"/>
-                                            <fontDescription key="fontDescription" type="system" pointSize="24"/>
-                                            <state key="normal" title="Vote"/>
-                                        </button>
                                     </subviews>
                                     <constraints>
                                         <constraint firstAttribute="trailing" secondItem="Tgq-JT-xth" secondAttribute="trailing" constant="109" id="I9t-d8-Ag2"/>
@@ -102,13 +97,11 @@
                                         <constraint firstItem="R4i-Ac-nFU" firstAttribute="leading" secondItem="X8h-ZC-yWb" secondAttribute="leading" constant="212" id="NWw-dK-3QU"/>
                                         <constraint firstItem="XUx-hx-ZMB" firstAttribute="top" secondItem="X8h-ZC-yWb" secondAttribute="top" constant="97" id="OUU-Hm-Jea"/>
                                         <constraint firstItem="drr-Rk-PnG" firstAttribute="leading" secondItem="X8h-ZC-yWb" secondAttribute="leading" constant="114" id="Odf-Sa-NtM"/>
-                                        <constraint firstAttribute="trailing" secondItem="EsR-ut-HYN" secondAttribute="trailing" constant="16" id="PHp-RC-ifE"/>
                                         <constraint firstItem="JYe-oD-vOP" firstAttribute="leading" secondItem="X8h-ZC-yWb" secondAttribute="leading" constant="16" id="QGh-Gs-p88"/>
                                         <constraint firstItem="Vua-Et-kA5" firstAttribute="top" secondItem="X8h-ZC-yWb" secondAttribute="top" constant="97" id="RaX-is-Tfx"/>
                                         <constraint firstItem="Tgq-JT-xth" firstAttribute="leading" secondItem="X8h-ZC-yWb" secondAttribute="leading" constant="16" id="YnI-01-bY7"/>
                                         <constraint firstItem="Vua-Et-kA5" firstAttribute="leading" secondItem="X8h-ZC-yWb" secondAttribute="leading" constant="65" id="byS-HZ-ch0"/>
                                         <constraint firstItem="drr-Rk-PnG" firstAttribute="top" secondItem="X8h-ZC-yWb" secondAttribute="top" constant="97" id="ddV-J6-1aV"/>
-                                        <constraint firstItem="EsR-ut-HYN" firstAttribute="top" secondItem="X8h-ZC-yWb" secondAttribute="top" constant="97" id="jWo-1C-55p"/>
                                         <constraint firstItem="R4i-Ac-nFU" firstAttribute="top" secondItem="X8h-ZC-yWb" secondAttribute="top" constant="97" id="pdk-lF-3qX"/>
                                         <constraint firstItem="XUx-hx-ZMB" firstAttribute="leading" secondItem="X8h-ZC-yWb" secondAttribute="leading" constant="163" id="q1D-Br-jTU"/>
                                     </constraints>
@@ -129,7 +122,14 @@
                             <outlet property="delegate" destination="bi2-Ie-PEL" id="Aem-yI-QSB"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" id="CBu-vH-3At"/>
+                    <navigationItem key="navigationItem" id="CBu-vH-3At">
+                        <barButtonItem key="rightBarButtonItem" systemItem="save" id="Iwi-Jk-pei">
+                            <color key="tintColor" red="0.0" green="0.58980089430000004" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <connections>
+                                <action selector="saveVoteButton:" destination="bi2-Ie-PEL" id="BP1-nG-aBw"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="n9N-TO-PcV" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

@@ -18,5 +18,4 @@ class MainVC: UIViewController {
 
     }
     
-    
 }

@@ -12,7 +12,7 @@ class DetailVoteTVC: UITableViewController {
     
     var prepodDetailName = ""
     let cellIdentifier = "voteDetaliCell"
-     var currentSelection = [[-1], [-1]]
+    var currentSelection: IndexPath = [-1]
     
     let voteDetails = [ "Компетенстність в дисципліні, яку викладає",
                         "Вимогливість викладача",
@@ -22,50 +22,63 @@ class DetailVoteTVC: UITableViewController {
                         "Використання засобів дистанційного спілкування (електронна пошта, Skype, соцмережі)"
     ]
     
+    var prepodMarks = [0, 0, 0, 0, 0, 0]
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         navigationItem.title = prepodDetailName
-        tableView.rowHeight = UITableViewAutomaticDimension
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         if let cell = tableView.dequeueReusableCell(withIdentifier: cellIdentifier, for: indexPath) as? DetailVoteTVCell {
             cell.detalilVoteLabel.text = voteDetails[indexPath.row]
+            cell.index = indexPath
+            prepodMarks[indexPath.row] = cell.mark
+            cell.viewController = self
             return cell
         }
         return UITableViewCell()
     }
     
+    override func numberOfSections(in tableView: UITableView) -> Int {
+        return 1
+    }
+    
+    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return voteDetails.count
+    }
+    
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
-        self.currentSelection = [[indexPath.section], [indexPath.row]]
+        self.currentSelection = [indexPath.row]
         tableView.beginUpdates()
         tableView.endUpdates()
     }
     
-    override func numberOfSections(in tableView: UITableView) -> Int {
-        // #warning Incomplete implementation, return the number of sections
-        return 1
-    }
-
-    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        // #warning Incomplete implementation, return the number of rows
-        return voteDetails.count
-    }
-    
     override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return setHeight(index: indexPath)
+        return 150
     }
     
-    private func setHeight(index: IndexPath) -> CGFloat {
-        if [[index.section], [index.row]] == self.currentSelection {
-            if tableView.cellForRow(at: index)?.frame.size.height == 150 {
-                return 95
-            }
-            return 150
+    @IBAction func saveVoteButton(_ sender: Any) {
+        tableView.reloadData()
+        print("reloaded \(prepodMarks)")
+        createAlert()
+    }
+    
+    func createAlert() {
+        let alert = UIAlertController.init(title: "Оцінка за \(prepodDetailName)", message:"збережена успішно і є конфіденційною" , preferredStyle: UIAlertControllerStyle.alert)
+        let okAction = UIAlertAction.init(title: "Ok", style: UIAlertActionStyle.default) { (UIAlertAction) in
+            print("saved")
         }
-        return 95
+        alert.addAction(okAction)
+        self.present(alert, animated: true, completion: nil)
     }
     
     
 }
+
+
+
+
+
+
