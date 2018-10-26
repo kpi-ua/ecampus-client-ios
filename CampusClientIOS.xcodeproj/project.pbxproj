@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		04047E6B2181D86A00585BEB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 04047E6A2181D86A00585BEB /* Assets.xcassets */; };
+		04047E6E21821DBE00585BEB /* ArchiveTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04047E6D21821DBE00585BEB /* ArchiveTVC.swift */; };
 		04150A2121772A1D00ACBF81 /* DetailVoteTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04150A2021772A1D00ACBF81 /* DetailVoteTVC.swift */; };
 		04150A242177303A00ACBF81 /* DetailVoteTVCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04150A232177303A00ACBF81 /* DetailVoteTVCell.swift */; };
 		04150A26217CA56F00ACBF81 /* UIButtonExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04150A25217CA56F00ACBF81 /* UIButtonExtension.swift */; };
@@ -22,6 +23,7 @@
 
 /* Begin PBXFileReference section */
 		04047E6A2181D86A00585BEB /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Assets.xcassets; path = ../../../.Trash/Assets.xcassets; sourceTree = "<group>"; };
+		04047E6D21821DBE00585BEB /* ArchiveTVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArchiveTVC.swift; sourceTree = "<group>"; };
 		04150A2021772A1D00ACBF81 /* DetailVoteTVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailVoteTVC.swift; sourceTree = "<group>"; };
 		04150A232177303A00ACBF81 /* DetailVoteTVCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailVoteTVCell.swift; sourceTree = "<group>"; };
 		04150A25217CA56F00ACBF81 /* UIButtonExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIButtonExtension.swift; sourceTree = "<group>"; };
@@ -50,6 +52,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		04047E6C21821D7C00585BEB /* Archive */ = {
+			isa = PBXGroup;
+			children = (
+				04047E6D21821DBE00585BEB /* ArchiveTVC.swift */,
+			);
+			path = Archive;
+			sourceTree = "<group>";
+		};
 		04150A2221772A2B00ACBF81 /* DetailVote */ = {
 			isa = PBXGroup;
 			children = (
@@ -89,6 +99,7 @@
 			isa = PBXGroup;
 			children = (
 				04CFCE4C216A323B00A460BA /* Main.storyboard */,
+				04047E6C21821D7C00585BEB /* Archive */,
 				04150A2221772A2B00ACBF81 /* DetailVote */,
 				04CFCE69216B445600A460BA /* Potochne */,
 				04CFCE48216A323B00A460BA /* AppDelegate.swift */,
@@ -245,6 +256,7 @@
 			files = (
 				04150A242177303A00ACBF81 /* DetailVoteTVCell.swift in Sources */,
 				04CFCE67216B402400A460BA /* PotochneTVC.swift in Sources */,
+				04047E6E21821DBE00585BEB /* ArchiveTVC.swift in Sources */,
 				04CFCE5B216A36D800A460BA /* MainVC.swift in Sources */,
 				04CFCE49216A323B00A460BA /* AppDelegate.swift in Sources */,
 				04150A26217CA56F00ACBF81 /* UIButtonExtension.swift in Sources */,

@@ -15,9 +15,9 @@ class DetailVoteTVCell: UITableViewCell {
     @IBOutlet var markButton: [UIButton]!
     
     var mark = 0
+    var index: Int?
     let defaultColor = #colorLiteral(red: 0, green: 0.5898008943, blue: 1, alpha: 1)
-    var viewController: UITableViewController?
-    var index: IndexPath?
+    var viewController: DetailVoteTVC?
     
     func toReturnMark() -> Int {
         var mark: Int
@@ -34,6 +34,7 @@ class DetailVoteTVCell: UITableViewCell {
         removeMarkButtonsStyle()
         makeButtonStyle(button: sender)
         self.mark = sender.tag + 1
+        self.viewController?.getmark(mark: self.mark, index: self.index ?? 0)
     }
     
     private func makeButtonStyle(button: UIButton) {

@@ -32,8 +32,7 @@ class DetailVoteTVC: UITableViewController {
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         if let cell = tableView.dequeueReusableCell(withIdentifier: cellIdentifier, for: indexPath) as? DetailVoteTVCell {
             cell.detalilVoteLabel.text = voteDetails[indexPath.row]
-            cell.index = indexPath
-            prepodMarks[indexPath.row] = cell.mark
+            cell.index = indexPath.row
             cell.viewController = self
             return cell
         }
@@ -59,13 +58,17 @@ class DetailVoteTVC: UITableViewController {
         return 150
     }
     
-    @IBAction func saveVoteButton(_ sender: Any) {
-        tableView.reloadData()
-        print("reloaded \(prepodMarks)")
-        createAlert()
+    func getmark(mark: Int, index: Int) {
+        prepodMarks[index] = mark
     }
     
-    func createAlert() {
+    @IBAction func saveVoteButton(_ sender: Any) {
+        let choose = checkMarksForZeros()
+        chooseAlert(choose: choose)
+        print("save button \(prepodMarks)")
+    }
+    
+    func createOKAlert() {
         let alert = UIAlertController.init(title: "Оцінка за \(prepodDetailName)", message:"збережена успішно і є конфіденційною" , preferredStyle: UIAlertControllerStyle.alert)
         let okAction = UIAlertAction.init(title: "Ok", style: UIAlertActionStyle.default) { (UIAlertAction) in
             print("saved")
@@ -74,6 +77,30 @@ class DetailVoteTVC: UITableViewController {
         self.present(alert, animated: true, completion: nil)
     }
     
+    func createWarningAlert() {
+        let alert = UIAlertController.init(title: "Проставте всі оцінки", message: nil, preferredStyle: UIAlertControllerStyle.alert)
+        let okAction = UIAlertAction.init(title: "Ok", style: UIAlertActionStyle.default, handler: nil)
+        alert.addAction(okAction)
+        self.present(alert, animated: true, completion: nil)
+    }
+    
+    func checkMarksForZeros() -> Bool {
+        for i in 0..<prepodMarks.count {
+            if prepodMarks[i] == 0 {
+                return true
+            }
+        }
+        return false
+    }
+    
+    func chooseAlert(choose: Bool) {
+        if choose == true {
+            createWarningAlert()
+        }
+        else {
+            createOKAlert()
+        }
+    }
     
 }
 
