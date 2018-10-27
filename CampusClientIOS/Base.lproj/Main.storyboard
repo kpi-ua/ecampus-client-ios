@@ -240,10 +240,57 @@
             </objects>
             <point key="canvasLocation" x="388" y="1996.5517241379312"/>
         </scene>
+        <!--Log InVC-->
+        <scene sceneID="KPb-R1-fHn">
+            <objects>
+                <viewController storyboardIdentifier="loginVC" useStoryboardIdentifierAsRestorationIdentifier="YES" id="SRu-VY-vhq" customClass="LogInVC" customModule="CampusClientIOS" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="U22-Ng-Gpg">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="dZG-T3-vDH">
+                                <rect key="frame" x="16" y="196" width="343" height="30"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ozD-GX-iYe">
+                                <rect key="frame" x="16" y="100" width="343" height="30"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HO0-4q-LVJ">
+                                <rect key="frame" x="16" y="272" width="48" height="38"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="21"/>
+                                <state key="normal" title="Enter"/>
+                                <connections>
+                                    <segue destination="zUx-89-RQp" kind="show" id="B4r-2U-FHi"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="ozD-GX-iYe" firstAttribute="leading" secondItem="dZG-T3-vDH" secondAttribute="leading" id="EjF-PO-b5m"/>
+                            <constraint firstItem="ozD-GX-iYe" firstAttribute="leading" secondItem="U22-Ng-Gpg" secondAttribute="leadingMargin" id="JTi-nH-xg1"/>
+                            <constraint firstItem="ozD-GX-iYe" firstAttribute="trailing" secondItem="U22-Ng-Gpg" secondAttribute="trailingMargin" id="OJH-ed-Ufy"/>
+                            <constraint firstItem="ozD-GX-iYe" firstAttribute="trailing" secondItem="dZG-T3-vDH" secondAttribute="trailing" id="TBx-vV-YK4"/>
+                            <constraint firstItem="dZG-T3-vDH" firstAttribute="top" secondItem="ozD-GX-iYe" secondAttribute="bottom" constant="66" id="Yxb-dy-Buc"/>
+                            <constraint firstItem="HO0-4q-LVJ" firstAttribute="leading" secondItem="dZG-T3-vDH" secondAttribute="leading" id="dzO-1s-CQe"/>
+                            <constraint firstItem="ozD-GX-iYe" firstAttribute="top" secondItem="L6k-B5-ucW" secondAttribute="top" constant="80" id="is3-t1-5ug"/>
+                            <constraint firstItem="HO0-4q-LVJ" firstAttribute="top" secondItem="dZG-T3-vDH" secondAttribute="bottom" constant="46" id="oCu-d8-DgP"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="L6k-B5-ucW"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="kd7-kI-bu3" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1394" y="-519"/>
+        </scene>
         <!--Головне меню-->
         <scene sceneID="Wrt-4d-Vgo">
             <objects>
-                <viewController id="QSP-fR-pZH" customClass="MainVC" customModule="CampusClientIOS" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="MainVC" useStoryboardIdentifierAsRestorationIdentifier="YES" id="QSP-fR-pZH" customClass="MainVC" customModule="CampusClientIOS" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="d8O-RI-Za9">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -289,7 +336,7 @@
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Hwc-Wb-Ru8" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-196" y="1057"/>
+            <point key="canvasLocation" x="-196" y="1050"/>
         </scene>
     </scenes>
 </document>

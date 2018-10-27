@@ -1,21 +1,19 @@
 //
-//  MainVC.swift
+//  LogInVC.swift
 //  CampusClientIOS
 //
-//  Created by mac on 07.10.2018.
+//  Created by mac on 10/27/18.
 //  Copyright © 2018 SINED. All rights reserved.
 //
 
 import UIKit
-import UIDropDown
 
-class MainVC: UIViewController {
+class LogInVC: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        navigationController?.navigationBar.prefersLargeTitles = true
-
     }
+    
     
 }

@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		04047E6B2181D86A00585BEB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 04047E6A2181D86A00585BEB /* Assets.xcassets */; };
 		04047E6E21821DBE00585BEB /* ArchiveTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04047E6D21821DBE00585BEB /* ArchiveTVC.swift */; };
+		04047E7621845EB800585BEB /* LogInVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04047E7521845EB800585BEB /* LogInVC.swift */; };
 		04150A2121772A1D00ACBF81 /* DetailVoteTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04150A2021772A1D00ACBF81 /* DetailVoteTVC.swift */; };
 		04150A242177303A00ACBF81 /* DetailVoteTVCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04150A232177303A00ACBF81 /* DetailVoteTVCell.swift */; };
 		04150A26217CA56F00ACBF81 /* UIButtonExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04150A25217CA56F00ACBF81 /* UIButtonExtension.swift */; };
@@ -24,6 +25,7 @@
 /* Begin PBXFileReference section */
 		04047E6A2181D86A00585BEB /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Assets.xcassets; path = ../../../.Trash/Assets.xcassets; sourceTree = "<group>"; };
 		04047E6D21821DBE00585BEB /* ArchiveTVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArchiveTVC.swift; sourceTree = "<group>"; };
+		04047E7521845EB800585BEB /* LogInVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogInVC.swift; sourceTree = "<group>"; };
 		04150A2021772A1D00ACBF81 /* DetailVoteTVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailVoteTVC.swift; sourceTree = "<group>"; };
 		04150A232177303A00ACBF81 /* DetailVoteTVCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailVoteTVCell.swift; sourceTree = "<group>"; };
 		04150A25217CA56F00ACBF81 /* UIButtonExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIButtonExtension.swift; sourceTree = "<group>"; };
@@ -58,6 +60,22 @@
 				04047E6D21821DBE00585BEB /* ArchiveTVC.swift */,
 			);
 			path = Archive;
+			sourceTree = "<group>";
+		};
+		04047E7121835D4100585BEB /* LogIn */ = {
+			isa = PBXGroup;
+			children = (
+				04047E7521845EB800585BEB /* LogInVC.swift */,
+			);
+			path = LogIn;
+			sourceTree = "<group>";
+		};
+		04047E7221835E7700585BEB /* Main */ = {
+			isa = PBXGroup;
+			children = (
+				04CFCE5A216A36D800A460BA /* MainVC.swift */,
+			);
+			path = Main;
 			sourceTree = "<group>";
 		};
 		04150A2221772A2B00ACBF81 /* DetailVote */ = {
@@ -98,12 +116,13 @@
 		04CFCE47216A323B00A460BA /* CampusClientIOS */ = {
 			isa = PBXGroup;
 			children = (
+				04CFCE48216A323B00A460BA /* AppDelegate.swift */,
 				04CFCE4C216A323B00A460BA /* Main.storyboard */,
+				04047E7221835E7700585BEB /* Main */,
+				04047E7121835D4100585BEB /* LogIn */,
 				04047E6C21821D7C00585BEB /* Archive */,
 				04150A2221772A2B00ACBF81 /* DetailVote */,
 				04CFCE69216B445600A460BA /* Potochne */,
-				04CFCE48216A323B00A460BA /* AppDelegate.swift */,
-				04CFCE5A216A36D800A460BA /* MainVC.swift */,
 				04CFCE51216A323C00A460BA /* LaunchScreen.storyboard */,
 				04CFCE54216A323C00A460BA /* Info.plist */,
 				04047E6A2181D86A00585BEB /* Assets.xcassets */,
@@ -262,6 +281,7 @@
 				04150A26217CA56F00ACBF81 /* UIButtonExtension.swift in Sources */,
 				04CFCE6C216B449500A460BA /* VoteTVCell.swift in Sources */,
 				04150A2121772A1D00ACBF81 /* DetailVoteTVC.swift in Sources */,
+				04047E7621845EB800585BEB /* LogInVC.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
