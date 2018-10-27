@@ -12,6 +12,10 @@ import UIKit
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
+    let warningMessage = "wrong login or password"
+    
+    let password = UserDefaults.standard.string(forKey: "login")
+    let login = UserDefaults.standard.string(forKey: "password")
     
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
@@ -48,7 +52,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         self.window?.rootViewController = loginVC
         //self.present(loginVC, animated: true, completion: nil)
     }
-
-
+    
+    
+    
+    
+    
+    
+    
 }
 
