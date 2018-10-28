@@ -1,41 +1,43 @@
 //
-//  MainVC.swift
+//  MainTVC.swift
 //  CampusClientIOS
 //
-//  Created by mac on 07.10.2018.
+//  Created by mac on 10/28/18.
 //  Copyright © 2018 SINED. All rights reserved.
 //
 
 import UIKit
-import UIDropDown
 
-class MainVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
-    
+class MainTVC: UITableViewController {
+
     var password: String?
     var login: String?
     let mainMenu = ["Голосування", "Розклад", "Вийти"]
     
-    override func viewDidLoad() {
-        super.viewDidLoad()
+    override func awakeFromNib() {
         
-        navigationController?.navigationBar.prefersLargeTitles = true
     }
     
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        self.navigationController?.navigationBar.prefersLargeTitles = true
+    }
+    
+    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return mainMenu.count
     }
     
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "mainCell", for: indexPath) as! MainTVCell
-        cell.menuItemLabel.text = mainMenu[indexPath.row]
+        cell.infoLabel.text = mainMenu[indexPath.row]
         return cell
     }
     
-    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+    override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 70
     }
     
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
         navigationThroughMenu(index: indexPath)
     }
@@ -57,5 +59,5 @@ class MainVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
         let loginVC = self.storyboard?.instantiateViewController(withIdentifier: "loginVC") as! LogInVC
         present(loginVC, animated: true, completion: nil)
     }
-    
+
 }

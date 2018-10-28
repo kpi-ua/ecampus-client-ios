@@ -22,7 +22,6 @@ class PotochneTVC: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        tableView.layoutIfNeeded()
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -57,6 +56,7 @@ class PotochneTVC: UITableViewController {
     }
     
     private func setHeight(index: IndexPath) -> CGFloat {
+        
         if [[index.section], [index.row]] == self.currentSelection {
             if tableView.cellForRow(at: index)?.frame.size.height == 100 {
                 return 60
@@ -78,5 +78,7 @@ class PotochneTVC: UITableViewController {
             }
         }
     }
+    
+    
     
 }

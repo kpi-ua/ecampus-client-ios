@@ -9,8 +9,8 @@
 import UIKit
 
 class MainTVCell: UITableViewCell {
-    
-    @IBOutlet weak var menuItemLabel: UILabel!
+
+    @IBOutlet weak var infoLabel: UILabel!
     
     override func awakeFromNib() {
         super.awakeFromNib()
