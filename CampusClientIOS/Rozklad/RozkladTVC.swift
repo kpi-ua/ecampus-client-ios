@@ -1,23 +1,21 @@
 //
-//  ArchiveTVC.swift
+//  RozkladTVC.swift
 //  CampusClientIOS
 //
-//  Created by mac on 10/25/18.
+//  Created by mac on 10/28/18.
 //  Copyright © 2018 SINED. All rights reserved.
 //
 
 import UIKit
 
-class ArchiveTVC: UITableViewController {
+class RozkladTVC: UITableViewController {
 
-    
-    let cellID = "arhiveCell"
-    
     override func viewDidLoad() {
         super.viewDidLoad()
-
-       
+        navigationController?.navigationBar.prefersLargeTitles = true
     }
+
+    // MARK: - Table view data source
 
     override func numberOfSections(in tableView: UITableView) -> Int {
         // #warning Incomplete implementation, return the number of sections
@@ -29,5 +27,5 @@ class ArchiveTVC: UITableViewController {
         return 0
     }
 
-   
+    
 }
