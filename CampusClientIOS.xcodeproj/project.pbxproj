@@ -14,6 +14,7 @@
 		04047E812185DA1200585BEB /* HideKeyboardExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04047E802185DA1200585BEB /* HideKeyboardExtension.swift */; };
 		04047E852185E43E00585BEB /* MainTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04047E842185E43E00585BEB /* MainTVC.swift */; };
 		04047E872185E49200585BEB /* MainTVCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04047E862185E49200585BEB /* MainTVCell.swift */; };
+		04047E892186FFE300585BEB /* TermsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04047E882186FFE300585BEB /* TermsVC.swift */; };
 		04150A2121772A1D00ACBF81 /* DetailVoteTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04150A2021772A1D00ACBF81 /* DetailVoteTVC.swift */; };
 		04150A242177303A00ACBF81 /* DetailVoteTVCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04150A232177303A00ACBF81 /* DetailVoteTVCell.swift */; };
 		04150A26217CA56F00ACBF81 /* UIButtonExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04150A25217CA56F00ACBF81 /* UIButtonExtension.swift */; };
@@ -33,6 +34,7 @@
 		04047E802185DA1200585BEB /* HideKeyboardExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HideKeyboardExtension.swift; sourceTree = "<group>"; };
 		04047E842185E43E00585BEB /* MainTVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTVC.swift; sourceTree = "<group>"; };
 		04047E862185E49200585BEB /* MainTVCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTVCell.swift; sourceTree = "<group>"; };
+		04047E882186FFE300585BEB /* TermsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TermsVC.swift; sourceTree = "<group>"; };
 		04150A2021772A1D00ACBF81 /* DetailVoteTVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailVoteTVC.swift; sourceTree = "<group>"; };
 		04150A232177303A00ACBF81 /* DetailVoteTVCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailVoteTVCell.swift; sourceTree = "<group>"; };
 		04150A25217CA56F00ACBF81 /* UIButtonExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIButtonExtension.swift; sourceTree = "<group>"; };
@@ -140,6 +142,7 @@
 				04047E6C21821D7C00585BEB /* Archive */,
 				04150A2221772A2B00ACBF81 /* DetailVote */,
 				04CFCE69216B445600A460BA /* Potochne */,
+				04047E882186FFE300585BEB /* TermsVC.swift */,
 				04CFCE51216A323C00A460BA /* LaunchScreen.storyboard */,
 				04CFCE54216A323C00A460BA /* Info.plist */,
 				04047E6A2181D86A00585BEB /* Assets.xcassets */,
@@ -151,8 +154,8 @@
 		04CFCE69216B445600A460BA /* Potochne */ = {
 			isa = PBXGroup;
 			children = (
-				04CFCE65216B402400A460BA /* PotochneTVC.swift */,
 				04CFCE6A216B449500A460BA /* VoteTVCell.swift */,
+				04CFCE65216B402400A460BA /* PotochneTVC.swift */,
 			);
 			path = Potochne;
 			sourceTree = "<group>";
@@ -297,6 +300,7 @@
 				04150A26217CA56F00ACBF81 /* UIButtonExtension.swift in Sources */,
 				04047E852185E43E00585BEB /* MainTVC.swift in Sources */,
 				04CFCE6C216B449500A460BA /* VoteTVCell.swift in Sources */,
+				04047E892186FFE300585BEB /* TermsVC.swift in Sources */,
 				04047E7F2185BE3100585BEB /* RozkladTVC.swift in Sources */,
 				04150A2121772A1D00ACBF81 /* DetailVoteTVC.swift in Sources */,
 				04047E7A2184C76F00585BEB /* ForArchiveTVC.swift in Sources */,

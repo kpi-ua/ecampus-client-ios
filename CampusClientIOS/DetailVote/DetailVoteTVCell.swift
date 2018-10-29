@@ -28,6 +28,8 @@ class DetailVoteTVCell: UITableViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         detalilVoteLabel.numberOfLines = 0
+        detalilVoteLabel.frame = CGRect.init(x: 16, y: 11, width: 250, height: 80)
+        detalilVoteLabel.sizeToFit()
     }
     
     @IBAction func markButtonPushed(_ sender: UIButton) {

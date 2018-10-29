@@ -56,8 +56,19 @@ class MainTVC: UITableViewController {
     func exitCellTapped() {
         UserDefaults.standard.set(nil, forKey: "login")
         UserDefaults.standard.set(nil, forKey: "password")
-        let loginVC = self.storyboard?.instantiateViewController(withIdentifier: "loginVC") as! LogInVC
-        present(loginVC, animated: true, completion: nil)
+        createExitAlert()
+    }
+    
+    func createExitAlert() {
+        let alert = UIAlertController.init(title: "Ви впевнені?", message: nil, preferredStyle: UIAlertControllerStyle.alert)
+        let okAction = UIAlertAction.init(title: "Ok", style: UIAlertActionStyle.default) { (UIAlertAction) in
+            let loginVC = self.storyboard?.instantiateViewController(withIdentifier: "loginVC") as! LogInVC
+            self.present(loginVC, animated: true, completion: nil)
+        }
+        let cancelAction = UIAlertAction.init(title: "Cancel", style: UIAlertActionStyle.cancel, handler: nil)
+        alert.addAction(okAction)
+        alert.addAction(cancelAction)
+        self.present(alert, animated: true, completion: nil)
     }
 
 }
