@@ -13,7 +13,6 @@
         <!--Navigation Controller-->
         <scene sceneID="fA9-bx-LAY">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="wEK-rl-RLD" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <navigationController storyboardIdentifier="mainNavVC" useStoryboardIdentifierAsRestorationIdentifier="YES" id="zUx-89-RQp" sceneMemberID="viewController">
                     <navigationItem key="navigationItem" largeTitleDisplayMode="always" id="fIT-IY-Avw"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="OSH-G7-HW9">
@@ -24,6 +23,7 @@
                         <segue destination="KC7-Ra-oJi" kind="relationship" relationship="rootViewController" id="imF-xT-O8q"/>
                     </connections>
                 </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="wEK-rl-RLD" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-196" y="-608"/>
         </scene>
@@ -424,9 +424,11 @@
             <objects>
                 <tabBarController id="Qw0-jI-flf" sceneMemberID="viewController">
                     <navigationItem key="navigationItem" title="Голосування" largeTitleDisplayMode="always" id="GCf-U1-TbD">
-                        <barButtonItem key="rightBarButtonItem" title="Terms" id="2bI-fz-D7R">
+                        <barButtonItem key="rightBarButtonItem" title="Умови" id="wKV-pU-wpq">
                             <connections>
-                                <segue destination="8OZ-2c-L7q" kind="show" id="J4f-3O-Vox"/>
+                                <segue destination="8OZ-2c-L7q" kind="popoverPresentation" popoverAnchorBarButtonItem="wKV-pU-wpq" id="w7f-1m-J9H">
+                                    <popoverArrowDirection key="popoverArrowDirection" up="YES" down="YES" left="YES" right="YES"/>
+                                </segue>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -452,20 +454,39 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="7FS-q4-dTL">
-                                <rect key="frame" x="0.0" y="64" width="375" height="603"/>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" keyboardDismissMode="interactive" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="7FS-q4-dTL">
+                                <rect key="frame" x="0.0" y="20" width="375" height="569"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="569" id="LGk-T2-euf"/>
+                                </constraints>
                                 <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                <connections>
+                                    <outlet property="delegate" destination="8OZ-2c-L7q" id="Cgr-ty-N9T"/>
+                                    <outlet property="pasteDelegate" destination="8OZ-2c-L7q" id="gwT-mL-suE"/>
+                                    <outlet property="textDragDelegate" destination="8OZ-2c-L7q" id="ANY-gX-Zbb"/>
+                                    <outlet property="textDropDelegate" destination="8OZ-2c-L7q" id="WSE-1C-Nlu"/>
+                                </connections>
                             </textView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="isQ-UD-FJa">
+                                <rect key="frame" x="0.0" y="597" width="375" height="70"/>
+                                <state key="normal" image="icons8-expand2"/>
+                                <connections>
+                                    <action selector="hideButtonAction:" destination="8OZ-2c-L7q" eventType="touchUpInside" id="lr1-bh-vtk"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="7FS-q4-dTL" firstAttribute="bottom" secondItem="JJY-mL-b16" secondAttribute="bottom" id="6JM-Q3-Whu"/>
-                            <constraint firstItem="7FS-q4-dTL" firstAttribute="top" secondItem="JJY-mL-b16" secondAttribute="top" id="BsM-sh-gLx"/>
-                            <constraint firstAttribute="trailing" secondItem="7FS-q4-dTL" secondAttribute="trailing" id="DlI-8f-pU9"/>
-                            <constraint firstItem="7FS-q4-dTL" firstAttribute="leading" secondItem="xhQ-o3-xv1" secondAttribute="leading" id="ndr-ue-eXN"/>
+                            <constraint firstItem="7FS-q4-dTL" firstAttribute="top" secondItem="JJY-mL-b16" secondAttribute="top" id="AaS-bG-iDv"/>
+                            <constraint firstAttribute="trailing" secondItem="7FS-q4-dTL" secondAttribute="trailing" id="I3d-a5-r32"/>
+                            <constraint firstItem="7FS-q4-dTL" firstAttribute="leading" secondItem="xhQ-o3-xv1" secondAttribute="leading" id="JGh-yW-0Jq"/>
+                            <constraint firstItem="7FS-q4-dTL" firstAttribute="trailing" secondItem="isQ-UD-FJa" secondAttribute="trailing" id="Nnm-2Z-1HR"/>
+                            <constraint firstItem="7FS-q4-dTL" firstAttribute="leading" secondItem="isQ-UD-FJa" secondAttribute="leading" id="SV4-7a-LQL"/>
+                            <constraint firstItem="isQ-UD-FJa" firstAttribute="bottom" secondItem="JJY-mL-b16" secondAttribute="bottom" id="bIQ-Nm-6Z1"/>
+                            <constraint firstItem="isQ-UD-FJa" firstAttribute="top" secondItem="7FS-q4-dTL" secondAttribute="bottom" constant="8" symbolic="YES" id="bt9-Aa-X1L"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="JJY-mL-b16"/>
                     </view>
@@ -475,10 +496,11 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Edi-sL-sO1" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="812" y="1046.6266866566718"/>
+            <point key="canvasLocation" x="888.79999999999995" y="1048.4257871064469"/>
         </scene>
     </scenes>
     <resources>
         <image name="icons8-chevron_right" width="96" height="96"/>
+        <image name="icons8-expand2" width="96" height="96"/>
     </resources>
 </document>

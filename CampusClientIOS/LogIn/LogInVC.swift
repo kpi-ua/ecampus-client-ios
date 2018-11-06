@@ -32,6 +32,7 @@ class LogInVC: UIViewController {
     }
     
     @IBAction func enterButtonAction(_ sender: Any) {
+        //testRequest()
         if checkTextForNil() == false {
             infoLabel.text = "please, enter all data"
         }
@@ -70,5 +71,29 @@ class LogInVC: UIViewController {
         enterButtonOutlet.borderColor = #colorLiteral(red: 0, green: 0.5898008943, blue: 1, alpha: 1)
         enterButtonOutlet.backgroundColor = #colorLiteral(red: 0, green: 0.5898008943, blue: 1, alpha: 1)
     }
+    
+   /* func testRequest() {
+        guard  let url = URL(string: "api.ecampus.kpi.ua/") else { return }
+        
+        let session = URLSession.shared
+        session.dataTask(with: url) { (data, response, error) in
+            
+            if let response = response {
+                print(response)
+            }
+            
+            guard let data = data else { return }
+            print(data)
+            
+            do {
+                let json = try JSONSerialization.jsonObject(with: data, options: [])
+                print(json)
+            }
+            catch {
+                print(error)
+            }
+            
+        }.resume()
+    }*/
     
 }
