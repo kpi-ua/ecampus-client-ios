@@ -7,7 +7,7 @@
 //
 
 import UIKit
-import UIDropDown
+
 
 class VoteTVCell: UITableViewCell {
     

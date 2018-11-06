@@ -1,16 +1,20 @@
 PODS:
-  - UIDropDown (1.1.1)
+  - AeroGearHttp (2.0.0)
+  - AeroGearOAuth2 (2.0.0):
+    - AeroGearHttp (= 2.0.0)
 
 DEPENDENCIES:
-  - UIDropDown
+  - AeroGearOAuth2
 
 SPEC REPOS:
   https://github.com/cocoapods/specs.git:
-    - UIDropDown
+    - AeroGearHttp
+    - AeroGearOAuth2
 
 SPEC CHECKSUMS:
-  UIDropDown: 22e6e3e22d419884c8f21d95ea9be36aac905ed4
+  AeroGearHttp: 65bf374aefd3521e1d8d33547e4db96047b745aa
+  AeroGearOAuth2: 759cd8f9a8bc0395021d21724cc8f8d0fac34eb6
 
-PODFILE CHECKSUM: 790180fa53ef97b868a0c47cced9a1ef40bab88a
+PODFILE CHECKSUM: 58c54e7be32f4ae1d3d3a277c2e710ae22d9d440
 
 COCOAPODS: 1.5.3
