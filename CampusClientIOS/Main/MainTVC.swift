@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Alamofire
 
 class MainTVC: UITableViewController {
 
@@ -21,6 +22,7 @@ class MainTVC: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.navigationController?.navigationBar.prefersLargeTitles = true
+        //testPost(loginPost: "mky", passwordPost: "mky")
     }
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -70,5 +72,6 @@ class MainTVC: UITableViewController {
         alert.addAction(cancelAction)
         self.present(alert, animated: true, completion: nil)
     }
+    
 
 }

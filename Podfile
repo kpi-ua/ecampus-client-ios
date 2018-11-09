@@ -6,6 +6,7 @@ target 'CampusClientIOS' do
   use_frameworks!
 
   # Pods for CampusClientIOS
-  pod 'AeroGearOAuth2'
+  pod 'Alamofire', '~> 4.7'
+  pod 'SwiftyJSON', '~> 4.0'
 
 end

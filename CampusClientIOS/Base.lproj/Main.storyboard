@@ -284,29 +284,17 @@
                                     <action selector="enterButtonAction:" destination="SRu-VY-vhq" eventType="touchUpInside" id="Oqz-vo-BJU"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ncS-9F-To4">
-                                <rect key="frame" x="16" y="20" width="343" height="72"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="72" id="TsM-F3-ete"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="HO0-4q-LVJ" firstAttribute="top" secondItem="dZG-T3-vDH" secondAttribute="bottom" constant="46" id="9VV-kC-GzZ"/>
-                            <constraint firstItem="ncS-9F-To4" firstAttribute="top" secondItem="L6k-B5-ucW" secondAttribute="top" id="AO7-tg-FJC"/>
                             <constraint firstItem="ozD-GX-iYe" firstAttribute="leading" secondItem="dZG-T3-vDH" secondAttribute="leading" id="EjF-PO-b5m"/>
                             <constraint firstItem="HO0-4q-LVJ" firstAttribute="leading" secondItem="dZG-T3-vDH" secondAttribute="leading" id="FdC-jQ-GLg"/>
                             <constraint firstItem="ozD-GX-iYe" firstAttribute="leading" secondItem="U22-Ng-Gpg" secondAttribute="leadingMargin" id="JTi-nH-xg1"/>
                             <constraint firstItem="ozD-GX-iYe" firstAttribute="trailing" secondItem="U22-Ng-Gpg" secondAttribute="trailingMargin" id="OJH-ed-Ufy"/>
                             <constraint firstItem="ozD-GX-iYe" firstAttribute="trailing" secondItem="dZG-T3-vDH" secondAttribute="trailing" id="TBx-vV-YK4"/>
-                            <constraint firstItem="HO0-4q-LVJ" firstAttribute="trailing" secondItem="ncS-9F-To4" secondAttribute="trailing" id="TvT-ao-ke9"/>
                             <constraint firstItem="HO0-4q-LVJ" firstAttribute="trailing" secondItem="dZG-T3-vDH" secondAttribute="trailing" id="Wb5-OF-cO3"/>
                             <constraint firstItem="dZG-T3-vDH" firstAttribute="top" secondItem="ozD-GX-iYe" secondAttribute="bottom" constant="66" id="Yxb-dy-Buc"/>
-                            <constraint firstItem="HO0-4q-LVJ" firstAttribute="leading" secondItem="ncS-9F-To4" secondAttribute="leading" id="aAc-D5-6dO"/>
                             <constraint firstItem="ozD-GX-iYe" firstAttribute="top" secondItem="L6k-B5-ucW" secondAttribute="top" constant="80" id="is3-t1-5ug"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="L6k-B5-ucW"/>
@@ -314,7 +302,6 @@
                     <navigationItem key="navigationItem" id="iid-uL-Wjz"/>
                     <connections>
                         <outlet property="enterButtonOutlet" destination="HO0-4q-LVJ" id="Y5r-eq-wWU"/>
-                        <outlet property="infoLabel" destination="ncS-9F-To4" id="Tp5-W7-DRT"/>
                         <outlet property="loginTextField" destination="ozD-GX-iYe" id="bvC-ag-GPr"/>
                         <outlet property="passwordTextField" destination="dZG-T3-vDH" id="LrX-N8-kmg"/>
                         <segue destination="zUx-89-RQp" kind="show" identifier="loginToMainSegue" id="VXu-jN-mv0"/>
