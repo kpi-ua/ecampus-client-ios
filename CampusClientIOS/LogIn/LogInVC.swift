@@ -9,6 +9,7 @@
 import UIKit
 import Alamofire
 import SwiftyJSON
+import SKActivityIndicatorView
 
 class LogInVC: UIViewController {
     
@@ -37,14 +38,6 @@ class LogInVC: UIViewController {
     @IBAction func enterButtonAction(_ sender: Any) {
         if checkTextForNil() == true {
             tokenRequest(loginPost: loginTextField.text!, passwordPost: passwordTextField.text!)
-                if self.accessToken != nil {
-                    print(self.accessToken)
-                }
-                if self.tokenType != nil {
-                    print(self.tokenType)
-                }
-            UserDefaults.standard.set(loginTextField.text, forKey: loginKey)
-            UserDefaults.standard.set(passwordTextField.text, forKey: passwordkey)
         } else {
             createErrorAlert()
         }
@@ -75,6 +68,8 @@ class LogInVC: UIViewController {
     
     func tokenRequest(loginPost: String, passwordPost: String) {
         
+        SKActivityIndicator.show("Loading", userInteractionStatus: false)
+        
         let headers = [
             "Content-Type": "application/x-www-form-urlencoded"
         ]
@@ -89,17 +84,18 @@ class LogInVC: UIViewController {
                 print("success",data)
                 if let data = response.result.value {
                     let JSON = data as! NSDictionary
-                        if JSON["access_token"] != nil {
-                            self.accessToken = JSON["access_token"] as? String
-                            //print(self.accessToken)
-                        }
-                        if JSON["token_type"] != nil {
-                            self.tokenType = JSON["token_type"] as? String
-                            // print(self.tokenType)
-                        }
+                    SKActivityIndicator.dismiss()
+                    if JSON["access_token"] != nil {
+                        self.goToMain(token: JSON["access_token"] as? String)
+                        UserDefaults.standard.set(JSON["access_token"] as? String, forKey: "access_token")
+                    } else {
+                        self.createErrorAlert()
+                    }
                 }
             case.failure(let error):
+                SKActivityIndicator.dismiss()
                 print("Not Success",error)
+                self.createErrorAlert()
             }
         }
     }
@@ -111,9 +107,12 @@ class LogInVC: UIViewController {
         self.present(alert, animated: true, completion: nil)
     }
     
-    func createActivity() -> ActivityIndicatorView{
-        let activity = ActivityIndicatorView.init(title: "", center: self.view.center)
-        return activity
+    func goToMain(token: String?) {
+        if token != nil {
+            performSegue(withIdentifier: "loginToMainSegue", sender: nil)
+        } else {
+            createErrorAlert()
+        }
     }
     
 }

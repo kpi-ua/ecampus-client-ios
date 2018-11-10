@@ -56,14 +56,13 @@ class MainTVC: UITableViewController {
     }
     
     func exitCellTapped() {
-        UserDefaults.standard.set(nil, forKey: "login")
-        UserDefaults.standard.set(nil, forKey: "password")
         createExitAlert()
     }
     
     func createExitAlert() {
         let alert = UIAlertController.init(title: "Ви впевнені?", message: nil, preferredStyle: UIAlertControllerStyle.alert)
         let okAction = UIAlertAction.init(title: "Ok", style: UIAlertActionStyle.default) { (UIAlertAction) in
+            UserDefaults.standard.set(nil, forKey: "access_token")
             let loginVC = self.storyboard?.instantiateViewController(withIdentifier: "loginVC") as! LogInVC
             self.present(loginVC, animated: true, completion: nil)
         }

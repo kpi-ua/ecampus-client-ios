@@ -12,14 +12,10 @@ import UIKit
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
-    let warningMessage = "wrong login or password"
-    
-    let password = UserDefaults.standard.string(forKey: "login")
-    let login = UserDefaults.standard.string(forKey: "password")
     
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
-        
+        chooseController()
         return true
     }
 
@@ -45,7 +41,18 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
     }
     
-    
+    func chooseController() {
+        let token = UserDefaults.standard.string(forKey: "access_token")
+        if token == nil {
+            let storyboard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
+            let loginVC = storyboard.instantiateViewController(withIdentifier: "loginVC") as!LogInVC
+            self.window?.rootViewController = loginVC
+        } else {
+            let storyboard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
+            let mainVC = storyboard.instantiateViewController(withIdentifier: "mainNavVC") as! UINavigationController
+            self.window?.rootViewController = mainVC
+        }
+    }
    
     
 }

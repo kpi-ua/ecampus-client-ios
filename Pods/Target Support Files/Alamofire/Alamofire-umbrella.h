@@ -11,6 +11,6 @@
 #endif
 
 
-FOUNDATION_EXPORT double UIDropDownVersionNumber;
-FOUNDATION_EXPORT const unsigned char UIDropDownVersionString[];
+FOUNDATION_EXPORT double AlamofireVersionNumber;
+FOUNDATION_EXPORT const unsigned char AlamofireVersionString[];
 
