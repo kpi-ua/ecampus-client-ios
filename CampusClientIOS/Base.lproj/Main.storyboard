@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14313.18" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="zUx-89-RQp">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="zUx-89-RQp">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14283.14"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -44,7 +44,10 @@
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Tgq-JT-xth">
-                                            <rect key="frame" x="16" y="11" width="250" height="80"/>
+                                            <rect key="frame" x="16" y="11" width="343" height="80"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="80" id="de4-ks-5Gx"/>
+                                            </constraints>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
@@ -92,18 +95,18 @@
                                         </button>
                                     </subviews>
                                     <constraints>
-                                        <constraint firstAttribute="trailing" secondItem="Tgq-JT-xth" secondAttribute="trailing" constant="109" id="I9t-d8-Ag2"/>
-                                        <constraint firstItem="Tgq-JT-xth" firstAttribute="top" secondItem="X8h-ZC-yWb" secondAttribute="topMargin" id="L2V-jx-DDK"/>
                                         <constraint firstItem="JYe-oD-vOP" firstAttribute="top" secondItem="X8h-ZC-yWb" secondAttribute="top" constant="97" id="L9q-sb-lpg"/>
                                         <constraint firstItem="R4i-Ac-nFU" firstAttribute="leading" secondItem="X8h-ZC-yWb" secondAttribute="leading" constant="212" id="NWw-dK-3QU"/>
                                         <constraint firstItem="XUx-hx-ZMB" firstAttribute="top" secondItem="X8h-ZC-yWb" secondAttribute="top" constant="97" id="OUU-Hm-Jea"/>
                                         <constraint firstItem="drr-Rk-PnG" firstAttribute="leading" secondItem="X8h-ZC-yWb" secondAttribute="leading" constant="114" id="Odf-Sa-NtM"/>
                                         <constraint firstItem="JYe-oD-vOP" firstAttribute="leading" secondItem="X8h-ZC-yWb" secondAttribute="leading" constant="16" id="QGh-Gs-p88"/>
                                         <constraint firstItem="Vua-Et-kA5" firstAttribute="top" secondItem="X8h-ZC-yWb" secondAttribute="top" constant="97" id="RaX-is-Tfx"/>
-                                        <constraint firstItem="JYe-oD-vOP" firstAttribute="top" secondItem="Tgq-JT-xth" secondAttribute="bottom" constant="6" id="WQA-3z-RRn"/>
-                                        <constraint firstItem="Tgq-JT-xth" firstAttribute="leading" secondItem="X8h-ZC-yWb" secondAttribute="leading" constant="16" id="YnI-01-bY7"/>
+                                        <constraint firstItem="JYe-oD-vOP" firstAttribute="top" secondItem="Tgq-JT-xth" secondAttribute="bottom" constant="6" id="UkY-cY-4hb"/>
                                         <constraint firstItem="Vua-Et-kA5" firstAttribute="leading" secondItem="X8h-ZC-yWb" secondAttribute="leading" constant="65" id="byS-HZ-ch0"/>
                                         <constraint firstItem="drr-Rk-PnG" firstAttribute="top" secondItem="X8h-ZC-yWb" secondAttribute="top" constant="97" id="ddV-J6-1aV"/>
+                                        <constraint firstItem="Tgq-JT-xth" firstAttribute="trailing" secondItem="X8h-ZC-yWb" secondAttribute="trailingMargin" id="iTX-3k-SF7"/>
+                                        <constraint firstItem="Tgq-JT-xth" firstAttribute="leading" secondItem="JYe-oD-vOP" secondAttribute="leading" id="iZK-Cb-hqT"/>
+                                        <constraint firstItem="Tgq-JT-xth" firstAttribute="top" secondItem="X8h-ZC-yWb" secondAttribute="topMargin" id="mC4-PY-Hy8"/>
                                         <constraint firstItem="R4i-Ac-nFU" firstAttribute="top" secondItem="X8h-ZC-yWb" secondAttribute="top" constant="97" id="pdk-lF-3qX"/>
                                         <constraint firstItem="XUx-hx-ZMB" firstAttribute="leading" secondItem="X8h-ZC-yWb" secondAttribute="leading" constant="163" id="q1D-Br-jTU"/>
                                     </constraints>
@@ -168,7 +171,7 @@
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9e8-cE-ARi">
+                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9e8-cE-ARi">
                                             <rect key="frame" x="311" y="61" width="48" height="36"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                             <state key="normal" title="Vote"/>
@@ -185,17 +188,16 @@
                                         </label>
                                     </subviews>
                                     <constraints>
-                                        <constraint firstItem="hSY-eL-HUd" firstAttribute="leading" secondItem="lUm-Uh-4lV" secondAttribute="leading" constant="16" id="0Ut-hp-sIZ"/>
-                                        <constraint firstItem="hSY-eL-HUd" firstAttribute="centerY" secondItem="9e8-cE-ARi" secondAttribute="centerY" id="4Ze-bh-9jO"/>
                                         <constraint firstAttribute="trailing" secondItem="sLd-rO-Dga" secondAttribute="trailing" constant="16" id="6AJ-Qp-fHn"/>
                                         <constraint firstAttribute="trailing" secondItem="9e8-cE-ARi" secondAttribute="trailing" constant="16" id="Idc-xY-hvV"/>
-                                        <constraint firstItem="hSY-eL-HUd" firstAttribute="bottom" secondItem="lUm-Uh-4lV" secondAttribute="bottomMargin" id="KNM-q2-3jC"/>
-                                        <constraint firstItem="FRk-jg-RGO" firstAttribute="leading" secondItem="hSY-eL-HUd" secondAttribute="leading" id="OSH-Zu-409"/>
+                                        <constraint firstItem="hSY-eL-HUd" firstAttribute="leading" secondItem="lUm-Uh-4lV" secondAttribute="leading" constant="16" id="Igp-OJ-Is4"/>
+                                        <constraint firstItem="FRk-jg-RGO" firstAttribute="top" secondItem="lUm-Uh-4lV" secondAttribute="top" constant="18" id="Pgr-Za-5YJ"/>
+                                        <constraint firstItem="hSY-eL-HUd" firstAttribute="top" secondItem="lUm-Uh-4lV" secondAttribute="top" constant="68" id="TAW-f9-d1L"/>
                                         <constraint firstItem="9e8-cE-ARi" firstAttribute="top" secondItem="lUm-Uh-4lV" secondAttribute="top" constant="61" id="etP-mJ-ccq"/>
                                         <constraint firstItem="sLd-rO-Dga" firstAttribute="top" secondItem="lUm-Uh-4lV" secondAttribute="top" constant="18" id="g0v-b3-Cte"/>
                                         <constraint firstItem="FRk-jg-RGO" firstAttribute="baseline" secondItem="sLd-rO-Dga" secondAttribute="baseline" id="gB5-gR-oGl"/>
-                                        <constraint firstItem="hSY-eL-HUd" firstAttribute="top" secondItem="lUm-Uh-4lV" secondAttribute="top" constant="68" id="qvE-ms-6Wc"/>
                                         <constraint firstItem="9e8-cE-ARi" firstAttribute="leading" secondItem="sLd-rO-Dga" secondAttribute="leading" id="rvo-Zs-Gbo"/>
+                                        <constraint firstItem="FRk-jg-RGO" firstAttribute="leading" secondItem="lUm-Uh-4lV" secondAttribute="leading" constant="16" id="xBf-wj-ll1"/>
                                     </constraints>
                                 </tableViewCellContentView>
                                 <inset key="separatorInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
@@ -210,7 +212,7 @@
                             <outlet property="delegate" destination="o6Z-l9-e0f" id="wGN-gx-5Xj"/>
                         </connections>
                     </tableView>
-                    <tabBarItem key="tabBarItem" title="Поточне" id="x8m-SM-D3N"/>
+                    <tabBarItem key="tabBarItem" title="Поточне" image="icons8-elections_filled" springLoaded="YES" id="x8m-SM-D3N"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="tnC-iX-BC2" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -225,11 +227,11 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="ilj-7f-o16">
-                                <rect key="frame" x="0.0" y="28" width="375" height="44"/>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="49" id="ilj-7f-o16">
+                                <rect key="frame" x="0.0" y="28" width="375" height="49"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="ilj-7f-o16" id="SAk-b6-MwN">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="48.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                 </tableViewCellContentView>
                             </tableViewCell>
@@ -239,11 +241,11 @@
                             <outlet property="delegate" destination="Ji3-o7-thx" id="wLy-8m-XEG"/>
                         </connections>
                     </tableView>
-                    <tabBarItem key="tabBarItem" title="Архів" id="hq4-Nr-UVB"/>
+                    <tabBarItem key="tabBarItem" title="Архів" image="icons8-open_book_filled" id="hq4-Nr-UVB"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3r4-kl-ADK" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="502" y="1997"/>
+            <point key="canvasLocation" x="501.60000000000002" y="1996.5517241379312"/>
         </scene>
         <!--Log InVC-->
         <scene sceneID="KPb-R1-fHn">
@@ -488,6 +490,8 @@
     </scenes>
     <resources>
         <image name="icons8-chevron_right" width="96" height="96"/>
+        <image name="icons8-elections_filled" width="32" height="32"/>
         <image name="icons8-expand2" width="96" height="96"/>
+        <image name="icons8-open_book_filled" width="32" height="32"/>
     </resources>
 </document>

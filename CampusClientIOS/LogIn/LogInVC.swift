@@ -37,6 +37,8 @@ class LogInVC: UIViewController {
     
     @IBAction func enterButtonAction(_ sender: Any) {
         if checkTextForNil() == true {
+            UserDefaults.standard.set(loginTextField.text, forKey: "login")
+            UserDefaults.standard.set(passwordTextField.text, forKey: "password")
             tokenRequest(loginPost: loginTextField.text!, passwordPost: passwordTextField.text!)
         } else {
             createErrorAlert()

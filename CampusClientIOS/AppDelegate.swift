@@ -7,6 +7,8 @@
 //
 
 import UIKit
+import Alamofire
+import SwiftyJSON
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -48,12 +50,41 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             let loginVC = storyboard.instantiateViewController(withIdentifier: "loginVC") as!LogInVC
             self.window?.rootViewController = loginVC
         } else {
+            let login = UserDefaults.standard.string(forKey: "login")
+            let password = UserDefaults.standard.string(forKey: "password")
+            tokenRequest(loginPost: login!, passwordPost: password!)
             let storyboard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
             let mainVC = storyboard.instantiateViewController(withIdentifier: "mainNavVC") as! UINavigationController
             self.window?.rootViewController = mainVC
         }
     }
-   
+    
+    func tokenRequest(loginPost: String, passwordPost: String) {
+        
+        let headers = [
+            "Content-Type": "application/x-www-form-urlencoded"
+        ]
+        
+        let parametres = ["password": passwordPost,
+                          "username": loginPost,
+                          "grant_type": "password"]
+        
+        request("http://api.ecampus.kpi.ua/oauth/token", method: .post, parameters: parametres, encoding: URLEncoding.httpBody, headers: headers).responseJSON { (response) in
+            switch(response.result) {
+            case.success(let data):
+                print("success",data)
+                if let data = response.result.value {
+                    let JSON = data as! NSDictionary
+                    if JSON["access_token"] != nil {
+                        UserDefaults.standard.set(JSON["access_token"] as? String, forKey: "access_token")
+                    } else {
+                    }
+                }
+            case.failure(let error):
+                print("Not Success",error)
+            }
+        }
+    }
     
 }
 

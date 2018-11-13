@@ -7,6 +7,8 @@
 //
 
 import UIKit
+import Alamofire
+import SwiftyJSON
 
 
 class VoteTVCell: UITableViewCell {
@@ -25,7 +27,7 @@ class VoteTVCell: UITableViewCell {
     }
     
     @IBAction func voteActionButton(_ sender: Any) {
-        
+       
     }
     
 }

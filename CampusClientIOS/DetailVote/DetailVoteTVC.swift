@@ -7,6 +7,8 @@
 //
 
 import UIKit
+import Alamofire
+import SwiftyJSON
 
 class DetailVoteTVC: UITableViewController {
     
@@ -14,19 +16,14 @@ class DetailVoteTVC: UITableViewController {
     let cellIdentifier = "voteDetaliCell"
     var currentSelection: IndexPath = [-1]
     
-    let voteDetails = [ "Компетенстність в дисципліні, яку викладає",
-                        "Вимогливість викладача",
-                        "Вміння донести матеріал до студентів",
-                        "Вміння налагодиди партнерські стосунки зі студентами",
-                        "Загальна культура та тактовність по відношенню до студентів",
-                        "Використання засобів дистанційного спілкування (електронна пошта, Skype, соцмережі)"
-    ]
+    var voteDetails = [String]()
     
     var prepodMarks = [0, 0, 0, 0, 0, 0]
     
     override func viewDidLoad() {
         super.viewDidLoad()
         navigationItem.title = prepodDetailName
+        
         
     }
     
@@ -102,6 +99,10 @@ class DetailVoteTVC: UITableViewController {
             createOKAlert()
         }
     }
+    
+    
+    
+    
     
 }
 

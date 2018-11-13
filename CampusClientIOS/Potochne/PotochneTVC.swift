@@ -7,7 +7,8 @@
 //
 
 import UIKit
-
+import Alamofire
+import SwiftyJSON
 
 class PotochneTVC: UITableViewController {
     
@@ -19,9 +20,15 @@ class PotochneTVC: UITableViewController {
     let cellIdentifier = "voteCell"
     var currentSelection = [[-1], [-1]]
     var selectedPrepod = ""
+    var criterions = [String]()
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        tableView.estimatedRowHeight = 60
+        tableView.layoutIfNeeded()
+        tableView.rowHeight = UITableViewAutomaticDimension
+        requestForCriterions()
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -57,13 +64,14 @@ class PotochneTVC: UITableViewController {
     
     private func setHeight(index: IndexPath) -> CGFloat {
         
-        if [[index.section], [index.row]] == self.currentSelection {
-            if tableView.cellForRow(at: index)?.frame.size.height == 100 {
-                return 60
+            if [[index.section], [index.row]] == self.currentSelection {
+                if tableView.cellForRow(at: index)?.bounds.size.height == 100 {
+                    return 60
+                }
+                return 100
             }
-            return 100
-        }
             return 60
+        
     }
     
     func currentPrepod(index: IndexPath) -> String {
@@ -75,6 +83,28 @@ class PotochneTVC: UITableViewController {
         if (segue.identifier == "detailVoteSegue") {
             if let DetailVoteTVC = segue.destination as? DetailVoteTVC {
                 DetailVoteTVC.prepodDetailName = selectedPrepod
+                DetailVoteTVC.voteDetails = self.criterions
+            }
+        }
+    }
+    
+    func requestForCriterions() {
+        request("http://api.ecampus.kpi.ua/Vote/Criterions", method: .get, parameters: nil, encoding: URLEncoding.httpBody, headers: nil).responseJSON { (response) in
+            switch(response.result) {
+            case.success(let data) :
+                print("success\(data)")
+                let json = data as! [NSDictionary]
+                
+                print(json.count)
+                print(json[0]["id"]!)
+                
+                for i in 0...json.count - 1 {
+                    self.criterions.append(json[i]["name"] as! String)
+                }
+                print(self.criterions)
+                
+            case.failure(let error):
+                print("error \(error)")
             }
         }
     }
