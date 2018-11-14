@@ -109,6 +109,7 @@
 		04150A27217CE0C400ACBF81 /* Extentions */ = {
 			isa = PBXGroup;
 			children = (
+				04B74E152195A3D4005E3F94 /* ActivityIndicator.swift */,
 				04150A25217CA56F00ACBF81 /* UIButtonExtension.swift */,
 				04047E802185DA1200585BEB /* HideKeyboardExtension.swift */,
 			);
@@ -145,7 +146,6 @@
 				04150A2221772A2B00ACBF81 /* DetailVote */,
 				04CFCE69216B445600A460BA /* Potochne */,
 				04047E882186FFE300585BEB /* TermsVC.swift */,
-				04B74E152195A3D4005E3F94 /* ActivityIndicator.swift */,
 				04CFCE51216A323C00A460BA /* LaunchScreen.storyboard */,
 				047D37D2219B042A00C75594 /* Assets.xcassets */,
 				04CFCE54216A323C00A460BA /* Info.plist */,

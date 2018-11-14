@@ -7,79 +7,131 @@
 //
 
 import UIKit
+import Alamofire
+import SwiftyJSON
+import SKActivityIndicatorView
 
 class ForArchiveTVC: UITableViewController {
 
+    let urlVoteTerms = "http://api.ecampus.kpi.ua/Vote/term/finished?api_key=oauth"
+    
+    var openedSections: [Int: Bool] = [:]
+    
+    var sections: [String : Any] = [:]
+    var voteID: [String] = []
+    
+    override func awakeFromNib() {
+        super.awakeFromNib()
+        voteListRequest()
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        print(sections)
     }
-
+    
     // MARK: - Table view data source
 
     override func numberOfSections(in tableView: UITableView) -> Int {
         // #warning Incomplete implementation, return the number of sections
-        return 0
+        return sections.count
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        // #warning Incomplete implementation, return the number of rows
-        return 0
+        if isSectionOpened(section) {
+            return 3
+        }
+        
+        return 1
     }
-
-    /*
+    
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier", for: indexPath)
-
-        // Configure the cell...
-
+        
+        if indexPath.row == 0 {
+            let cell = tableView.dequeueReusableCell(withIdentifier: "HeaderCell", for: indexPath)
+            
+            cell.textLabel?.text = "Опитування № \(voteID[indexPath.row]) за \(sections.index(forKey: voteID[indexPath.row]))"
+            
+            if isSectionOpened(indexPath.section) {
+                cell.detailTextLabel?.text = "▼"
+            }
+            else {
+                cell.detailTextLabel?.text = "▶︎"
+            }
+            
+            return cell
+        }
+        
+        let cell = tableView.dequeueReusableCell(withIdentifier: "ItemCell", for: indexPath)
+        cell.textLabel?.text = "2"
+        
         return cell
     }
-    */
-
-    /*
-    // Override to support conditional editing of the table view.
-    override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
-        // Return false if you do not want the specified item to be editable.
-        return true
+    
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        tableView.deselectRow(at: indexPath, animated: true)
+        if indexPath.row == 0 {
+            changeSectionStatus(indexPath.section)
+        }
     }
-    */
-
-    /*
-    // Override to support editing the table view.
-    override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
-        if editingStyle == .delete {
-            // Delete the row from the data source
-            tableView.deleteRows(at: [indexPath], with: .fade)
-        } else if editingStyle == .insert {
-            // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-        }    
+    
+    func isSectionOpened(_ section: Int) -> Bool {
+        if let status = openedSections[section] {
+            return status
+        }
+        return false
     }
-    */
-
-    /*
-    // Override to support rearranging the table view.
-    override func tableView(_ tableView: UITableView, moveRowAt fromIndexPath: IndexPath, to: IndexPath) {
-
+    
+    func changeSectionStatus(_ section: Int) {
+        if let status = openedSections[section] {
+            openedSections[section] = !status
+        }
+        else {
+            openedSections[section] = true
+        }
+        tableView.reloadData()
     }
-    */
-
-    /*
-    // Override to support conditional rearranging of the table view.
-    override func tableView(_ tableView: UITableView, canMoveRowAt indexPath: IndexPath) -> Bool {
-        // Return false if you do not want the item to be re-orderable.
-        return true
+    
+    override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 60
     }
-    */
 
-    /*
-    // MARK: - Navigation
+}
 
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+
+extension ForArchiveTVC {
+    
+    func voteListRequest() {
+        
+        SKActivityIndicator.show("Loading", userInteractionStatus: false)
+        
+        let token = UserDefaults.standard.string(forKey: "access_token")
+        
+        let headers = ["Authorization" : "Bearer " + token!]
+        
+        request(urlVoteTerms, method: .get, parameters: nil, encoding: URLEncoding.httpBody, headers: headers as HTTPHeaders).responseJSON { (response) in
+            switch(response.result) {
+            case .success(let data):
+                print(data)
+                let json = data as! [[String: AnyObject]]
+                for i in 0..<json.count {
+                    guard let key = json[i]["id"] else { return }
+                    guard let semesterValue = json[i]["semester"] else { return }
+                    guard let studyPeriod = json[i]["studyPeriod"] else { return }
+                    let value = [semesterValue, studyPeriod]
+                    let activeKey = String.init(describing: key)
+                    self.sections.updateValue(value, forKey: activeKey)
+                    self.voteID.append(activeKey)
+                }
+                SKActivityIndicator.dismiss()
+                print(self.sections.count)
+            case .failure(let error):
+                print(error)
+            }
+        }
     }
-    */
-
+    
+    
+    
+    
 }
