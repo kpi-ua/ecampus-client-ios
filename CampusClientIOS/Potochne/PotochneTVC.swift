@@ -92,17 +92,13 @@ class PotochneTVC: UITableViewController {
         request("http://api.ecampus.kpi.ua/Vote/Criterions", method: .get, parameters: nil, encoding: URLEncoding.httpBody, headers: nil).responseJSON { (response) in
             switch(response.result) {
             case.success(let data) :
-                print("success\(data)")
+                //print("success\(data)")
                 let json = data as! [NSDictionary]
-                
-                print(json.count)
-                print(json[0]["id"]!)
-                
+                //print(json.count)
+                //print(json[0]["id"]!)
                 for i in 0...json.count - 1 {
                     self.criterions.append(json[i]["name"] as! String)
                 }
-                print(self.criterions)
-                
             case.failure(let error):
                 print("error \(error)")
             }

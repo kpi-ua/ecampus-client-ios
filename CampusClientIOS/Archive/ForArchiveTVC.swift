@@ -11,23 +11,21 @@ import Alamofire
 import SwiftyJSON
 import SKActivityIndicatorView
 
-class ForArchiveTVC: UITableViewController {
-
-    let urlVoteTerms = "http://api.ecampus.kpi.ua/Vote/term/finished?api_key=oauth"
+class ForStudentArchiveTVC: UITableViewController {
+    
+    let urlFinishedVotes = "http://api.ecampus.kpi.ua/Vote/term/finished?api_key=oauth"
     
     var openedSections: [Int: Bool] = [:]
     
-    var sections: [String : Any] = [:]
-    var voteID: [String] = []
+    var sections: [String : FinishedVote] = [:]
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        voteListRequest()
+        finishedVotesRequest()
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        print(sections)
     }
     
     // MARK: - Table view data source
@@ -41,7 +39,6 @@ class ForArchiveTVC: UITableViewController {
         if isSectionOpened(section) {
             return 3
         }
-        
         return 1
     }
     
@@ -50,21 +47,22 @@ class ForArchiveTVC: UITableViewController {
         if indexPath.row == 0 {
             let cell = tableView.dequeueReusableCell(withIdentifier: "HeaderCell", for: indexPath)
             
-            cell.textLabel?.text = "Опитування № \(voteID[indexPath.row]) за \(sections.index(forKey: voteID[indexPath.row]))"
+            let index = String.init(describing: indexPath.row + 1)
+            
+            let title: FinishedVote = sections[index]!
+            
+            cell.textLabel?.text = (title.studyTerm.start?.description)! + "-" + (title.studyTerm.end?.description)!
             
             if isSectionOpened(indexPath.section) {
                 cell.detailTextLabel?.text = "▼"
-            }
-            else {
+            } else {
                 cell.detailTextLabel?.text = "▶︎"
             }
             
             return cell
         }
-        
         let cell = tableView.dequeueReusableCell(withIdentifier: "ItemCell", for: indexPath)
         cell.textLabel?.text = "2"
-        
         return cell
     }
     
@@ -98,10 +96,11 @@ class ForArchiveTVC: UITableViewController {
 
 }
 
-
-extension ForArchiveTVC {
+extension ForStudentArchiveTVC {
     
-    func voteListRequest() {
+    func finishedVotesRequest() {
+        
+        let archiveQueue = DispatchQueue.global(qos: DispatchQoS.QoSClass.userInteractive)
         
         SKActivityIndicator.show("Loading", userInteractionStatus: false)
         
@@ -109,29 +108,32 @@ extension ForArchiveTVC {
         
         let headers = ["Authorization" : "Bearer " + token!]
         
-        request(urlVoteTerms, method: .get, parameters: nil, encoding: URLEncoding.httpBody, headers: headers as HTTPHeaders).responseJSON { (response) in
-            switch(response.result) {
-            case .success(let data):
-                print(data)
-                let json = data as! [[String: AnyObject]]
-                for i in 0..<json.count {
-                    guard let key = json[i]["id"] else { return }
-                    guard let semesterValue = json[i]["semester"] else { return }
-                    guard let studyPeriod = json[i]["studyPeriod"] else { return }
-                    let value = [semesterValue, studyPeriod]
-                    let activeKey = String.init(describing: key)
-                    self.sections.updateValue(value, forKey: activeKey)
-                    self.voteID.append(activeKey)
+        archiveQueue.async {
+            request(self.urlFinishedVotes, method: .get, parameters: nil, encoding: URLEncoding.httpBody, headers: headers as HTTPHeaders).responseJSON { (response) in
+                switch(response.result) {
+                case .success(let data):
+                    print("archive request")
+                    let json = data as! [[String: AnyObject]]
+                    for i in 0..<json.count {
+                        guard let key = json[i]["id"] else { return }
+                        guard let start = json[i]["studyPeriod"]?["start"] else { return }
+                        guard let end = json[i]["studyPeriod"]?["end"] else { return }
+                        guard let semester = json[i]["semester"] else { return }
+                        guard let vote = json[i]["voteNumber"] else { return }
+                        let studyTerms = StudyTerms.init(start: String.init(describing: start), end: String.init(describing: end))
+                        let archiveVote = FinishedVote.init(studyTerm: studyTerms, semester: String.init(describing: semester), voteNumber: String.init(describing: vote))
+                        self.sections.updateValue(archiveVote, forKey: String.init(describing: key))
+                    }
+                    SKActivityIndicator.dismiss()
+                    print(self.sections)
+                case .failure(let error):
+                    print(error)
                 }
-                SKActivityIndicator.dismiss()
-                print(self.sections.count)
-            case .failure(let error):
-                print(error)
             }
         }
+        
+        
+        
     }
-    
-    
-    
     
 }

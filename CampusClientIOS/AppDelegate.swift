@@ -68,22 +68,22 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         let parametres = ["password": passwordPost,
                           "username": loginPost,
                           "grant_type": "password"]
-        
-        request("http://api.ecampus.kpi.ua/oauth/token", method: .post, parameters: parametres, encoding: URLEncoding.httpBody, headers: headers).responseJSON { (response) in
-            switch(response.result) {
-            case.success(let data):
-                print("success",data)
-                if let data = response.result.value {
-                    let JSON = data as! NSDictionary
-                    if JSON["access_token"] != nil {
-                        UserDefaults.standard.set(JSON["access_token"] as? String, forKey: "access_token")
-                    } else {
+            request("http://api.ecampus.kpi.ua/oauth/token", method: .post, parameters: parametres, encoding: URLEncoding.httpBody, headers: headers).responseJSON { (response) in
+                switch(response.result) {
+                case.success(let data):
+                    print("success",data)
+                    if let data = response.result.value {
+                        let JSON = data as! NSDictionary
+                        if JSON["access_token"] != nil {
+                            UserDefaults.standard.set(JSON["access_token"] as? String, forKey: "access_token")
+                        } else {
+                        }
                     }
+                case.failure(let error):
+                    print("Not Success",error)
                 }
-            case.failure(let error):
-                print("Not Success",error)
             }
-        }
+        
     }
     
 }
