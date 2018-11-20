@@ -12,6 +12,7 @@ struct FinishedVote: Decodable {
     var studyTerm: StudyTerms
     var semester: String?
     var voteNumber: String?
+    var id: String?
 }
 
 struct StudyTerms: Decodable {

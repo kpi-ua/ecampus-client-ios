@@ -1,24 +1,31 @@
 PODS:
   - Alamofire (4.7.3)
+  - PromiseKit/Alamofire (6.5.1):
+    - Alamofire (~> 4.0)
+    - PromiseKit/CorePromise
+  - PromiseKit/CorePromise (6.5.1)
   - SKActivityIndicatorView (0.1.0)
   - SwiftyJSON (4.2.0)
 
 DEPENDENCIES:
   - Alamofire (~> 4.7)
+  - PromiseKit/Alamofire (~> 6.0)
   - SKActivityIndicatorView (~> 0.1.0)
   - SwiftyJSON (~> 4.0)
 
 SPEC REPOS:
   https://github.com/cocoapods/specs.git:
     - Alamofire
+    - PromiseKit
     - SKActivityIndicatorView
     - SwiftyJSON
 
 SPEC CHECKSUMS:
   Alamofire: c7287b6e5d7da964a70935e5db17046b7fde6568
+  PromiseKit: 162f56c89aae9989ffc14476a5f821af17c3f4ba
   SKActivityIndicatorView: f46936f760d33eb8235333242269bf01cc9248ae
   SwiftyJSON: c4bcba26dd9ec7a027fc8eade48e2c911f229e96
 
-PODFILE CHECKSUM: 8a4316a08fd12674692e544d5ec4a5006d482db0
+PODFILE CHECKSUM: 7d8166536924770bf05cab02aa1213d103d9cd2d
 
 COCOAPODS: 1.5.3
