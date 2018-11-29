@@ -48,7 +48,6 @@ class LogInVC: UIViewController {
     func checkTextForNil() ->Bool {
         loginToPost = loginTextField.text
         passwordToPost = passwordTextField.text
-        
         if loginToPost != nil {
             return true
         }
@@ -56,37 +55,32 @@ class LogInVC: UIViewController {
         if passwordToPost != nil {
             return true
         }
-        
         return false
     }
     
     func enterButtonStyle() {
+        let navColor = UIColor.init(hexString: "#0277bd")
         enterButtonOutlet.setTitleColor(UIColor.white, for: UIControlState.normal)
         enterButtonOutlet.borderWidth = 1
         enterButtonOutlet.cornerRadius = 20
-        enterButtonOutlet.borderColor = #colorLiteral(red: 0, green: 0.5898008943, blue: 1, alpha: 1)
-        enterButtonOutlet.backgroundColor = #colorLiteral(red: 0, green: 0.5898008943, blue: 1, alpha: 1)
+        enterButtonOutlet.borderColor = navColor
+        enterButtonOutlet.backgroundColor = navColor
     }
     
     func tokenRequest(loginPost: String, passwordPost: String) {
-        
         SKActivityIndicator.show("Loading", userInteractionStatus: false)
-        
-        let headers = [
-            "Content-Type": "application/x-www-form-urlencoded"
-        ]
-        
-        let parametres = ["password": passwordPost,
+        let headers = [ "Content-Type": "application/x-www-form-urlencoded" ]
+        let parameters = ["password": passwordPost,
                           "username": loginPost,
                           "grant_type": "password"]
-        
-        request("http://api.ecampus.kpi.ua/oauth/token", method: .post, parameters: parametres, encoding: URLEncoding.httpBody, headers: headers).responseJSON { (response) in
+        request("http://api.ecampus.kpi.ua/oauth/token", method: .post, parameters: parameters, encoding: URLEncoding.httpBody, headers: headers).responseJSON { (response) in
             switch(response.result) {
             case.success(let data):
                 print("success",data)
                 if let data = response.result.value {
                     let JSON = data as! NSDictionary
                     SKActivityIndicator.dismiss()
+                    print("data")
                     if JSON["access_token"] != nil {
                         self.goToMain(token: JSON["access_token"] as? String)
                         UserDefaults.standard.set(JSON["access_token"] as? String, forKey: "access_token")

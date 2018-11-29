@@ -8,12 +8,17 @@
 
 import UIKit
 import Alamofire
+import SwiftyJSON
 
 class MainTVC: UITableViewController {
 
     var password: String?
     var login: String?
     let mainMenu = ["Голосування", "Розклад", "Вийти"]
+    var status: String?
+    var potochneSections = [VoteTerms]()
+    var prepodsToVote = [PrepodToVote]()
+    let navColor = UIColor.init(hexString: "#0277bd")
     
     override func awakeFromNib() {
         
@@ -21,8 +26,10 @@ class MainTVC: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.navigationController?.navigationBar.prefersLargeTitles = true
-        //testPost(loginPost: "mky", passwordPost: "mky")
+        navigationBarSettings()
+        checkForStatus()
+        getCurrentVote()
+        requesForPrepods()
     }
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -49,7 +56,7 @@ class MainTVC: UITableViewController {
         case 0:
             performSegue(withIdentifier: "voteSegue", sender: nil)
         case 1:
-            performSegue(withIdentifier: "tableSegue", sender: nil)
+            print("")
         default:
             exitCellTapped()
         }
@@ -72,5 +79,99 @@ class MainTVC: UITableViewController {
         self.present(alert, animated: true, completion: nil)
     }
     
-
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "voteSegue" {
+            let destinationVC: UITabBarController = segue.destination as! VoteTabBarController
+            let potochneVC = destinationVC.viewControllers![0] as! PotochneTVC
+            potochneVC.sections = potochneSections
+            potochneVC.prepodi = prepodsToVote
+        }
+    }
+    
+    func checkForStatus() {
+        let urlAccountInfo = "http://api.ecampus.kpi.ua/Account/Info"
+        let token = UserDefaults.standard.string(forKey: "access_token")
+        let auth = ["Authorization" : "Bearer " + token!]
+        request(urlAccountInfo, method: .get, parameters: nil, encoding: URLEncoding.httpBody, headers: auth as HTTPHeaders).responseJSON { (response) in
+            switch(response.result){
+            case .success(let data):
+                let json = data as! [String : AnyObject]
+                let position = json["position"] as! [AnyObject]
+                self.status = position[0]["name"] as? String
+            case .failure(let error):
+                print(error)
+            }
+        }
+    }
+    
+    func getCurrentVote() {
+        let currentVoteUrl = "http://api.ecampus.kpi.ua/Vote/term/current"
+        let token = UserDefaults.standard.string(forKey: "access_token")
+        let auth = ["Authorization" : "Bearer " + token!]
+        request(currentVoteUrl, method: .get, parameters: nil, encoding: URLEncoding.httpBody, headers: auth).responseJSON { (response) in
+            switch(response.result) {
+            case .success(let data):
+                let json = data as! [[String : AnyObject]]
+                self.parseVote(json: json)
+            case .failure(let error):
+                print(error)
+            }
+        }
+    }
+    
+    func parseVote(json: [[String: AnyObject]]) {
+        for i in 0..<json.count {
+            guard let key = json[i]["id"] else { return }
+            guard let start = json[i]["studyPeriod"]?["start"] else { return }
+            guard let end = json[i]["studyPeriod"]?["end"] else { return }
+            guard let semester = json[i]["semester"] else { return }
+            guard let vote = json[i]["voteNumber"] else { return }
+            let studyTerms = StudyTerms.init(start: String.init(describing: start!), end: String.init(describing: end!))
+            let voteElement = VoteTerms.init(studyTerm: studyTerms, semester: String.init(describing: semester), voteNumber: String.init(describing: vote), id: String.init(describing: key))
+            self.potochneSections.append(voteElement)
+        }
+    }
+    
+    func requesForPrepods() {
+        let url = "http://api.ecampus.kpi.ua/Vote/Persons"
+        let token = UserDefaults.standard.string(forKey: "access_token")
+        let auth = ["Authorization" : "Bearer " + token!]
+        request(url, method: .get, parameters: nil, encoding: URLEncoding.httpBody, headers: auth).responseJSON { (response) in
+            switch (response.result) {
+            case .success(let data):
+                let json = data as! [[String: AnyObject]]
+                self.parsePrepods(json: json)
+                print(self.prepodsToVote)
+            case .failure(let error):
+                print(error)
+            }
+        }
+    }
+    
+    func parsePrepods(json: [[String: AnyObject]]) {
+        for i in 0..<json.count {
+            guard let id = json[i]["employeesId"] else { return }
+            guard let lecturer = json[i]["lecturer"] else { return }
+            let prepod = PrepodToVote.init(employeesId: (id as! String), lecturer: (lecturer as! String))
+            self.prepodsToVote.append(prepod)
+        }
+    }
+    
+    func navigationBarSettings() {
+        self.navigationController?.navigationBar.prefersLargeTitles = true
+        self.navigationController?.navigationBar.backgroundColor = navColor
+        self.navigationController?.navigationBar.barTintColor = navColor
+        self.navigationController?.navigationBar.tintColor = UIColor.white
+        self.navigationController?.navigationBar.accessibilityIgnoresInvertColors = false
+        self.navigationController?.navigationBar.largeTitleTextAttributes = [NSAttributedStringKey.backgroundColor : UIColor.white]
+        self.navigationController?.navigationBar.largeTitleTextAttributes = [NSAttributedStringKey.foregroundColor : UIColor.white]
+        self.navigationController?.navigationBar.titleTextAttributes = [NSAttributedStringKey.backgroundColor : UIColor.white]
+        self.navigationController?.navigationBar.titleTextAttributes = [NSAttributedStringKey.foregroundColor : UIColor.white]
+        self.navigationController?.navigationBar.accessibilityIgnoresInvertColors = false
+    }
+    
+    
 }
+
+
+

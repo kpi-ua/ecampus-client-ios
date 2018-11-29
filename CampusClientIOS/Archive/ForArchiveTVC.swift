@@ -17,12 +17,11 @@ class ForStudentArchiveTVC: UITableViewController {
     
     var openedSections: [Int: Bool] = [:]
     
-    var terms: [String : FinishedVote] = [:]
+    var terms: [String : VoteTerms] = [:]
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        finishedVoteQueue.sync { self.finishedVotesRequest() }
-        finishedVoteQueue.sync { self.multipleRequestForSpecTermResult() }
+        
     }
     
     override func viewDidLoad() {
@@ -36,7 +35,7 @@ class ForStudentArchiveTVC: UITableViewController {
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "HeaderCell", for: indexPath)
         let index = String(indexPath.row + 1)
-        let title: FinishedVote = terms[index]!
+        let title: VoteTerms = terms[index]!
         cell.textLabel?.text = "Oпитування № \(title.voteNumber!) за \(title.studyTerm.start! + "-" + title.studyTerm.end!) Н.Р."
         cell.detailTextLabel?.text = "▶︎"
         return cell
@@ -55,8 +54,7 @@ class ForStudentArchiveTVC: UITableViewController {
 
 extension ForStudentArchiveTVC {
    
-    func parseFinished(json: [[String: AnyObject]]) {
-        let json = json
+    func parseVote(json: [[String: AnyObject]]) {
         for i in 0..<json.count {
             guard let key = json[i]["id"] else { return }
             guard let start = json[i]["studyPeriod"]?["start"] else { return }
@@ -64,7 +62,7 @@ extension ForStudentArchiveTVC {
             guard let semester = json[i]["semester"] else { return }
             guard let vote = json[i]["voteNumber"] else { return }
             let studyTerms = StudyTerms.init(start: String.init(describing: start!), end: String.init(describing: end!))
-            let archiveVote = FinishedVote.init(studyTerm: studyTerms, semester: String.init(describing: semester), voteNumber: String.init(describing: vote), id: String.init(describing: key))
+            let archiveVote = VoteTerms.init(studyTerm: studyTerms, semester: String.init(describing: semester), voteNumber: String.init(describing: vote), id: String.init(describing: key))
             self.terms.updateValue(archiveVote, forKey: String.init(describing: key))
         }
     }
@@ -79,7 +77,7 @@ extension ForStudentArchiveTVC {
             switch(response.result) {
             case .success(let data):
                 print("success")
-                self.parseFinished(json: data as! [[String: AnyObject]])
+                self.parseVote(json: data as! [[String: AnyObject]])
                 print(self.terms)
                 SKActivityIndicator.dismiss()
             case .failure(let error):
@@ -98,10 +96,6 @@ extension ForStudentArchiveTVC {
         }*/
     }
     
-    func multipleRequestForSpecTermResult() {
-        print(terms)
-    }
-    
     func requestVoteResultStudent(id: String, yearStart: String, yearEnd: String, semester: String) {
         let urlRequestResults = "http://api.ecampus.kpi.ua/Vote/\(id)/result?yearStart=\(yearStart)&yearEnd=\(yearEnd)&semester=\(semester)"
         print(urlRequestResults)
@@ -116,6 +110,10 @@ extension ForStudentArchiveTVC {
             }
         }
     }
+    
+    
+    
+    
     
 }
 

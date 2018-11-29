@@ -12,19 +12,22 @@ import SwiftyJSON
 
 class PotochneTVC: UITableViewController {
     
-    let prepodi = [
-        ["prepod0", "prepod1", "prepod2", "prepod3", "prepod4"],
-        ["prepod5", "prepod6", "prepod7", "prepod8"]
-        ]
-    let sectionNames = ["vote 1", "vote 2"]
+    let navColor = UIColor.init(hexString: "#0277bd")
+    var prepodi = [PrepodToVote]()
+    var sections = [VoteTerms]()
     let cellIdentifier = "voteCell"
-    var currentSelection = [[-1], [-1]]
-    var selectedPrepod = ""
     var criterions = [String]()
+    var currentSelection: Int?
+    var currentVote: VoteTerms?
     
+    
+    override func awakeFromNib() {
+        super.awakeFromNib()
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        tabBarSettings()
         tableView.estimatedRowHeight = 60
         tableView.layoutIfNeeded()
         tableView.rowHeight = UITableViewAutomaticDimension
@@ -32,20 +35,21 @@ class PotochneTVC: UITableViewController {
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return prepodi[section].count
+        return prepodi.count
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: cellIdentifier, for: indexPath) as! VoteTVCell
-        cell.prepodNameLabel.text = prepodi[indexPath.section][indexPath.row]
+        let text = prepodi[indexPath.row].lecturer!
+        cell.prepodNameLabel.text = text
         return cell
     }
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.selectRow(at: indexPath, animated: true, scrollPosition: .bottom)
+        currentSelection = indexPath.row
+        performSegue(withIdentifier: "detailVoteSegue", sender: nil)
         tableView.beginUpdates()
-        self.currentSelection = [[indexPath.section], [indexPath.row]]
-        selectedPrepod = currentPrepod(index: indexPath)
         tableView.deselectRow(at: indexPath, animated: true)
         tableView.endUpdates()
     }
@@ -55,35 +59,26 @@ class PotochneTVC: UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
-        return "section \(self.sectionNames[section])"
+        let voteNumber = sections[section].voteNumber!
+        let start = sections[section].studyTerm.start!
+        let end = sections[section].studyTerm.end!
+        return "Опитування № \(voteNumber) за \(start) - \(end) Н.Р."
     }
     
     override func numberOfSections(in tableView: UITableView) -> Int {
-        return prepodi.count
+        return sections.count
     }
     
     private func setHeight(index: IndexPath) -> CGFloat {
-        
-            if [[index.section], [index.row]] == self.currentSelection {
-                if tableView.cellForRow(at: index)?.bounds.size.height == 100 {
-                    return 60
-                }
-                return 100
-            }
-            return 60
-        
-    }
-    
-    func currentPrepod(index: IndexPath) -> String {
-        let currentPrepod = prepodi[index.section][index.row]
-        return currentPrepod
+        return 80
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if (segue.identifier == "detailVoteSegue") {
             if let DetailVoteTVC = segue.destination as? DetailVoteTVC {
-                DetailVoteTVC.prepodDetailName = selectedPrepod
+                DetailVoteTVC.prepodDetailName = prepodi[currentSelection!]
                 DetailVoteTVC.voteDetails = self.criterions
+                DetailVoteTVC.currentVote = self.sections[0]
             }
         }
     }
@@ -92,10 +87,7 @@ class PotochneTVC: UITableViewController {
         request("http://api.ecampus.kpi.ua/Vote/Criterions", method: .get, parameters: nil, encoding: URLEncoding.httpBody, headers: nil).responseJSON { (response) in
             switch(response.result) {
             case.success(let data) :
-                //print("success\(data)")
                 let json = data as! [NSDictionary]
-                //print(json.count)
-                //print(json[0]["id"]!)
                 for i in 0...json.count - 1 {
                     self.criterions.append(json[i]["name"] as! String)
                 }
@@ -105,6 +97,13 @@ class PotochneTVC: UITableViewController {
         }
     }
     
+    func tabBarSettings() {
+        self.tabBarController?.tabBar.tintColor = navColor
+        self.tabBarController?.tabBar.barTintColor = navColor
+        self.tabBarController?.tabBar.unselectedItemTintColor = UIColor.white
+        self.tabBarController?.tabBar.selectedItem?.badgeColor = UIColor.orange
+    }
     
     
 }
+

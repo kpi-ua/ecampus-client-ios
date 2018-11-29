@@ -20,14 +20,9 @@ class VoteTVCell: UITableViewCell {
         // Initialization code
     }
     
-    @IBOutlet weak var statusLabel: UILabel!
-    
     func nameOfPrepod(name: String) {
         prepodNameLabel.text = name
     }
     
-    @IBAction func voteActionButton(_ sender: Any) {
-       
-    }
     
 }

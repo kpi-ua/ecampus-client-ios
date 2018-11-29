@@ -12,9 +12,12 @@ import SwiftyJSON
 
 class DetailVoteTVC: UITableViewController {
     
-    var prepodDetailName = ""
+    @IBOutlet weak var saveButtonOutlet: UIBarButtonItem!
+    
+    var prepodDetailName: PrepodToVote?
     let cellIdentifier = "voteDetaliCell"
     var currentSelection: IndexPath = [-1]
+    var currentVote: VoteTerms?
     
     var voteDetails = [String]()
     
@@ -22,9 +25,8 @@ class DetailVoteTVC: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        navigationItem.title = prepodDetailName
-        
-        
+        navigationItem.title = prepodDetailName!.lecturer
+        saveButtonOutlet.tintColor = UIColor.white
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -100,9 +102,23 @@ class DetailVoteTVC: UITableViewController {
         }
     }
     
-    
-    
-    
+    func postMarks(marks: [Int]) {
+        let token = UserDefaults.standard.string(forKey: "access_token")
+        let auth = ["Authorization" : "Bearer " + token!,
+                    "Content-Type": "application/x-www-form-urlencoded"]
+        let parameters = ["voteTermId" : currentVote?.id,
+                          "employeeId" : prepodDetailName?.lecturer,
+                          "dateVote" : "",
+                          "actuality" : "",
+                          "changeDate" : "",
+                          "personalityId" : "",
+                          "voteCriterionId" : "",
+                          "course" : "",
+                          "mark" : ""]
+        for i in 0...voteDetails.count {
+            
+        }
+    }
     
 }
 

@@ -16,7 +16,7 @@ class DetailVoteTVCell: UITableViewCell {
     
     var mark = 0
     var index: Int?
-    let defaultColor = #colorLiteral(red: 0, green: 0.5898008943, blue: 1, alpha: 1)
+    let defaultColor = UIColor.init(hexString: "#0277bd")
     var viewController: DetailVoteTVC?
     
     func toReturnMark() -> Int {

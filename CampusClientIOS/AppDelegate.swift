@@ -65,10 +65,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             "Content-Type": "application/x-www-form-urlencoded"
         ]
         
-        let parametres = ["password": passwordPost,
+        let parameters = ["password": passwordPost,
                           "username": loginPost,
                           "grant_type": "password"]
-            request("http://api.ecampus.kpi.ua/oauth/token", method: .post, parameters: parametres, encoding: URLEncoding.httpBody, headers: headers).responseJSON { (response) in
+            request("http://api.ecampus.kpi.ua/oauth/token", method: .post, parameters: parameters, encoding: URLEncoding.httpBody, headers: headers).responseJSON { (response) in
                 switch(response.result) {
                 case.success(let data):
                     print("success",data)
