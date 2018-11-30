@@ -18,15 +18,15 @@ class DetailVoteTVC: UITableViewController {
     let cellIdentifier = "voteDetaliCell"
     var currentSelection: IndexPath = [-1]
     var currentVote: VoteTerms?
-    
     var voteDetails = [String]()
-    
-    var prepodMarks = [0, 0, 0, 0, 0, 0]
+    var prepodMarks = [Int]()
+    let date = Date.init()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         navigationItem.title = prepodDetailName!.lecturer
         saveButtonOutlet.tintColor = UIColor.white
+        makePrepodMarksArray()
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -102,19 +102,25 @@ class DetailVoteTVC: UITableViewController {
         }
     }
     
+    func makePrepodMarksArray() {
+        for _ in 0..<voteDetails.count {
+            prepodMarks.append(0)
+        }
+    }
+    
     func postMarks(marks: [Int]) {
         let token = UserDefaults.standard.string(forKey: "access_token")
         let auth = ["Authorization" : "Bearer " + token!,
                     "Content-Type": "application/x-www-form-urlencoded"]
         let parameters = ["voteTermId" : currentVote?.id,
                           "employeeId" : prepodDetailName?.lecturer,
-                          "dateVote" : "",
-                          "actuality" : "",
-                          "changeDate" : "",
+                          "dateVote" : date.description,
+                          "actuality" : "true",
+                          "changeDate" : date.description,
                           "personalityId" : "",
                           "voteCriterionId" : "",
                           "course" : "",
-                          "mark" : ""]
+                          "mark" : ""] as [String : Any]
         for i in 0...voteDetails.count {
             
         }

@@ -2,6 +2,9 @@
 <Workspace
    version = "1.0">
    <FileRef
+      location = "group:/Users/mac/Desktop/ecampus-client-ios/CampusClientIOS/RequestClass.swift">
+   </FileRef>
+   <FileRef
       location = "group:CampusClientIOS.xcodeproj">
    </FileRef>
    <FileRef

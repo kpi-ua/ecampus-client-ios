@@ -60,11 +60,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
     
     func tokenRequest(loginPost: String, passwordPost: String) {
-        
-        let headers = [
-            "Content-Type": "application/x-www-form-urlencoded"
-        ]
-        
+        let headers = [ "Content-Type": "application/x-www-form-urlencoded" ]
         let parameters = ["password": passwordPost,
                           "username": loginPost,
                           "grant_type": "password"]
@@ -83,7 +79,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                     print("Not Success",error)
                 }
             }
-        
     }
     
 }

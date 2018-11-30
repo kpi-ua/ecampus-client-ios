@@ -32,11 +32,16 @@ class PotochneTVC: UITableViewController {
         tableView.layoutIfNeeded()
         tableView.rowHeight = UITableViewAutomaticDimension
         requestForCriterions()
+        self.tableView.sectionHeaderHeight = 40
+        self.tableView.tableHeaderView?.backgroundColor = navColor
+        self.tableView.tableHeaderView?.tintColor = navColor
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return prepodi.count
     }
+    
+    
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: cellIdentifier, for: indexPath) as! VoteTVCell
@@ -97,6 +102,8 @@ class PotochneTVC: UITableViewController {
         }
     }
     
+    
+    
     func tabBarSettings() {
         self.tabBarController?.tabBar.tintColor = navColor
         self.tabBarController?.tabBar.barTintColor = navColor
@@ -104,6 +111,6 @@ class PotochneTVC: UITableViewController {
         self.tabBarController?.tabBar.selectedItem?.badgeColor = UIColor.orange
     }
     
-    
 }
+
 
