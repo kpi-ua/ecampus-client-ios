@@ -7,45 +7,39 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		04047E7621845EB800585BEB /* LogInVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04047E7521845EB800585BEB /* LogInVC.swift */; };
-		04047E7A2184C76F00585BEB /* ForArchiveTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04047E792184C76F00585BEB /* ForArchiveTVC.swift */; };
 		04047E7F2185BE3100585BEB /* RozkladTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04047E7E2185BE3100585BEB /* RozkladTVC.swift */; };
 		04047E812185DA1200585BEB /* HideKeyboardExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04047E802185DA1200585BEB /* HideKeyboardExtension.swift */; };
-		04047E852185E43E00585BEB /* MainTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04047E842185E43E00585BEB /* MainTVC.swift */; };
-		04047E872185E49200585BEB /* MainTVCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04047E862185E49200585BEB /* MainTVCell.swift */; };
-		04047E892186FFE300585BEB /* TermsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04047E882186FFE300585BEB /* TermsVC.swift */; };
-		04150A2121772A1D00ACBF81 /* DetailVoteTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04150A2021772A1D00ACBF81 /* DetailVoteTVC.swift */; };
-		04150A242177303A00ACBF81 /* DetailVoteTVCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04150A232177303A00ACBF81 /* DetailVoteTVCell.swift */; };
 		04150A26217CA56F00ACBF81 /* UIButtonExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04150A25217CA56F00ACBF81 /* UIButtonExtension.swift */; };
-		0430A6B221A1662F0066F929 /* Structs.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0430A6B121A1662F0066F929 /* Structs.swift */; };
-		0430A6B821B015620066F929 /* VoteTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0430A6B721B015610066F929 /* VoteTabBarController.swift */; };
 		0430A6BA21B03AD60066F929 /* HexExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0430A6B921B03AD60066F929 /* HexExtension.swift */; };
-		0430A6BC21B03D810066F929 /* VoteNavController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0430A6BB21B03D810066F929 /* VoteNavController.swift */; };
+		043CA52021E679BC0001F076 /* LoginScreenVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 043CA51F21E679BC0001F076 /* LoginScreenVC.swift */; };
+		043CA52221E679FF0001F076 /* EnterButton.xib in Resources */ = {isa = PBXBuildFile; fileRef = 043CA52121E679FF0001F076 /* EnterButton.xib */; };
+		043CA52421E67A300001F076 /* EnterButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 043CA52321E67A300001F076 /* EnterButton.swift */; };
+		043CA52821E682470001F076 /* UiViewDesignable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 043CA52721E682470001F076 /* UiViewDesignable.swift */; };
+		043CA52A21E683E40001F076 /* DataRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 043CA52921E683E40001F076 /* DataRequest.swift */; };
+		043CA52C21E7E0860001F076 /* MainTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 043CA52B21E7E0860001F076 /* MainTVC.swift */; };
+		043CA52E21E7E3F40001F076 /* VoteTerms.swift in Sources */ = {isa = PBXBuildFile; fileRef = 043CA52D21E7E3F40001F076 /* VoteTerms.swift */; };
+		043CA53021E804D60001F076 /* PotochneTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 043CA52F21E804D60001F076 /* PotochneTVC.swift */; };
 		047D37D3219B042A00C75594 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 047D37D2219B042A00C75594 /* Assets.xcassets */; };
 		04B74E162195A3D4005E3F94 /* ActivityIndicator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04B74E152195A3D4005E3F94 /* ActivityIndicator.swift */; };
 		04CFCE49216A323B00A460BA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04CFCE48216A323B00A460BA /* AppDelegate.swift */; };
 		04CFCE4E216A323B00A460BA /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 04CFCE4C216A323B00A460BA /* Main.storyboard */; };
 		04CFCE53216A323C00A460BA /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 04CFCE51216A323C00A460BA /* LaunchScreen.storyboard */; };
-		04CFCE67216B402400A460BA /* PotochneTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04CFCE65216B402400A460BA /* PotochneTVC.swift */; };
-		04CFCE6C216B449500A460BA /* VoteTVCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04CFCE6A216B449500A460BA /* VoteTVCell.swift */; };
 		FAC44813D60CCB2C081F5DF8 /* Pods_CampusClientIOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 792C034B76FFB0E7E5CACEFB /* Pods_CampusClientIOS.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		04047E7521845EB800585BEB /* LogInVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogInVC.swift; sourceTree = "<group>"; };
-		04047E792184C76F00585BEB /* ForArchiveTVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForArchiveTVC.swift; sourceTree = "<group>"; };
 		04047E7E2185BE3100585BEB /* RozkladTVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RozkladTVC.swift; sourceTree = "<group>"; };
 		04047E802185DA1200585BEB /* HideKeyboardExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HideKeyboardExtension.swift; sourceTree = "<group>"; };
-		04047E842185E43E00585BEB /* MainTVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTVC.swift; sourceTree = "<group>"; };
-		04047E862185E49200585BEB /* MainTVCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTVCell.swift; sourceTree = "<group>"; };
-		04047E882186FFE300585BEB /* TermsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TermsVC.swift; sourceTree = "<group>"; };
-		04150A2021772A1D00ACBF81 /* DetailVoteTVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailVoteTVC.swift; sourceTree = "<group>"; };
-		04150A232177303A00ACBF81 /* DetailVoteTVCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailVoteTVCell.swift; sourceTree = "<group>"; };
 		04150A25217CA56F00ACBF81 /* UIButtonExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIButtonExtension.swift; sourceTree = "<group>"; };
-		0430A6B121A1662F0066F929 /* Structs.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Structs.swift; sourceTree = "<group>"; };
-		0430A6B721B015610066F929 /* VoteTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VoteTabBarController.swift; sourceTree = "<group>"; };
 		0430A6B921B03AD60066F929 /* HexExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HexExtension.swift; sourceTree = "<group>"; };
-		0430A6BB21B03D810066F929 /* VoteNavController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VoteNavController.swift; sourceTree = "<group>"; };
+		043CA51F21E679BC0001F076 /* LoginScreenVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginScreenVC.swift; sourceTree = "<group>"; };
+		043CA52121E679FF0001F076 /* EnterButton.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = EnterButton.xib; sourceTree = "<group>"; };
+		043CA52321E67A300001F076 /* EnterButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EnterButton.swift; sourceTree = "<group>"; };
+		043CA52721E682470001F076 /* UiViewDesignable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UiViewDesignable.swift; sourceTree = "<group>"; };
+		043CA52921E683E40001F076 /* DataRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataRequest.swift; sourceTree = "<group>"; };
+		043CA52B21E7E0860001F076 /* MainTVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTVC.swift; sourceTree = "<group>"; };
+		043CA52D21E7E3F40001F076 /* VoteTerms.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VoteTerms.swift; sourceTree = "<group>"; };
+		043CA52F21E804D60001F076 /* PotochneTVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PotochneTVC.swift; sourceTree = "<group>"; };
 		047D37D2219B042A00C75594 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		04B74E152195A3D4005E3F94 /* ActivityIndicator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityIndicator.swift; sourceTree = "<group>"; };
 		04CFCE45216A323B00A460BA /* CampusClientIOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CampusClientIOS.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -53,8 +47,6 @@
 		04CFCE4D216A323B00A460BA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		04CFCE52216A323C00A460BA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		04CFCE54216A323C00A460BA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		04CFCE65216B402400A460BA /* PotochneTVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = PotochneTVC.swift; path = CampusClientIOS/Potochne/PotochneTVC.swift; sourceTree = SOURCE_ROOT; };
-		04CFCE6A216B449500A460BA /* VoteTVCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = VoteTVCell.swift; path = CampusClientIOS/Potochne/VoteTVCell.swift; sourceTree = SOURCE_ROOT; };
 		792C034B76FFB0E7E5CACEFB /* Pods_CampusClientIOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CampusClientIOS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		84415CC226A4C81E05085554 /* Pods-CampusClientIOS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CampusClientIOS.release.xcconfig"; path = "Pods/Target Support Files/Pods-CampusClientIOS/Pods-CampusClientIOS.release.xcconfig"; sourceTree = "<group>"; };
 		97CB0B402711BDEA41A20A82 /* Pods-CampusClientIOS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CampusClientIOS.debug.xcconfig"; path = "Pods/Target Support Files/Pods-CampusClientIOS/Pods-CampusClientIOS.debug.xcconfig"; sourceTree = "<group>"; };
@@ -75,7 +67,6 @@
 		04047E6C21821D7C00585BEB /* Archive */ = {
 			isa = PBXGroup;
 			children = (
-				04047E792184C76F00585BEB /* ForArchiveTVC.swift */,
 			);
 			path = Archive;
 			sourceTree = "<group>";
@@ -83,7 +74,6 @@
 		04047E7121835D4100585BEB /* LogIn */ = {
 			isa = PBXGroup;
 			children = (
-				04047E7521845EB800585BEB /* LogInVC.swift */,
 			);
 			path = LogIn;
 			sourceTree = "<group>";
@@ -91,8 +81,7 @@
 		04047E7221835E7700585BEB /* Main */ = {
 			isa = PBXGroup;
 			children = (
-				04047E842185E43E00585BEB /* MainTVC.swift */,
-				04047E862185E49200585BEB /* MainTVCell.swift */,
+				043CA52B21E7E0860001F076 /* MainTVC.swift */,
 			);
 			path = Main;
 			sourceTree = "<group>";
@@ -108,8 +97,6 @@
 		04150A2221772A2B00ACBF81 /* DetailVote */ = {
 			isa = PBXGroup;
 			children = (
-				04150A2021772A1D00ACBF81 /* DetailVoteTVC.swift */,
-				04150A232177303A00ACBF81 /* DetailVoteTVCell.swift */,
 			);
 			path = DetailVote;
 			sourceTree = "<group>";
@@ -147,20 +134,22 @@
 			isa = PBXGroup;
 			children = (
 				04CFCE4C216A323B00A460BA /* Main.storyboard */,
+				043CA51F21E679BC0001F076 /* LoginScreenVC.swift */,
 				04CFCE48216A323B00A460BA /* AppDelegate.swift */,
+				043CA52921E683E40001F076 /* DataRequest.swift */,
+				043CA52D21E7E3F40001F076 /* VoteTerms.swift */,
 				04047E7121835D4100585BEB /* LogIn */,
 				04047E7D2185BE1000585BEB /* Rozklad */,
 				04047E6C21821D7C00585BEB /* Archive */,
 				04047E7221835E7700585BEB /* Main */,
 				04CFCE69216B445600A460BA /* Potochne */,
 				04150A2221772A2B00ACBF81 /* DetailVote */,
-				04047E882186FFE300585BEB /* TermsVC.swift */,
-				0430A6B721B015610066F929 /* VoteTabBarController.swift */,
-				0430A6BB21B03D810066F929 /* VoteNavController.swift */,
 				04CFCE51216A323C00A460BA /* LaunchScreen.storyboard */,
-				0430A6B121A1662F0066F929 /* Structs.swift */,
 				047D37D2219B042A00C75594 /* Assets.xcassets */,
 				04CFCE54216A323C00A460BA /* Info.plist */,
+				043CA52121E679FF0001F076 /* EnterButton.xib */,
+				043CA52321E67A300001F076 /* EnterButton.swift */,
+				043CA52721E682470001F076 /* UiViewDesignable.swift */,
 				04150A27217CE0C400ACBF81 /* Extentions */,
 			);
 			path = CampusClientIOS;
@@ -169,8 +158,7 @@
 		04CFCE69216B445600A460BA /* Potochne */ = {
 			isa = PBXGroup;
 			children = (
-				04CFCE65216B402400A460BA /* PotochneTVC.swift */,
-				04CFCE6A216B449500A460BA /* VoteTVCell.swift */,
+				043CA52F21E804D60001F076 /* PotochneTVC.swift */,
 			);
 			path = Potochne;
 			sourceTree = "<group>";
@@ -252,6 +240,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				043CA52221E679FF0001F076 /* EnterButton.xib in Resources */,
 				04CFCE53216A323C00A460BA /* LaunchScreen.storyboard in Resources */,
 				047D37D3219B042A00C75594 /* Assets.xcassets in Resources */,
 				04CFCE4E216A323B00A460BA /* Main.storyboard in Resources */,
@@ -314,24 +303,19 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				04150A242177303A00ACBF81 /* DetailVoteTVCell.swift in Sources */,
-				04CFCE67216B402400A460BA /* PotochneTVC.swift in Sources */,
+				043CA52021E679BC0001F076 /* LoginScreenVC.swift in Sources */,
+				043CA52A21E683E40001F076 /* DataRequest.swift in Sources */,
 				04047E812185DA1200585BEB /* HideKeyboardExtension.swift in Sources */,
 				04CFCE49216A323B00A460BA /* AppDelegate.swift in Sources */,
 				04B74E162195A3D4005E3F94 /* ActivityIndicator.swift in Sources */,
-				0430A6B821B015620066F929 /* VoteTabBarController.swift in Sources */,
+				043CA52C21E7E0860001F076 /* MainTVC.swift in Sources */,
+				043CA53021E804D60001F076 /* PotochneTVC.swift in Sources */,
+				043CA52821E682470001F076 /* UiViewDesignable.swift in Sources */,
+				043CA52E21E7E3F40001F076 /* VoteTerms.swift in Sources */,
 				04150A26217CA56F00ACBF81 /* UIButtonExtension.swift in Sources */,
-				04047E852185E43E00585BEB /* MainTVC.swift in Sources */,
-				04CFCE6C216B449500A460BA /* VoteTVCell.swift in Sources */,
-				04047E892186FFE300585BEB /* TermsVC.swift in Sources */,
 				04047E7F2185BE3100585BEB /* RozkladTVC.swift in Sources */,
-				04150A2121772A1D00ACBF81 /* DetailVoteTVC.swift in Sources */,
-				04047E7A2184C76F00585BEB /* ForArchiveTVC.swift in Sources */,
-				0430A6B221A1662F0066F929 /* Structs.swift in Sources */,
 				0430A6BA21B03AD60066F929 /* HexExtension.swift in Sources */,
-				0430A6BC21B03D810066F929 /* VoteNavController.swift in Sources */,
-				04047E872185E49200585BEB /* MainTVCell.swift in Sources */,
-				04047E7621845EB800585BEB /* LogInVC.swift in Sources */,
+				043CA52421E67A300001F076 /* EnterButton.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
