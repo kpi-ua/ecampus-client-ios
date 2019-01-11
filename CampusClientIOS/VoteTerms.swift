@@ -9,7 +9,6 @@
 import Foundation
 
 class VoteTerms: NSObject {
-    
     var studyYear: String?
     var voteNumber: String?
     var voteDescription: String?
@@ -18,14 +17,4 @@ class VoteTerms: NSObject {
     var actuality: String?
     var changeDate: String?
     var datePublish: String?
-    
-    func checkActuality() -> Bool {
-        if actuality == "0" {
-            return true
-        }
-        return false
-    }
-    
-    
-    
 }

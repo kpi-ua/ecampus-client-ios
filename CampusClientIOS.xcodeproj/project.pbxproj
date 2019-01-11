@@ -19,6 +19,11 @@
 		043CA52C21E7E0860001F076 /* MainTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 043CA52B21E7E0860001F076 /* MainTVC.swift */; };
 		043CA52E21E7E3F40001F076 /* VoteTerms.swift in Sources */ = {isa = PBXBuildFile; fileRef = 043CA52D21E7E3F40001F076 /* VoteTerms.swift */; };
 		043CA53021E804D60001F076 /* PotochneTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 043CA52F21E804D60001F076 /* PotochneTVC.swift */; };
+		043CA53221E811C90001F076 /* Structs.swift in Sources */ = {isa = PBXBuildFile; fileRef = 043CA53121E811C90001F076 /* Structs.swift */; };
+		043CA53421E816E10001F076 /* DetailTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 043CA53321E816E10001F076 /* DetailTVC.swift */; };
+		043CA53621E817190001F076 /* DetailTVCellTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 043CA53521E817190001F076 /* DetailTVCellTableViewCell.swift */; };
+		043CA53821E819710001F076 /* MarkButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 043CA53721E819710001F076 /* MarkButton.swift */; };
+		043CA53A21E819820001F076 /* MarkButton.xib in Resources */ = {isa = PBXBuildFile; fileRef = 043CA53921E819820001F076 /* MarkButton.xib */; };
 		047D37D3219B042A00C75594 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 047D37D2219B042A00C75594 /* Assets.xcassets */; };
 		04B74E162195A3D4005E3F94 /* ActivityIndicator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04B74E152195A3D4005E3F94 /* ActivityIndicator.swift */; };
 		04CFCE49216A323B00A460BA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04CFCE48216A323B00A460BA /* AppDelegate.swift */; };
@@ -40,6 +45,11 @@
 		043CA52B21E7E0860001F076 /* MainTVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTVC.swift; sourceTree = "<group>"; };
 		043CA52D21E7E3F40001F076 /* VoteTerms.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VoteTerms.swift; sourceTree = "<group>"; };
 		043CA52F21E804D60001F076 /* PotochneTVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PotochneTVC.swift; sourceTree = "<group>"; };
+		043CA53121E811C90001F076 /* Structs.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Structs.swift; sourceTree = "<group>"; };
+		043CA53321E816E10001F076 /* DetailTVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailTVC.swift; sourceTree = "<group>"; };
+		043CA53521E817190001F076 /* DetailTVCellTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailTVCellTableViewCell.swift; sourceTree = "<group>"; };
+		043CA53721E819710001F076 /* MarkButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarkButton.swift; sourceTree = "<group>"; };
+		043CA53921E819820001F076 /* MarkButton.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MarkButton.xib; sourceTree = "<group>"; };
 		047D37D2219B042A00C75594 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		04B74E152195A3D4005E3F94 /* ActivityIndicator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityIndicator.swift; sourceTree = "<group>"; };
 		04CFCE45216A323B00A460BA /* CampusClientIOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CampusClientIOS.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -97,6 +107,8 @@
 		04150A2221772A2B00ACBF81 /* DetailVote */ = {
 			isa = PBXGroup;
 			children = (
+				043CA53321E816E10001F076 /* DetailTVC.swift */,
+				043CA53521E817190001F076 /* DetailTVCellTableViewCell.swift */,
 			);
 			path = DetailVote;
 			sourceTree = "<group>";
@@ -150,6 +162,9 @@
 				043CA52121E679FF0001F076 /* EnterButton.xib */,
 				043CA52321E67A300001F076 /* EnterButton.swift */,
 				043CA52721E682470001F076 /* UiViewDesignable.swift */,
+				043CA53121E811C90001F076 /* Structs.swift */,
+				043CA53721E819710001F076 /* MarkButton.swift */,
+				043CA53921E819820001F076 /* MarkButton.xib */,
 				04150A27217CE0C400ACBF81 /* Extentions */,
 			);
 			path = CampusClientIOS;
@@ -242,6 +257,7 @@
 			files = (
 				043CA52221E679FF0001F076 /* EnterButton.xib in Resources */,
 				04CFCE53216A323C00A460BA /* LaunchScreen.storyboard in Resources */,
+				043CA53A21E819820001F076 /* MarkButton.xib in Resources */,
 				047D37D3219B042A00C75594 /* Assets.xcassets in Resources */,
 				04CFCE4E216A323B00A460BA /* Main.storyboard in Resources */,
 			);
@@ -308,12 +324,16 @@
 				04047E812185DA1200585BEB /* HideKeyboardExtension.swift in Sources */,
 				04CFCE49216A323B00A460BA /* AppDelegate.swift in Sources */,
 				04B74E162195A3D4005E3F94 /* ActivityIndicator.swift in Sources */,
+				043CA53221E811C90001F076 /* Structs.swift in Sources */,
+				043CA53421E816E10001F076 /* DetailTVC.swift in Sources */,
 				043CA52C21E7E0860001F076 /* MainTVC.swift in Sources */,
 				043CA53021E804D60001F076 /* PotochneTVC.swift in Sources */,
 				043CA52821E682470001F076 /* UiViewDesignable.swift in Sources */,
+				043CA53621E817190001F076 /* DetailTVCellTableViewCell.swift in Sources */,
 				043CA52E21E7E3F40001F076 /* VoteTerms.swift in Sources */,
 				04150A26217CA56F00ACBF81 /* UIButtonExtension.swift in Sources */,
 				04047E7F2185BE3100585BEB /* RozkladTVC.swift in Sources */,
+				043CA53821E819710001F076 /* MarkButton.swift in Sources */,
 				0430A6BA21B03AD60066F929 /* HexExtension.swift in Sources */,
 				043CA52421E67A300001F076 /* EnterButton.swift in Sources */,
 			);

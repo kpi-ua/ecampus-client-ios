@@ -60,10 +60,65 @@ class DataRequest: NSObject {
         }
     }
     
-    public func getPersonsForVote(token: String?) {
+    public func getPersonsForVote(token: String?, completion: @escaping ([PersonToVote]) -> Void) {
         let url = "http://api.ecampus.kpi.ua/Vote/Persons"
-        
-        
+        let auth = ["Authorization" : "Bearer " + token!]
+        requsetBgQ.async {
+            request(url, method: .get, parameters: nil, encoding: URLEncoding.httpBody, headers: auth).responseJSON(completionHandler: { (response) in
+                switch(response.result) {
+                case .success(let data) :
+                    let json = data as! [[String : AnyObject]]
+                    let persons = self.parsePersons(json: json)
+                    completion(persons)
+                case .failure(let error):
+                    print(error)
+                }
+            })
+        }
+    }
+    
+    public func getCriterious(completion: @escaping ([String]) -> Void) {
+        let url = "http://api.ecampus.kpi.ua/Vote/Criterions"
+        requsetBgQ.async {
+            request(url, method: .get, parameters: nil, encoding: URLEncoding.httpBody, headers: nil).responseJSON { (response) in
+                switch(response.result) {
+                case .success(let data):
+                    print(data)
+                    let json = data as! [[String : AnyObject]]
+                    let criterions = self.parseCriterions(json: json)
+                    print(criterions)
+                    mainQ.async {
+                        completion(criterions)
+                    }
+                case .failure(let error):
+                    print(error)
+                }
+            }
+        }
+    }
+    
+    private func parseCriterions(json: [[String : AnyObject]]) -> [String] {
+        var criterions = [String]()
+        for i in 0..<json.count {
+            var crit = String.init()
+            guard let name = json[i]["name"] as? String else { return [String]() }
+            crit = name
+            criterions.append(crit)
+        }
+        return criterions
+    }
+    
+    private func parsePersons(json: [[String : AnyObject]]) -> [PersonToVote] {
+        var persons = [PersonToVote]()
+        for i in 0..<json.count {
+            var person = PersonToVote.init(id: nil, lecturer: nil)
+            guard let id = json[i]["employeesId"] as? String else { return [PersonToVote]() }
+            person.id = id
+            guard let lecturer = json[i]["lecturer"] as? String else { return [PersonToVote]() }
+            person.lecturer = lecturer
+            persons.append(person)
+        }
+        return persons
     }
     
     private func parseTerms(json: [[String : AnyObject]]) -> [VoteTerms] {

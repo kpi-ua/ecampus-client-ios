@@ -11,12 +11,22 @@ import UIKit
 class PotochneTVC: UITableViewController {
     
     let dataRequest = DataRequest()
-    let defaults = UserDefaults.standard
+    let token = UserDefaults.standard.string(forKey: "access_token")
     var voteTerms: [VoteTerms]?
+    var persons: [PersonToVote]?
     
     override func viewDidLoad() {
         super.viewDidLoad()
         voteData()
+        personsToVote()
+        tabBarSettings()
+    }
+    
+    func tabBarSettings() {
+        self.tabBarController?.tabBar.tintColor = themeColor
+        self.tabBarController?.tabBar.barTintColor = themeColor
+        self.tabBarController?.tabBar.unselectedItemTintColor = UIColor.white
+        self.tabBarController?.tabBar.selectedItem?.badgeColor = UIColor.orange
     }
 
     func setUpIndicator() -> ActivityIndicatorView {
@@ -30,10 +40,16 @@ class PotochneTVC: UITableViewController {
     func voteData() {
         let activityIndicator = setUpIndicator()
         activityIndicator.startAnimating()
-        let token = defaults.string(forKey: "access_token")
         dataRequest.getAllVotes(token: token) { (terms) in
             self.voteTerms = terms
             activityIndicator.stopAnimating()
+            self.tableView.reloadData()
+        }
+    }
+    
+    func personsToVote() {
+        dataRequest.getPersonsForVote(token: token) { (persons) in
+            self.persons = persons
             self.tableView.reloadData()
         }
     }
@@ -49,6 +65,12 @@ class PotochneTVC: UITableViewController {
     
     // MARK: - Table view data source
 
+    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "personCell", for: indexPath)
+        cell.textLabel?.text = persons![indexPath.row].lecturer
+        return cell
+    }
+    
     override func numberOfSections(in tableView: UITableView) -> Int {
         return 1
     }
@@ -58,8 +80,25 @@ class PotochneTVC: UITableViewController {
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        if persons != nil {
+            return persons!.count
+        }
         return 0
     }
+    
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        tableView.deselectRow(at: indexPath, animated: true)
+        performSegue(withIdentifier: "toVoteSegue", sender: persons![indexPath.row])
+    }
 
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "toVoteSegue" {
+            let destVC = segue.destination as! DetailTVC
+            guard let person = sender as? PersonToVote else { return }
+            destVC.person = person
+        }
+    }
+    
+    
     
 }

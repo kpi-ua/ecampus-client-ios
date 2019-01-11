@@ -36,12 +36,21 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="cF8-RQ-bam">
-                                <rect key="frame" x="0.0" y="28" width="375" height="44"/>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="personCell" textLabel="kE4-c7-sPR" rowHeight="60" style="IBUITableViewCellStyleDefault" id="cF8-RQ-bam">
+                                <rect key="frame" x="0.0" y="28" width="375" height="60"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="cF8-RQ-bam" id="MmF-GO-Qu8">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="59.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="kE4-c7-sPR">
+                                            <rect key="frame" x="16" y="0.0" width="343" height="59.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
                                 </tableViewCellContentView>
                             </tableViewCell>
                         </prototypes>
@@ -51,10 +60,98 @@
                         </connections>
                     </tableView>
                     <tabBarItem key="tabBarItem" title="Поточне" id="49j-zN-ISk"/>
+                    <connections>
+                        <segue destination="0qb-kL-IC3" kind="show" identifier="toVoteSegue" id="1o4-uh-C9x"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Lmd-QY-WKQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-1222" y="1979"/>
+        </scene>
+        <!--DetailTVC-->
+        <scene sceneID="cLV-MC-0ia">
+            <objects>
+                <tableViewController id="0qb-kL-IC3" customClass="DetailTVC" customModule="CampusClientIOS" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="4fL-s3-umC">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="detailVoteCell" rowHeight="129" id="dGW-Fn-XNV" customClass="DetailTVCell" customModule="CampusClientIOS" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="28" width="375" height="129"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="dGW-Fn-XNV" id="bvy-in-Kne">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="128.5"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2in-Ca-Fpu">
+                                            <rect key="frame" x="9" y="0.0" width="358" height="79"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xNt-8d-bOL" customClass="MarkButton" customModule="CampusClientIOS" customModuleProvider="target">
+                                            <rect key="frame" x="15" y="87" width="45" height="30"/>
+                                            <state key="normal" title="Button"/>
+                                        </button>
+                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ysy-bH-apy" customClass="MarkButton" customModule="CampusClientIOS" customModuleProvider="target">
+                                            <rect key="frame" x="165" y="87" width="45" height="30"/>
+                                            <state key="normal" title="Button"/>
+                                        </button>
+                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CiI-4v-475" customClass="MarkButton" customModule="CampusClientIOS" customModuleProvider="target">
+                                            <rect key="frame" x="240" y="87" width="45" height="30"/>
+                                            <state key="normal" title="Button"/>
+                                        </button>
+                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uFi-zV-QDj" customClass="MarkButton" customModule="CampusClientIOS" customModuleProvider="target">
+                                            <rect key="frame" x="315" y="87" width="45" height="30"/>
+                                            <state key="normal" title="Button"/>
+                                        </button>
+                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fsU-ad-XJA" customClass="MarkButton" customModule="CampusClientIOS" customModuleProvider="target">
+                                            <rect key="frame" x="90" y="87" width="45" height="30"/>
+                                            <state key="normal" title="Button"/>
+                                        </button>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstItem="fsU-ad-XJA" firstAttribute="top" secondItem="2in-Ca-Fpu" secondAttribute="bottom" constant="8" id="65m-Jd-hrp"/>
+                                        <constraint firstItem="fsU-ad-XJA" firstAttribute="leading" secondItem="bvy-in-Kne" secondAttribute="leading" constant="90" id="D17-un-CMp"/>
+                                        <constraint firstItem="CiI-4v-475" firstAttribute="leading" secondItem="Ysy-bH-apy" secondAttribute="trailing" constant="30" id="HnH-sm-uvb"/>
+                                        <constraint firstItem="CiI-4v-475" firstAttribute="leading" secondItem="bvy-in-Kne" secondAttribute="leading" constant="240" id="Lhb-Nl-YlB"/>
+                                        <constraint firstAttribute="bottom" secondItem="fsU-ad-XJA" secondAttribute="bottom" constant="11.5" id="PtX-uA-Ipj"/>
+                                        <constraint firstItem="Ysy-bH-apy" firstAttribute="leading" secondItem="bvy-in-Kne" secondAttribute="leading" constant="165" id="Qrl-bj-Wj6"/>
+                                        <constraint firstItem="xNt-8d-bOL" firstAttribute="leading" secondItem="bvy-in-Kne" secondAttribute="leading" constant="15" id="RIJ-R3-KLn"/>
+                                        <constraint firstItem="2in-Ca-Fpu" firstAttribute="top" secondItem="bvy-in-Kne" secondAttribute="top" id="SRQ-w4-g2a"/>
+                                        <constraint firstAttribute="trailing" secondItem="2in-Ca-Fpu" secondAttribute="trailing" constant="8" id="WdW-MM-ipc"/>
+                                        <constraint firstItem="uFi-zV-QDj" firstAttribute="leading" secondItem="CiI-4v-475" secondAttribute="trailing" constant="30" id="ZV7-hp-eDT"/>
+                                        <constraint firstItem="uFi-zV-QDj" firstAttribute="leading" secondItem="bvy-in-Kne" secondAttribute="leading" constant="315" id="bhj-kS-OoD"/>
+                                        <constraint firstAttribute="bottom" secondItem="CiI-4v-475" secondAttribute="bottom" constant="11.5" id="fHd-ov-HyH"/>
+                                        <constraint firstAttribute="bottom" secondItem="xNt-8d-bOL" secondAttribute="bottom" constant="11.5" id="geb-8f-aDx"/>
+                                        <constraint firstItem="Ysy-bH-apy" firstAttribute="leading" secondItem="fsU-ad-XJA" secondAttribute="trailing" constant="30" id="hWo-b9-D2v"/>
+                                        <constraint firstItem="CiI-4v-475" firstAttribute="top" secondItem="2in-Ca-Fpu" secondAttribute="bottom" constant="8" id="kfF-4R-3hA"/>
+                                        <constraint firstItem="fsU-ad-XJA" firstAttribute="leading" secondItem="xNt-8d-bOL" secondAttribute="trailing" constant="30" id="qIx-BP-PSV"/>
+                                        <constraint firstItem="Ysy-bH-apy" firstAttribute="top" secondItem="2in-Ca-Fpu" secondAttribute="bottom" constant="8" id="ray-hU-MVP"/>
+                                        <constraint firstItem="xNt-8d-bOL" firstAttribute="top" secondItem="2in-Ca-Fpu" secondAttribute="bottom" constant="8" id="sBD-HS-fiO"/>
+                                        <constraint firstAttribute="trailing" secondItem="uFi-zV-QDj" secondAttribute="trailing" constant="15" id="sBE-Qh-Fkb"/>
+                                        <constraint firstAttribute="bottom" secondItem="uFi-zV-QDj" secondAttribute="bottom" constant="11.5" id="t0x-sV-5DK"/>
+                                        <constraint firstItem="uFi-zV-QDj" firstAttribute="top" secondItem="2in-Ca-Fpu" secondAttribute="bottom" constant="8" id="u3t-IW-AY9"/>
+                                        <constraint firstAttribute="bottom" secondItem="2in-Ca-Fpu" secondAttribute="bottom" constant="49.5" id="xiZ-eg-m8E"/>
+                                        <constraint firstItem="2in-Ca-Fpu" firstAttribute="leading" secondItem="bvy-in-Kne" secondAttribute="leading" constant="9" id="xps-tc-Be5"/>
+                                        <constraint firstAttribute="bottom" secondItem="Ysy-bH-apy" secondAttribute="bottom" constant="11.5" id="yuX-vg-NRi"/>
+                                    </constraints>
+                                </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="criteriousLabel" destination="2in-Ca-Fpu" id="43Y-o0-3pZ"/>
+                                </connections>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="0qb-kL-IC3" id="6s8-au-s8G"/>
+                            <outlet property="delegate" destination="0qb-kL-IC3" id="YND-Hh-7yr"/>
+                        </connections>
+                    </tableView>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Wmj-RJ-BxH" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1223.2" y="2767.4662668665669"/>
         </scene>
         <!--Архів-->
         <scene sceneID="tWv-B1-kjb">
