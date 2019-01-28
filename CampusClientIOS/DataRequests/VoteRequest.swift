@@ -10,7 +10,7 @@ import Foundation
 import Alamofire
 import SwiftyJSON
 
-class DataRequest: NSObject {
+class VoteRequest: NSObject {
     
     private let defaults = UserDefaults.standard
     private let requsetBgQ = DispatchQueue.global(qos: DispatchQoS.QoSClass.userInitiated)
@@ -26,6 +26,7 @@ class DataRequest: NSObject {
             request(authURL, method: .post, parameters: parameters, encoding: URLEncoding.httpBody, headers: headers).responseJSON { (response) in
                 switch(response.result) {
                 case .success(let data) :
+                    print(data)
                     let json = data as! [String : AnyObject]
                     if let token = json["access_token"] as? String {
                         mainQ.async {
@@ -83,10 +84,8 @@ class DataRequest: NSObject {
             request(url, method: .get, parameters: nil, encoding: URLEncoding.httpBody, headers: nil).responseJSON { (response) in
                 switch(response.result) {
                 case .success(let data):
-                    print(data)
                     let json = data as! [[String : AnyObject]]
                     let criterions = self.parseCriterions(json: json)
-                    print(criterions)
                     mainQ.async {
                         completion(criterions)
                     }
@@ -95,6 +94,27 @@ class DataRequest: NSObject {
                 }
             }
         }
+    }
+    
+    public func studentResultsRequest(token: String, termID: String, completion: @escaping ([[String : AnyObject]]) -> Void) {
+        let url = "http://api.ecampus.kpi.ua/Vote/Results/Students?voteTermId=\(termID)"
+        let auth = ["Authorization" : "Bearer " + token]
+        requsetBgQ.async {
+            request(url, method: .get, parameters: nil, encoding: URLEncoding.httpBody, headers: auth).responseJSON(completionHandler: { (response) in
+                switch response.result {
+                case .success(let data) :
+                    print(data)
+                    let json = data as! [[String : AnyObject]]
+                    completion(json)
+                case .failure(let error):
+                    print(error)
+                }
+            })
+        }
+    }
+    
+    private func parseStudResults(json: [[String : AnyObject]]) {
+        print(json)
     }
     
     private func parseCriterions(json: [[String : AnyObject]]) -> [String] {
@@ -116,6 +136,9 @@ class DataRequest: NSObject {
             person.id = id
             guard let lecturer = json[i]["lecturer"] as? String else { return [PersonToVote]() }
             person.lecturer = lecturer
+            if person.lecturer!.hasSuffix(", ") {
+                person.lecturer!.removeLast(2)
+            }
             persons.append(person)
         }
         return persons
@@ -147,5 +170,21 @@ class DataRequest: NSObject {
     }
     
     
+    public func sendMarks(voteTermId: String, employeeID: String, personalityID: String, course: String, mark: String, termId: String) {
+    }
     
+/*[
+ {
+ "voteTermId": 7,
+ "employeeId": 39811,
+ "dateVote": "2018-11-18T15:00:17.382Z",
+ "actuality": true,
+ "changeDate": "2018-11-18T15:00:17.382Z",
+ "personalityId": 10252,
+ "voteCriterionId": 1,
+ "course": 3,
+ "mark": 1
+ }
+ ]
+  */
 }

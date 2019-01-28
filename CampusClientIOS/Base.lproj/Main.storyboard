@@ -43,7 +43,7 @@
                                     <rect key="frame" x="0.0" y="0.0" width="375" height="59.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="kE4-c7-sPR">
+                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="kE4-c7-sPR">
                                             <rect key="frame" x="16" y="0.0" width="343" height="59.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="20"/>
@@ -66,9 +66,9 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Lmd-QY-WKQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1222" y="1979"/>
+            <point key="canvasLocation" x="-2738" y="1906"/>
         </scene>
-        <!--DetailTVC-->
+        <!--Title-->
         <scene sceneID="cLV-MC-0ia">
             <objects>
                 <tableViewController id="0qb-kL-IC3" customClass="DetailTVC" customModule="CampusClientIOS" customModuleProvider="target" sceneMemberID="viewController">
@@ -92,27 +92,58 @@
                                         </label>
                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xNt-8d-bOL" customClass="MarkButton" customModule="CampusClientIOS" customModuleProvider="target">
                                             <rect key="frame" x="15" y="87" width="45" height="30"/>
-                                            <state key="normal" title="Button"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="30" id="VwX-VA-Dlp"/>
+                                                <constraint firstAttribute="width" constant="45" id="hct-fX-QoI"/>
+                                            </constraints>
+                                            <connections>
+                                                <action selector="markButton1Action:" destination="dGW-Fn-XNV" eventType="touchUpInside" id="azB-hD-5lO"/>
+                                            </connections>
                                         </button>
                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ysy-bH-apy" customClass="MarkButton" customModule="CampusClientIOS" customModuleProvider="target">
                                             <rect key="frame" x="165" y="87" width="45" height="30"/>
-                                            <state key="normal" title="Button"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="30" id="0X0-Os-qzk"/>
+                                                <constraint firstAttribute="width" constant="45" id="9df-0j-99i"/>
+                                            </constraints>
+                                            <connections>
+                                                <action selector="markButton3Action:" destination="dGW-Fn-XNV" eventType="touchUpInside" id="utt-0J-xht"/>
+                                            </connections>
                                         </button>
                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CiI-4v-475" customClass="MarkButton" customModule="CampusClientIOS" customModuleProvider="target">
                                             <rect key="frame" x="240" y="87" width="45" height="30"/>
-                                            <state key="normal" title="Button"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="30" id="B82-S1-g8x"/>
+                                                <constraint firstAttribute="width" constant="45" id="Wrb-ft-ZFI"/>
+                                            </constraints>
+                                            <connections>
+                                                <action selector="markButton4Action:" destination="dGW-Fn-XNV" eventType="touchUpInside" id="U47-2i-bbC"/>
+                                            </connections>
                                         </button>
                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uFi-zV-QDj" customClass="MarkButton" customModule="CampusClientIOS" customModuleProvider="target">
-                                            <rect key="frame" x="315" y="87" width="45" height="30"/>
-                                            <state key="normal" title="Button"/>
+                                            <rect key="frame" x="315" y="87" width="42" height="30"/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" constant="42" id="E2h-Et-idS"/>
+                                                <constraint firstAttribute="height" constant="30" id="aWb-mO-Auu"/>
+                                            </constraints>
+                                            <connections>
+                                                <action selector="markButton5Action:" destination="dGW-Fn-XNV" eventType="touchUpInside" id="1Pk-2d-EtL"/>
+                                            </connections>
                                         </button>
                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fsU-ad-XJA" customClass="MarkButton" customModule="CampusClientIOS" customModuleProvider="target">
                                             <rect key="frame" x="90" y="87" width="45" height="30"/>
-                                            <state key="normal" title="Button"/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" constant="45" id="Odf-mk-HjO"/>
+                                                <constraint firstAttribute="height" constant="30" id="XbT-ay-QYL"/>
+                                            </constraints>
+                                            <connections>
+                                                <action selector="markButton2Action:" destination="dGW-Fn-XNV" eventType="touchUpInside" id="RmA-f8-iiO"/>
+                                            </connections>
                                         </button>
                                     </subviews>
                                     <constraints>
                                         <constraint firstItem="fsU-ad-XJA" firstAttribute="top" secondItem="2in-Ca-Fpu" secondAttribute="bottom" constant="8" id="65m-Jd-hrp"/>
+                                        <constraint firstItem="uFi-zV-QDj" firstAttribute="leading" secondItem="Ysy-bH-apy" secondAttribute="trailing" constant="105" id="AtY-At-zuf"/>
                                         <constraint firstItem="fsU-ad-XJA" firstAttribute="leading" secondItem="bvy-in-Kne" secondAttribute="leading" constant="90" id="D17-un-CMp"/>
                                         <constraint firstItem="CiI-4v-475" firstAttribute="leading" secondItem="Ysy-bH-apy" secondAttribute="trailing" constant="30" id="HnH-sm-uvb"/>
                                         <constraint firstItem="CiI-4v-475" firstAttribute="leading" secondItem="bvy-in-Kne" secondAttribute="leading" constant="240" id="Lhb-Nl-YlB"/>
@@ -130,7 +161,6 @@
                                         <constraint firstItem="fsU-ad-XJA" firstAttribute="leading" secondItem="xNt-8d-bOL" secondAttribute="trailing" constant="30" id="qIx-BP-PSV"/>
                                         <constraint firstItem="Ysy-bH-apy" firstAttribute="top" secondItem="2in-Ca-Fpu" secondAttribute="bottom" constant="8" id="ray-hU-MVP"/>
                                         <constraint firstItem="xNt-8d-bOL" firstAttribute="top" secondItem="2in-Ca-Fpu" secondAttribute="bottom" constant="8" id="sBD-HS-fiO"/>
-                                        <constraint firstAttribute="trailing" secondItem="uFi-zV-QDj" secondAttribute="trailing" constant="15" id="sBE-Qh-Fkb"/>
                                         <constraint firstAttribute="bottom" secondItem="uFi-zV-QDj" secondAttribute="bottom" constant="11.5" id="t0x-sV-5DK"/>
                                         <constraint firstItem="uFi-zV-QDj" firstAttribute="top" secondItem="2in-Ca-Fpu" secondAttribute="bottom" constant="8" id="u3t-IW-AY9"/>
                                         <constraint firstAttribute="bottom" secondItem="2in-Ca-Fpu" secondAttribute="bottom" constant="49.5" id="xiZ-eg-m8E"/>
@@ -138,8 +168,14 @@
                                         <constraint firstAttribute="bottom" secondItem="Ysy-bH-apy" secondAttribute="bottom" constant="11.5" id="yuX-vg-NRi"/>
                                     </constraints>
                                 </tableViewCellContentView>
+                                <inset key="separatorInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 <connections>
                                     <outlet property="criteriousLabel" destination="2in-Ca-Fpu" id="43Y-o0-3pZ"/>
+                                    <outletCollection property="markButtonOutletCollection" destination="xNt-8d-bOL" collectionClass="NSMutableArray" id="G8Q-GI-77B"/>
+                                    <outletCollection property="markButtonOutletCollection" destination="fsU-ad-XJA" collectionClass="NSMutableArray" id="aCU-nd-JHy"/>
+                                    <outletCollection property="markButtonOutletCollection" destination="Ysy-bH-apy" collectionClass="NSMutableArray" id="Bs3-j8-axH"/>
+                                    <outletCollection property="markButtonOutletCollection" destination="CiI-4v-475" collectionClass="NSMutableArray" id="Fwd-Dp-R4Z"/>
+                                    <outletCollection property="markButtonOutletCollection" destination="uFi-zV-QDj" collectionClass="NSMutableArray" id="a5h-Fa-rsP"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -148,27 +184,56 @@
                             <outlet property="delegate" destination="0qb-kL-IC3" id="YND-Hh-7yr"/>
                         </connections>
                     </tableView>
+                    <navigationItem key="navigationItem" title="Title" id="FCx-fE-np4">
+                        <barButtonItem key="rightBarButtonItem" title="Save" id="UQQ-lj-5EP">
+                            <connections>
+                                <action selector="saveButtonAction:" destination="0qb-kL-IC3" id="PaE-hO-QMf"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Wmj-RJ-BxH" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1223.2" y="2767.4662668665669"/>
+            <point key="canvasLocation" x="-2738" y="2753"/>
         </scene>
         <!--Архів-->
         <scene sceneID="tWv-B1-kjb">
             <objects>
-                <tableViewController id="cWQ-h4-tVk" sceneMemberID="viewController">
+                <tableViewController id="cWQ-h4-tVk" customClass="studentArchiveVC" customModule="CampusClientIOS" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="jQF-Pv-0Uf">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="miI-qq-B80">
-                                <rect key="frame" x="0.0" y="28" width="375" height="44"/>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="studentArchCell" textLabel="K2Z-Yc-28p" detailTextLabel="FHx-7m-q6H" rowHeight="40" style="IBUITableViewCellStyleValue1" id="miI-qq-B80" customClass="ArchiveMainCell" customModule="CampusClientIOS" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="28" width="375" height="40"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="miI-qq-B80" id="oLI-0T-qEL">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="39.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="K2Z-Yc-28p">
+                                            <rect key="frame" x="15" y="10" width="33.5" height="20.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <color key="backgroundColor" white="1" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Detail" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="FHx-7m-q6H">
+                                            <rect key="frame" x="315" y="10" width="44" height="20.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
                                 </tableViewCellContentView>
+                                <inset key="separatorInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                <connections>
+                                    <outlet property="detailLabel" destination="FHx-7m-q6H" id="IFI-hN-vcd"/>
+                                    <outlet property="titleLabel" destination="K2Z-Yc-28p" id="ICa-uN-sLj"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>
@@ -180,7 +245,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="lnA-aa-lAs" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="852" y="1979"/>
+            <point key="canvasLocation" x="-660" y="1906"/>
         </scene>
         <!--MainTVC-->
         <scene sceneID="Aww-ks-RMy">
@@ -217,7 +282,7 @@
                     </tableView>
                     <navigationItem key="navigationItem" id="5eX-dq-auK"/>
                     <connections>
-                        <segue destination="bCy-qa-2Xa" kind="show" identifier="potochneSegue" id="C8q-vJ-7An"/>
+                        <segue destination="bCy-qa-2Xa" kind="show" identifier="potochneStudentSegue" id="C8q-vJ-7An"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="K7Y-6h-NmW" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -241,7 +306,7 @@
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="9rZ-Vy-5iR" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-196" y="1038"/>
+            <point key="canvasLocation" x="-1678" y="1022"/>
         </scene>
         <!--Login ScreenVC-->
         <scene sceneID="KPb-R1-fHn">

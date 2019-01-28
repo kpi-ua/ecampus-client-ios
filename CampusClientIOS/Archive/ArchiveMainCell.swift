@@ -1,16 +1,17 @@
 //
-//  DetailTVCellTableViewCell.swift
+//  ArchiveMainCell.swift
 //  CampusClientIOS
 //
-//  Created by mac on 1/11/19.
+//  Created by mac on 1/23/19.
 //  Copyright © 2019 SINED. All rights reserved.
 //
 
 import UIKit
 
-class DetailTVCell: UITableViewCell {
-
-    @IBOutlet weak var criteriousLabel: UILabel!
+class ArchiveMainCell: UITableViewCell {
+    
+    @IBOutlet weak var titleLabel: UILabel!
+    @IBOutlet weak var detailLabel: UILabel!
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -20,7 +21,6 @@ class DetailTVCell: UITableViewCell {
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
         
-        
     }
-
+    
 }

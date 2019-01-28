@@ -12,8 +12,8 @@ class MarkButton: UIButton {
 
     @IBOutlet weak var markLabel: UILabel!
     
-    var view: RoundUIView!
-    var nibName = "MarkButton"
+    private var view: RoundUIView!
+    private var nibName = "MarkButton"
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -32,14 +32,24 @@ class MarkButton: UIButton {
         return view
     }
     
-    func setup() {
+    public func setup() {
         view = loadFromNib()
         view.autoresizingMask = [.flexibleWidth, .flexibleHeight]
         view.frame = bounds
         view.isUserInteractionEnabled = false
         view.backgroundColor = UIColor.white
+        markLabel.textColor = themeColor
         view.cornerRadius = 5
         addSubview(view)
+    }
+    
+    func border() {
+        self.view.borderWidth = 1
+        self.view.borderColor = themeColor
+    }
+    
+    func removeBorder() {
+        self.view.borderWidth = 0
     }
 
 }

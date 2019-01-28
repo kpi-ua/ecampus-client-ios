@@ -12,6 +12,10 @@ class MainTVC: UITableViewController {
     
     let menuItems = ["Поточне", "Вихід"]
     let defaults = UserDefaults.standard
+    let accountInfo = AccountInfo.init()
+    
+    let studentStatus = "студент"
+    let prepodStatus = "викладач"
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -70,10 +74,47 @@ class MainTVC: UITableViewController {
     func actionForChosenCell(indexPath: IndexPath) {
         switch indexPath.row {
         case 0:
-            performSegue(withIdentifier: "potochneSegue", sender: nil)
+            requestStatus()
         default:
             createExitAlert()
         }
+    }
+    
+    //check is user student of teacher
+    func requestStatus() {
+        accountInfo.getAccountInfo { (info) -> Void in
+            guard let status = info.position?.name else { return }
+            print(status)
+            self.presentControllerDependsOnStatus(status: self.checkForStatus(status: status))
+        }
+    }
+    
+    func checkForStatus(status: String) -> String {
+        if status.lowercased().contains(studentStatus) {
+            return studentStatus
+        }
+        if status.lowercased().contains(prepodStatus) {
+            return prepodStatus
+        }
+        return "error"
+    }
+    
+    func presentControllerDependsOnStatus(status: String) {
+        switch status {
+        case studentStatus:
+            performSegue(withIdentifier: "potochneStudentSegue", sender: nil)
+        case prepodStatus :
+            performSegue(withIdentifier: "potochneStudentSegue", sender: nil)
+        default:
+            createErrorAlert()
+        }
+    }
+    
+    func createErrorAlert() {
+        let alert = UIAlertController.init(title: "Помилка", message: nil, preferredStyle: UIAlertControllerStyle.alert)
+        let okAction = UIAlertAction.init(title: "Ok", style: UIAlertActionStyle.default, handler: nil)
+        alert.addAction(okAction)
+        present(alert, animated: true, completion: nil)
     }
     
 }

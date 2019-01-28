@@ -10,7 +10,7 @@ import UIKit
 
 class PotochneTVC: UITableViewController {
     
-    let dataRequest = DataRequest()
+    let dataRequest = VoteRequest()
     let token = UserDefaults.standard.string(forKey: "access_token")
     var voteTerms: [VoteTerms]?
     var persons: [PersonToVote]?
@@ -69,6 +69,12 @@ class PotochneTVC: UITableViewController {
         let cell = tableView.dequeueReusableCell(withIdentifier: "personCell", for: indexPath)
         cell.textLabel?.text = persons![indexPath.row].lecturer
         return cell
+    }
+    
+    override func tableView(_ tableView: UITableView, willDisplayHeaderView view: UIView, forSection section: Int) {
+        view.tintColor = themeColor
+        let headerView = view as! UITableViewHeaderFooterView
+        headerView.textLabel?.textColor = UIColor.white
     }
     
     override func numberOfSections(in tableView: UITableView) -> Int {

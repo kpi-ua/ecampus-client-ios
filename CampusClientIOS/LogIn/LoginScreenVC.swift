@@ -14,7 +14,7 @@ class LoginScreenVC: UIViewController {
     @IBOutlet weak var loginTextField: UITextField!
     @IBOutlet weak var passwordTextField: UITextField!
     
-    let dataRequest = DataRequest.init()
+    let dataRequest = VoteRequest.init()
     let defaults = UserDefaults.standard
     override var shouldAutorotate: Bool {
         return false
@@ -75,12 +75,17 @@ class LoginScreenVC: UIViewController {
         if detectLoginError() {
             return
         }
+        let center = CGPoint.init(x: self.view.frame.height, y: self.view.frame.height)
+        let activityIndicator = ActivityIndicatorView.init(title: "", center: center)
+        activityIndicator.startAnimating()
         dataRequest.tokenRequest(login: loginTextField.text!, password: passwordTextField.text!) { (token) -> Void in
             print(token)
             if self.checkToken(token: token) {
                 self.createAuthAllert(message: "Невірний логін або пароль")
+                activityIndicator.stopAnimating()
             } else {
                 self.defaults.set(token, forKey: "access_token")
+                activityIndicator.stopAnimating()
                 self.performSegue(withIdentifier: "loginToMainSegue", sender: nil)
             }
         }
@@ -89,3 +94,4 @@ class LoginScreenVC: UIViewController {
     
     
 }
+
