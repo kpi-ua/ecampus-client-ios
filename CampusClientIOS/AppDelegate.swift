@@ -7,15 +7,22 @@
 //
 
 import UIKit
+import Alamofire
+import SwiftyJSON
+import SKActivityIndicatorView
+
+let themeColor = UIColor.init(hexString: "#007ba7")
+
+let mainQ = DispatchQueue.main
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
-
-
+    
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
+        //chooseController()
         return true
     }
 
@@ -40,7 +47,63 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func applicationWillTerminate(_ application: UIApplication) {
         // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
     }
-
-
+    
+    /*func chooseController(completion: @escaping () -> Void) {
+        let token = UserDefaults.standard.string(forKey: "access_token")
+        let login = UserDefaults.standard.string(forKey: "login")
+        let password = UserDefaults.standard.string(forKey: "password")
+        if token != nil {
+            SKActivityIndicator.show()
+            requestData.tokenRequest(loginPost: login!, passwordPost: password!) { (token) in
+                let storyboard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
+                let mainVC = storyboard.instantiateViewController(withIdentifier: "mainNavVC") as! UINavigationController
+                self.window?.rootViewController = mainVC
+                SKActivityIndicator.dismiss()
+            }
+        } else {
+            let storyboard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
+            let loginVC = storyboard.instantiateViewController(withIdentifier: "loginVC") as!LogInVC
+            self.window?.rootViewController = loginVC
+        }
+    }
+    
+    func chooseController() {
+        let token = UserDefaults.standard.string(forKey: "access_token")
+        let login = UserDefaults.standard.string(forKey: "login")
+        let password = UserDefaults.standard.string(forKey: "password")
+        if password == nil || login == nil || token == nil {
+            let storyboard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
+            let loginVC = storyboard.instantiateViewController(withIdentifier: "loginVC") as!LogInVC
+            self.window?.rootViewController = loginVC
+        } else {
+            tokenRequest(loginPost: login!, passwordPost: password!)
+            let storyboard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
+            let mainVC = storyboard.instantiateViewController(withIdentifier: "mainNavVC") as! UINavigationController
+            self.window?.rootViewController = mainVC
+        }
+    }
+    
+    @objc func tokenRequest(loginPost: String, passwordPost: String) {
+        let headers = [ "Content-Type": "application/x-www-form-urlencoded" ]
+        let parameters = ["password": passwordPost,
+                          "username": loginPost,
+                          "grant_type": "password"]
+            request("http://api.ecampus.kpi.ua/oauth/token", method: .post, parameters: parameters, encoding: URLEncoding.httpBody, headers: headers).responseJSON { (response) in
+                switch(response.result) {
+                case.success(let data):
+                    print("success",data)
+                    if let data = response.result.value {
+                        let JSON = data as! NSDictionary
+                        if JSON["access_token"] != nil {
+                            UserDefaults.standard.set(JSON["access_token"] as? String, forKey: "access_token")
+                        } else {
+                        }
+                    }
+                case.failure(let error):
+                    print("Not Success",error)
+                }
+            }
+    }*/
+    
 }
 

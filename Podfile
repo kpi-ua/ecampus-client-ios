@@ -6,5 +6,8 @@ target 'CampusClientIOS' do
   use_frameworks!
 
   # Pods for CampusClientIOS
-
+  pod 'Alamofire', '~> 4.7'
+  pod 'SwiftyJSON', '~> 4.0'
+  pod 'SKActivityIndicatorView', '~> 0.1.0'
+  pod 'PromiseKit/Alamofire', '~> 6.0'
 end
