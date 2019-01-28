@@ -62,8 +62,8 @@ class LoginScreenVC: UIViewController {
     }
     
     func createAuthAllert(message: String) {
-        let alert = UIAlertController.init(title: "Помилка", message: message, preferredStyle: UIAlertControllerStyle.alert)
-        let okAction = UIAlertAction.init(title: "Ok", style: UIAlertActionStyle.default, handler: nil)
+        let alert = UIAlertController.init(title: "Помилка", message: message, preferredStyle: UIAlertController.Style.alert)
+        let okAction = UIAlertAction.init(title: "Ok", style: UIAlertAction.Style.default, handler: nil)
         alert.addAction(okAction)
         present(alert, animated: true) {
             self.passwordTextField.text = nil

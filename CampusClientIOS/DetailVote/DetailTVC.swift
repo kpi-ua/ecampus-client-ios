@@ -58,8 +58,8 @@ class DetailTVC: UITableViewController, SaveOneCriterionMark {
     
     func createErrorAlert() {
         print("alert")
-        let alert = UIAlertController.init(title: "Помилка", message: "Проставте всі оцінки", preferredStyle: UIAlertControllerStyle.alert)
-        let okAction = UIAlertAction.init(title: "Ok", style: UIAlertActionStyle.default, handler: nil)
+        let alert = UIAlertController.init(title: "Помилка", message: "Проставте всі оцінки", preferredStyle: UIAlertController.Style.alert)
+        let okAction = UIAlertAction.init(title: "Ok", style: UIAlertAction.Style.default, handler: nil)
         alert.addAction(okAction)
         self.present(alert, animated: true, completion: nil)
     }
