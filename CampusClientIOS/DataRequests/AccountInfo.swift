@@ -15,7 +15,7 @@ class AccountInfo: NSObject {
     let accountQ = DispatchQueue.global(qos: DispatchQoS.QoSClass.background)
     
     public func getAccountInfo(completion: @escaping (AccountInfoS) -> Void) {
-        let url = "http://api.ecampus.kpi.ua/Account/Info"
+        let url = Settings.apiEndpoint + "Account/Info"
         guard let token = UserDefaults.standard.object(forKey: "access_token") as? String else { return }
         let auth = ["Authorization" : "Bearer " + token]
         accountQ.async {

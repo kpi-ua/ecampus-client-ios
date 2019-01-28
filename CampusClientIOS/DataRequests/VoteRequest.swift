@@ -16,7 +16,7 @@ class VoteRequest: NSObject {
     private let requsetBgQ = DispatchQueue.global(qos: DispatchQoS.QoSClass.userInitiated)
     
     public func tokenRequest(login: String, password: String, completion: @escaping (String) -> Void) {
-        let authURL = "http://api.ecampus.kpi.ua/oauth/token"
+        let authURL = Settings.apiEndpoint + "oauth/token"
         let headers = ["Content-Type" : "application/x-www-form-urlencoded",
                        "Accept" : "application/json"]
         let parameters = ["username" : login,
@@ -43,7 +43,7 @@ class VoteRequest: NSObject {
     }
     
     public func getAllVotes(token: String?, completion: @escaping ([VoteTerms]) -> Void) {
-        let url = "http://api.ecampus.kpi.ua/Vote/Terms"
+        let url = Settings.apiEndpoint + "Vote/Terms"
         let auth = ["Authorization" : "Bearer " + token!]
         requsetBgQ.async {
             request(url, method: .get, parameters: nil, encoding: URLEncoding.httpBody, headers: auth).responseJSON { (response) in
@@ -62,7 +62,7 @@ class VoteRequest: NSObject {
     }
     
     public func getPersonsForVote(token: String?, completion: @escaping ([PersonToVote]) -> Void) {
-        let url = "http://api.ecampus.kpi.ua/Vote/Persons"
+        let url = Settings.apiEndpoint + "Vote/Persons"
         let auth = ["Authorization" : "Bearer " + token!]
         requsetBgQ.async {
             request(url, method: .get, parameters: nil, encoding: URLEncoding.httpBody, headers: auth).responseJSON(completionHandler: { (response) in
@@ -79,7 +79,7 @@ class VoteRequest: NSObject {
     }
     
     public func getCriterious(completion: @escaping ([String]) -> Void) {
-        let url = "http://api.ecampus.kpi.ua/Vote/Criterions"
+        let url = Settings.apiEndpoint + "Vote/Criterions"
         requsetBgQ.async {
             request(url, method: .get, parameters: nil, encoding: URLEncoding.httpBody, headers: nil).responseJSON { (response) in
                 switch(response.result) {
@@ -97,7 +97,7 @@ class VoteRequest: NSObject {
     }
     
     public func studentResultsRequest(token: String, termID: String, completion: @escaping ([[String : AnyObject]]) -> Void) {
-        let url = "http://api.ecampus.kpi.ua/Vote/Results/Students?voteTermId=\(termID)"
+        let url = Settings.apiEndpoint + "Vote/Results/Students?voteTermId=\(termID)"
         let auth = ["Authorization" : "Bearer " + token]
         requsetBgQ.async {
             request(url, method: .get, parameters: nil, encoding: URLEncoding.httpBody, headers: auth).responseJSON(completionHandler: { (response) in
