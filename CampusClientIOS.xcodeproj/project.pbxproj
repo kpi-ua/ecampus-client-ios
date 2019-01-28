@@ -32,6 +32,7 @@
 		04CFCE49216A323B00A460BA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04CFCE48216A323B00A460BA /* AppDelegate.swift */; };
 		04CFCE4E216A323B00A460BA /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 04CFCE4C216A323B00A460BA /* Main.storyboard */; };
 		04CFCE53216A323C00A460BA /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 04CFCE51216A323C00A460BA /* LaunchScreen.storyboard */; };
+		ABC354E2D57CA846B8C17A97 /* ApiClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABC3515134DD60D983FE2823 /* ApiClient.swift */; };
 		ABC357A72529722C77F3C227 /* Settings.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABC356AECA2B49ED89A6732F /* Settings.swift */; };
 		FAC44813D60CCB2C081F5DF8 /* Pods_CampusClientIOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 792C034B76FFB0E7E5CACEFB /* Pods_CampusClientIOS.framework */; };
 /* End PBXBuildFile section */
@@ -67,6 +68,7 @@
 		792C034B76FFB0E7E5CACEFB /* Pods_CampusClientIOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CampusClientIOS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		84415CC226A4C81E05085554 /* Pods-CampusClientIOS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CampusClientIOS.release.xcconfig"; path = "Pods/Target Support Files/Pods-CampusClientIOS/Pods-CampusClientIOS.release.xcconfig"; sourceTree = "<group>"; };
 		97CB0B402711BDEA41A20A82 /* Pods-CampusClientIOS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CampusClientIOS.debug.xcconfig"; path = "Pods/Target Support Files/Pods-CampusClientIOS/Pods-CampusClientIOS.debug.xcconfig"; sourceTree = "<group>"; };
+		ABC3515134DD60D983FE2823 /* ApiClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ApiClient.swift; sourceTree = "<group>"; };
 		ABC356AECA2B49ED89A6732F /* Settings.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Settings.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -186,6 +188,7 @@
 				043CA53921E819820001F076 /* MarkButton.xib */,
 				04150A27217CE0C400ACBF81 /* Extentions */,
 				ABC356AECA2B49ED89A6732F /* Settings.swift */,
+				ABC3515134DD60D983FE2823 /* ApiClient.swift */,
 			);
 			path = CampusClientIOS;
 			sourceTree = "<group>";
@@ -361,6 +364,7 @@
 				043CA52421E67A300001F076 /* EnterButton.swift in Sources */,
 				043CA53D21ECDC670001F076 /* AccountInfo.swift in Sources */,
 				ABC357A72529722C77F3C227 /* Settings.swift in Sources */,
+				ABC354E2D57CA846B8C17A97 /* ApiClient.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

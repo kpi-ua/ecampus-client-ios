@@ -10,7 +10,7 @@ import UIKit
 
 class PotochneTVC: UITableViewController {
     
-    let dataRequest = VoteRequest()
+    let dataRequest = VoteRequest(apiClient: ApiClient.shared)
     let token = UserDefaults.standard.string(forKey: "access_token")
     var voteTerms: [VoteTerms]?
     var persons: [PersonToVote]?

@@ -11,112 +11,70 @@ import Alamofire
 import SwiftyJSON
 
 class VoteRequest: NSObject {
-    
+
+
+    private var apiClient : ApiClient
+
     private let defaults = UserDefaults.standard
     private let requsetBgQ = DispatchQueue.global(qos: DispatchQoS.QoSClass.userInitiated)
-    
-    public func tokenRequest(login: String, password: String, completion: @escaping (String) -> Void) {
-        let authURL = Settings.apiEndpoint + "oauth/token"
-        let headers = ["Content-Type" : "application/x-www-form-urlencoded",
-                       "Accept" : "application/json"]
-        let parameters = ["username" : login,
-                          "password" : password,
-                          "grant_type" : "password"]
-        requsetBgQ.async {
-            request(authURL, method: .post, parameters: parameters, encoding: URLEncoding.httpBody, headers: headers).responseJSON { (response) in
-                switch(response.result) {
-                case .success(let data) :
-                    print(data)
-                    let json = data as! [String : AnyObject]
-                    if let token = json["access_token"] as? String {
-                        mainQ.async {
-                            completion(token)
-                        }
-                    } else {
-                        completion("")
-                    }
-                case .failure(let error) :
-                    print(error)
-                }
-            }
-        }
+
+    init(apiClient: ApiClient) {
+        self.apiClient = apiClient
+
+        super.init()
     }
-    
+
+
     public func getAllVotes(token: String?, completion: @escaping ([VoteTerms]) -> Void) {
-        let url = Settings.apiEndpoint + "Vote/Terms"
-        let auth = ["Authorization" : "Bearer " + token!]
         requsetBgQ.async {
-            request(url, method: .get, parameters: nil, encoding: URLEncoding.httpBody, headers: auth).responseJSON { (response) in
-                switch(response.result) {
-                case .success(let data):
-                    let json = data as! [[String : AnyObject]]
-                    let terms = self.parseTerms(json: json)
-                    mainQ.async {
-                        completion(terms)
-                    }
-                case .failure(let error):
-                    print(error)
+
+            self.apiClient.makeRequest("Vote/Terms", method: .get, parameters: nil) { (data) -> Void in
+                let json = data as! [[String: AnyObject]]
+                let terms = self.parseTerms(json: json)
+                mainQ.async {
+                    completion(terms)
                 }
             }
         }
     }
-    
+
+
     public func getPersonsForVote(token: String?, completion: @escaping ([PersonToVote]) -> Void) {
-        let url = Settings.apiEndpoint + "Vote/Persons"
-        let auth = ["Authorization" : "Bearer " + token!]
-        requsetBgQ.async {
-            request(url, method: .get, parameters: nil, encoding: URLEncoding.httpBody, headers: auth).responseJSON(completionHandler: { (response) in
-                switch(response.result) {
-                case .success(let data) :
-                    let json = data as! [[String : AnyObject]]
-                    let persons = self.parsePersons(json: json)
-                    completion(persons)
-                case .failure(let error):
-                    print(error)
-                }
-            })
-        }
     }
-    
+
     public func getCriterious(completion: @escaping ([String]) -> Void) {
-        let url = Settings.apiEndpoint + "Vote/Criterions"
+
         requsetBgQ.async {
-            request(url, method: .get, parameters: nil, encoding: URLEncoding.httpBody, headers: nil).responseJSON { (response) in
-                switch(response.result) {
-                case .success(let data):
-                    let json = data as! [[String : AnyObject]]
-                    let criterions = self.parseCriterions(json: json)
-                    mainQ.async {
-                        completion(criterions)
-                    }
-                case .failure(let error):
-                    print(error)
+
+            self.apiClient.makeRequest("Vote/Criterions", method: .get, parameters: nil) { (data) -> Void in
+                let json = data as! [[String : AnyObject]]
+                let criterions = self.parseCriterions(json: json)
+                mainQ.async {
+                    completion(criterions)
                 }
             }
         }
     }
-    
+
     public func studentResultsRequest(token: String, termID: String, completion: @escaping ([[String : AnyObject]]) -> Void) {
-        let url = Settings.apiEndpoint + "Vote/Results/Students?voteTermId=\(termID)"
-        let auth = ["Authorization" : "Bearer " + token]
+
+        let url = "Vote/Results/Students?voteTermId=\(termID)"
+        
+        ApiClient.shared
+
         requsetBgQ.async {
-            request(url, method: .get, parameters: nil, encoding: URLEncoding.httpBody, headers: auth).responseJSON(completionHandler: { (response) in
-                switch response.result {
-                case .success(let data) :
-                    print(data)
-                    let json = data as! [[String : AnyObject]]
-                    completion(json)
-                case .failure(let error):
-                    print(error)
-                }
-            })
+            self.apiClient.makeRequest(url, method: .get, parameters: nil) { (data) -> Void in
+                print(data)
+                let json = data as! [[String : AnyObject]]
+                completion(json)
+            }
         }
     }
-    
+
     private func parseStudResults(json: [[String : AnyObject]]) {
         print(json)
     }
-    
+
     private func parseCriterions(json: [[String : AnyObject]]) -> [String] {
         var criterions = [String]()
         for i in 0..<json.count {
@@ -127,7 +85,7 @@ class VoteRequest: NSObject {
         }
         return criterions
     }
-    
+
     private func parsePersons(json: [[String : AnyObject]]) -> [PersonToVote] {
         var persons = [PersonToVote]()
         for i in 0..<json.count {
@@ -143,7 +101,7 @@ class VoteRequest: NSObject {
         }
         return persons
     }
-    
+
     private func parseTerms(json: [[String : AnyObject]]) -> [VoteTerms] {
         var terms = [VoteTerms]()
         for i in 0..<json.count {
@@ -168,11 +126,11 @@ class VoteRequest: NSObject {
         }
         return terms
     }
-    
-    
+
+
     public func sendMarks(voteTermId: String, employeeID: String, personalityID: String, course: String, mark: String, termId: String) {
     }
-    
+
 /*[
  {
  "voteTermId": 7,

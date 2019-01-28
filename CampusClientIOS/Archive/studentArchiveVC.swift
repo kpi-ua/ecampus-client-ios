@@ -10,7 +10,8 @@ import UIKit
 
 class studentArchiveVC: UITableViewController {
 
-    let voteReq = VoteRequest.init()
+    let voteReq = VoteRequest.init(apiClient: ApiClient.shared)
+
     let defaults = UserDefaults.standard
     var votes = [VoteTerms]()
     

@@ -12,7 +12,7 @@ class DetailTVC: UITableViewController, SaveOneCriterionMark {
     
     var person: PersonToVote?
     var criterions: [String]?
-    let dataRequest = VoteRequest.init()
+    let dataRequest = VoteRequest.init(apiClient: ApiClient.shared)
     
     var marks = [0, 0, 0, 0, 0, 0]
     
@@ -80,7 +80,4 @@ class DetailTVC: UITableViewController, SaveOneCriterionMark {
             return
         }
     }
-    
-    
-    
 }
