@@ -9,9 +9,8 @@
 import UIKit
 import Alamofire
 import SwiftyJSON
-import SKActivityIndicatorView
 
-let themeColor = UIColor.init(hexString: "#007ba7")
+let themeColor = UIColor.init(hexString: "#208843")
 
 let mainQ = DispatchQueue.main
 
@@ -20,7 +19,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
     
-    func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
+    func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
         //chooseController()
         return true
@@ -88,7 +87,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         let parameters = ["password": passwordPost,
                           "username": loginPost,
                           "grant_type": "password"]
-            request("http://api.ecampus.kpi.ua/oauth/token", method: .post, parameters: parameters, encoding: URLEncoding.httpBody, headers: headers).responseJSON { (response) in
+            request(Settings.apiEndpoint + "oauth/token", method: .post, parameters: parameters, encoding: URLEncoding.httpBody, headers: headers).responseJSON { (response) in
                 switch(response.result) {
                 case.success(let data):
                     print("success",data)

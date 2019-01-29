@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="FaceBookButton" customModule="CampusClientIOS" customModuleProvider="target">
+            <connections>
+                <outlet property="facebookLabel" destination="7qC-Hv-8e5" id="b53-mY-wwl"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB">
+            <rect key="frame" x="0.0" y="0.0" width="343" height="38"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="0cd-Lv-a8g">
+                    <rect key="frame" x="-37" y="-49" width="38" height="38"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                </imageView>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="-van-de-laatste-nieuwsberichten-volg-ons-via-twitter-en-facebook-4" translatesAutoresizingMaskIntoConstraints="NO" id="oPN-SP-Tr4">
+                    <rect key="frame" x="0.0" y="0.0" width="38" height="38"/>
+                </imageView>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Увійти через Facebook" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7qC-Hv-8e5">
+                    <rect key="frame" x="90" y="0.0" width="187" height="38"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+            </subviews>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="7qC-Hv-8e5" firstAttribute="bottom" secondItem="vUN-kp-3ea" secondAttribute="bottom" id="3m0-eY-hVd"/>
+                <constraint firstItem="7qC-Hv-8e5" firstAttribute="leading" secondItem="oPN-SP-Tr4" secondAttribute="trailing" constant="52" id="5Ex-vM-FEb"/>
+                <constraint firstItem="oPN-SP-Tr4" firstAttribute="bottom" secondItem="vUN-kp-3ea" secondAttribute="bottom" id="5aR-Zd-Q4K"/>
+                <constraint firstItem="7qC-Hv-8e5" firstAttribute="trailing" secondItem="vUN-kp-3ea" secondAttribute="trailing" constant="-66" id="71r-IR-idI"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="oPN-SP-Tr4" secondAttribute="trailing" constant="305" id="DJ1-3l-3el"/>
+                <constraint firstItem="oPN-SP-Tr4" firstAttribute="bottom" secondItem="vUN-kp-3ea" secondAttribute="bottom" id="DWg-2Y-ufS"/>
+                <constraint firstItem="7qC-Hv-8e5" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" id="GVr-W6-88M"/>
+                <constraint firstItem="oPN-SP-Tr4" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="IHF-fR-hau"/>
+                <constraint firstItem="oPN-SP-Tr4" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" id="XgL-AB-Hhw"/>
+                <constraint firstItem="oPN-SP-Tr4" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" id="czX-8f-nN0"/>
+                <constraint firstAttribute="bottom" secondItem="oPN-SP-Tr4" secondAttribute="bottom" id="gqI-WW-6VE"/>
+                <constraint firstItem="oPN-SP-Tr4" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="jPz-YL-RoX"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
+            <point key="canvasLocation" x="44" y="10.794602698650676"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="-van-de-laatste-nieuwsberichten-volg-ons-via-twitter-en-facebook-4" width="3000" height="3000"/>
+    </resources>
+</document>

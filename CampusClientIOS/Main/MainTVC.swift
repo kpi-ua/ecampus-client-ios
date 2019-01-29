@@ -10,7 +10,7 @@ import UIKit
 
 class MainTVC: UITableViewController {
     
-    let menuItems = ["Поточне", "Вихід"]
+    let menuItems = ["Опитування", "Вихід"]
     let defaults = UserDefaults.standard
     let accountInfo = AccountInfo.init()
     
@@ -50,22 +50,22 @@ class MainTVC: UITableViewController {
         self.navigationController?.navigationBar.barTintColor = themeColor
         self.navigationController?.navigationBar.tintColor = UIColor.white
         self.navigationController?.navigationBar.accessibilityIgnoresInvertColors = false
-        self.navigationController?.navigationBar.largeTitleTextAttributes = [NSAttributedStringKey.backgroundColor : UIColor.white]
-        self.navigationController?.navigationBar.largeTitleTextAttributes = [NSAttributedStringKey.foregroundColor : UIColor.white]
-        self.navigationController?.navigationBar.titleTextAttributes = [NSAttributedStringKey.backgroundColor : UIColor.white]
-        self.navigationController?.navigationBar.titleTextAttributes = [NSAttributedStringKey.foregroundColor : UIColor.white]
+        self.navigationController?.navigationBar.largeTitleTextAttributes = [NSAttributedString.Key.backgroundColor : UIColor.white]
+        self.navigationController?.navigationBar.largeTitleTextAttributes = [NSAttributedString.Key.foregroundColor : UIColor.white]
+        self.navigationController?.navigationBar.titleTextAttributes = [NSAttributedString.Key.backgroundColor : UIColor.white]
+        self.navigationController?.navigationBar.titleTextAttributes = [NSAttributedString.Key.foregroundColor : UIColor.white]
         self.navigationController?.navigationBar.accessibilityIgnoresInvertColors = false
     }
     
     func createExitAlert() {
-        let alert = UIAlertController.init(title: "Ви впевнені?", message: nil, preferredStyle: UIAlertControllerStyle.alert)
-        let okAction = UIAlertAction.init(title: "Ok", style: UIAlertActionStyle.default) { (UIAlertAction) in
+        let alert = UIAlertController.init(title: "Ви впевнені?", message: nil, preferredStyle: UIAlertController.Style.alert)
+        let okAction = UIAlertAction.init(title: "Ok", style: UIAlertAction.Style.default) { (UIAlertAction) in
             let vcToPresent = self.storyboard?.instantiateViewController(withIdentifier: "loginVC") as! LoginScreenVC
             self.present(vcToPresent, animated: true, completion: {
                 self.defaults.set(nil, forKey: "access_token")
             })
         }
-        let cancelAction = UIAlertAction.init(title: "cancel", style: UIAlertActionStyle.cancel, handler: nil)
+        let cancelAction = UIAlertAction.init(title: "cancel", style: UIAlertAction.Style.cancel, handler: nil)
         alert.addAction(okAction)
         alert.addAction(cancelAction)
         self.present(alert, animated: true, completion: nil)
@@ -111,8 +111,8 @@ class MainTVC: UITableViewController {
     }
     
     func createErrorAlert() {
-        let alert = UIAlertController.init(title: "Помилка", message: nil, preferredStyle: UIAlertControllerStyle.alert)
-        let okAction = UIAlertAction.init(title: "Ok", style: UIAlertActionStyle.default, handler: nil)
+        let alert = UIAlertController.init(title: "Помилка", message: nil, preferredStyle: UIAlertController.Style.alert)
+        let okAction = UIAlertAction.init(title: "Ok", style: UIAlertAction.Style.default, handler: nil)
         alert.addAction(okAction)
         present(alert, animated: true, completion: nil)
     }

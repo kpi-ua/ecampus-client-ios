@@ -40,9 +40,9 @@ class EnterButton: UIButton {
         view.frame = bounds
         view.isUserInteractionEnabled = false
         view.backgroundColor = themeColor
-        buttonLabel.text = "Login"
+        buttonLabel.text = "Увійти"
         buttonLabel.textColor = UIColor.white
-        view.cornerRadius = 20
+        view.cornerRadius = 0
         addSubview(view)
     }
     

@@ -11,24 +11,18 @@ import UIKit
 class DetailTVC: UITableViewController, SaveOneCriterionMark {
     
     var person: PersonToVote?
-    var criterions: [String]?
-    let dataRequest = VoteRequest.init()
+    let criterions = ["Компетентність в дисципліні, яку викладає", "Вимогливість викладача",
+                      "Вміння донести матеріал до студентів",
+                      "Вміння налагодити партнерські стосунки зі студентом",
+                      "Загальна культура та тактовність по відношенню до студентів",
+                      "Використання засобів дистанційного спілкування (електронна пошта, Skype, соцмережі)"]
     
     var marks = [0, 0, 0, 0, 0, 0]
     
     override func viewDidLoad() {
         super.viewDidLoad()
         self.title = person?.lecturer
-        getCriterions()
         tableView.allowsSelection = false
-    }
-    
-    func getCriterions() {
-        dataRequest.getCriterious { (gotCriterions) in
-            print(gotCriterions)
-            self.criterions = gotCriterions
-            self.tableView.reloadData()
-        }
     }
 
     override func numberOfSections(in tableView: UITableView) -> Int {
@@ -40,12 +34,12 @@ class DetailTVC: UITableViewController, SaveOneCriterionMark {
         if criterions == nil {
             return 0
         }
-        return criterions!.count
+        return criterions.count
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "detailVoteCell", for: indexPath) as! DetailTVCell
-        cell.criteriousLabel.text = criterions![indexPath.row]
+        cell.criteriousLabel.text = criterions[indexPath.row]
         cell.criterionID = indexPath.row + 1
         cell.buttonsOutlet()
         cell.delegate = self
@@ -58,8 +52,8 @@ class DetailTVC: UITableViewController, SaveOneCriterionMark {
     
     func createErrorAlert() {
         print("alert")
-        let alert = UIAlertController.init(title: "Помилка", message: "Проставте всі оцінки", preferredStyle: UIAlertControllerStyle.alert)
-        let okAction = UIAlertAction.init(title: "Ok", style: UIAlertActionStyle.default, handler: nil)
+        let alert = UIAlertController.init(title: "Помилка", message: "Проставте всі оцінки", preferredStyle: UIAlertController.Style.alert)
+        let okAction = UIAlertAction.init(title: "Ok", style: UIAlertAction.Style.default, handler: nil)
         alert.addAction(okAction)
         self.present(alert, animated: true, completion: nil)
     }
@@ -80,7 +74,4 @@ class DetailTVC: UITableViewController, SaveOneCriterionMark {
             return
         }
     }
-    
-    
-    
 }
