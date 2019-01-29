@@ -7,28 +7,35 @@
 //
 
 import UIKit
+import FBSDKLoginKit
+import FBSDKCoreKit
 
-class LoginScreenVC: UIViewController {
+class LoginScreenVC: UIViewController, FBSDKLoginButtonDelegate  {
     
     @IBOutlet weak var enterButtonOutlet: EnterButton!
     @IBOutlet weak var loginTextField: UITextField!
     @IBOutlet weak var passwordTextField: UITextField!
+    @IBOutlet weak var facebookButtonOutlet: FBSDKLoginButton!
+    
+    weak var fbDelegate : FBSDKLoginButtonDelegate?
+    var fbToken = FBSDKAccessToken.self
     
     let dataRequest = VoteRequest.init(apiClient: ApiClient.shared)
     let apiClient = ApiClient.shared
     
-
     let defaults = UserDefaults.standard
-    override var shouldAutorotate: Bool {
-        return false
-    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
         enterButtonOutlet.setup()
         hideKeyboardWhenTappedAround()
+        facebookButtonOutlet.delegate = self
     }
-   
+    
+    override var shouldAutorotate: Bool {
+        return false
+    }
+    
     func checkLoginText() -> Bool {
         if loginTextField.text == "" {
             return true
@@ -94,6 +101,20 @@ class LoginScreenVC: UIViewController {
         }
     }
     
+    @IBAction func facebookButton(_ sender: Any) {
+        
+    }
+    
+    func loginButton(_ loginButton: FBSDKLoginButton!, didCompleteWith result: FBSDKLoginManagerLoginResult!, error: Error!) {
+        print("----------TOKEN----------")
+        let token = FBSDKAccessToken.current()?.tokenString
+        print(token)
+    }
+    
+    func loginButtonDidLogOut(_ loginButton: FBSDKLoginButton!) {
+        FBSDKAccessToken.refreshCurrentAccessToken(nil)
+        print("LOGGED OUT \(FBSDKAccessToken.current())")
+    }
     
     
 }

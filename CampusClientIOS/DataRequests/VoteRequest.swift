@@ -12,7 +12,6 @@ import SwiftyJSON
 
 class VoteRequest: NSObject {
 
-
     private var apiClient : ApiClient
 
     private let defaults = UserDefaults.standard
@@ -20,14 +19,11 @@ class VoteRequest: NSObject {
 
     init(apiClient: ApiClient) {
         self.apiClient = apiClient
-
         super.init()
     }
 
-
     public func getAllVotes(token: String?, completion: @escaping ([VoteTerms]) -> Void) {
         requsetBgQ.async {
-
             self.apiClient.makeRequest("Vote/Terms", method: .get, parameters: nil) { (data) -> Void in
                 let json = data as! [[String: AnyObject]]
                 let terms = self.parseTerms(json: json)
@@ -38,30 +34,18 @@ class VoteRequest: NSObject {
         }
     }
 
-
     public func getPersonsForVote(token: String?, completion: @escaping ([PersonToVote]) -> Void) {
-    }
-
-    public func getCriterious(completion: @escaping ([String]) -> Void) {
-
         requsetBgQ.async {
-
-            self.apiClient.makeRequest("Vote/Criterions", method: .get, parameters: nil) { (data) -> Void in
+            self.apiClient.makeRequest("Vote/Persons", { (data) in
                 let json = data as! [[String : AnyObject]]
-                let criterions = self.parseCriterions(json: json)
-                mainQ.async {
-                    completion(criterions)
-                }
-            }
+                let persons = self.parsePersons(json: json)
+                completion(persons)
+            })
         }
     }
 
     public func studentResultsRequest(token: String, termID: String, completion: @escaping ([[String : AnyObject]]) -> Void) {
-
         let url = "Vote/Results/Students?voteTermId=\(termID)"
-        
-        ApiClient.shared
-
         requsetBgQ.async {
             self.apiClient.makeRequest(url, method: .get, parameters: nil) { (data) -> Void in
                 print(data)
@@ -73,17 +57,6 @@ class VoteRequest: NSObject {
 
     private func parseStudResults(json: [[String : AnyObject]]) {
         print(json)
-    }
-
-    private func parseCriterions(json: [[String : AnyObject]]) -> [String] {
-        var criterions = [String]()
-        for i in 0..<json.count {
-            var crit = String.init()
-            guard let name = json[i]["name"] as? String else { return [String]() }
-            crit = name
-            criterions.append(crit)
-        }
-        return criterions
     }
 
     private func parsePersons(json: [[String : AnyObject]]) -> [PersonToVote] {

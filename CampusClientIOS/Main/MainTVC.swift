@@ -10,7 +10,7 @@ import UIKit
 
 class MainTVC: UITableViewController {
     
-    let menuItems = ["Поточне", "Вихід"]
+    let menuItems = ["Опитування", "Вихід"]
     let defaults = UserDefaults.standard
     let accountInfo = AccountInfo.init()
     

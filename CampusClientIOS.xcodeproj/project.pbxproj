@@ -32,6 +32,9 @@
 		04CFCE49216A323B00A460BA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04CFCE48216A323B00A460BA /* AppDelegate.swift */; };
 		04CFCE4E216A323B00A460BA /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 04CFCE4C216A323B00A460BA /* Main.storyboard */; };
 		04CFCE53216A323C00A460BA /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 04CFCE51216A323C00A460BA /* LaunchScreen.storyboard */; };
+		04E7F76821FFC5890021127F /* FaceBookButton.xib in Resources */ = {isa = PBXBuildFile; fileRef = 04E7F76721FFC5890021127F /* FaceBookButton.xib */; };
+		04E7F76A21FFC5AB0021127F /* FaceBookButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04E7F76921FFC5AB0021127F /* FaceBookButton.swift */; };
+		04E7F76D2200DAFB0021127F /* ProfileTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04E7F76C2200DAFB0021127F /* ProfileTVC.swift */; };
 		ABC354E2D57CA846B8C17A97 /* ApiClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABC3515134DD60D983FE2823 /* ApiClient.swift */; };
 		ABC357A72529722C77F3C227 /* Settings.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABC356AECA2B49ED89A6732F /* Settings.swift */; };
 		FAC44813D60CCB2C081F5DF8 /* Pods_CampusClientIOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 792C034B76FFB0E7E5CACEFB /* Pods_CampusClientIOS.framework */; };
@@ -65,6 +68,9 @@
 		04CFCE4D216A323B00A460BA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		04CFCE52216A323C00A460BA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		04CFCE54216A323C00A460BA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		04E7F76721FFC5890021127F /* FaceBookButton.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FaceBookButton.xib; sourceTree = "<group>"; };
+		04E7F76921FFC5AB0021127F /* FaceBookButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FaceBookButton.swift; sourceTree = "<group>"; };
+		04E7F76C2200DAFB0021127F /* ProfileTVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileTVC.swift; sourceTree = "<group>"; };
 		792C034B76FFB0E7E5CACEFB /* Pods_CampusClientIOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CampusClientIOS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		84415CC226A4C81E05085554 /* Pods-CampusClientIOS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CampusClientIOS.release.xcconfig"; path = "Pods/Target Support Files/Pods-CampusClientIOS/Pods-CampusClientIOS.release.xcconfig"; sourceTree = "<group>"; };
 		97CB0B402711BDEA41A20A82 /* Pods-CampusClientIOS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CampusClientIOS.debug.xcconfig"; path = "Pods/Target Support Files/Pods-CampusClientIOS/Pods-CampusClientIOS.debug.xcconfig"; sourceTree = "<group>"; };
@@ -142,6 +148,8 @@
 			children = (
 				043CA52921E683E40001F076 /* VoteRequest.swift */,
 				043CA53C21ECDC670001F076 /* AccountInfo.swift */,
+				ABC3515134DD60D983FE2823 /* ApiClient.swift */,
+				ABC356AECA2B49ED89A6732F /* Settings.swift */,
 			);
 			path = DataRequests;
 			sourceTree = "<group>";
@@ -174,10 +182,11 @@
 				04047E7D2185BE1000585BEB /* Rozklad */,
 				04047E6C21821D7C00585BEB /* Archive */,
 				04047E7221835E7700585BEB /* Main */,
+				04E7F76B2200DAD60021127F /* Profile */,
 				04CFCE69216B445600A460BA /* Potochne */,
 				04150A2221772A2B00ACBF81 /* DetailVote */,
+				04150A27217CE0C400ACBF81 /* Extentions */,
 				04CFCE51216A323C00A460BA /* LaunchScreen.storyboard */,
-				047D37D2219B042A00C75594 /* Assets.xcassets */,
 				04CFCE54216A323C00A460BA /* Info.plist */,
 				043CA52121E679FF0001F076 /* EnterButton.xib */,
 				043CA52321E67A300001F076 /* EnterButton.swift */,
@@ -186,9 +195,9 @@
 				043CA53121E811C90001F076 /* Structs.swift */,
 				043CA53721E819710001F076 /* MarkButton.swift */,
 				043CA53921E819820001F076 /* MarkButton.xib */,
-				04150A27217CE0C400ACBF81 /* Extentions */,
-				ABC356AECA2B49ED89A6732F /* Settings.swift */,
-				ABC3515134DD60D983FE2823 /* ApiClient.swift */,
+				04E7F76721FFC5890021127F /* FaceBookButton.xib */,
+				04E7F76921FFC5AB0021127F /* FaceBookButton.swift */,
+				047D37D2219B042A00C75594 /* Assets.xcassets */,
 			);
 			path = CampusClientIOS;
 			sourceTree = "<group>";
@@ -199,6 +208,14 @@
 				043CA52F21E804D60001F076 /* PotochneTVC.swift */,
 			);
 			path = Potochne;
+			sourceTree = "<group>";
+		};
+		04E7F76B2200DAD60021127F /* Profile */ = {
+			isa = PBXGroup;
+			children = (
+				04E7F76C2200DAFB0021127F /* ProfileTVC.swift */,
+			);
+			path = Profile;
 			sourceTree = "<group>";
 		};
 		3E3DE76D9572D3A7EABF2203 /* Pods */ = {
@@ -280,6 +297,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				043CA52221E679FF0001F076 /* EnterButton.xib in Resources */,
+				04E7F76821FFC5890021127F /* FaceBookButton.xib in Resources */,
 				04CFCE53216A323C00A460BA /* LaunchScreen.storyboard in Resources */,
 				043CA53A21E819820001F076 /* MarkButton.xib in Resources */,
 				047D37D3219B042A00C75594 /* Assets.xcassets in Resources */,
@@ -318,8 +336,10 @@
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-CampusClientIOS/Pods-CampusClientIOS-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
+				"${BUILT_PRODUCTS_DIR}/Bolts/Bolts.framework",
+				"${BUILT_PRODUCTS_DIR}/FBSDKCoreKit/FBSDKCoreKit.framework",
+				"${BUILT_PRODUCTS_DIR}/FBSDKLoginKit/FBSDKLoginKit.framework",
 				"${BUILT_PRODUCTS_DIR}/PromiseKit/PromiseKit.framework",
-				"${BUILT_PRODUCTS_DIR}/SKActivityIndicatorView/SKActivityIndicatorView.framework",
 				"${BUILT_PRODUCTS_DIR}/SwiftyJSON/SwiftyJSON.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
@@ -327,8 +347,10 @@
 			);
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Bolts.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FBSDKCoreKit.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FBSDKLoginKit.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/PromiseKit.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SKActivityIndicatorView.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftyJSON.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -352,6 +374,7 @@
 				043CA53421E816E10001F076 /* DetailTVC.swift in Sources */,
 				043CA52C21E7E0860001F076 /* MainTVC.swift in Sources */,
 				043CA53021E804D60001F076 /* PotochneTVC.swift in Sources */,
+				04E7F76D2200DAFB0021127F /* ProfileTVC.swift in Sources */,
 				043CA52821E682470001F076 /* UiViewDesignable.swift in Sources */,
 				0467D5AD21F7D0B2002E6D58 /* studentArchiveVC.swift in Sources */,
 				0467D5AF21F7E735002E6D58 /* ArchiveMainCell.swift in Sources */,
@@ -363,6 +386,7 @@
 				0430A6BA21B03AD60066F929 /* HexExtension.swift in Sources */,
 				043CA52421E67A300001F076 /* EnterButton.swift in Sources */,
 				043CA53D21ECDC670001F076 /* AccountInfo.swift in Sources */,
+				04E7F76A21FFC5AB0021127F /* FaceBookButton.swift in Sources */,
 				ABC357A72529722C77F3C227 /* Settings.swift in Sources */,
 				ABC354E2D57CA846B8C17A97 /* ApiClient.swift in Sources */,
 			);
@@ -444,6 +468,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 11.4;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
+				OTHER_LDFLAGS = "-ObjC";
 				SDKROOT = iphoneos;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
@@ -497,6 +522,7 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 11.4;
 				MTL_ENABLE_DEBUG_INFO = NO;
+				OTHER_LDFLAGS = "-ObjC";
 				SDKROOT = iphoneos;
 				SWIFT_COMPILATION_MODE = wholemodule;
 				SWIFT_OPTIMIZATION_LEVEL = "-O";
@@ -509,7 +535,7 @@
 			baseConfigurationReference = 97CB0B402711BDEA41A20A82 /* Pods-CampusClientIOS.debug.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 98LW3JUVJ3;
+				DEVELOPMENT_TEAM = YNXC5CY44T;
 				INFOPLIST_FILE = CampusClientIOS/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -527,7 +553,7 @@
 			baseConfigurationReference = 84415CC226A4C81E05085554 /* Pods-CampusClientIOS.release.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 98LW3JUVJ3;
+				DEVELOPMENT_TEAM = YNXC5CY44T;
 				INFOPLIST_FILE = CampusClientIOS/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",

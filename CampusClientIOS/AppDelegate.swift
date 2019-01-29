@@ -9,9 +9,8 @@
 import UIKit
 import Alamofire
 import SwiftyJSON
-import SKActivityIndicatorView
 
-let themeColor = UIColor.init(hexString: "#007ba7")
+let themeColor = UIColor.init(hexString: "#208843")
 
 let mainQ = DispatchQueue.main
 

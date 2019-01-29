@@ -1,18 +1,20 @@
 //
-//  EnterButton.swift
+//  FaceBookButton.swift
 //  CampusClientIOS
 //
-//  Created by mac on 1/9/19.
+//  Created by mac on 1/29/19.
 //  Copyright © 2019 SINED. All rights reserved.
 //
 
 import UIKit
 
-class EnterButton: UIButton {
+class FaceBookButton: UIButton {
 
-    @IBOutlet weak var buttonLabel: UILabel!
-    
     let buttonAnimationQ = DispatchQueue.global(qos: DispatchQoS.QoSClass.userInitiated)
+    
+    let buttonColor = UIColor.init(hexString: "#3C5A99")
+    
+    @IBOutlet weak var facebookLabel: UILabel!
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -24,13 +26,13 @@ class EnterButton: UIButton {
         setup()
     }
     
-    var view: RoundUIView!
-    var nibName = "EnterButton"
+    var view: UIView!
+    var nibName = "FaceBookButton"
     
-    private func loadFromNib() -> RoundUIView {
+    private func loadFromNib() -> UIView {
         let bundle = Bundle.init(for: type(of: self))
         let nib = UINib.init(nibName: nibName, bundle: bundle)
-        let view = nib.instantiate(withOwner: self, options: nil).first as! RoundUIView
+        let view = nib.instantiate(withOwner: self, options: nil).first as! UIView
         return view
     }
     
@@ -39,10 +41,8 @@ class EnterButton: UIButton {
         view.autoresizingMask = [.flexibleWidth, .flexibleHeight]
         view.frame = bounds
         view.isUserInteractionEnabled = false
-        view.backgroundColor = themeColor
-        buttonLabel.text = "Увійти"
-        buttonLabel.textColor = UIColor.white
-        view.cornerRadius = 0
+        view.backgroundColor = buttonColor
+        facebookLabel.textColor = UIColor.white
         addSubview(view)
     }
     
@@ -52,7 +52,7 @@ class EnterButton: UIButton {
                 self.view.backgroundColor = UIColor.white
             }, completion: nil)
             UIView.animate(withDuration: 1, animations: {
-                self.view.backgroundColor = themeColor
+                self.view.backgroundColor = self.buttonColor
             }, completion: nil)
         }
     }
