@@ -46,3 +46,20 @@ struct Subdivision: Encodable {
     var name: String?
     var id: String?
 }
+
+struct AcountGroupSingle: Codable {
+    var studyGroupId: String?
+    var studyGroupName: String?
+    var studyCourse: String?
+    var dcStudyGroupId: String?
+    var proftraintotalId: String?
+    var proftrain: String?
+    var totalShifr: String?
+    var okrId: String?
+    var okr: String?
+    var cathedraId: String?
+    var cathedra: String?
+    var dcStudyFormId: String?
+    var studyformname: String?
+    var yearIntake: String?
+}

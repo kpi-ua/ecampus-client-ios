@@ -39,11 +39,10 @@ class AccountInfo: NSObject {
                 switch (response.result) {
                 case .success(let data):
                     print(data)
-                    let json = data as! [[String : Any]]
-                    guard let data = response.data else { return }
                     do {
+                        let jsonData = try JSONSerialization.data(withJSONObject: data)
                         let decoder = JSONDecoder()
-                        let groupData = try decoder.decode(AcountGroupSingle.self, from: data)
+                        let groupData = try! decoder.decode(Array<AcountGroupSingle>.self, from: jsonData)
                         print(groupData)
                     } catch let err {
                         print("Err", err)
@@ -55,26 +54,7 @@ class AccountInfo: NSObject {
         }
     }
     
-    struct AcountGroupArray: Codable {
-        var AcountGroupSingle: [AcountGroupSingle]
-    }
     
-    struct AcountGroupSingle: Codable {
-        var studyGroupId: String?
-        var studyGroupName: String?
-        var studyCourse: String?
-        var dcStudyGroupId: String?
-        var proftraintotalId: String?
-        var proftrain: String?
-        var totalShifr: String?
-        var okrId: String?
-        var okr: String?
-        var cathedraId: String?
-        var cathedra: String?
-        var dcStudyFormId: String?
-        var studyformname: String?
-        var yearIntake: String?
-    }
     
     private func parseAccountInfo(json: [String : AnyObject]) -> AccountInfoS? {
         guard let positionAc = json["position"] as? [[String : AnyObject]] else { return nil }
