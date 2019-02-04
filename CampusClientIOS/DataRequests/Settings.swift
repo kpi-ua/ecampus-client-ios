@@ -6,5 +6,5 @@
 import Foundation
 
 class Settings {
-    static let apiEndpoint = "https://api.campus.kpi.ua/"
+    static let apiEndpoint = "http://api.ecampus.kpi.ua/"
 }

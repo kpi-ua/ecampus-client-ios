@@ -49,10 +49,6 @@ class ApiClient {
         }
     }
     
-    public func fbAuth(fbToken: String, completion: @escaping () -> Void) {
-        let authUrl = self.baseURL + "Account/oauth/login/fb"
-    }
-    
     public func makeRequest(_ path: String,
                             method: HTTPMethod = .get,
                             parameters: Parameters? = nil,

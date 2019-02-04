@@ -290,10 +290,10 @@
             </objects>
             <point key="canvasLocation" x="-1500" y="170"/>
         </scene>
-        <!--Table View Controller-->
+        <!--Мій профіль-->
         <scene sceneID="c1Q-mc-c0B">
             <objects>
-                <tableViewController id="ww1-qf-gbh" sceneMemberID="viewController">
+                <tableViewController title="Мій профіль" id="ww1-qf-gbh" customClass="ProfileTVC" customModule="CampusClientIOS" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="bjX-qx-lh3">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

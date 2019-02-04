@@ -14,24 +14,66 @@ class AccountInfo: NSObject {
     
     let accountQ = DispatchQueue.global(qos: DispatchQoS.QoSClass.background)
     
+    private var apiClient : ApiClient
+    
+    init(apiClient: ApiClient) {
+        self.apiClient = apiClient
+        super.init()
+    }
+    
     public func getAccountInfo(completion: @escaping (AccountInfoS) -> Void) {
-        let url = Settings.apiEndpoint + "Account/Info"
-        guard let token = UserDefaults.standard.object(forKey: "access_token") as? String else { return }
-        let auth = ["Authorization" : "Bearer " + token]
         accountQ.async {
-            request(url, method: .get, parameters: nil, encoding: URLEncoding.httpBody, headers: auth).responseJSON(completionHandler: { (response) in
-                switch(response.result) {
+            self.apiClient.makeRequest("Account/Info", method: .get, parameters: nil, { (data) in
+                let json = data as! [String : AnyObject]
+                let info = self.parseAccountInfo(json: json)
+                mainQ.async {
+                    completion(info!)
+                }
+            })
+        }
+    }
+    
+    public func getAccountGroup() {
+        accountQ.async {
+            request("http://api.ecampus.kpi.ua/Account/student/group", method: .get, parameters: nil, encoding: URLEncoding.httpBody, headers: ["Authorization" : "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiI00LoiLCJpZCI6IjU3NTI0IiwiaXNzIjoiaHR0cDovLzEyNy4wLjAuMSIsImF1ZCI6IjRiMjZkZGIyMDNkZDQxMzk4MjdiYTY5NzMyMjhjMGVhIiwiZXhwIjoxNTQ5MzcwNzkzLCJuYmYiOjE1NDkyODQzOTN9.fOWMEyj4f_gIlX4pAz4XIovR6YVHgi8UUNQ-YI7IUZc"]).responseJSON { (response) in
+                switch (response.result) {
                 case .success(let data):
-                    let json = data as! [String : AnyObject]
-                    let info = self.parseAccountInfo(json: json)
-                    mainQ.async {
-                        completion(info!)
+                    print(data)
+                    let json = data as! [[String : Any]]
+                    guard let data = response.data else { return }
+                    do {
+                        let decoder = JSONDecoder()
+                        let groupData = try decoder.decode(AcountGroupSingle.self, from: data)
+                        print(groupData)
+                    } catch let err {
+                        print("Err", err)
                     }
                 case .failure(let error):
                     print(error)
                 }
-            })
+            }
         }
+    }
+    
+    struct AcountGroupArray: Codable {
+        var AcountGroupSingle: [AcountGroupSingle]
+    }
+    
+    struct AcountGroupSingle: Codable {
+        var studyGroupId: String?
+        var studyGroupName: String?
+        var studyCourse: String?
+        var dcStudyGroupId: String?
+        var proftraintotalId: String?
+        var proftrain: String?
+        var totalShifr: String?
+        var okrId: String?
+        var okr: String?
+        var cathedraId: String?
+        var cathedra: String?
+        var dcStudyFormId: String?
+        var studyformname: String?
+        var yearIntake: String?
     }
     
     private func parseAccountInfo(json: [String : AnyObject]) -> AccountInfoS? {
@@ -53,21 +95,3 @@ class AccountInfo: NSObject {
     
 }
 
-struct AccountInfoS: Encodable {
-    var position: Position?
-    var subdivision: Subdivision?
-    var isBulletinBoardModerator: String?
-    var sid: String?
-    var name: String?
-    var id: String?
-}
-
-struct Position: Encodable {
-    var name: String?
-    var id: String?
-}
-
-struct Subdivision: Encodable {
-    var name: String?
-    var id: String?
-}

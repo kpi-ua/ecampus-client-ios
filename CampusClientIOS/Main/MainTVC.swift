@@ -10,9 +10,10 @@ import UIKit
 
 class MainTVC: UITableViewController {
     
-    let menuItems = ["Опитування", "Вихід"]
+    let menuItems = ["Профіль","Опитування", "Вихід"]
     let defaults = UserDefaults.standard
-    let accountInfo = AccountInfo.init()
+    
+    let accountInfo = AccountInfo.init(apiClient: ApiClient.shared)
     
     let studentStatus = "студент"
     let prepodStatus = "викладач"
@@ -74,7 +75,9 @@ class MainTVC: UITableViewController {
     func actionForChosenCell(indexPath: IndexPath) {
         switch indexPath.row {
         case 0:
-            requestStatus()
+            performSegue(withIdentifier: "profileSegue", sender: nil)
+        case 1:
+            performSegue(withIdentifier: "potochneStudentSegue", sender: nil)
         default:
             createExitAlert()
         }

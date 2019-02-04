@@ -27,3 +27,22 @@ struct lecturerResult: Codable {
     var voteCriterionCoef: String?
     var mark: String?
 }
+
+struct AccountInfoS: Encodable {
+    var position: Position?
+    var subdivision: Subdivision?
+    var isBulletinBoardModerator: String?
+    var sid: String?
+    var name: String?
+    var id: String?
+}
+
+struct Position: Encodable {
+    var name: String?
+    var id: String?
+}
+
+struct Subdivision: Encodable {
+    var name: String?
+    var id: String?
+}
