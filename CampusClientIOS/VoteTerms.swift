@@ -8,7 +8,7 @@
 
 import Foundation
 
-class VoteTerms: NSObject {
+class VoteTerms: NSObject, Codable {
     var studyYear: String?
     var voteNumber: String?
     var voteDescription: String?

@@ -84,13 +84,7 @@ class MainTVC: UITableViewController {
     }
     
     //check is user student of teacher
-    func requestStatus() {
-        accountInfo.getAccountInfo { (info) -> Void in
-            guard let status = info.position?.name else { return }
-            print(status)
-            self.presentControllerDependsOnStatus(status: self.checkForStatus(status: status))
-        }
-    }
+   
     
     func checkForStatus(status: String) -> String {
         if status.lowercased().contains(studentStatus) {

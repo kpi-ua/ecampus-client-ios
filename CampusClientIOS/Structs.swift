@@ -28,26 +28,26 @@ struct lecturerResult: Codable {
     var mark: String?
 }
 
-struct AccountInfoS: Encodable {
-    var position: Position?
-    var subdivision: Subdivision?
-    var isBulletinBoardModerator: String?
-    var sid: String?
-    var name: String?
-    var id: String?
+struct AccountInfoS: Codable {
+    var position: [Position]
+    var subdivision: [Subdivision]
+    var isBulletinBoardModerator: Bool
+    var sid: String
+    var name: String
+    var id: Int
 }
 
-struct Position: Encodable {
-    var name: String?
-    var id: String?
+struct Position: Codable {
+    var name: String
+    var id: Int
 }
 
-struct Subdivision: Encodable {
-    var name: String?
-    var id: String?
+struct Subdivision: Codable {
+    var name: String
+    var id: Int
 }
 
-struct AcountGroupSingle: Codable {
+struct AcountGroup: Codable {
     var studyGroupId: String?
     var studyGroupName: String?
     var studyCourse: String?
@@ -63,3 +63,4 @@ struct AcountGroupSingle: Codable {
     var studyformname: String?
     var yearIntake: String?
 }
+

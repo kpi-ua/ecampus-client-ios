@@ -19,7 +19,6 @@ class ProfileTVC: UITableViewController {
         acountInfoReq.getAccountInfo { (info) in
             print(info)
         }
-        acountInfoReq.getAccountGroup()
     }
 
     // MARK: - Table view data source

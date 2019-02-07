@@ -67,7 +67,7 @@ JSON's type definitions.
 
 See http://www.json.org
 */
-public enum Type: Int {
+public enum Type: Int, Codable {
 	case number
 	case string
 	case bool

@@ -12,7 +12,9 @@ import SwiftyJSON
 
 class AccountInfo: NSObject {
     
-    let accountQ = DispatchQueue.global(qos: DispatchQoS.QoSClass.background)
+    private let accountQ = DispatchQueue.global(qos: DispatchQoS.QoSClass.background)
+    
+    private let decoder = JSONDecoder()
     
     private var apiClient : ApiClient
     
@@ -24,53 +26,33 @@ class AccountInfo: NSObject {
     public func getAccountInfo(completion: @escaping (AccountInfoS) -> Void) {
         accountQ.async {
             self.apiClient.makeRequest("Account/Info", method: .get, parameters: nil, { (data) in
-                let json = data as! [String : AnyObject]
-                let info = self.parseAccountInfo(json: json)
-                mainQ.async {
-                    completion(info!)
+                do {
+                    let jsonData = try JSONSerialization.data(withJSONObject: data)
+                    let info = try self.decoder.decode(AccountInfoS.self, from: jsonData)
+                    mainQ.async {
+                        completion(info)
+                    }
+                } catch let err {
+                    print("Err", err)
                 }
             })
         }
     }
     
-    public func getAccountGroup() {
+    public func getAccountGroup(completion: @escaping ([AcountGroup]) -> Void) {
         accountQ.async {
-            request("http://api.ecampus.kpi.ua/Account/student/group", method: .get, parameters: nil, encoding: URLEncoding.httpBody, headers: ["Authorization" : "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiI00LoiLCJpZCI6IjU3NTI0IiwiaXNzIjoiaHR0cDovLzEyNy4wLjAuMSIsImF1ZCI6IjRiMjZkZGIyMDNkZDQxMzk4MjdiYTY5NzMyMjhjMGVhIiwiZXhwIjoxNTQ5MzcwNzkzLCJuYmYiOjE1NDkyODQzOTN9.fOWMEyj4f_gIlX4pAz4XIovR6YVHgi8UUNQ-YI7IUZc"]).responseJSON { (response) in
-                switch (response.result) {
-                case .success(let data):
-                    print(data)
-                    do {
-                        let jsonData = try JSONSerialization.data(withJSONObject: data)
-                        let decoder = JSONDecoder()
-                        let groupData = try! decoder.decode(Array<AcountGroupSingle>.self, from: jsonData)
-                        print(groupData)
-                    } catch let err {
-                        print("Err", err)
+            self.apiClient.makeRequest("Account/student/group", { (data) in
+                do {
+                    let jsonData = try JSONSerialization.data(withJSONObject: data)
+                    let groupData = try self.decoder.decode(Array<AcountGroup>.self, from: jsonData)
+                    mainQ.async {
+                        completion(groupData)
                     }
-                case .failure(let error):
-                    print(error)
+                } catch let err {
+                    print("Err", err)
                 }
-            }
+            })
         }
-    }
-    
-    
-    
-    private func parseAccountInfo(json: [String : AnyObject]) -> AccountInfoS? {
-        guard let positionAc = json["position"] as? [[String : AnyObject]] else { return nil }
-        guard let posID = positionAc[0]["id"] else { return nil }
-        guard let posName = positionAc[0]["name"] else { return nil }
-        guard let subdivisionAc = json["subdivision"] as? [[String : AnyObject]] else { return nil }
-        guard let subId = subdivisionAc[0]["id"] else { return nil }
-        guard let subName = subdivisionAc[0]["name"] else { return nil }
-        guard let moder = json["isBulletinBoardModerator"] else { return nil }
-        guard let sid = json["sid"] else { return nil }
-        guard let name = json["name"] else { return nil }
-        guard let id = json["id"] else { return nil }
-        let pos = Position.init(name: posName as? String, id: posID as? String)
-        let subd = Subdivision.init(name: subName as? String, id: subId as? String)
-        let acInf = AccountInfoS.init(position: pos, subdivision: subd, isBulletinBoardModerator: moder as? String, sid: sid as? String, name: name as? String, id: id as? String)
-        return acInf
     }
     
 }
