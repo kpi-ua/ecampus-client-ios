@@ -55,5 +55,16 @@ class AccountInfo: NSObject {
         }
     }
     
+    public func getEnglishName(userID: String, completion: @escaping (Any) -> Void) {
+        accountQ.async {
+            self.apiClient.makeRequest("/Account/\(userID)/Name/Eng", { (data) in
+                completion(data)
+            })
+        }
+    }
+    
+    
+    
+    
 }
 

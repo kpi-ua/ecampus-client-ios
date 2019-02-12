@@ -43,6 +43,9 @@ class ProfileTVC: UITableViewController {
             accountInfoReq.getAccountInfo { (info) in
                 self.info = info
                 self.setLabels()
+                self.accountInfoReq.getEnglishName(userID: String(self.info!.id), completion: { (data) in
+                    self.checkForEnglishName(data: data as! String)
+                })
             }
             accountInfoReq.getAccountGroup { (group) in
                 self.groupInfo = group
@@ -61,8 +64,51 @@ class ProfileTVC: UITableViewController {
         tableView.reloadData()
     }
     
+    private func createEnglishNameLabel(text: String) -> UILabel {
+        let rect = CGRect.init(x: 16, y: 48, width: 343, height: 21)
+        let label = UILabel.init(frame: rect)
+        return label
+    }
+    
+    private func createEnglishNameTextField() -> UITextField {
+        let rect = CGRect.init(x: 16, y: 48, width: 343, height: 21)
+        let textField = UITextField.init(frame: rect)
+        return textField
+    }
+    
+    func checkForEnglishName(data: String) {
+        if data == "" {
+            
+        }
+    }
+    
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
     }
+    
+    @objc func createSaveAlert() {
+        let alert = UIAlertController.init(title: "Ви впевнені, що хочете зберегти зміни?", message: nil, preferredStyle: UIAlertController.Style.alert)
+        let okAction = UIAlertAction.init(title: "Ok", style: UIAlertAction.Style.default) { (UIAlertAction) in
+            //Code for saving changes in profile
+            self.resetEditButtonStyle()
+        }
+        let cancelAction = UIAlertAction.init(title: "Cancel", style: UIAlertAction.Style.cancel) { (UIAlertAction) in
+            //Actions after cancelling editing
+            self.resetEditButtonStyle()
+        }
+        alert.addAction(okAction)
+        alert.addAction(cancelAction)
+    }
+    
+    func resetEditButtonStyle() {
+        let buttonItem = UIBarButtonItem.init(title: "Edit", style: UIBarButtonItem.Style.plain, target: nil, action: nil)
+        self.navigationItem.rightBarButtonItem = buttonItem
+    }
+    
+    @IBAction func editButton(_ sender: Any) {
+        let buttonItem = UIBarButtonItem.init(title: "Save", style: .plain, target: nil, action: #selector(self.createSaveAlert))
+        self.navigationItem.rightBarButtonItem = buttonItem
+    }
+    
     
 }
