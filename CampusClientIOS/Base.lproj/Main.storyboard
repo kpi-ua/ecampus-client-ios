@@ -379,7 +379,7 @@
                                             </subviews>
                                             <constraints>
                                                 <constraint firstItem="DqT-WW-1DH" firstAttribute="leading" secondItem="w1Z-bA-eFc" secondAttribute="leadingMargin" id="HUO-2k-4Wd"/>
-                                                <constraint firstAttribute="bottomMargin" secondItem="DqT-WW-1DH" secondAttribute="bottom" constant="37" id="Xwh-Fh-8Hk"/>
+                                                <constraint firstItem="DqT-WW-1DH" firstAttribute="top" secondItem="w1Z-bA-eFc" secondAttribute="top" constant="11" id="IcA-pA-aMt"/>
                                                 <constraint firstItem="DqT-WW-1DH" firstAttribute="trailing" secondItem="w1Z-bA-eFc" secondAttribute="trailingMargin" id="rRP-dd-VsY"/>
                                                 <constraint firstItem="DqT-WW-1DH" firstAttribute="top" secondItem="w1Z-bA-eFc" secondAttribute="topMargin" id="vQt-rU-D15"/>
                                             </constraints>

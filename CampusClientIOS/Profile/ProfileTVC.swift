@@ -27,15 +27,22 @@ class ProfileTVC: UITableViewController {
     let accountInfoReq = AccountInfo.init(apiClient: ApiClient.shared)
     var info: AccountInfoS?
     var groupInfo: [AcountGroup]?
+    var englishName: String?
+    var editingProfile = false
     
     override func viewDidLoad() {
         super.viewDidLoad()
         self.navigationController?.title = "Мій профіль"
+        setHeaders()
+        makeRequests()
+        hideKeyboardWhenTappedAround()
+    }
+    
+    func setHeaders() {
         firstHeaderCell.backgroundColor = themeColor
         secondHeaderCell.backgroundColor = themeColor
         firstHeaderLabel.textColor = UIColor.white
         secondHeaderLabel.textColor = UIColor.white
-        makeRequests()
     }
     
     func makeRequests() {
@@ -44,7 +51,7 @@ class ProfileTVC: UITableViewController {
                 self.info = info
                 self.setLabels()
                 self.accountInfoReq.getEnglishName(userID: String(self.info!.id), completion: { (data) in
-                    self.checkForEnglishName(data: data as! String)
+                    self.englishName = data as? String
                 })
             }
             accountInfoReq.getAccountGroup { (group) in
@@ -76,39 +83,77 @@ class ProfileTVC: UITableViewController {
         return textField
     }
     
-    func checkForEnglishName(data: String) {
-        if data == "" {
-            
+    @objc func createSaveAlert(_ sender: UIBarButtonItem) {
+        editingProfile = false
+        let alert = UIAlertController.init(title: "Ви впевнені, що хочете зберегти зміни?", message: nil, preferredStyle: UIAlertController.Style.alert)
+        let okAction = UIAlertAction.init(title: "Ok", style: UIAlertAction.Style.default) { (UIAlertAction) in
+            //Code for saving changes in profile
+            self.editingProfile = false
+            self.resetEditButtonStyle()
         }
+        let cancelAction = UIAlertAction.init(title: "Cancel", style: UIAlertAction.Style.cancel) { (UIAlertAction) in
+            //Actions after cancelling editing
+            self.editingProfile = false
+            self.resetEditButtonStyle()
+        }
+        alert.addAction(okAction)
+        alert.addAction(cancelAction)
+        present(alert, animated: true, completion: nil)
+    }
+    
+    func resetEditButtonStyle() {
+        let buttonItem = UIBarButtonItem.init(title: "Edit", style: UIBarButtonItem.Style.plain, target: self, action: #selector(editButton(_:)))
+        self.navigationItem.rightBarButtonItem = buttonItem
+    }
+    
+    @IBAction func editButton(_ sender: Any) {
+        print("editing")
+        print(englishName)
+        editingProfile = true
+        let barButoon = UIBarButtonItem.init(title: "Save", style: .plain, target: self, action: #selector(createSaveAlert(_:)))
+        self.navigationItem.rightBarButtonItem = barButoon
+        print(editingProfile)
+        tableView.reloadData()
+        print("reloaded")
     }
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
     }
     
-    @objc func createSaveAlert() {
-        let alert = UIAlertController.init(title: "Ви впевнені, що хочете зберегти зміни?", message: nil, preferredStyle: UIAlertController.Style.alert)
-        let okAction = UIAlertAction.init(title: "Ok", style: UIAlertAction.Style.default) { (UIAlertAction) in
-            //Code for saving changes in profile
-            self.resetEditButtonStyle()
+    override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        switch indexPath.row {
+        case 2:
+            return setEnglishNameRow()
+        default:
+            return setHeight(index: indexPath)
         }
-        let cancelAction = UIAlertAction.init(title: "Cancel", style: UIAlertAction.Style.cancel) { (UIAlertAction) in
-            //Actions after cancelling editing
-            self.resetEditButtonStyle()
-        }
-        alert.addAction(okAction)
-        alert.addAction(cancelAction)
     }
     
-    func resetEditButtonStyle() {
-        let buttonItem = UIBarButtonItem.init(title: "Edit", style: UIBarButtonItem.Style.plain, target: nil, action: nil)
-        self.navigationItem.rightBarButtonItem = buttonItem
+    func setEnglishNameRow() -> CGFloat {
+        if editingProfile == false && englishName == "" {
+            return 80
+        }
+        if editingProfile && englishName != "" {
+            return 120
+        }
+        if englishName == "" {
+            return 40
+        }
+        return 40
     }
     
-    @IBAction func editButton(_ sender: Any) {
-        let buttonItem = UIBarButtonItem.init(title: "Save", style: .plain, target: nil, action: #selector(self.createSaveAlert))
-        self.navigationItem.rightBarButtonItem = buttonItem
+    func setHeight(index: IndexPath) -> CGFloat {
+        switch index.row {
+        case 0:
+            return 29.5
+        case 3:
+            return 29.5
+        default:
+            return 80
+        }
     }
+    
     
     
 }
