@@ -654,7 +654,7 @@
         <!--Голосування-->
         <scene sceneID="dxV-9y-uuE">
             <objects>
-                <tabBarController id="bCy-qa-2Xa" sceneMemberID="viewController">
+                <tabBarController id="bCy-qa-2Xa" customClass="VoteTabBar" customModule="CampusClientIOS" customModuleProvider="target" sceneMemberID="viewController">
                     <navigationItem key="navigationItem" title="Голосування" id="B0M-Bu-fTw"/>
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="Otz-IS-NvA">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="49"/>
