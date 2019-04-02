@@ -21,7 +21,7 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Enter" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gKp-si-zQ0">
-                    <rect key="frame" x="132" y="8" width="79" height="22"/>
+                    <rect key="frame" x="0.0" y="8" width="343" height="22"/>
                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                     <nil key="textColor"/>
                     <nil key="highlightedColor"/>
@@ -30,11 +30,12 @@
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
                 <constraint firstItem="gKp-si-zQ0" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" constant="8" id="3f8-oy-mv2"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="gKp-si-zQ0" secondAttribute="trailing" id="9iq-cw-YaW"/>
                 <constraint firstItem="gKp-si-zQ0" firstAttribute="centerX" secondItem="vUN-kp-3ea" secondAttribute="centerX" id="D8B-42-gXc"/>
+                <constraint firstItem="gKp-si-zQ0" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="Xz6-Ag-Djw"/>
                 <constraint firstItem="vUN-kp-3ea" firstAttribute="bottom" secondItem="gKp-si-zQ0" secondAttribute="bottom" constant="8" id="eg0-H2-EeQ"/>
-                <constraint firstItem="gKp-si-zQ0" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="132" id="mcV-3i-ccO"/>
-                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="gKp-si-zQ0" secondAttribute="trailing" constant="132" id="moj-CG-Iuy"/>
-                <constraint firstItem="gKp-si-zQ0" firstAttribute="centerY" secondItem="vUN-kp-3ea" secondAttribute="centerY" id="xFK-z1-qu8"/>
+                <constraint firstItem="gKp-si-zQ0" firstAttribute="centerY" secondItem="vUN-kp-3ea" secondAttribute="centerY" id="sfG-7R-vSr"/>
+                <constraint firstItem="gKp-si-zQ0" firstAttribute="centerX" secondItem="vUN-kp-3ea" secondAttribute="centerX" id="x5A-ZO-elo"/>
             </constraints>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>

@@ -25,7 +25,7 @@ class VoteRequest: NSObject {
 
     public func getAllVotes(token: String?, completion: @escaping ([VoteTerms]) -> Void) {
         requsetBgQ.async {
-            self.apiClient.makeRequest("Vote/Terms", method: .get, parameters: nil) { (data) -> Void in
+            self.apiClient.makeRequest("Vote/Terms", method: .get, parameters: nil) { (data) in
                 do {
                     let jsonData = try JSONSerialization.data(withJSONObject: data)
                     let terms = try! self.decoder.decode(Array<VoteTerms>.self, from: jsonData)
@@ -33,7 +33,7 @@ class VoteRequest: NSObject {
                         completion(terms)
                     }
                 } catch let err {
-                    print("Err", err)
+                    print("Err", err.localizedDescription)
                 }
             }
         }
@@ -60,11 +60,27 @@ class VoteRequest: NSObject {
         let url = "Vote/Results/Students?voteTermId=\(termID)"
         requsetBgQ.async {
             self.apiClient.makeRequest(url, method: .get, parameters: nil) { (data) -> Void in
-                print(data)
                 let json = data as! [[String : AnyObject]]
                 completion(json)
             }
         }
     }
+    
+    public func archiveRequest(termID : String, completion: @escaping ([ArchiveResults]) -> Void) {
+        let url = "Vote/\(termID)/archive"
+        requsetBgQ.async {
+            self.apiClient.makeRequest(url, method: .get, parameters: nil, { (data) in
+                do {
+                    let jsonData = try JSONSerialization.data(withJSONObject: data)
+                    let results = try! self.decoder.decode(Array<ArchiveResults>.self, from: jsonData)
+                    completion(results)
+                } catch {
+                    print(error.localizedDescription)
+                }
+            })
+        }
+    }
+    
+    
     
 }

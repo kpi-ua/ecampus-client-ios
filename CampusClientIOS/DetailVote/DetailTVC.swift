@@ -26,7 +26,6 @@ class DetailTVC: UITableViewController, SaveOneCriterionMark {
     }
 
     override func numberOfSections(in tableView: UITableView) -> Int {
-        // #warning Incomplete implementation, return the number of sections
         return 1
     }
 
@@ -74,4 +73,5 @@ class DetailTVC: UITableViewController, SaveOneCriterionMark {
             return
         }
     }
+    
 }

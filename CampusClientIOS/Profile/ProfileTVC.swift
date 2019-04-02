@@ -47,23 +47,23 @@ class ProfileTVC: UITableViewController {
     
     func makeRequests() {
         profileQ.sync {
-            accountInfoReq.getAccountInfo { (info) in
+            self.accountInfoReq.getAccountInfo { (info) in
                 self.info = info
                 self.setLabels()
                 self.accountInfoReq.getEnglishName(userID: String(self.info!.id), completion: { (data) in
                     self.englishName = data as? String
                 })
             }
-            accountInfoReq.getAccountGroup { (group) in
+            self.accountInfoReq.getAccountGroup { (group) in
                 self.groupInfo = group
-                self.setLabels()
+                print("getGroupInfo")
             }
         }
     }
     
     func setLabels() {
         nameLabel.text = info?.name
-        subdivisionLabel.text = groupInfo?[0].cathedra
+        subdivisionLabel.text = info?.subdivision[0].name
         groupLabel.text = groupInfo?[0].studyGroupName
         studyFormLabel.text = groupInfo?[0].studyformname
         courseLabel.text = groupInfo?[0].studyCourse
@@ -153,7 +153,5 @@ class ProfileTVC: UITableViewController {
             return 80
         }
     }
-    
-    
     
 }

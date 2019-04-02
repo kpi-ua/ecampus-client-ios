@@ -30,6 +30,7 @@ class AccountInfo: NSObject {
                     let jsonData = try JSONSerialization.data(withJSONObject: data)
                     let info = try self.decoder.decode(AccountInfoS.self, from: jsonData)
                     mainQ.async {
+                        print(info)
                         completion(info)
                     }
                 } catch let err {
@@ -47,6 +48,7 @@ class AccountInfo: NSObject {
                     let groupData = try self.decoder.decode(Array<AcountGroup>.self, from: jsonData)
                     mainQ.async {
                         completion(groupData)
+                        print(groupData)
                     }
                 } catch let err {
                     print("Err", err)
@@ -62,7 +64,6 @@ class AccountInfo: NSObject {
             })
         }
     }
-    
     
     
     

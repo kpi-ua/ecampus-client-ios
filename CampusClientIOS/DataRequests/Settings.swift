@@ -5,6 +5,7 @@
 
 import Foundation
 
-class Settings {
-    static let apiEndpoint = "http://api.ecampus.kpi.ua/"
+enum Settings: String {
+    case main = "https://api.campus.kpi.ua/"
+    case test = "http://api.ecampus.kpi.ua/"
 }

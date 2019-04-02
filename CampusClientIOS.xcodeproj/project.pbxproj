@@ -27,6 +27,10 @@
 		043CA53D21ECDC670001F076 /* AccountInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 043CA53C21ECDC670001F076 /* AccountInfo.swift */; };
 		0467D5AD21F7D0B2002E6D58 /* studentArchiveVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0467D5AC21F7D0B2002E6D58 /* studentArchiveVC.swift */; };
 		0467D5AF21F7E735002E6D58 /* ArchiveMainCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0467D5AE21F7E735002E6D58 /* ArchiveMainCell.swift */; };
+		0469179A224CD286002DCC22 /* UIImageRotate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04691799224CD286002DCC22 /* UIImageRotate.swift */; };
+		0469179E224CEB51002DCC22 /* CellTouch.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0469179D224CEB50002DCC22 /* CellTouch.swift */; };
+		046917A0224CF7DB002DCC22 /* ArchiveDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0469179F224CF7DB002DCC22 /* ArchiveDataModel.swift */; };
+		046917A2224CFB39002DCC22 /* ArchiveResultsStruct.swift in Sources */ = {isa = PBXBuildFile; fileRef = 046917A1224CFB39002DCC22 /* ArchiveResultsStruct.swift */; };
 		047D37D3219B042A00C75594 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 047D37D2219B042A00C75594 /* Assets.xcassets */; };
 		04B74E162195A3D4005E3F94 /* ActivityIndicator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04B74E152195A3D4005E3F94 /* ActivityIndicator.swift */; };
 		04B98E142211B0F5009955FD /* EnglishNameTextFieldCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04B98E132211B0F5009955FD /* EnglishNameTextFieldCell.swift */; };
@@ -63,10 +67,15 @@
 		043CA53C21ECDC670001F076 /* AccountInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountInfo.swift; sourceTree = "<group>"; };
 		0467D5AC21F7D0B2002E6D58 /* studentArchiveVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = studentArchiveVC.swift; sourceTree = "<group>"; };
 		0467D5AE21F7E735002E6D58 /* ArchiveMainCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArchiveMainCell.swift; sourceTree = "<group>"; };
+		04691799224CD286002DCC22 /* UIImageRotate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIImageRotate.swift; sourceTree = "<group>"; };
+		0469179D224CEB50002DCC22 /* CellTouch.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CellTouch.swift; sourceTree = "<group>"; };
+		0469179F224CF7DB002DCC22 /* ArchiveDataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArchiveDataModel.swift; sourceTree = "<group>"; };
+		046917A1224CFB39002DCC22 /* ArchiveResultsStruct.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArchiveResultsStruct.swift; sourceTree = "<group>"; };
 		047D37D2219B042A00C75594 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		04B74E152195A3D4005E3F94 /* ActivityIndicator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityIndicator.swift; sourceTree = "<group>"; };
 		04B98E132211B0F5009955FD /* EnglishNameTextFieldCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EnglishNameTextFieldCell.swift; sourceTree = "<group>"; };
 		04B98E172216D413009955FD /* VoteTabBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VoteTabBar.swift; sourceTree = "<group>"; };
+		04CC7906223D68A6004194BC /* CampusClientIOS.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = CampusClientIOS.entitlements; sourceTree = "<group>"; };
 		04CFCE45216A323B00A460BA /* CampusClientIOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CampusClientIOS.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		04CFCE48216A323B00A460BA /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		04CFCE4D216A323B00A460BA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -98,7 +107,9 @@
 			isa = PBXGroup;
 			children = (
 				0467D5AC21F7D0B2002E6D58 /* studentArchiveVC.swift */,
+				0469179F224CF7DB002DCC22 /* ArchiveDataModel.swift */,
 				0467D5AE21F7E735002E6D58 /* ArchiveMainCell.swift */,
+				0469179D224CEB50002DCC22 /* CellTouch.swift */,
 			);
 			path = Archive;
 			sourceTree = "<group>";
@@ -143,6 +154,7 @@
 				04B74E152195A3D4005E3F94 /* ActivityIndicator.swift */,
 				04150A25217CA56F00ACBF81 /* UIButtonExtension.swift */,
 				04047E802185DA1200585BEB /* HideKeyboardExtension.swift */,
+				04691799224CD286002DCC22 /* UIImageRotate.swift */,
 			);
 			path = Extentions;
 			sourceTree = "<group>";
@@ -154,6 +166,7 @@
 				043CA53C21ECDC670001F076 /* AccountInfo.swift */,
 				ABC3515134DD60D983FE2823 /* ApiClient.swift */,
 				ABC356AECA2B49ED89A6732F /* Settings.swift */,
+				046917A1224CFB39002DCC22 /* ArchiveResultsStruct.swift */,
 			);
 			path = DataRequests;
 			sourceTree = "<group>";
@@ -197,8 +210,9 @@
 		04CFCE47216A323B00A460BA /* CampusClientIOS */ = {
 			isa = PBXGroup;
 			children = (
-				04CFCE4C216A323B00A460BA /* Main.storyboard */,
+				04CC7906223D68A6004194BC /* CampusClientIOS.entitlements */,
 				04CFCE48216A323B00A460BA /* AppDelegate.swift */,
+				04CFCE4C216A323B00A460BA /* Main.storyboard */,
 				043CA53B21ECDC3E0001F076 /* DataRequests */,
 				04047E7121835D4100585BEB /* LogIn */,
 				04047E7D2185BE1000585BEB /* Rozklad */,
@@ -292,6 +306,14 @@
 					04CFCE44216A323B00A460BA = {
 						CreatedOnToolsVersion = 9.4.1;
 						LastSwiftMigration = 1010;
+						SystemCapabilities = {
+							com.apple.ApplicationGroups.iOS = {
+								enabled = 1;
+							};
+							com.apple.Keychain = {
+								enabled = 1;
+							};
+						};
 					};
 				};
 			};
@@ -388,7 +410,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				043CA52021E679BC0001F076 /* LoginScreenVC.swift in Sources */,
+				0469179E224CEB51002DCC22 /* CellTouch.swift in Sources */,
 				043CA52A21E683E40001F076 /* VoteRequest.swift in Sources */,
+				0469179A224CD286002DCC22 /* UIImageRotate.swift in Sources */,
 				04047E812185DA1200585BEB /* HideKeyboardExtension.swift in Sources */,
 				04CFCE49216A323B00A460BA /* AppDelegate.swift in Sources */,
 				04B74E162195A3D4005E3F94 /* ActivityIndicator.swift in Sources */,
@@ -397,10 +421,12 @@
 				043CA52C21E7E0860001F076 /* MainTVC.swift in Sources */,
 				043CA53021E804D60001F076 /* PotochneTVC.swift in Sources */,
 				04E7F76D2200DAFB0021127F /* ProfileTVC.swift in Sources */,
+				046917A2224CFB39002DCC22 /* ArchiveResultsStruct.swift in Sources */,
 				043CA52821E682470001F076 /* UiViewDesignable.swift in Sources */,
 				0467D5AD21F7D0B2002E6D58 /* studentArchiveVC.swift in Sources */,
 				0467D5AF21F7E735002E6D58 /* ArchiveMainCell.swift in Sources */,
 				043CA53621E817190001F076 /* DetailTVCell.swift in Sources */,
+				046917A0224CF7DB002DCC22 /* ArchiveDataModel.swift in Sources */,
 				043CA52E21E7E3F40001F076 /* VoteTerms.swift in Sources */,
 				04150A26217CA56F00ACBF81 /* UIButtonExtension.swift in Sources */,
 				04047E7F2185BE3100585BEB /* RozkladTVC.swift in Sources */,
@@ -558,6 +584,8 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 97CB0B402711BDEA41A20A82 /* Pods-CampusClientIOS.debug.xcconfig */;
 			buildSettings = {
+				CODE_SIGN_ENTITLEMENTS = CampusClientIOS/CampusClientIOS.entitlements;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = YNXC5CY44T;
 				INFOPLIST_FILE = CampusClientIOS/Info.plist;
@@ -567,6 +595,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = SN.CampusClientIOS;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -576,6 +605,8 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 84415CC226A4C81E05085554 /* Pods-CampusClientIOS.release.xcconfig */;
 			buildSettings = {
+				CODE_SIGN_ENTITLEMENTS = CampusClientIOS/CampusClientIOS.entitlements;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = YNXC5CY44T;
 				INFOPLIST_FILE = CampusClientIOS/Info.plist;
@@ -585,6 +616,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = SN.CampusClientIOS;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};

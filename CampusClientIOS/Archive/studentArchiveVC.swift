@@ -9,23 +9,27 @@
 import UIKit
 
 class studentArchiveVC: UITableViewController {
-
+    
     let voteReq = VoteRequest.init(apiClient: ApiClient.shared)
 
-    let defaults = UserDefaults.standard
-    var votes = [VoteTerms]()
+    private let defaults = UserDefaults.standard
+    
+    var dataModel: ArchiveDataModel?
+    
+    var votes = [VoteTerms]() {
+        didSet {
+            tableView.reloadData()
+        }
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        requestVotes()
+        dataModel = ArchiveDataModel.init()
     }
     
-    func requestVotes() {
-        guard let token = defaults.string(forKey: "access_token") else { return }
-        voteReq.getAllVotes(token: token) { (terms) in
-            self.votes = terms
-            self.tableView.reloadData()
-        }
+    private final func tabBarSettings() {
+        self.tabBarController?.tabBar.barTintColor = themeColor
+        self.tabBarItem.selectedImage = UIImage.init(named: "icons8-book_filled")
     }
     
     //Data and design for table view
@@ -33,19 +37,24 @@ class studentArchiveVC: UITableViewController {
         return votes.count
     }
     
+    override func numberOfSections(in tableView: UITableView) -> Int {
+        return 1
+    }
+    
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        if votes == [] {
-            return UITableViewCell()
-        }
         let cell = tableView.dequeueReusableCell(withIdentifier: "studentArchCell", for: indexPath) as! ArchiveMainCell
-        cell.textLabel?.text = "ОПИТУВАННЯ № \(votes[indexPath.row].voteNumber!) ЗА \(votes[indexPath.row].studyYear!)"
+        cell.titleLabel?.text = "ОПИТУВАННЯ № \(votes[indexPath.row].voteNumber!) ЗА \(votes[indexPath.row].studyYear!) р."
+        let arrowIMG = UIImage.init(named: "icons8-chevron_right_filled")
+        cell.arrowPicture?.image = arrowIMG
         return cell
     }
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
+        
     }
     
-   
-
+    
+    
+    
 }

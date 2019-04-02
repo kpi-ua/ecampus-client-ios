@@ -14,6 +14,7 @@ class PotochneTVC: UITableViewController {
     let token = UserDefaults.standard.string(forKey: "access_token")
     var voteTerms: [VoteTerms]?
     var persons: [PersonToVote]?
+    let segueID = "voteSegue"
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -23,10 +24,8 @@ class PotochneTVC: UITableViewController {
     }
     
     func tabBarSettings() {
-        self.tabBarController?.tabBar.tintColor = themeColor
         self.tabBarController?.tabBar.barTintColor = themeColor
-        self.tabBarController?.tabBar.unselectedItemTintColor = UIColor.white
-        self.tabBarController?.tabBar.selectedItem?.badgeColor = UIColor.orange
+        self.tabBarItem.selectedImage = UIImage.init(named: "icons8-todo_list_filled")
     }
 
     func setUpIndicator() -> ActivityIndicatorView {
@@ -55,11 +54,11 @@ class PotochneTVC: UITableViewController {
     }
     
     func createHeader() -> String {
-        if voteTerms != nil {
+        /*if voteTerms != nil {
             let actualVoteNumber = voteTerms!.count - 1
             let header = "ОПИТУВАННЯ № \(voteTerms![actualVoteNumber].voteNumber!) ЗА \(voteTerms![actualVoteNumber].studyYear!)"
             return header
-        }
+        }*/
         return ""
     }
     
@@ -94,17 +93,15 @@ class PotochneTVC: UITableViewController {
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
-        performSegue(withIdentifier: "toVoteSegue", sender: persons![indexPath.row])
+        performSegue(withIdentifier: "voteSegue", sender: self.persons![indexPath.row])
     }
 
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier == "toVoteSegue" {
+        if segue.identifier == "voteSegue" {
             let destVC = segue.destination as! DetailTVC
             guard let person = sender as? PersonToVote else { return }
             destVC.person = person
         }
     }
-    
-    
     
 }

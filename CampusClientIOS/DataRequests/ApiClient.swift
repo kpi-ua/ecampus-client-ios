@@ -9,7 +9,7 @@ import SwiftyJSON
 
 class ApiClient {
     
-    static let shared = ApiClient(baseURL: Settings.apiEndpoint)
+    static let shared = ApiClient(baseURL: .test)
     
     private var token = ""
     private let baseURL: String
@@ -17,8 +17,8 @@ class ApiClient {
     
     // Initialization
     
-    private init(baseURL: String) {
-        self.baseURL = baseURL
+    private init(baseURL: Settings) {
+        self.baseURL = baseURL.rawValue
     }
     
     public func auth(login: String, password: String, completion: @escaping (String) -> Void) {
@@ -66,6 +66,7 @@ class ApiClient {
                 }
         }
     }
+    
     
     
 }
