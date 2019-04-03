@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="SRu-VY-vhq">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="SRu-VY-vhq">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -241,6 +241,24 @@
                                     <outlet property="titleLabel" destination="3zf-fu-apy" id="2fz-em-Wm2"/>
                                 </connections>
                             </tableViewCell>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="studentExpandedCell" textLabel="thC-Hs-XSd" rowHeight="40" style="IBUITableViewCellStyleDefault" id="y0C-c7-QfT">
+                                <rect key="frame" x="0.0" y="68" width="375" height="40"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="y0C-c7-QfT" id="IO3-br-g69">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="39.5"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="thC-Hs-XSd">
+                                            <rect key="frame" x="15" y="0.0" width="344" height="39.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                </tableViewCellContentView>
+                                <inset key="separatorInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                            </tableViewCell>
                         </prototypes>
                         <connections>
                             <outlet property="dataSource" destination="cWQ-h4-tVk" id="7wa-w8-IUy"/>
@@ -248,10 +266,42 @@
                         </connections>
                     </tableView>
                     <tabBarItem key="tabBarItem" title="Архів" image="icons8-book" selectedImage="icons8-book_filled" id="99r-OB-7KF"/>
+                    <connections>
+                        <segue destination="J6w-g7-Jax" kind="push" identifier="toDetailInfo" id="3Lv-WL-FXD"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="lnA-aa-lAs" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-2226.4000000000001" y="1952.473763118441"/>
+        </scene>
+        <!--Lol-->
+        <scene sceneID="Rbb-Ss-WnV">
+            <objects>
+                <tableViewController title="Lol" id="J6w-g7-Jax" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="jCq-dP-NOI">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="lRf-8b-5DB">
+                                <rect key="frame" x="0.0" y="28" width="375" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="lRf-8b-5DB" id="xUe-uz-niN">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="J6w-g7-Jax" id="Xzx-3Z-C8T"/>
+                            <outlet property="delegate" destination="J6w-g7-Jax" id="myC-Ue-jMa"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="LOLVC" id="EVu-gO-PrK"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="C89-SG-AIB" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1500" y="1953"/>
         </scene>
         <!--MainTVC-->
         <scene sceneID="Aww-ks-RMy">
@@ -773,10 +823,10 @@
         </scene>
     </scenes>
     <resources>
-        <image name="icons8-book" width="50" height="50"/>
-        <image name="icons8-book_filled" width="50" height="50"/>
+        <image name="icons8-book" width="25" height="25"/>
+        <image name="icons8-book_filled" width="25" height="25"/>
         <image name="icons8-chevron_right_filled" width="75" height="75"/>
-        <image name="icons8-todo_list" width="50" height="50"/>
+        <image name="icons8-todo_list" width="25" height="25"/>
         <image name="logo-big-green" width="200" height="123"/>
     </resources>
 </document>

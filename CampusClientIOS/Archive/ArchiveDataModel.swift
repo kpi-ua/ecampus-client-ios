@@ -24,9 +24,7 @@ class ArchiveDataModel {
         voteRequest.getAllVotes(token: token) { (voteTerms) in
             for vote in voteTerms {
                 self.voteRequest.archiveRequest(termID: vote.id!, completion: { (archiveResult) in
-                    var dictionary: [VoteTerms: [ArchiveResults]] = [:]
-                    dictionary.updateValue(archiveResult, forKey: vote)
-                    self.dataDelegate?.dataReceive(data: dictionary)
+                    self.dataDelegate?.dataReceive(vote: vote, result: archiveResult)
                 })
             }
         }

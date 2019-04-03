@@ -9,5 +9,5 @@
 import Foundation
 
 protocol DataReceiveProtocol: class {
-    func dataReceive(data: [VoteTerms: [ArchiveResults]])
+    func dataReceive(vote: VoteTerms, result: [ArchiveResults])
 }

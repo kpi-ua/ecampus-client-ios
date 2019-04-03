@@ -7,6 +7,13 @@
 //
 
 import UIKit
+import Foundation
+
+struct expandableCell {
+    var opened: Bool
+    var title: VoteTerms
+    var data: [ArchiveResults]
+}
 
 class studentArchiveVC: UITableViewController, DataReceiveProtocol {
     
@@ -14,7 +21,9 @@ class studentArchiveVC: UITableViewController, DataReceiveProtocol {
     
     var dataModel: ArchiveDataModel?
     
-    var results: [[VoteTerms : [ArchiveResults]]] = []
+    //var results: [[VoteTerms : [ArchiveResults]]] = []
+    
+    var tableViewData = [expandableCell]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -29,34 +38,46 @@ class studentArchiveVC: UITableViewController, DataReceiveProtocol {
     
     //Data and design for table view
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return results.count
+        if tableViewData[section].opened == true {
+            return tableViewData[section].data.count + 1
+        } else {
+            return 1
+        }
     }
     
     override func numberOfSections(in tableView: UITableView) -> Int {
-        return 1
+        return tableViewData.count
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "studentArchCell", for: indexPath) as! ArchiveMainCell
-        print("ОПИТУВАННЯ № \(results[indexPath.row].keys.first!.voteNumber!) ЗА \(results[indexPath.row].keys.first!.studyYear!) р.")
-        cell.titleLabel.text = "ОПИТУВАННЯ № \(results[indexPath.row].keys.first!.voteNumber!) ЗА \(results[indexPath.row].keys.first!.studyYear!) р."
-        //cell.titleLabel?.text = "ОПИТУВАННЯ № \(votes[indexPath.row].voteNumber!) ЗА \(votes[indexPath.row].studyYear!) р."
-        let arrowIMG = UIImage.init(named: "icons8-chevron_right_filled")
-        cell.arrowPicture?.image = arrowIMG
-        return cell
+        if indexPath.row == 0 {
+            guard let cell = tableView.dequeueReusableCell(withIdentifier: "studentArchCell") as? ArchiveMainCell else { return UITableViewCell() }
+            cell.titleLabel.text = "ОПИТУВАННЯ № \(tableViewData[indexPath.section].title.voteNumber) ЗА \(tableViewData[indexPath.section].title.studyYear) р."
+            return cell
+        } else {
+            guard let cell = tableView.dequeueReusableCell(withIdentifier: "studentExpandedCell") else { return UITableViewCell() }
+            cell.textLabel?.text = tableViewData[indexPath.section].data[indexPath.row - 1].fullName
+            return cell
+        }
     }
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
-        
+        if tableViewData[indexPath.section].opened == true {
+            tableViewData[indexPath.section].opened = false
+            let sections = IndexSet.init(integer: indexPath.section)
+            tableView.reloadSections(sections, with: .none)
+        } else {
+            tableViewData[indexPath.section].opened = true
+            let sections = IndexSet.init(integer: indexPath.section)
+            tableView.reloadSections(sections, with: .none)
+        }
+        performSegue(withIdentifier: "toDetailInfo", sender: nil)
     }
     
-    func dataReceive(data: [VoteTerms : [ArchiveResults]]) {
-        results.append(data)
+    func dataReceive(vote: VoteTerms, result: [ArchiveResults]) {
+        tableViewData.append(expandableCell.init(opened: false, title: vote, data: result))
         tableView.reloadData()
     }
-    
-    
-    
     
 }
