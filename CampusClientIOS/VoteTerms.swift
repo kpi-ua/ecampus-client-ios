@@ -8,7 +8,7 @@
 
 import Foundation
 
-struct VoteTerms: Codable {
+struct VoteTerms: Codable, Hashable {
     var id: String?
     var studyYear: String?
     var voteNumber: String?

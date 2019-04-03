@@ -41,6 +41,7 @@
 		04E7F76821FFC5890021127F /* FaceBookButton.xib in Resources */ = {isa = PBXBuildFile; fileRef = 04E7F76721FFC5890021127F /* FaceBookButton.xib */; };
 		04E7F76A21FFC5AB0021127F /* FaceBookButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04E7F76921FFC5AB0021127F /* FaceBookButton.swift */; };
 		04E7F76D2200DAFB0021127F /* ProfileTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04E7F76C2200DAFB0021127F /* ProfileTVC.swift */; };
+		742532ED2254B437006B1BFE /* DataReceiveProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 742532EC2254B437006B1BFE /* DataReceiveProtocol.swift */; };
 		ABC354E2D57CA846B8C17A97 /* ApiClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABC3515134DD60D983FE2823 /* ApiClient.swift */; };
 		ABC357A72529722C77F3C227 /* Settings.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABC356AECA2B49ED89A6732F /* Settings.swift */; };
 		FAC44813D60CCB2C081F5DF8 /* Pods_CampusClientIOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 792C034B76FFB0E7E5CACEFB /* Pods_CampusClientIOS.framework */; };
@@ -84,6 +85,7 @@
 		04E7F76721FFC5890021127F /* FaceBookButton.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FaceBookButton.xib; sourceTree = "<group>"; };
 		04E7F76921FFC5AB0021127F /* FaceBookButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FaceBookButton.swift; sourceTree = "<group>"; };
 		04E7F76C2200DAFB0021127F /* ProfileTVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileTVC.swift; sourceTree = "<group>"; };
+		742532EC2254B437006B1BFE /* DataReceiveProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataReceiveProtocol.swift; sourceTree = "<group>"; };
 		792C034B76FFB0E7E5CACEFB /* Pods_CampusClientIOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CampusClientIOS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		84415CC226A4C81E05085554 /* Pods-CampusClientIOS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CampusClientIOS.release.xcconfig"; path = "Pods/Target Support Files/Pods-CampusClientIOS/Pods-CampusClientIOS.release.xcconfig"; sourceTree = "<group>"; };
 		97CB0B402711BDEA41A20A82 /* Pods-CampusClientIOS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CampusClientIOS.debug.xcconfig"; path = "Pods/Target Support Files/Pods-CampusClientIOS/Pods-CampusClientIOS.debug.xcconfig"; sourceTree = "<group>"; };
@@ -110,6 +112,7 @@
 				0469179F224CF7DB002DCC22 /* ArchiveDataModel.swift */,
 				0467D5AE21F7E735002E6D58 /* ArchiveMainCell.swift */,
 				0469179D224CEB50002DCC22 /* CellTouch.swift */,
+				742532EC2254B437006B1BFE /* DataReceiveProtocol.swift */,
 			);
 			path = Archive;
 			sourceTree = "<group>";
@@ -419,6 +422,7 @@
 				043CA53221E811C90001F076 /* Structs.swift in Sources */,
 				043CA53421E816E10001F076 /* DetailTVC.swift in Sources */,
 				043CA52C21E7E0860001F076 /* MainTVC.swift in Sources */,
+				742532ED2254B437006B1BFE /* DataReceiveProtocol.swift in Sources */,
 				043CA53021E804D60001F076 /* PotochneTVC.swift in Sources */,
 				04E7F76D2200DAFB0021127F /* ProfileTVC.swift in Sources */,
 				046917A2224CFB39002DCC22 /* ArchiveResultsStruct.swift in Sources */,
