@@ -9,21 +9,19 @@
 import UIKit
 import Foundation
 
-struct expandableCell {
+struct expandableCellData {
     var opened: Bool
     var title: VoteTerms
     var data: [ArchiveResults]
 }
 
-class studentArchiveVC: UITableViewController, DataReceiveProtocol {
+class StudentArchiveVC: UITableViewController, DataReceiveProtocol {
     
     private let defaults = UserDefaults.standard
     
     var dataModel: ArchiveDataModel?
     
-    //var results: [[VoteTerms : [ArchiveResults]]] = []
-    
-    var tableViewData = [expandableCell]()
+    var tableViewData = [expandableCellData]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -62,22 +60,35 @@ class studentArchiveVC: UITableViewController, DataReceiveProtocol {
     }
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        tableView.deselectRow(at: indexPath, animated: true)
-        if tableViewData[indexPath.section].opened == true {
-            tableViewData[indexPath.section].opened = false
-            let sections = IndexSet.init(integer: indexPath.section)
-            tableView.reloadSections(sections, with: .none)
-        } else {
-            tableViewData[indexPath.section].opened = true
-            let sections = IndexSet.init(integer: indexPath.section)
-            tableView.reloadSections(sections, with: .none)
+        if indexPath.row == 0{
+            tableView.deselectRow(at: indexPath, animated: true)
+            if tableViewData[indexPath.section].opened == true {
+                tableViewData[indexPath.section].opened = false
+                let sections = IndexSet.init(integer: indexPath.section)
+                tableView.reloadSections(sections, with: .none)
+            } else {
+                tableViewData[indexPath.section].opened = true
+                let sections = IndexSet.init(integer: indexPath.section)
+                tableView.reloadSections(sections, with: .none)
+            }
         }
-        performSegue(withIdentifier: "toDetailInfo", sender: nil)
+        if indexPath.row != 0 {
+            tableView.deselectRow(at: indexPath, animated: true)
+            performSegue(withIdentifier: "toDetailInfo", sender: tableViewData[indexPath.section].data[indexPath.row - 1])
+        }
     }
     
     func dataReceive(vote: VoteTerms, result: [ArchiveResults]) {
-        tableViewData.append(expandableCell.init(opened: false, title: vote, data: result))
+        tableViewData.append(expandableCellData.init(opened: false, title: vote, data: result))
         tableView.reloadData()
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if  segue.identifier == "toDetailInfo" {
+            let destinationVC = segue.destination as? StudentArchiveDetailTVC
+            let data = sender as? ArchiveResults
+            destinationVC?.voteData = data
+        }
     }
     
 }
