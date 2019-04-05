@@ -18,7 +18,7 @@ class VoteTabBar: UITabBarController {
         self.delegate = self as? UITabBarControllerDelegate
         currentVC = PotochneTVC()
         archiveVC = StudentArchiveVC()
-        self.tabBar.backgroundColor = themeColor
+        self.tabBar.backgroundColor = UIColor.ThemeColor.themeColor
         setImages()
         setControllers()
     }

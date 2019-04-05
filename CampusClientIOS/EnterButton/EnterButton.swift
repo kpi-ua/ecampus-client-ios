@@ -39,7 +39,7 @@ class EnterButton: UIButton {
         view.autoresizingMask = [.flexibleWidth, .flexibleHeight]
         view.frame = bounds
         view.isUserInteractionEnabled = false
-        view.backgroundColor = themeColor
+        view.backgroundColor = UIColor.ThemeColor.themeColor
         buttonLabel.text = "Увійти"
         buttonLabel.textColor = UIColor.white
         view.cornerRadius = 0
@@ -52,7 +52,7 @@ class EnterButton: UIButton {
                 self.view.backgroundColor = UIColor.white
             }, completion: nil)
             UIView.animate(withDuration: 1, animations: {
-                self.view.backgroundColor = themeColor
+                self.view.backgroundColor = UIColor.ThemeColor.themeColor
             }, completion: nil)
         }
     }

@@ -16,6 +16,8 @@ class PotochneTVC: UITableViewController {
     var persons: [PersonToVote]?
     let segueID = "voteSegue"
     
+    let coreDataManager = CoreDataManager.init()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         voteData()
@@ -24,7 +26,7 @@ class PotochneTVC: UITableViewController {
     }
     
     func tabBarSettings() {
-        self.tabBarController?.tabBar.barTintColor = themeColor
+        self.tabBarController?.tabBar.barTintColor = UIColor.ThemeColor.themeColor
         self.tabBarItem.selectedImage = UIImage.init(named: "icons8-todo_list_filled")
     }
 
@@ -39,15 +41,19 @@ class PotochneTVC: UITableViewController {
     func voteData() {
         let activityIndicator = setUpIndicator()
         activityIndicator.startAnimating()
-        dataRequest.getAllVotes(token: token) { (terms) in
+        dataRequest.getAllVotes() { (terms) in
             self.voteTerms = terms
             activityIndicator.stopAnimating()
             self.tableView.reloadData()
+            
+            self.coreDataManager.createObject(entityName: "CurrentVotes", value: terms, key: "votes")
+            self.coreDataManager.fetchData(entityName: "CurrentVotes")
+            
         }
     }
     
     func personsToVote() {
-        dataRequest.getPersonsForVote(token: token) { (persons) in
+        dataRequest.getPersonsForVote() { (persons) in
             self.persons = persons
             self.tableView.reloadData()
         }
@@ -71,7 +77,7 @@ class PotochneTVC: UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, willDisplayHeaderView view: UIView, forSection section: Int) {
-        view.tintColor = themeColor
+        view.tintColor = UIColor.ThemeColor.themeColor
         let headerView = view as! UITableViewHeaderFooterView
         headerView.textLabel?.textColor = UIColor.white
     }

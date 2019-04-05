@@ -33,7 +33,3 @@ struct YearMark: Codable {
     var year: String
     var mark: Double
 }
-
-
-
-

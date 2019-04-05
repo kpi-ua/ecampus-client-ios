@@ -37,7 +37,7 @@ class ApiClient {
                 let json = data as! [String: AnyObject]
                 if let token = json["access_token"] as? String {
                     self.token = token
-                    mainQ.async {
+                    DispatchQueue.main.async {
                         completion(self.token)
                     }
                 } else {

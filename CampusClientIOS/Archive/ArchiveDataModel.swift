@@ -21,7 +21,7 @@ class ArchiveDataModel {
     
     private func finalResult() {
         guard token != nil else { return }
-        voteRequest.getAllVotes(token: token) { (voteTerms) in
+        voteRequest.getAllVotes() { (voteTerms) in
             for vote in voteTerms {
                 self.voteRequest.archiveRequest(termID: vote.id!, completion: { (archiveResult) in
                     self.dataDelegate?.dataReceive(vote: vote, result: archiveResult)
@@ -29,6 +29,5 @@ class ArchiveDataModel {
             }
         }
     }
-    
     
 }

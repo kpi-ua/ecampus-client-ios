@@ -286,7 +286,7 @@
                         <sections>
                             <tableViewSection id="E9k-CN-DSL">
                                 <cells>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="detailStudentCell" rowHeight="61" id="lRf-8b-5DB">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="61" id="lRf-8b-5DB">
                                         <rect key="frame" x="0.0" y="0.0" width="414" height="61"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="lRf-8b-5DB" id="xUe-uz-niN">
@@ -308,7 +308,7 @@
                                             </constraints>
                                         </tableViewCellContentView>
                                     </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="detailStudentCell" rowHeight="148" id="0y7-ms-Opc">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="148" id="0y7-ms-Opc">
                                         <rect key="frame" x="0.0" y="61" width="414" height="148"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="0y7-ms-Opc" id="sco-jA-62c">
@@ -507,7 +507,7 @@
                                             </constraints>
                                         </tableViewCellContentView>
                                     </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="detailStudentCell" id="nIh-6y-qww">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="nIh-6y-qww">
                                         <rect key="frame" x="0.0" y="209" width="414" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="nIh-6y-qww" id="oT3-pV-Mq6">
@@ -524,6 +524,12 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="LOLVC" id="EVu-gO-PrK"/>
+                    <connections>
+                        <outlet property="commonMarkHeaderLabel" destination="RwQ-ls-XEZ" id="6lB-a6-u7z"/>
+                        <outlet property="oneCourseCommonMarkHeaderLabel" destination="lpO-48-J0E" id="aDC-uw-eQp"/>
+                        <outlet property="universityCommonMarkHeaderLabel" destination="mHi-40-D8z" id="Mva-BE-tM6"/>
+                        <outlet property="universityCommonMarkLabel" destination="peN-CR-wGa" id="GTx-3Q-CUl"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="C89-SG-AIB" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -1007,8 +1013,8 @@
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="logo-big-green" translatesAutoresizingMaskIntoConstraints="NO" id="gHa-Cy-ZT2">
                                 <rect key="frame" x="106.99999999999999" y="48" width="176.66666666666663" height="123"/>
                             </imageView>
-                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uQe-8q-wkI" customClass="FBSDKLoginButton">
-                                <rect key="frame" x="16" y="407" width="343" height="38"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uQe-8q-wkI" customClass="FBSDKLoginButton">
+                                <rect key="frame" x="16" y="407" width="382" height="38"/>
                                 <connections>
                                     <action selector="facebookButton:" destination="SRu-VY-vhq" eventType="touchUpInside" id="1no-Dn-Z7a"/>
                                 </connections>
@@ -1019,7 +1025,8 @@
                             <constraint firstItem="uQe-8q-wkI" firstAttribute="top" secondItem="HO0-4q-LVJ" secondAttribute="bottom" constant="30" id="1cL-Ff-0Gb"/>
                             <constraint firstItem="HO0-4q-LVJ" firstAttribute="trailing" secondItem="dZG-T3-vDH" secondAttribute="trailing" id="2sM-Xh-QhE"/>
                             <constraint firstItem="gHa-Cy-ZT2" firstAttribute="width" secondItem="U22-Ng-Gpg" secondAttribute="height" multiplier="160:667" id="KLF-aG-xwQ"/>
-                            <constraint firstItem="uQe-8q-wkI" firstAttribute="trailing" secondItem="HO0-4q-LVJ" secondAttribute="trailing" id="Nxb-d6-rBA"/>
+                            <constraint firstItem="uQe-8q-wkI" firstAttribute="height" secondItem="HO0-4q-LVJ" secondAttribute="height" id="MN5-WL-Bss"/>
+                            <constraint firstItem="uQe-8q-wkI" firstAttribute="width" secondItem="HO0-4q-LVJ" secondAttribute="width" id="QVj-T0-KVz"/>
                             <constraint firstItem="dZG-T3-vDH" firstAttribute="leading" secondItem="ozD-GX-iYe" secondAttribute="leading" id="REb-ty-ueS"/>
                             <constraint firstItem="HO0-4q-LVJ" firstAttribute="leading" secondItem="dZG-T3-vDH" secondAttribute="leading" id="T7Q-4S-R7j"/>
                             <constraint firstItem="dZG-T3-vDH" firstAttribute="trailing" secondItem="ozD-GX-iYe" secondAttribute="trailing" id="eRA-KL-LLH"/>
@@ -1029,6 +1036,7 @@
                             <constraint firstItem="ozD-GX-iYe" firstAttribute="leading" secondItem="L6k-B5-ucW" secondAttribute="leading" constant="16" id="oxi-93-WAj"/>
                             <constraint firstItem="gHa-Cy-ZT2" firstAttribute="leading" secondItem="L6k-B5-ucW" secondAttribute="leading" constant="107" id="p0A-S1-SwZ"/>
                             <constraint firstItem="gHa-Cy-ZT2" firstAttribute="top" secondItem="L6k-B5-ucW" secondAttribute="top" constant="28" id="taB-kC-oDZ"/>
+                            <constraint firstItem="uQe-8q-wkI" firstAttribute="trailing" secondItem="HO0-4q-LVJ" secondAttribute="trailing" id="vRk-ln-k6p"/>
                             <constraint firstItem="HO0-4q-LVJ" firstAttribute="top" secondItem="dZG-T3-vDH" secondAttribute="bottom" constant="31" id="xHo-QJ-JHq"/>
                             <constraint firstItem="uQe-8q-wkI" firstAttribute="leading" secondItem="HO0-4q-LVJ" secondAttribute="leading" id="y2J-pD-aju"/>
                         </constraints>
@@ -1045,7 +1053,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="kd7-kI-bu3" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1500" y="-609.44527736131943"/>
+            <point key="canvasLocation" x="-1500.0000000000002" y="-609.78260869565224"/>
         </scene>
     </scenes>
     <resources>

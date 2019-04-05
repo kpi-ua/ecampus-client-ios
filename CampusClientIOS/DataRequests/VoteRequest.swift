@@ -23,13 +23,13 @@ class VoteRequest: NSObject {
         super.init()
     }
 
-    public func getAllVotes(token: String?, completion: @escaping ([VoteTerms]) -> Void) {
+    public func getAllVotes(completion: @escaping ([VoteTerms]) -> Void) {
         requsetBgQ.async {
             self.apiClient.makeRequest("Vote/Terms", method: .get, parameters: nil) { (data) in
                 do {
                     let jsonData = try JSONSerialization.data(withJSONObject: data)
                     let terms = try! self.decoder.decode(Array<VoteTerms>.self, from: jsonData)
-                    mainQ.async {
+                    DispatchQueue.main.async {
                         completion(terms)
                     }
                 } catch let err {
@@ -39,13 +39,13 @@ class VoteRequest: NSObject {
         }
     }
 
-    public func getPersonsForVote(token: String?, completion: @escaping ([PersonToVote]) -> Void) {
+    public func getPersonsForVote(completion: @escaping ([PersonToVote]) -> Void) {
         requsetBgQ.async {
             self.apiClient.makeRequest("Vote/Persons", { (data) in
                 do {
                     let jsonData = try JSONSerialization.data(withJSONObject: data)
                     let persons = try! self.decoder.decode(Array<PersonToVote>.self, from: jsonData)
-                    mainQ.async {
+                    DispatchQueue.main.async {
                         completion(persons)
                     }
                 } catch let err {

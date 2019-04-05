@@ -30,7 +30,7 @@ class StudentArchiveVC: UITableViewController, DataReceiveProtocol {
     }
     
     private final func tabBarSettings() {
-        self.tabBarController?.tabBar.barTintColor = themeColor
+        self.tabBarController?.tabBar.barTintColor = UIColor.ThemeColor.themeColor
         self.tabBarItem.selectedImage = UIImage.init(named: "icons8-book_filled")
     }
     

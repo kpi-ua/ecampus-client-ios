@@ -10,6 +10,12 @@ import UIKit
 
 class StudentArchiveDetailTVC: UITableViewController {
     
+    
+    @IBOutlet weak var commonMarkHeaderLabel: BorderedLabel!
+    @IBOutlet weak var universityCommonMarkHeaderLabel: BorderedLabel!
+    @IBOutlet weak var oneCourseCommonMarkHeaderLabel: BorderedLabel!
+    @IBOutlet weak var universityCommonMarkLabel: BorderedLabel!
+    
     var voteData: ArchiveResults?
     
     override func viewDidLoad() {

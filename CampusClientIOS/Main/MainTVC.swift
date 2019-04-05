@@ -47,8 +47,8 @@ class MainTVC: UITableViewController {
     
     func navigationBarSettings() {
         self.navigationController?.navigationBar.prefersLargeTitles = true
-        self.navigationController?.navigationBar.backgroundColor = themeColor
-        self.navigationController?.navigationBar.barTintColor = themeColor
+        self.navigationController?.navigationBar.backgroundColor = UIColor.ThemeColor.themeColor
+        self.navigationController?.navigationBar.barTintColor = UIColor.ThemeColor.themeColor
         self.navigationController?.navigationBar.tintColor = UIColor.white
         self.navigationController?.navigationBar.accessibilityIgnoresInvertColors = false
         self.navigationController?.navigationBar.largeTitleTextAttributes = [NSAttributedString.Key.backgroundColor : UIColor.white]
