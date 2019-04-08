@@ -17,7 +17,9 @@ class VoteRequest: NSObject {
     private let defaults = UserDefaults.standard
     private let requsetBgQ = DispatchQueue.global(qos: DispatchQoS.QoSClass.userInitiated)
     private let decoder = JSONDecoder()
-
+    
+    let dataManager = CoreDataManager.init()
+    
     init(apiClient: ApiClient) {
         self.apiClient = apiClient
         super.init()
@@ -30,6 +32,12 @@ class VoteRequest: NSObject {
                     let jsonData = try JSONSerialization.data(withJSONObject: data)
                     let terms = try! self.decoder.decode(Array<VoteTerms>.self, from: jsonData)
                     DispatchQueue.main.async {
+                        print(terms)
+                        let newObj = self.dataManager.createObject(entityName: "CurrentVotes") as! CurrentVotes
+                        newObj.votes = terms as NSObject
+                        print(newObj)
+                        self.dataManager.saveData()
+                        self.dataManager.fetchData(entityName: "CurrentVotes")
                         completion(terms)
                     }
                 } catch let err {

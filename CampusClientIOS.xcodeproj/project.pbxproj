@@ -40,6 +40,7 @@
 		04E7F76821FFC5890021127F /* FaceBookButton.xib in Resources */ = {isa = PBXBuildFile; fileRef = 04E7F76721FFC5890021127F /* FaceBookButton.xib */; };
 		04E7F76A21FFC5AB0021127F /* FaceBookButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04E7F76921FFC5AB0021127F /* FaceBookButton.swift */; };
 		04E7F76D2200DAFB0021127F /* ProfileTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04E7F76C2200DAFB0021127F /* ProfileTVC.swift */; };
+		74239846225B689500ED157A /* DataObjectProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74239845225B689500ED157A /* DataObjectProtocol.swift */; };
 		742532ED2254B437006B1BFE /* DataReceiveProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 742532EC2254B437006B1BFE /* DataReceiveProtocol.swift */; };
 		742532EF2254FBFF006B1BFE /* CellTouchProtokol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 742532EE2254FBFF006B1BFE /* CellTouchProtokol.swift */; };
 		742DD08322574F04009B63E2 /* DataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 742DD08222574F04009B63E2 /* DataManager.swift */; };
@@ -90,6 +91,7 @@
 		04E7F76721FFC5890021127F /* FaceBookButton.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FaceBookButton.xib; sourceTree = "<group>"; };
 		04E7F76921FFC5AB0021127F /* FaceBookButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FaceBookButton.swift; sourceTree = "<group>"; };
 		04E7F76C2200DAFB0021127F /* ProfileTVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileTVC.swift; sourceTree = "<group>"; };
+		74239845225B689500ED157A /* DataObjectProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataObjectProtocol.swift; sourceTree = "<group>"; };
 		742532EC2254B437006B1BFE /* DataReceiveProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataReceiveProtocol.swift; sourceTree = "<group>"; };
 		742532EE2254FBFF006B1BFE /* CellTouchProtokol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CellTouchProtokol.swift; sourceTree = "<group>"; };
 		742DD08222574F04009B63E2 /* DataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataManager.swift; sourceTree = "<group>"; };
@@ -184,7 +186,6 @@
 				ABC3515134DD60D983FE2823 /* ApiClient.swift */,
 				ABC356AECA2B49ED89A6732F /* Settings.swift */,
 				046917A1224CFB39002DCC22 /* ArchiveResultsStruct.swift */,
-				742DD08922578FCF009B63E2 /* CoreData */,
 			);
 			path = DataRequests;
 			sourceTree = "<group>";
@@ -232,6 +233,7 @@
 				04CFCE48216A323B00A460BA /* AppDelegate.swift */,
 				04CFCE4C216A323B00A460BA /* Main.storyboard */,
 				043CA53B21ECDC3E0001F076 /* DataRequests */,
+				742DD08922578FCF009B63E2 /* CoreData */,
 				04047E7121835D4100585BEB /* LogIn */,
 				04047E7D2185BE1000585BEB /* Rozklad */,
 				04047E6C21821D7C00585BEB /* Archive */,
@@ -287,6 +289,7 @@
 			isa = PBXGroup;
 			children = (
 				749365B22257903200AF2B09 /* CoreDataManager.swift */,
+				74239845225B689500ED157A /* DataObjectProtocol.swift */,
 				742DD08622578E79009B63E2 /* DataModel.xcdatamodeld */,
 			);
 			path = CoreData;
@@ -446,6 +449,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				74239846225B689500ED157A /* DataObjectProtocol.swift in Sources */,
 				043CA52021E679BC0001F076 /* LoginScreenVC.swift in Sources */,
 				043CA52A21E683E40001F076 /* VoteRequest.swift in Sources */,
 				0469179A224CD286002DCC22 /* UIImageRotate.swift in Sources */,

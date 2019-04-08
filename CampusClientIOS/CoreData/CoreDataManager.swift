@@ -13,28 +13,18 @@ import UIKit
 class CoreDataManager {
     
     private let appDelegate = UIApplication.shared.delegate as! AppDelegate
-    private let decoder = JSONDecoder.init()
-    private let encoder = JSONEncoder.init()
+    private let context: NSManagedObjectContext?
     
     init() {
-        
+        self.context = appDelegate.persistentContainer.viewContext
     }
     
-    func createObject<T>(entityName: String, value: T, key: String) {
-        let context = appDelegate.persistentContainer.viewContext
-        let entity = NSEntityDescription.entity(forEntityName: entityName, in: context)
-        let newObj = NSManagedObject.init(entity: entity!, insertInto: context)
+    func saveData() {
         do {
-            
-        } catch let err {
-            
-        }
-        //newObj.setValue(convertedValue, forKey: key)
-        do {
-            try context.save()
+            try context?.save()
             print("saved")
-        } catch let error {
-            print(error.localizedDescription)
+        } catch let err {
+            print(err.localizedDescription)
         }
     }
     
@@ -50,8 +40,11 @@ class CoreDataManager {
         }
     }
     
-    
-    
+    func createObject(entityName: String) -> NSManagedObject {
+        let entity = NSEntityDescription.entity(forEntityName: entityName, in: self.context!)
+        let newObject = NSManagedObject.init(entity: entity!, insertInto: context)
+        return newObject
+    }
     
     
 }

@@ -16,8 +16,6 @@ class PotochneTVC: UITableViewController {
     var persons: [PersonToVote]?
     let segueID = "voteSegue"
     
-    let coreDataManager = CoreDataManager.init()
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         voteData()
@@ -45,10 +43,6 @@ class PotochneTVC: UITableViewController {
             self.voteTerms = terms
             activityIndicator.stopAnimating()
             self.tableView.reloadData()
-            
-            self.coreDataManager.createObject(entityName: "CurrentVotes", value: terms, key: "votes")
-            self.coreDataManager.fetchData(entityName: "CurrentVotes")
-            
         }
     }
     
