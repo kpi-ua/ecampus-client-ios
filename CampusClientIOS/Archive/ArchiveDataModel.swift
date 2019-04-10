@@ -13,38 +13,21 @@ class ArchiveDataModel {
     private let voteRequest = VoteRequest.init(apiClient: ApiClient.shared)
     private let token = UserDefaults.standard.string(forKey: "access_token")
     
-    var allVotes: [VoteTerms]?
-    var resultsForSpecificTerm: [[ArchiveResults]]?
+    weak var dataDelegate: DataReceiveProtocol?
     
     init() {
-        getVotes { (result) in
-            self.allVotes = result
-            self.makeArchiveList()
-        }
+        finalResult()
     }
     
-    private func getVotes(_ completion: @escaping ([VoteTerms]?) -> Void) {
+    private func finalResult() {
         guard token != nil else { return }
-        voteRequest.getAllVotes(token: token) { (terms) in
-            completion(terms)
-        }
-    }
-    
-    private func makeArchiveList() {
-        for vote in allVotes! {
-            getResultForSpecificVote(termID: vote.id!) { (result) in
-                print(result[0])
+        voteRequest.getAllVotes() { (voteTerms) in
+            for vote in voteTerms {
+                self.voteRequest.archiveRequest(termID: vote.id!, completion: { (archiveResult) in
+                    self.dataDelegate?.dataReceive(vote: vote, result: archiveResult)
+                })
             }
         }
     }
-    
-    private func getResultForSpecificVote(termID: String, completion: @escaping ([ArchiveResults]) -> Void) {
-        guard token != nil else { return }
-        voteRequest.archiveRequest(termID: termID) { (results) in
-            completion(results)
-        }
-    }
-    
-    
     
 }

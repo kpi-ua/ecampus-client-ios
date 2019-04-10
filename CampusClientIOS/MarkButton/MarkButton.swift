@@ -38,14 +38,14 @@ class MarkButton: UIButton {
         view.frame = bounds
         view.isUserInteractionEnabled = false
         view.backgroundColor = UIColor.white
-        markLabel.textColor = themeColor
+        markLabel.textColor = UIColor.ThemeColor.themeColor
         view.cornerRadius = 5
         addSubview(view)
     }
     
     func border() {
         self.view.borderWidth = 1
-        self.view.borderColor = themeColor
+        self.view.borderColor = UIColor.ThemeColor.themeColor
     }
     
     func removeBorder() {

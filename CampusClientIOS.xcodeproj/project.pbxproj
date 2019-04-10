@@ -25,10 +25,9 @@
 		043CA53821E819710001F076 /* MarkButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 043CA53721E819710001F076 /* MarkButton.swift */; };
 		043CA53A21E819820001F076 /* MarkButton.xib in Resources */ = {isa = PBXBuildFile; fileRef = 043CA53921E819820001F076 /* MarkButton.xib */; };
 		043CA53D21ECDC670001F076 /* AccountInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 043CA53C21ECDC670001F076 /* AccountInfo.swift */; };
-		0467D5AD21F7D0B2002E6D58 /* studentArchiveVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0467D5AC21F7D0B2002E6D58 /* studentArchiveVC.swift */; };
+		0467D5AD21F7D0B2002E6D58 /* StudentArchiveTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0467D5AC21F7D0B2002E6D58 /* StudentArchiveTVC.swift */; };
 		0467D5AF21F7E735002E6D58 /* ArchiveMainCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0467D5AE21F7E735002E6D58 /* ArchiveMainCell.swift */; };
 		0469179A224CD286002DCC22 /* UIImageRotate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04691799224CD286002DCC22 /* UIImageRotate.swift */; };
-		0469179E224CEB51002DCC22 /* CellTouch.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0469179D224CEB50002DCC22 /* CellTouch.swift */; };
 		046917A0224CF7DB002DCC22 /* ArchiveDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0469179F224CF7DB002DCC22 /* ArchiveDataModel.swift */; };
 		046917A2224CFB39002DCC22 /* ArchiveResultsStruct.swift in Sources */ = {isa = PBXBuildFile; fileRef = 046917A1224CFB39002DCC22 /* ArchiveResultsStruct.swift */; };
 		047D37D3219B042A00C75594 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 047D37D2219B042A00C75594 /* Assets.xcassets */; };
@@ -41,6 +40,15 @@
 		04E7F76821FFC5890021127F /* FaceBookButton.xib in Resources */ = {isa = PBXBuildFile; fileRef = 04E7F76721FFC5890021127F /* FaceBookButton.xib */; };
 		04E7F76A21FFC5AB0021127F /* FaceBookButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04E7F76921FFC5AB0021127F /* FaceBookButton.swift */; };
 		04E7F76D2200DAFB0021127F /* ProfileTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04E7F76C2200DAFB0021127F /* ProfileTVC.swift */; };
+		74239846225B689500ED157A /* DataObjectProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74239845225B689500ED157A /* DataObjectProtocol.swift */; };
+		742532ED2254B437006B1BFE /* DataReceiveProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 742532EC2254B437006B1BFE /* DataReceiveProtocol.swift */; };
+		742532EF2254FBFF006B1BFE /* CellTouchProtokol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 742532EE2254FBFF006B1BFE /* CellTouchProtokol.swift */; };
+		742DD08322574F04009B63E2 /* DataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 742DD08222574F04009B63E2 /* DataManager.swift */; };
+		742DD08522577FF7009B63E2 /* MainColorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 742DD08422577FF7009B63E2 /* MainColorExtension.swift */; };
+		742DD08822578E79009B63E2 /* DataModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 742DD08622578E79009B63E2 /* DataModel.xcdatamodeld */; };
+		7434402F2255E7E900592BA7 /* StudentArchiveDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7434402E2255E7E900592BA7 /* StudentArchiveDetail.swift */; };
+		743440312255F50500592BA7 /* BorderedLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 743440302255F50500592BA7 /* BorderedLabel.swift */; };
+		749365B32257903200AF2B09 /* CoreDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 749365B22257903200AF2B09 /* CoreDataManager.swift */; };
 		ABC354E2D57CA846B8C17A97 /* ApiClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABC3515134DD60D983FE2823 /* ApiClient.swift */; };
 		ABC357A72529722C77F3C227 /* Settings.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABC356AECA2B49ED89A6732F /* Settings.swift */; };
 		FAC44813D60CCB2C081F5DF8 /* Pods_CampusClientIOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 792C034B76FFB0E7E5CACEFB /* Pods_CampusClientIOS.framework */; };
@@ -65,10 +73,9 @@
 		043CA53721E819710001F076 /* MarkButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarkButton.swift; sourceTree = "<group>"; };
 		043CA53921E819820001F076 /* MarkButton.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MarkButton.xib; sourceTree = "<group>"; };
 		043CA53C21ECDC670001F076 /* AccountInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountInfo.swift; sourceTree = "<group>"; };
-		0467D5AC21F7D0B2002E6D58 /* studentArchiveVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = studentArchiveVC.swift; sourceTree = "<group>"; };
+		0467D5AC21F7D0B2002E6D58 /* StudentArchiveTVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudentArchiveTVC.swift; sourceTree = "<group>"; };
 		0467D5AE21F7E735002E6D58 /* ArchiveMainCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArchiveMainCell.swift; sourceTree = "<group>"; };
 		04691799224CD286002DCC22 /* UIImageRotate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIImageRotate.swift; sourceTree = "<group>"; };
-		0469179D224CEB50002DCC22 /* CellTouch.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CellTouch.swift; sourceTree = "<group>"; };
 		0469179F224CF7DB002DCC22 /* ArchiveDataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArchiveDataModel.swift; sourceTree = "<group>"; };
 		046917A1224CFB39002DCC22 /* ArchiveResultsStruct.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArchiveResultsStruct.swift; sourceTree = "<group>"; };
 		047D37D2219B042A00C75594 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -84,6 +91,15 @@
 		04E7F76721FFC5890021127F /* FaceBookButton.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FaceBookButton.xib; sourceTree = "<group>"; };
 		04E7F76921FFC5AB0021127F /* FaceBookButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FaceBookButton.swift; sourceTree = "<group>"; };
 		04E7F76C2200DAFB0021127F /* ProfileTVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileTVC.swift; sourceTree = "<group>"; };
+		74239845225B689500ED157A /* DataObjectProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataObjectProtocol.swift; sourceTree = "<group>"; };
+		742532EC2254B437006B1BFE /* DataReceiveProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataReceiveProtocol.swift; sourceTree = "<group>"; };
+		742532EE2254FBFF006B1BFE /* CellTouchProtokol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CellTouchProtokol.swift; sourceTree = "<group>"; };
+		742DD08222574F04009B63E2 /* DataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataManager.swift; sourceTree = "<group>"; };
+		742DD08422577FF7009B63E2 /* MainColorExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainColorExtension.swift; sourceTree = "<group>"; };
+		742DD08722578E79009B63E2 /* DataModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = DataModel.xcdatamodel; sourceTree = "<group>"; };
+		7434402E2255E7E900592BA7 /* StudentArchiveDetail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudentArchiveDetail.swift; sourceTree = "<group>"; };
+		743440302255F50500592BA7 /* BorderedLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BorderedLabel.swift; sourceTree = "<group>"; };
+		749365B22257903200AF2B09 /* CoreDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataManager.swift; sourceTree = "<group>"; };
 		792C034B76FFB0E7E5CACEFB /* Pods_CampusClientIOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CampusClientIOS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		84415CC226A4C81E05085554 /* Pods-CampusClientIOS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CampusClientIOS.release.xcconfig"; path = "Pods/Target Support Files/Pods-CampusClientIOS/Pods-CampusClientIOS.release.xcconfig"; sourceTree = "<group>"; };
 		97CB0B402711BDEA41A20A82 /* Pods-CampusClientIOS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CampusClientIOS.debug.xcconfig"; path = "Pods/Target Support Files/Pods-CampusClientIOS/Pods-CampusClientIOS.debug.xcconfig"; sourceTree = "<group>"; };
@@ -106,10 +122,11 @@
 		04047E6C21821D7C00585BEB /* Archive */ = {
 			isa = PBXGroup;
 			children = (
-				0467D5AC21F7D0B2002E6D58 /* studentArchiveVC.swift */,
+				0467D5AC21F7D0B2002E6D58 /* StudentArchiveTVC.swift */,
 				0469179F224CF7DB002DCC22 /* ArchiveDataModel.swift */,
 				0467D5AE21F7E735002E6D58 /* ArchiveMainCell.swift */,
-				0469179D224CEB50002DCC22 /* CellTouch.swift */,
+				742532EC2254B437006B1BFE /* DataReceiveProtocol.swift */,
+				742532EE2254FBFF006B1BFE /* CellTouchProtokol.swift */,
 			);
 			path = Archive;
 			sourceTree = "<group>";
@@ -155,6 +172,7 @@
 				04150A25217CA56F00ACBF81 /* UIButtonExtension.swift */,
 				04047E802185DA1200585BEB /* HideKeyboardExtension.swift */,
 				04691799224CD286002DCC22 /* UIImageRotate.swift */,
+				742DD08422577FF7009B63E2 /* MainColorExtension.swift */,
 			);
 			path = Extentions;
 			sourceTree = "<group>";
@@ -162,6 +180,7 @@
 		043CA53B21ECDC3E0001F076 /* DataRequests */ = {
 			isa = PBXGroup;
 			children = (
+				742DD08222574F04009B63E2 /* DataManager.swift */,
 				043CA52921E683E40001F076 /* VoteRequest.swift */,
 				043CA53C21ECDC670001F076 /* AccountInfo.swift */,
 				ABC3515134DD60D983FE2823 /* ApiClient.swift */,
@@ -214,9 +233,11 @@
 				04CFCE48216A323B00A460BA /* AppDelegate.swift */,
 				04CFCE4C216A323B00A460BA /* Main.storyboard */,
 				043CA53B21ECDC3E0001F076 /* DataRequests */,
+				742DD08922578FCF009B63E2 /* CoreData */,
 				04047E7121835D4100585BEB /* LogIn */,
 				04047E7D2185BE1000585BEB /* Rozklad */,
 				04047E6C21821D7C00585BEB /* Archive */,
+				7434402B2255E6E100592BA7 /* ArchiveDetailStudent */,
 				04047E7221835E7700585BEB /* Main */,
 				04E7F76B2200DAD60021127F /* Profile */,
 				04CFCE69216B445600A460BA /* Potochne */,
@@ -224,6 +245,7 @@
 				04150A27217CE0C400ACBF81 /* Extentions */,
 				04B98E112211B08E009955FD /* MarkButton */,
 				04B98E122211B0B2009955FD /* EnterButton */,
+				743440302255F50500592BA7 /* BorderedLabel.swift */,
 				04B98E172216D413009955FD /* VoteTabBar.swift */,
 				04B98E132211B0F5009955FD /* EnglishNameTextFieldCell.swift */,
 				04CFCE51216A323C00A460BA /* LaunchScreen.storyboard */,
@@ -261,6 +283,24 @@
 				84415CC226A4C81E05085554 /* Pods-CampusClientIOS.release.xcconfig */,
 			);
 			name = Pods;
+			sourceTree = "<group>";
+		};
+		742DD08922578FCF009B63E2 /* CoreData */ = {
+			isa = PBXGroup;
+			children = (
+				749365B22257903200AF2B09 /* CoreDataManager.swift */,
+				74239845225B689500ED157A /* DataObjectProtocol.swift */,
+				742DD08622578E79009B63E2 /* DataModel.xcdatamodeld */,
+			);
+			path = CoreData;
+			sourceTree = "<group>";
+		};
+		7434402B2255E6E100592BA7 /* ArchiveDetailStudent */ = {
+			isa = PBXGroup;
+			children = (
+				7434402E2255E7E900592BA7 /* StudentArchiveDetail.swift */,
+			);
+			path = ArchiveDetailStudent;
 			sourceTree = "<group>";
 		};
 		93F47F1164B4D1CB2102524F /* Frameworks */ = {
@@ -409,8 +449,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				74239846225B689500ED157A /* DataObjectProtocol.swift in Sources */,
 				043CA52021E679BC0001F076 /* LoginScreenVC.swift in Sources */,
-				0469179E224CEB51002DCC22 /* CellTouch.swift in Sources */,
 				043CA52A21E683E40001F076 /* VoteRequest.swift in Sources */,
 				0469179A224CD286002DCC22 /* UIImageRotate.swift in Sources */,
 				04047E812185DA1200585BEB /* HideKeyboardExtension.swift in Sources */,
@@ -419,17 +459,24 @@
 				043CA53221E811C90001F076 /* Structs.swift in Sources */,
 				043CA53421E816E10001F076 /* DetailTVC.swift in Sources */,
 				043CA52C21E7E0860001F076 /* MainTVC.swift in Sources */,
+				742DD08322574F04009B63E2 /* DataManager.swift in Sources */,
+				743440312255F50500592BA7 /* BorderedLabel.swift in Sources */,
+				742532ED2254B437006B1BFE /* DataReceiveProtocol.swift in Sources */,
 				043CA53021E804D60001F076 /* PotochneTVC.swift in Sources */,
 				04E7F76D2200DAFB0021127F /* ProfileTVC.swift in Sources */,
 				046917A2224CFB39002DCC22 /* ArchiveResultsStruct.swift in Sources */,
 				043CA52821E682470001F076 /* UiViewDesignable.swift in Sources */,
-				0467D5AD21F7D0B2002E6D58 /* studentArchiveVC.swift in Sources */,
+				0467D5AD21F7D0B2002E6D58 /* StudentArchiveTVC.swift in Sources */,
 				0467D5AF21F7E735002E6D58 /* ArchiveMainCell.swift in Sources */,
 				043CA53621E817190001F076 /* DetailTVCell.swift in Sources */,
+				7434402F2255E7E900592BA7 /* StudentArchiveDetail.swift in Sources */,
+				742DD08522577FF7009B63E2 /* MainColorExtension.swift in Sources */,
 				046917A0224CF7DB002DCC22 /* ArchiveDataModel.swift in Sources */,
 				043CA52E21E7E3F40001F076 /* VoteTerms.swift in Sources */,
+				742532EF2254FBFF006B1BFE /* CellTouchProtokol.swift in Sources */,
 				04150A26217CA56F00ACBF81 /* UIButtonExtension.swift in Sources */,
 				04047E7F2185BE3100585BEB /* RozkladTVC.swift in Sources */,
+				749365B32257903200AF2B09 /* CoreDataManager.swift in Sources */,
 				043CA53821E819710001F076 /* MarkButton.swift in Sources */,
 				0430A6BA21B03AD60066F929 /* HexExtension.swift in Sources */,
 				043CA52421E67A300001F076 /* EnterButton.swift in Sources */,
@@ -437,6 +484,7 @@
 				04B98E182216D413009955FD /* VoteTabBar.swift in Sources */,
 				04E7F76A21FFC5AB0021127F /* FaceBookButton.swift in Sources */,
 				ABC357A72529722C77F3C227 /* Settings.swift in Sources */,
+				742DD08822578E79009B63E2 /* DataModel.xcdatamodeld in Sources */,
 				ABC354E2D57CA846B8C17A97 /* ApiClient.swift in Sources */,
 				04B98E142211B0F5009955FD /* EnglishNameTextFieldCell.swift in Sources */,
 			);
@@ -644,6 +692,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		742DD08622578E79009B63E2 /* DataModel.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				742DD08722578E79009B63E2 /* DataModel.xcdatamodel */,
+			);
+			currentVersion = 742DD08722578E79009B63E2 /* DataModel.xcdatamodel */;
+			path = DataModel.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = 04CFCE3D216A323B00A460BA /* Project object */;
 }

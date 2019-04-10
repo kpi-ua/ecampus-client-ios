@@ -39,8 +39,8 @@ class ProfileTVC: UITableViewController {
     }
     
     func setHeaders() {
-        firstHeaderCell.backgroundColor = themeColor
-        secondHeaderCell.backgroundColor = themeColor
+        firstHeaderCell.backgroundColor = UIColor.ThemeColor.themeColor
+        secondHeaderCell.backgroundColor = UIColor.ThemeColor.themeColor
         firstHeaderLabel.textColor = UIColor.white
         secondHeaderLabel.textColor = UIColor.white
     }

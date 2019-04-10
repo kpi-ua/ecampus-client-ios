@@ -11,14 +11,14 @@ import UIKit
 class VoteTabBar: UITabBarController {
     
     var currentVC: PotochneTVC?
-    var archiveVC: studentArchiveVC?
+    var archiveVC: StudentArchiveVC?
 
     override func viewDidLoad() {
         super.viewDidLoad()
         self.delegate = self as? UITabBarControllerDelegate
         currentVC = PotochneTVC()
-        archiveVC = studentArchiveVC()
-        self.tabBar.backgroundColor = themeColor
+        archiveVC = StudentArchiveVC()
+        self.tabBar.backgroundColor = UIColor.ThemeColor.themeColor
         setImages()
         setControllers()
     }

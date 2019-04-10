@@ -29,7 +29,7 @@ class AccountInfo: NSObject {
                 do {
                     let jsonData = try JSONSerialization.data(withJSONObject: data)
                     let info = try self.decoder.decode(AccountInfoS.self, from: jsonData)
-                    mainQ.async {
+                    DispatchQueue.main.async {
                         print(info)
                         completion(info)
                     }
@@ -46,7 +46,7 @@ class AccountInfo: NSObject {
                 do {
                     let jsonData = try JSONSerialization.data(withJSONObject: data)
                     let groupData = try self.decoder.decode(Array<AcountGroup>.self, from: jsonData)
-                    mainQ.async {
+                    DispatchQueue.main.async {
                         completion(groupData)
                         print(groupData)
                     }
