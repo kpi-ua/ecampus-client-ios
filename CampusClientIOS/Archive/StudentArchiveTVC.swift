@@ -50,7 +50,8 @@ class StudentArchiveVC: UITableViewController, DataReceiveProtocol {
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         if indexPath.row == 0 {
             guard let cell = tableView.dequeueReusableCell(withIdentifier: "studentArchCell") as? ArchiveMainCell else { return UITableViewCell() }
-            cell.titleLabel.text = "ОПИТУВАННЯ № \(tableViewData[indexPath.section].title.voteNumber) ЗА \(tableViewData[indexPath.section].title.studyYear) р."
+            cell.titleLabel.text = "ОПИТУВАННЯ № \(tableViewData[indexPath.section].title.voteNumber!) ЗА \(tableViewData[indexPath.section].title.studyYear!) р."
+            cell.accessoryType = UITableViewCell.AccessoryType.disclosureIndicator
             return cell
         } else {
             guard let cell = tableView.dequeueReusableCell(withIdentifier: "studentExpandedCell") else { return UITableViewCell() }
@@ -76,6 +77,10 @@ class StudentArchiveVC: UITableViewController, DataReceiveProtocol {
             tableView.deselectRow(at: indexPath, animated: true)
             performSegue(withIdentifier: "toDetailInfo", sender: tableViewData[indexPath.section].data[indexPath.row - 1])
         }
+    }
+    
+    override func tableView(_ tableView: UITableView, viewForFooterInSection section: Int) -> UIView? {
+        return UIView()
     }
     
     func dataReceive(vote: VoteTerms, result: [ArchiveResults]) {

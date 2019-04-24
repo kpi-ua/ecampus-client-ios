@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import CoreData
 
 struct VoteTerms: Codable, Hashable {
     var id: String?
@@ -18,9 +19,11 @@ struct VoteTerms: Codable, Hashable {
     var actuality: String?
     var changeDate: String?
     var datePublish: String?
-    
+
     enum TermsCase: String, CodingKey, Codable {
         case voteNumber
     }
-    
+
 }
+
+

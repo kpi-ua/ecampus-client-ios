@@ -83,7 +83,7 @@ class PotochneTVC: UITableViewController {
     override func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
         return createHeader()
     }
-
+    
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         if persons != nil {
             return persons!.count
@@ -96,6 +96,10 @@ class PotochneTVC: UITableViewController {
         performSegue(withIdentifier: "voteSegue", sender: self.persons![indexPath.row])
     }
 
+    override func tableView(_ tableView: UITableView, viewForFooterInSection section: Int) -> UIView? {
+        return UIView()
+    }
+    
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "voteSegue" {
             let destVC = segue.destination as! DetailTVC

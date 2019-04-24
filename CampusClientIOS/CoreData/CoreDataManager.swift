@@ -10,6 +10,31 @@ import Foundation
 import CoreData
 import UIKit
 
+enum DataFetch {
+    
+    case CurrentVote
+
+    func settings() -> FetchSettings? {
+        switch self {
+        case .CurrentVote:
+            return FetchSettings.init(entityName: "CurrentVotes", entity: CurrentVotes.self)
+        default:
+            return nil
+        }
+    }
+}
+
+struct FetchSettings {
+    var entityName: String
+    
+    
+    init<T>(entityName: String, entity: T) {
+        self.entityName = entityName
+        
+    }
+    
+}
+
 class CoreDataManager {
     
     private let appDelegate = UIApplication.shared.delegate as! AppDelegate
@@ -19,32 +44,48 @@ class CoreDataManager {
         self.context = appDelegate.persistentContainer.viewContext
     }
     
-    func saveData() {
+//    func saveData() {
+//        do {
+//            try context?.save()
+//            print("saved")
+//        } catch let err {
+//            print(err.localizedDescription)
+//        }
+//    }
+    
+//    func fetchData(entityName: String) {
+//        let context = appDelegate.persistentContainer.viewContext
+//        let request = NSFetchRequest<NSFetchRequestResult>.init(entityName: entityName)
+//        request.returnsObjectsAsFaults = false
+//        do {
+//            let result = try context.fetch(request)
+//            print(result)
+//        } catch let err {
+//            print(err.localizedDescription)
+//        }
+//    }
+    
+    public final func saveData(entityName: String, attributeName: String, dataToSave: Any) {
+        let entity = NSEntityDescription.entity(forEntityName: entityName, in: context!)
+        let objToSave = NSManagedObject.init(entity: entity!, insertInto: context!)
+        objToSave.setValue(dataToSave, forKey: attributeName)
         do {
             try context?.save()
-            print("saved")
         } catch let err {
             print(err.localizedDescription)
         }
     }
     
-    func fetchData(entityName: String) {
-        let context = appDelegate.persistentContainer.viewContext
-        let request = NSFetchRequest<NSFetchRequestResult>.init(entityName: entityName)
+    public final func fetchData<T>(entity: DataFetch) -> [T]? {
+        let request = NSFetchRequest<NSFetchRequestResult>.init(entityName: "")
         request.returnsObjectsAsFaults = false
         do {
-            let result = try context.fetch(request)
-            print(result)
+            let result = try context?.fetch(request) as! [T]
+            return result
         } catch let err {
             print(err.localizedDescription)
         }
+        return nil
     }
-    
-    func createObject(entityName: String) -> NSManagedObject {
-        let entity = NSEntityDescription.entity(forEntityName: entityName, in: self.context!)
-        let newObject = NSManagedObject.init(entity: entity!, insertInto: context)
-        return newObject
-    }
-    
     
 }

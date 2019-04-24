@@ -7,8 +7,6 @@
 //
 
 import Foundation
-import Alamofire
-import SwiftyJSON
 
 class VoteRequest: NSObject {
 
@@ -31,13 +29,10 @@ class VoteRequest: NSObject {
                 do {
                     let jsonData = try JSONSerialization.data(withJSONObject: data)
                     let terms = try! self.decoder.decode(Array<VoteTerms>.self, from: jsonData)
+                    let manager  = CoreDataManager.init()
+                    let foo = manager.fetchData(entityName: "CurrentVotes", type: CurrentVotes.self)
+                    print(foo)
                     DispatchQueue.main.async {
-                        print(terms)
-                        let newObj = self.dataManager.createObject(entityName: "CurrentVotes") as! CurrentVotes
-                        newObj.votes = terms as NSObject
-                        print(newObj)
-                        self.dataManager.saveData()
-                        self.dataManager.fetchData(entityName: "CurrentVotes")
                         completion(terms)
                     }
                 } catch let err {
