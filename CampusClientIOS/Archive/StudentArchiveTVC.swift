@@ -78,6 +78,10 @@ class StudentArchiveVC: UITableViewController, DataReceiveProtocol {
         }
     }
     
+    override func tableView(_ tableView: UITableView, viewForFooterInSection section: Int) -> UIView? {
+        return UIView()
+    }
+    
     func dataReceive(vote: VoteTerms, result: [ArchiveResults]) {
         tableViewData.append(expandableCellData.init(opened: false, title: vote, data: result))
         tableView.reloadData()
