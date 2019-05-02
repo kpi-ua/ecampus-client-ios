@@ -96,6 +96,7 @@ class LoginScreenVC: UIViewController, FBSDKLoginButtonDelegate  {
             } else {
                 self.defaults.set(token, forKey: "access_token")
                 activityIndicator.stopAnimating()
+                let _ = DataManager.shared
                 self.performSegue(withIdentifier: "loginToMainSegue", sender: nil)
             }
         }
@@ -107,13 +108,13 @@ class LoginScreenVC: UIViewController, FBSDKLoginButtonDelegate  {
     
     func loginButton(_ loginButton: FBSDKLoginButton!, didCompleteWith result: FBSDKLoginManagerLoginResult!, error: Error!) {
         print("----------TOKEN----------")
-        let token = FBSDKAccessToken.current()?.tokenString
-        print(token)
+        //let token = FBSDKAccessToken.current()?.tokenString
+        //print(token)
     }
     
     func loginButtonDidLogOut(_ loginButton: FBSDKLoginButton!) {
         FBSDKAccessToken.refreshCurrentAccessToken(nil)
-        print("LOGGED OUT \(FBSDKAccessToken.current())")
+        //print("LOGGED OUT \(FBSDKAccessToken.current())")
     }
     
     

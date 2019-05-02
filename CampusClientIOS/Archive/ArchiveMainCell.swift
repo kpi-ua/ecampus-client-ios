@@ -21,5 +21,4 @@ class ArchiveMainCell: UITableViewCell {
         super.setSelected(selected, animated: animated)
     }
     
-    
 }

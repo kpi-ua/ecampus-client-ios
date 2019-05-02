@@ -15,6 +15,7 @@ class PotochneTVC: UITableViewController {
     var voteTerms: [VoteTerms]?
     var persons: [PersonToVote]?
     let segueID = "voteSegue"
+    let dataManager = DataManager.shared
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -39,18 +40,22 @@ class PotochneTVC: UITableViewController {
     func voteData() {
         let activityIndicator = setUpIndicator()
         activityIndicator.startAnimating()
-        dataRequest.getAllVotes() { (terms) in
-            self.voteTerms = terms
-            activityIndicator.stopAnimating()
-            self.tableView.reloadData()
-        }
+        voteTerms = dataManager.allVotes
+        tableView.reloadData()
+//        dataRequest.getAllVotes() { (terms) in
+//            self.voteTerms = terms
+//            activityIndicator.stopAnimating()
+//            self.tableView.reloadData()
+//        }
     }
     
     func personsToVote() {
-        dataRequest.getPersonsForVote() { (persons) in
-            self.persons = persons
-            self.tableView.reloadData()
-        }
+        persons = dataManager.personsToVote
+        tableView.reloadData()
+//        dataRequest.getPersonsForVote() { (persons) in
+//            self.persons = persons
+//            self.tableView.reloadData()
+//        }
     }
     
     func createHeader() -> String {
@@ -83,7 +88,7 @@ class PotochneTVC: UITableViewController {
     override func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
         return createHeader()
     }
-
+    
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         if persons != nil {
             return persons!.count
@@ -96,6 +101,10 @@ class PotochneTVC: UITableViewController {
         performSegue(withIdentifier: "voteSegue", sender: self.persons![indexPath.row])
     }
 
+    override func tableView(_ tableView: UITableView, viewForFooterInSection section: Int) -> UIView? {
+        return UIView()
+    }
+    
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "voteSegue" {
             let destVC = segue.destination as! DetailTVC

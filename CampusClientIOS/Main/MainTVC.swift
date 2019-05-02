@@ -45,6 +45,10 @@ class MainTVC: UITableViewController {
         actionForChosenCell(indexPath: indexPath)
     }
     
+    override func tableView(_ tableView: UITableView, viewForFooterInSection section: Int) -> UIView? {
+        return UIView()
+    }
+    
     func navigationBarSettings() {
         self.navigationController?.navigationBar.prefersLargeTitles = true
         self.navigationController?.navigationBar.backgroundColor = UIColor.ThemeColor.themeColor

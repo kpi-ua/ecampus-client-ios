@@ -50,7 +50,8 @@ class StudentArchiveVC: UITableViewController, DataReceiveProtocol {
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         if indexPath.row == 0 {
             guard let cell = tableView.dequeueReusableCell(withIdentifier: "studentArchCell") as? ArchiveMainCell else { return UITableViewCell() }
-            cell.titleLabel.text = "ОПИТУВАННЯ № \(tableViewData[indexPath.section].title.voteNumber) ЗА \(tableViewData[indexPath.section].title.studyYear) р."
+            cell.titleLabel.text = "ОПИТУВАННЯ № \(tableViewData[indexPath.section].title.voteNumber!) ЗА \(tableViewData[indexPath.section].title.studyYear!) р."
+            cell.accessoryType = UITableViewCell.AccessoryType.disclosureIndicator
             return cell
         } else {
             guard let cell = tableView.dequeueReusableCell(withIdentifier: "studentExpandedCell") else { return UITableViewCell() }

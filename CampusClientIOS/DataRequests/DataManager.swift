@@ -8,57 +8,42 @@
 
 import Foundation
 
-
-class DataManager {
+final class DataManager {
     
-    private static var uniqueInstance: DataManager?
+    static let shared: DataManager = DataManager.init()
     
-    let voteRequest = VoteRequest.init(apiClient: ApiClient.shared)
-    let accountInfo = AccountInfo.init(apiClient: ApiClient.shared)
+    private let coreDataManager = CoreDataManager.init()
+    private let voteRequest = VoteRequest.init(apiClient: ApiClient.shared)
+    private let accountInfo = AccountInfo.init(apiClient: ApiClient.shared)
+    private let dataParser = DataParser.init()
     
-    private(set) static var allVotes: [VoteTerms]?
-    private(set) static var personsToVote: [PersonToVote]?
-    private(set) static var archiveResults: [ArchiveResults]?
+    private(set) var allVotes: [VoteTerms]?
+    private(set) var personsToVote: [PersonToVote]?
     
-    typealias completion<T> = (T) -> Void
+    private typealias completion<T> = (T) -> Void
     
     private init() {
-        getCurrentVotes { (votes) in
-            DataManager.allVotes = votes
+        print("DATA MANAGER INIT")
+        getAllVotes { (data) in
+            print("ALL VOTES")
+            self.allVotes = data
         }
-        getPersonsToVote { (persons) in
-            DataManager.personsToVote = persons
-        }
-    }
-    
-    static func shared() -> DataManager {
-        guard uniqueInstance != nil else { return uniqueInstance! }
-        uniqueInstance = DataManager.init()
-        return uniqueInstance!
-    }
-    
-    private func getCurrentVotes(completion: @escaping  completion<[VoteTerms]>) {
-        voteRequest.getAllVotes { (votes) in
-            completion(votes)
+        getPersons { (data) in
+            print("PERSONS")
+            self.personsToVote = data
         }
     }
     
-    private func getPersonsToVote(completion: @escaping completion<[PersonToVote]>) {
-        voteRequest.getPersonsForVote { (persons) in
-            completion(persons)
+    private func getAllVotes(completion: @escaping completion<[VoteTerms]>) {
+        voteRequest.getAllVotes { (data) in
+            completion(data)
         }
     }
     
-//    private func getArchiveResults(completion: @escaping completion<[ArchiveResults]>) {
-//        voteRequest.archiveRequest(termID: "") { (results) in
-//
-//        }
-//    }
-
-    
-    
-    
-    
-    
+    private func getPersons(completion: @escaping completion<[PersonToVote]>) {
+        voteRequest.getPersonsForVote { (data) in
+            completion(data)
+        }
+    }
     
 }
