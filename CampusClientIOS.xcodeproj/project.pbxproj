@@ -42,6 +42,7 @@
 		04E7F76821FFC5890021127F /* FaceBookButton.xib in Resources */ = {isa = PBXBuildFile; fileRef = 04E7F76721FFC5890021127F /* FaceBookButton.xib */; };
 		04E7F76A21FFC5AB0021127F /* FaceBookButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04E7F76921FFC5AB0021127F /* FaceBookButton.swift */; };
 		04E7F76D2200DAFB0021127F /* ProfileTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04E7F76C2200DAFB0021127F /* ProfileTVC.swift */; };
+		7424EDEF227B171C0053C193 /* Endpoints.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7424EDEE227B171C0053C193 /* Endpoints.swift */; };
 		742532ED2254B437006B1BFE /* DataReceiveProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 742532EC2254B437006B1BFE /* DataReceiveProtocol.swift */; };
 		742532EF2254FBFF006B1BFE /* CellTouchProtokol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 742532EE2254FBFF006B1BFE /* CellTouchProtokol.swift */; };
 		742DD08322574F04009B63E2 /* DataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 742DD08222574F04009B63E2 /* DataManager.swift */; };
@@ -50,6 +51,10 @@
 		7434402F2255E7E900592BA7 /* StudentArchiveDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7434402E2255E7E900592BA7 /* StudentArchiveDetail.swift */; };
 		743440312255F50500592BA7 /* BorderedLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 743440302255F50500592BA7 /* BorderedLabel.swift */; };
 		749365B32257903200AF2B09 /* CoreDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 749365B22257903200AF2B09 /* CoreDataManager.swift */; };
+		74F1E8392282F91000C05050 /* CurrentVotes+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74F1E8362282F90F00C05050 /* CurrentVotes+CoreDataProperties.swift */; };
+		74F1E83A2282F91000C05050 /* PersonsToVote+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74F1E8382282F91000C05050 /* PersonsToVote+CoreDataClass.swift */; };
+		74F1E83B2282F91000C05050 /* CurrentVotes+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74F1E8352282F90F00C05050 /* CurrentVotes+CoreDataClass.swift */; };
+		74F1E83C2282F91000C05050 /* PersonsToVote+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74F1E8372282F91000C05050 /* PersonsToVote+CoreDataProperties.swift */; };
 		ABC354E2D57CA846B8C17A97 /* ApiClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABC3515134DD60D983FE2823 /* ApiClient.swift */; };
 		ABC357A72529722C77F3C227 /* Settings.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABC356AECA2B49ED89A6732F /* Settings.swift */; };
 		FAC44813D60CCB2C081F5DF8 /* Pods_CampusClientIOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 792C034B76FFB0E7E5CACEFB /* Pods_CampusClientIOS.framework */; };
@@ -94,6 +99,7 @@
 		04E7F76721FFC5890021127F /* FaceBookButton.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FaceBookButton.xib; sourceTree = "<group>"; };
 		04E7F76921FFC5AB0021127F /* FaceBookButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FaceBookButton.swift; sourceTree = "<group>"; };
 		04E7F76C2200DAFB0021127F /* ProfileTVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileTVC.swift; sourceTree = "<group>"; };
+		7424EDEE227B171C0053C193 /* Endpoints.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Endpoints.swift; sourceTree = "<group>"; };
 		742532EC2254B437006B1BFE /* DataReceiveProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataReceiveProtocol.swift; sourceTree = "<group>"; };
 		742532EE2254FBFF006B1BFE /* CellTouchProtokol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CellTouchProtokol.swift; sourceTree = "<group>"; };
 		742DD08222574F04009B63E2 /* DataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataManager.swift; sourceTree = "<group>"; };
@@ -102,6 +108,10 @@
 		7434402E2255E7E900592BA7 /* StudentArchiveDetail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudentArchiveDetail.swift; sourceTree = "<group>"; };
 		743440302255F50500592BA7 /* BorderedLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BorderedLabel.swift; sourceTree = "<group>"; };
 		749365B22257903200AF2B09 /* CoreDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataManager.swift; sourceTree = "<group>"; };
+		74F1E8352282F90F00C05050 /* CurrentVotes+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "CurrentVotes+CoreDataClass.swift"; path = "/Users/DenysYefremov/Desktop/ecampus-client-ios/CampusClientIOS/CoreData/CurrentVotes+CoreDataClass.swift"; sourceTree = "<absolute>"; };
+		74F1E8362282F90F00C05050 /* CurrentVotes+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "CurrentVotes+CoreDataProperties.swift"; path = "/Users/DenysYefremov/Desktop/ecampus-client-ios/CampusClientIOS/CoreData/CurrentVotes+CoreDataProperties.swift"; sourceTree = "<absolute>"; };
+		74F1E8372282F91000C05050 /* PersonsToVote+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "PersonsToVote+CoreDataProperties.swift"; path = "/Users/DenysYefremov/Desktop/ecampus-client-ios/CampusClientIOS/CoreData/PersonsToVote+CoreDataProperties.swift"; sourceTree = "<absolute>"; };
+		74F1E8382282F91000C05050 /* PersonsToVote+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "PersonsToVote+CoreDataClass.swift"; path = "/Users/DenysYefremov/Desktop/ecampus-client-ios/CampusClientIOS/CoreData/PersonsToVote+CoreDataClass.swift"; sourceTree = "<absolute>"; };
 		792C034B76FFB0E7E5CACEFB /* Pods_CampusClientIOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CampusClientIOS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		84415CC226A4C81E05085554 /* Pods-CampusClientIOS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CampusClientIOS.release.xcconfig"; path = "Pods/Target Support Files/Pods-CampusClientIOS/Pods-CampusClientIOS.release.xcconfig"; sourceTree = "<group>"; };
 		97CB0B402711BDEA41A20A82 /* Pods-CampusClientIOS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CampusClientIOS.debug.xcconfig"; path = "Pods/Target Support Files/Pods-CampusClientIOS/Pods-CampusClientIOS.debug.xcconfig"; sourceTree = "<group>"; };
@@ -189,6 +199,7 @@
 				ABC356AECA2B49ED89A6732F /* Settings.swift */,
 				046917A1224CFB39002DCC22 /* ArchiveResultsStruct.swift */,
 				04CBA6692278E4F1009767EB /* DataParser.swift */,
+				7424EDEE227B171C0053C193 /* Endpoints.swift */,
 			);
 			path = DataRequests;
 			sourceTree = "<group>";
@@ -293,6 +304,10 @@
 			children = (
 				749365B22257903200AF2B09 /* CoreDataManager.swift */,
 				04CBA66B2279B47C009767EB /* CoreDataSettings.swift */,
+				74F1E8362282F90F00C05050 /* CurrentVotes+CoreDataProperties.swift */,
+				74F1E8352282F90F00C05050 /* CurrentVotes+CoreDataClass.swift */,
+				74F1E8382282F91000C05050 /* PersonsToVote+CoreDataClass.swift */,
+				74F1E8372282F91000C05050 /* PersonsToVote+CoreDataProperties.swift */,
 				742DD08622578E79009B63E2 /* DataModel.xcdatamodeld */,
 			);
 			path = CoreData;
@@ -466,10 +481,12 @@
 				742532ED2254B437006B1BFE /* DataReceiveProtocol.swift in Sources */,
 				043CA53021E804D60001F076 /* PotochneTVC.swift in Sources */,
 				04E7F76D2200DAFB0021127F /* ProfileTVC.swift in Sources */,
+				7424EDEF227B171C0053C193 /* Endpoints.swift in Sources */,
 				046917A2224CFB39002DCC22 /* ArchiveResultsStruct.swift in Sources */,
 				043CA52821E682470001F076 /* UiViewDesignable.swift in Sources */,
 				0467D5AD21F7D0B2002E6D58 /* StudentArchiveTVC.swift in Sources */,
 				0467D5AF21F7E735002E6D58 /* ArchiveMainCell.swift in Sources */,
+				74F1E8392282F91000C05050 /* CurrentVotes+CoreDataProperties.swift in Sources */,
 				043CA53621E817190001F076 /* DetailTVCell.swift in Sources */,
 				7434402F2255E7E900592BA7 /* StudentArchiveDetail.swift in Sources */,
 				742DD08522577FF7009B63E2 /* MainColorExtension.swift in Sources */,
@@ -479,10 +496,12 @@
 				742532EF2254FBFF006B1BFE /* CellTouchProtokol.swift in Sources */,
 				04150A26217CA56F00ACBF81 /* UIButtonExtension.swift in Sources */,
 				04047E7F2185BE3100585BEB /* RozkladTVC.swift in Sources */,
+				74F1E83B2282F91000C05050 /* CurrentVotes+CoreDataClass.swift in Sources */,
 				749365B32257903200AF2B09 /* CoreDataManager.swift in Sources */,
 				04CBA66C2279B47C009767EB /* CoreDataSettings.swift in Sources */,
 				043CA53821E819710001F076 /* MarkButton.swift in Sources */,
 				0430A6BA21B03AD60066F929 /* HexExtension.swift in Sources */,
+				74F1E83A2282F91000C05050 /* PersonsToVote+CoreDataClass.swift in Sources */,
 				043CA52421E67A300001F076 /* EnterButton.swift in Sources */,
 				043CA53D21ECDC670001F076 /* AccountInfo.swift in Sources */,
 				04B98E182216D413009955FD /* VoteTabBar.swift in Sources */,
@@ -491,6 +510,7 @@
 				742DD08822578E79009B63E2 /* DataModel.xcdatamodeld in Sources */,
 				ABC354E2D57CA846B8C17A97 /* ApiClient.swift in Sources */,
 				04B98E142211B0F5009955FD /* EnglishNameTextFieldCell.swift in Sources */,
+				74F1E83C2282F91000C05050 /* PersonsToVote+CoreDataProperties.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

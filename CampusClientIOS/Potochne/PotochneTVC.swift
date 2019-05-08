@@ -10,16 +10,13 @@ import UIKit
 
 class PotochneTVC: UITableViewController {
     
-    let dataRequest = VoteRequest(apiClient: ApiClient.shared)
-    let token = UserDefaults.standard.string(forKey: "access_token")
-    var voteTerms: [VoteTerms]?
-    var persons: [PersonToVote]?
-    let segueID = "voteSegue"
-    let dataManager = DataManager.shared
+    private let dataRequest = VoteRequest(apiClient: ApiClient.shared)
+    private var persons: [PersonToVote]?
+    private let segueID = "voteSegue"
+    private let dataManager = DataManager.shared
     
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        voteData()
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
         personsToVote()
         tabBarSettings()
     }
@@ -37,34 +34,9 @@ class PotochneTVC: UITableViewController {
         return activityIndicator
     }
     
-    func voteData() {
-        let activityIndicator = setUpIndicator()
-        activityIndicator.startAnimating()
-        voteTerms = dataManager.allVotes
-        tableView.reloadData()
-//        dataRequest.getAllVotes() { (terms) in
-//            self.voteTerms = terms
-//            activityIndicator.stopAnimating()
-//            self.tableView.reloadData()
-//        }
-    }
-    
     func personsToVote() {
         persons = dataManager.personsToVote
         tableView.reloadData()
-//        dataRequest.getPersonsForVote() { (persons) in
-//            self.persons = persons
-//            self.tableView.reloadData()
-//        }
-    }
-    
-    func createHeader() -> String {
-        /*if voteTerms != nil {
-            let actualVoteNumber = voteTerms!.count - 1
-            let header = "ОПИТУВАННЯ № \(voteTerms![actualVoteNumber].voteNumber!) ЗА \(voteTerms![actualVoteNumber].studyYear!)"
-            return header
-        }*/
-        return ""
     }
     
     // MARK: - Table view data source
@@ -83,10 +55,6 @@ class PotochneTVC: UITableViewController {
     
     override func numberOfSections(in tableView: UITableView) -> Int {
         return 1
-    }
-    
-    override func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
-        return createHeader()
     }
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {

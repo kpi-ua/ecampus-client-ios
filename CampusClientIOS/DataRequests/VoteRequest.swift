@@ -16,54 +16,48 @@ class VoteRequest: NSObject {
     private var apiClient : ApiClient
     private let defaults = UserDefaults.standard
     private let requsetBgQ = DispatchQueue.global(qos: DispatchQoS.QoSClass.userInitiated)
-    private let decoder = JSONDecoder()
-    private let dataParser = DataParser.init()
-    private let dataManager = CoreDataManager.init()
+    typealias completion = (Any) -> Void
     
     init(apiClient: ApiClient) {
         self.apiClient = apiClient
         super.init()
     }
 
-    public func getAllVotes(completion: @escaping ([VoteTerms]) -> Void) {
+    public func getAllVotes(completion: @escaping completion) {
         requsetBgQ.async {
             self.apiClient.makeRequest("Vote/Terms", method: .get, parameters: nil) { (data) in
-                guard let terms = self.dataParser.parseData(data: data, type: Array<VoteTerms>.self) else { return }
                 DispatchQueue.main.async {
-                    completion(terms)
+                    completion(data)
                 }
             }
         }
     }
 
-    public func getPersonsForVote(completion: @escaping ([PersonToVote]) -> Void) {
+    public func getPersonsForVote(completion: @escaping completion) {
         requsetBgQ.async {
             self.apiClient.makeRequest("Vote/Persons", { (data) in
-                    guard let persons = self.dataParser.parseData(data: data, type: Array<PersonToVote>.self) else { return }
                     DispatchQueue.main.async {
-                        completion(persons)
+                        completion(data)
                     }
             })
         }
     }
 
-    public func studentResultsRequest(token: String, termID: String, completion: @escaping ([[String : AnyObject]]) -> Void) {
+    public func studentResultsRequest(token: String, termID: String, completion: @escaping completion) {
         let url = "Vote/Results/Students?voteTermId=\(termID)"
         requsetBgQ.async {
             self.apiClient.makeRequest(url, method: .get, parameters: nil) { (data) -> Void in
-                let json = data as! [[String : AnyObject]]
-                completion(json)
+                completion(data)
             }
         }
     }
     
-    public func archiveRequest(termID : String, completion: @escaping ([ArchiveResults]) -> Void) {
+    public func archiveRequest(termID : String, completion: @escaping completion) {
         let url = "Vote/\(termID)/archive"
         requsetBgQ.async {
             self.apiClient.makeRequest(url, method: .get, parameters: nil, { (data) in
-                guard let results = self.dataParser.parseData(data: data, type: Array<ArchiveResults>.self) else { return }
                 DispatchQueue.main.async {
-                    completion(results)
+                    completion(data)
                 }
             })
         }

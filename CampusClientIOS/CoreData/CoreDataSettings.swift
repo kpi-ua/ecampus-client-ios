@@ -24,3 +24,4 @@ struct CoreDataSettings {
     var entityName: String
     var attributeName: String
 }
+

@@ -55,10 +55,32 @@ class CoreDataManager {
         }
     }
     
-    public final func checkAndFetchData<T>(entity: CoreDataEntities, data: Any, type: T) -> [T]? {
-        guard let result = fetchData(entity: entity, type: T.self) else { return nil }
+    //checking if argument exist in core data and save it if no
+    public final func checkIfExistingInData<T>(data: Any, entity: CoreDataEntities, type: T.Type) {
         
-        return nil
     }
+    
 }
+
+//class CurrentVotes: NSManagedObject {
+//    
+//    @NSManaged public var id: String?
+//    @NSManaged public var studyYear: String?
+//    @NSManaged public var voteNumber: String?
+//    @NSManaged public var voteDescription: String?
+//    @NSManaged public var dateStart: String?
+//    @NSManaged public var dateEnd: String?
+//    @NSManaged public var actuality: String?
+//    @NSManaged public var changeDate: String?
+//    @NSManaged public var datePublish: String?
+//    
+//    private enum CodingKeys: String, CodingKey {
+//        case id, studyYear, voteNumber, voteDescription = "description", dateStart, dateEnd, actuality, changeDate, datePublish
+//    }
+//    
+//    public convenience init(from decoder: Decoder) throws {
+//        let container = try decoder.container(keyedBy: CodingKeys.self)
+//        id = container.decode(String.self, forKey: .id)
+//    }
+//}
 

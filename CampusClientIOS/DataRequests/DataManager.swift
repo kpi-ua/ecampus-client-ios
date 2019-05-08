@@ -7,43 +7,55 @@
 //
 
 import Foundation
+import CoreData
+import UIKit
 
-final class DataManager {
+class DataManager {
     
     static let shared: DataManager = DataManager.init()
     
     private let coreDataManager = CoreDataManager.init()
+    private let dataParser = DataParser.init()
     private let voteRequest = VoteRequest.init(apiClient: ApiClient.shared)
     private let accountInfo = AccountInfo.init(apiClient: ApiClient.shared)
-    private let dataParser = DataParser.init()
     
     private(set) var allVotes: [VoteTerms]?
     private(set) var personsToVote: [PersonToVote]?
+    private(set) var archiveResults: [ArchiveResults]?
     
     private typealias completion<T> = (T) -> Void
     
     private init() {
-        print("DATA MANAGER INIT")
         getAllVotes { (data) in
-            print("ALL VOTES")
-            self.allVotes = data
+            
         }
         getPersons { (data) in
-            print("PERSONS")
             self.personsToVote = data
         }
     }
     
-    private func getAllVotes(completion: @escaping completion<[VoteTerms]>) {
+    private func getAllVotes(completion: @escaping completion<[CurrentVotes]>) {
         voteRequest.getAllVotes { (data) in
-            completion(data)
+            print(data)
+            guard let result = self.dataParser.parseData(data: data, type: [CurrentVotes].self) else { return }
+            completion(result)
         }
     }
     
     private func getPersons(completion: @escaping completion<[PersonToVote]>) {
         voteRequest.getPersonsForVote { (data) in
-            completion(data)
+            print(data)
+            guard let result = self.dataParser.parseData(data: data, type: Array<PersonToVote>.self) else { return }
+            completion(result)
+        }
+    }
+    
+    private func archiveResult(termID: String, completion: @escaping completion<[ArchiveResults]>) {
+        voteRequest.archiveRequest(termID: termID) { (data) in
+            guard let result = self.dataParser.parseData(data: data, type: Array<ArchiveResults>.self) else { return }
+            completion(result)
         }
     }
     
 }
+

@@ -2,6 +2,18 @@
 <Workspace
    version = "1.0">
    <FileRef
+      location = "group:/Users/DenysYefremov/Desktop/ecampus-client-ios/CampusClientIOS/CoreData/PersonsToVote+CoreDataClass.swift">
+   </FileRef>
+   <FileRef
+      location = "group:/Users/DenysYefremov/Desktop/ecampus-client-ios/CampusClientIOS/CoreData/PersonsToVote+CoreDataProperties.swift">
+   </FileRef>
+   <FileRef
+      location = "group:/Users/DenysYefremov/Desktop/ecampus-client-ios/CampusClientIOS/CoreData/CurrentVotes+CoreDataClass.swift">
+   </FileRef>
+   <FileRef
+      location = "group:/Users/DenysYefremov/Desktop/ecampus-client-ios/CampusClientIOS/CoreData/CurrentVotes+CoreDataProperties.swift">
+   </FileRef>
+   <FileRef
       location = "group:CampusClientIOS.xcodeproj">
    </FileRef>
    <FileRef
